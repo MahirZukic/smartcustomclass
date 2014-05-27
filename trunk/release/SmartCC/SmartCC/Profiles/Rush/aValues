@@ -1,0 +1,16 @@
+ValueHealthEnemy=2
+ValueHealthFriend=1
+ValueArmorEnemy=2
+ValueArmorFriend=1
+ValueSecret=6
+ValueEnemyCardDraw=10
+ValueEnemyMinionCount=2
+ValueFriendMinionCount=3
+ValueFriendCardDraw=7
+ValueDurabilityWeapon=1
+ValueHealthMinion=2
+ValueAttackMinion=3
+ValueTaunt=6
+ValueDivineShield=4
+ValueAttackWeapon=
+ValueFrozen=3

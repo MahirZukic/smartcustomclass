@@ -130,13 +130,33 @@ namespace HREngine.Bots
                     else
                         roll++;
                 }
-                int maxWidePerThread = 1;
-                if(nbThread > 0)
-                {
-                    maxWidePerThread = 10000 / nbThread;
-                }
-                
-                Console.WriteLine("Max per thread :" + maxWidePerThread.ToString());
+
+                int parsed = 0;
+                StreamReader str = new StreamReader(CardTemplate.DatabasePath + "Bots/SmartCC/Config/searchLevel");
+                    string use = str.ReadLine();
+
+                    str.Close();
+
+                    if (use == "low")
+                    {
+                        parsed = 5000;
+                    }
+                    else if(use == "medium")
+                    {
+                        parsed = 10000;
+                    }
+                    else if(use == "high")
+                    {
+                        parsed = 15000;
+                    }
+                    else if(use == "ultra")
+                    {
+                        parsed = 20000;
+                    }
+
+              
+                    int maxWidePerThread = parsed / nbThread;
+
                 bool useQuickSearch = true;
                 int lastStartRange = 0;
                 List<Thread> tt = new List<Thread>();
@@ -415,11 +435,8 @@ namespace HREngine.Bots
                 wide = 0;
                 foreach (Board b in input)
                 {
-                    int boardWide = 0;
-                    float maxWidePerBoard = maxWide/input.Count;
                     foreach (HREngine.Bots.Action a in b.CalculateAvailableActions())
                     {
-                        boardWide++;
                         wide++;
                         Board bb = b.ExecuteAction(a);
 
@@ -440,8 +457,6 @@ namespace HREngine.Bots
                                 ShouldStop = true;
                         }
 
-                        if (boardWide > maxWidePerBoard)
-                            break;
                         if (wide > maxWide)
                             break;
                         if (ShouldStop)
@@ -460,6 +475,8 @@ namespace HREngine.Bots
                     if (baa.GetValue() > BestBoard.GetValue())
                         BestBoard = baa;
                 }
+                if (ShouldStop)
+                    break;
                 input.Clear();
                 foreach(Board aaa in childaas)
                 {
