@@ -91,7 +91,7 @@ namespace HREngine.Bots
             int maxWide = 10000;
             int skipped = 0;
             root.Update();
-            bool tryToSkipEqualBoards = true;
+            bool tryToSkipEqualBoards = false;
             Board bestBoard = root;
             Log("ROOTBOARD : ");
             Log(root.ToString());
@@ -133,31 +133,32 @@ namespace HREngine.Bots
 
                 int parsed = 0;
                 StreamReader str = new StreamReader(CardTemplate.DatabasePath + "Bots/SmartCC/Config/searchLevel");
-                    string use = str.ReadLine();
+                string use = str.ReadLine();
 
-                    str.Close();
+                str.Close();
 
-                    if (use == "low")
-                    {
-                        parsed = 5000;
-                    }
-                    else if(use == "medium")
-                    {
-                        parsed = 10000;
-                    }
-                    else if(use == "high")
-                    {
-                        parsed = 15000;
-                    }
-                    else if(use == "ultra")
-                    {
-                        parsed = 20000;
-                    }
+                if (use == "low")
+                {
+                    parsed = 5000;
+                }
+                else if (use == "medium")
+                {
+                    parsed = 10000;
+                }
+                else if (use == "high")
+                {
+                    parsed = 15000;
+                }
+                else if (use == "ultra")
+                {
+                    parsed = 20000;
+                }
 
-              
-                    int maxWidePerThread = parsed / nbThread;
+                int maxWidePerThread = parsed;
+                if (nbThread > 0)
+                    maxWidePerThread = parsed / nbThread;
 
-                bool useQuickSearch = true;
+                bool useQuickSearch = false;
                 int lastStartRange = 0;
                 List<Thread> tt = new List<Thread>();
                 for (int i = 0; i < nbThread; i++)
@@ -168,11 +169,11 @@ namespace HREngine.Bots
                     lastStartRange += tab[i];
                     if (i == 0 && useQuickSearch)
                     {
-                        SimulationThread threadQuickSearch = new SimulationThread(maxWidePerThread/3);
+                        SimulationThread threadQuickSearch = new SimulationThread(maxWidePerThread / 3);
                         Thread threadlQuickSearch = new Thread(new ParameterizedThreadStart(threadQuickSearch.Calculate));
 
                         List<Board> quickSearchBoards = new List<Board>();
-                        foreach(Board v in input)
+                        foreach (Board v in input)
                         {
                             quickSearchBoards.Add(Board.Clone(v));
                         }
@@ -307,8 +308,9 @@ namespace HREngine.Bots
                 }
             }
 
-
             Action actionPrior = null;
+
+            /*
             foreach (Action acc in bestBoard.ActionsStack)
             {
                 if (actionPrior == null && acc.Actor != null)
@@ -318,7 +320,7 @@ namespace HREngine.Bots
                         Console.WriteLine("Action priori found");
                         if (acc.Type == Action.ActionType.CAST_MINION && acc.Actor.Behavior.ShouldBePlayed(root))
                         {
-                            if (bestBoard.MinionFriend.Count < 7)
+                            if (root.MinionFriend.Count < 7)
                                 actionPrior = acc;
 
                         }
@@ -330,7 +332,7 @@ namespace HREngine.Bots
                     }
                 }
             }
-
+            */
 
             List<Action> finalStack = new List<Action>();
             if (actionPrior != null)
@@ -439,31 +441,19 @@ namespace HREngine.Bots
                     {
                         wide++;
                         Board bb = b.ExecuteAction(a);
+                        childaas.Add(bb);
 
-                        bool found = false;
-                        foreach (Board lol in childaas)
+                        if (bb.GetValue() > 10000)
                         {
-                            if (bb.Equals(lol))
-                            {
-                                found = true;
-                                break;
-                            }
+                            ShouldStop = true;
+                            BestBoard = bb;
                         }
-
-                        if (!found)
-                        {
-                            childaas.Add(bb);
-                            if (bb.GetValue() > 10000)
-                                ShouldStop = true;
-                        }
-
                         if (wide > maxWide)
                             break;
                         if (ShouldStop)
                             break;
 
-                        if (BestBoard == null)
-                            BestBoard = bb;
+                        
                     }
                     if (wide > maxWide)
                         break;
@@ -472,13 +462,15 @@ namespace HREngine.Bots
                 }
                 foreach (Board baa in childaas)
                 {
+                    if (BestBoard == null)
+                        BestBoard = baa;
                     if (baa.GetValue() > BestBoard.GetValue())
                         BestBoard = baa;
                 }
                 if (ShouldStop)
                     break;
                 input.Clear();
-                foreach(Board aaa in childaas)
+                foreach (Board aaa in childaas)
                 {
                     input.Add(aaa);
                 }
