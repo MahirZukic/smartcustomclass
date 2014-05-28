@@ -198,6 +198,7 @@ namespace HREngine.Bots
                 {
                     Board endBoard = Board.Clone(b);
                     endBoard.EndTurn();
+                    endBoard = endBoard.EnemyTurnWorseBoard;
 
                     if (BestBoard == null)
                         BestBoard = endBoard;
@@ -234,7 +235,7 @@ namespace HREngine.Bots
                             childsCount++;
 
                             Board bb = b.ExecuteAction(a);
-                            /* 
+                            /*
                               Console.WriteLine(a.ToString());
                               Console.WriteLine("**************************************");
                               Console.WriteLine(bb.ToString());
@@ -286,9 +287,23 @@ namespace HREngine.Bots
                         {
                             Board endBoard = Board.Clone(baa);
                             endBoard.EndTurn();
-                            if (endBoard.GetValue() > bestBoard.GetValue())
+                            Board worstBoard = endBoard.EnemyTurnWorseBoard;
+                            if (worstBoard == null)
+                                worstBoard = endBoard;
+
+                            if(bestBoard.EnemyTurnWorseBoard != null)
                             {
-                                bestBoard = endBoard;
+                                if (worstBoard.GetValue() > bestBoard.EnemyTurnWorseBoard.GetValue())
+                                {
+                                    bestBoard = endBoard;
+                                }
+                            }
+                            else
+                            {
+                                if (endBoard.GetValue() > bestBoard.GetValue())
+                                {
+                                    bestBoard = endBoard;
+                                }
                             }
                         }
                     }
@@ -310,7 +325,7 @@ namespace HREngine.Bots
 
             Action actionPrior = null;
 
-            /*
+            
             foreach (Action acc in bestBoard.ActionsStack)
             {
                 if (actionPrior == null && acc.Actor != null)
@@ -332,7 +347,7 @@ namespace HREngine.Bots
                     }
                 }
             }
-            */
+            
 
             List<Action> finalStack = new List<Action>();
             if (actionPrior != null)
