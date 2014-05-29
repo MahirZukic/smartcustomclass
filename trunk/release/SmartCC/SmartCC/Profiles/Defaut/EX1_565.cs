@@ -24,7 +24,7 @@ namespace HREngine.Bots
 				{
 					return true;
 				}
-			]
+			}
 			
             return false;
         }
