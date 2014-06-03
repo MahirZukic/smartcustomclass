@@ -27,7 +27,17 @@ namespace HREngine.Bots
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null, int index = 0)
+        public override int GetValue(Board board)
+        {
+            if(!IsFriend)
+            {
+                return base.GetValue(board) +5;
+
+            }
+            return base.GetValue(board);
+        }
+
+        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target, index);
         }
@@ -50,8 +60,8 @@ namespace HREngine.Bots
 
                 if (worstMinion != null)
                 {
-                    board.RemoveCardFromBoard(worstMinion.Id);
-                    board.AddCardToBoard(worstMinion.template.Id, true);
+                    board.MinionEnemy.Remove(worstMinion);
+                    board.MinionFriend.Add(worstMinion);
                 }
                     
 
@@ -70,8 +80,8 @@ namespace HREngine.Bots
 
                 if (bestMinion != null)
                 {
-                    board.RemoveCardFromBoard(bestMinion.Id);
-                    board.AddCardToBoard(bestMinion.template.Id, false);
+                    board.MinionFriend.Remove(bestMinion);
+                    board.MinionEnemy.Add(bestMinion);
                 }
                     
 

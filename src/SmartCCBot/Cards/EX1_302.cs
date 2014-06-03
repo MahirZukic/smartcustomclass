@@ -26,7 +26,7 @@ public class EX1_302 : Card
             TargetTypeOnPlay = TargetType.MINION_ENEMY;
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0)
+        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);
             if(target != null)
@@ -35,7 +35,9 @@ public class EX1_302 : Card
                     board.FriendCardDraw++;
 
                 target.Damage(1 + board.GetSpellPower(), ref board);
+                board.Resimulate();
             }
+            
         }
 
         public override void OnDeath(ref Board board)

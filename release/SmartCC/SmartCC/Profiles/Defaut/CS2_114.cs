@@ -18,9 +18,15 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-            if (board.MinionEnemy.Count > 4)
-                return false;
-            return true;
+			int countMinionBelow2Hp = 0;
+			foreach(Card c in board.MinionEnemy)
+			{
+				if(c.CurrentHealth <= 2)
+					countMinionBelow2Hp++;
+			}
+            if (board.MinionEnemy.Count >= 2 && countMinionBelow2Hp > 1)
+                return true;
+            return false;
         }
 
         public override bool ShouldAttack(Board board)

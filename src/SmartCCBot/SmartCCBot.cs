@@ -35,7 +35,7 @@ namespace HREngine.Bots
                 StreamReader str = new StreamReader(CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Config" + Path.DirectorySeparatorChar + "useProfiles");
 
 
-                startInfo.Arguments = "\"" + CardTemplate.DatabasePath+ Path.DirectorySeparatorChar + "\"" + " " + str.ReadLine();
+                startInfo.Arguments = "\"" + CardTemplate.DatabasePath + Path.DirectorySeparatorChar + "\"" + " " + str.ReadLine();
                 str.Close();
 
                 try
@@ -61,6 +61,7 @@ namespace HREngine.Bots
             }
 
             ValuesInterface.LoadValuesFromFile();
+            ProfileInterface.LoadBehavior();
 
 
         }
@@ -76,15 +77,32 @@ namespace HREngine.Bots
             if (HRMulligan.IsMulliganActive())
             {
                 List<HRCard> Choices = HRCard.GetCards(HRPlayer.GetLocalPlayer(), HRCardZone.HAND);
+                List<Card> ParsedChoices = new List<Card>();
+                foreach (HRCard card in Choices)
+                {
+                    HREntity entity = card.GetEntity();
+                    Card c = Card.Create(entity.GetCardId(), true, entity.GetEntityId());
+                    c.CurrentCost = entity.GetCost();
+                    ParsedChoices.Add(c);
+                }
+
+                List<HRCard> CardsToKeep = new List<HRCard>();
+                foreach(Card c in ProfileInterface.Behavior.HandleMulligan(ParsedChoices))
+                {
+                    foreach (HRCard card in Choices)
+                    {
+                        if (c.Id == card.GetEntity().GetEntityId())
+                            CardsToKeep.Add(card);
+                    }
+                }
 
                 foreach (HRCard card in Choices)
                 {
-                    if (card.GetEntity().GetCost() >= 4)
-                    {
+                    if (!CardsToKeep.Contains(card))
                         HRMulligan.ToggleCard(card);
-                    }
                 }
                 return null;
+           
             }
             return null;
 
@@ -111,6 +129,7 @@ namespace HREngine.Bots
             root.HeroEnemy.CurrentArmor = HeroEnemy.GetArmor();
             root.HeroFriend.CurrentHealth = HeroFriend.GetHealth() - HeroFriend.GetDamage();
             root.HeroFriend.MaxHealth = 30;
+            root.HeroFriend.IsFrozen = HeroFriend.IsFrozen();
 
             root.HeroFriend.CurrentArmor = HeroFriend.GetArmor();
             root.HeroFriend.CurrentAtk = HeroFriend.GetATK();
@@ -230,6 +249,7 @@ namespace HREngine.Bots
             {
                 root.EnemyAbility = Card.Create(HRPlayer.GetEnemyPlayer().GetHeroPower().GetCardId(), false, HRPlayer.GetEnemyPlayer().GetHeroPower().GetEntityId());
             }
+            root.TurnCount = SmartCc.TurnCount + 1;
             SmartCc.root = root;
         }
 
@@ -291,6 +311,24 @@ namespace HREngine.Bots
                 {
                     switch (ActionToDo.Type)
                     {
+                        case Action.ActionType.TARGET:
+                            HREntity targett = GetEntityById(ActionToDo.Target.Id);
+                            return new HREngine.API.Actions.TargetAction(targett);
+                        case Action.ActionType.CHOICE:
+                            if(HREngine.API.HRChoice.IsChoiceActive())
+                            {
+                                List<HREntity> choices = HRChoice.GetChoiceCards();
+                                if(SmartCc.ChoiceTarget != null)
+                                {
+                                    SmartCc.InsertTargetAction(SmartCc.ChoiceTarget);
+                                    SmartCc.ChoiceTarget = null;
+                                }
+                                return new HREngine.API.Actions.ChoiceAction(choices[ActionToDo.Choice - 1]);
+                            }
+                            else
+                            {
+                                return null;
+                            }
                         case Action.ActionType.CAST_ABILITY:
                             HRCard cardAbility = HRPlayer.GetLocalPlayer().GetHeroPower().GetCard();
                             if (ActionToDo.Target != null)
@@ -307,6 +345,13 @@ namespace HREngine.Bots
                         case Action.ActionType.CAST_SPELL:
 
                             HRCard card = GetCardById(ActionToDo.Actor.Id);
+                            if (ActionToDo.Actor.HasChoices)
+                            {
+                                HRLog.Write("CARD HAS CHOICES");
+                                if (ActionToDo.Target != null)
+                                    SmartCc.ChoiceTarget = ActionToDo.Target;
+                                SmartCc.InsertChoiceAction(ActionToDo.Choice);
+                            }
                             if (ActionToDo.Target != null)
                             {
                                 HREntity target = GetEntityById(ActionToDo.Target.Id);
@@ -316,6 +361,7 @@ namespace HREngine.Bots
                             {
                                 return new HREngine.API.Actions.PlayCardAction(card, null, ActionToDo.Index + 1);
                             }
+
 
                         case Action.ActionType.HERO_ATTACK:
 
@@ -337,7 +383,7 @@ namespace HREngine.Bots
                             HRLog.Write("EndTurn");
                             SmartCc.TurnCount++;
                             SmartCc.SimuCount = 0;
-                            HRBattle.FinishRound();
+                            //HRBattle.FinishRound();
                             return null;
 
                         case Action.ActionType.RESIMULATE:

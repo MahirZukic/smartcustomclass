@@ -1,7 +1,7 @@
 ValueHealthEnemy=1
 ValueHealthFriend=1
 ValueArmorEnemy=1
-ValueArmorFriend=1
+ValueArmorFriend=2
 ValueSecret=6
 ValueEnemyCardDraw=10
 ValueEnemyMinionCount=3

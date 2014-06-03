@@ -18,7 +18,7 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-             if (board.HeroFriend.CurrentHealth < 10 || board.Hand.Count > 5)
+             if (board.HeroFriend.CurrentHealth < 5 || board.Hand.Count > 5)
                 return false;
             return true;
         }
@@ -40,7 +40,7 @@ namespace HREngine.Bots
 
         public override int GetPriorityPlay(Board board)
         {
-            return 10;
+            return 15;
         }
 		
     }

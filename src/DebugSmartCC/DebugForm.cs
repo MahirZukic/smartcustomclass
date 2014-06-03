@@ -95,6 +95,7 @@ namespace DebugSmartCC
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
             ValuesInterface.LoadValuesFromFile();
+            ProfileInterface.LoadBehavior();
             s.Simulate(false);
 
             stopWatch.Stop();
@@ -108,7 +109,9 @@ namespace DebugSmartCC
 
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
+
             ValuesInterface.LoadValuesFromFile();
+            ProfileInterface.LoadBehavior();
             s.Simulate(true);
 
             stopWatch.Stop();
@@ -122,17 +125,25 @@ namespace DebugSmartCC
             rootb.HeroEnemy = Card.Create("HERO_04", true, 0);
             rootb.HeroFriend = Card.Create("HERO_05", false, 1);
 
-            rootb.HeroFriend.CurrentHealth = 20;
+            rootb.HeroFriend.CurrentHealth = 30;
             rootb.HeroFriend.MaxHealth = 30;
 
-            rootb.HeroEnemy.CurrentHealth = 3;
+            rootb.HeroEnemy.CurrentHealth = 20;
             rootb.HeroEnemy.MaxHealth = 30;
 
             rootb.ManaAvailable = 10;
 
-            rootb.Hand.Add(Card.Create("CS2_046", true, 2));
+            rootb.Ability = Card.Create("CS2_056", true, 45);
 
-            rootb.MinionFriend.Add(Card.Create("EX1_575", true, 3));
+            rootb.Hand.Add(Card.Create("EX1_166", true, 2));
+
+            /*Card ene = Card.Create("EX1_165", false, 3);
+            ene.CurrentHealth = 4;
+            rootb.MinionEnemy.Add(ene);*/
+           // rootb.Hand.Add(Card.Create("EX1_004", true, 3));
+           // rootb.Hand.Add(Card.Create("GAME_005", true, 4));
+
+
             root = rootb;
         }
     }

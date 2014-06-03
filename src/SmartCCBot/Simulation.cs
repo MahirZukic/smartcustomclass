@@ -21,12 +21,16 @@ namespace HREngine.Bots
 
         public int SimuCount { get; set; }
 
+        public Card ChoiceTarget { get; set; }
+
 
 
         private string CurrentFolder { get; set; }
 
         public Action GetNextAction()
         {
+            if (ActionStack.Count == 1 && ActionStack[0].Type == Action.ActionType.RESIMULATE)
+                ActionStack.Clear();
             if (ActionStack.Count == 0 && !NeedCalculation)
             {
                 NeedCalculation = true;
@@ -39,12 +43,22 @@ namespace HREngine.Bots
             return ActionToDo;
         }
 
+        public void InsertChoiceAction(int choice)
+        {
+            ActionStack.Insert(0, new Action(Action.ActionType.CHOICE, null,null,0,choice));
+        }
+        public void InsertTargetAction(Card target)
+        {
+            ActionStack.Insert(0, new Action(Action.ActionType.TARGET,null,target));
+        }
+
         public Simulation()
         {
             root = null;
             ActionStack = new List<Action>();
             NeedCalculation = true;
             SimuCount = 0;
+            ChoiceTarget = null;
         }
 
         public bool SeedSimulation(Board b)
@@ -57,13 +71,17 @@ namespace HREngine.Bots
 
         public void CreateLogFolder()
         {
-            string nameFolder = DateTime.Now.ToString().Replace("/", "-").Replace(":", "-");
+            DateTime time = DateTime.Now;             
+            string format = "dd-MM-yy HH-mm-ss";           
+            string nameFolder = time.ToString(format);
             System.IO.Directory.CreateDirectory(CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Logs" + Path.DirectorySeparatorChar + "" + nameFolder);
             CurrentFolder = CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Logs" + Path.DirectorySeparatorChar + "" + nameFolder;
         }
 
         public void SerializeRoot()
         {
+            if (TurnCount > 40)
+                return;
             Stream stream = new FileStream(CurrentFolder + "" + Path.DirectorySeparatorChar + "Turn" + TurnCount.ToString() + "_" + SimuCount.ToString() + ".seed", FileMode.Create, FileAccess.Write, FileShare.None);
             byte[] mem = Debugger.Serialize(root);
             stream.Write(mem, 0, mem.GetLength(0));
@@ -72,6 +90,8 @@ namespace HREngine.Bots
 
         public void Log(string msg)
         {
+            if (TurnCount > 40)
+                return;
             StreamWriter sw = new StreamWriter(CurrentFolder + "" + Path.DirectorySeparatorChar + "Turn" + TurnCount.ToString() + ".log", true);
             sw.WriteLine(msg);
             sw.Close();
@@ -210,6 +230,8 @@ namespace HREngine.Bots
             }
             else
             {
+                float widePerTree = 0;
+                float wideTree = 0;
                 while (boards.Count != 0)
                 {
                     if (depth >= maxDepth)
@@ -219,16 +241,18 @@ namespace HREngine.Bots
                     skipped = 0;
                     List<Board> childs = new List<Board>();
 
+                    widePerTree = maxWide / boards.Count;
 
                     foreach (Board b in boards)
                     {
-
+                        wideTree = 0;
 
                         List<Action> actions = b.CalculateAvailableActions();
-
                         foreach (Action a in actions)
                         {
-                            if (wide >= maxWide)
+                            if (wide > maxWide)
+                                break;
+                            if (wideTree >= widePerTree)
                                 break;
 
                             Board bb = b.ExecuteAction(a);
@@ -260,8 +284,8 @@ namespace HREngine.Bots
 
                                     if (!found)
                                     {
+                                        wideTree++;
                                         wide++;
-
                                         childs.Add(bb);
                                     }
                                     else
@@ -271,8 +295,8 @@ namespace HREngine.Bots
                                 }
                                 else
                                 {
+                                    wideTree++;
                                     wide++;
-
                                     childs.Add(bb);
                                 }
                             }
@@ -286,6 +310,7 @@ namespace HREngine.Bots
                     {
                         foreach (Board baa in childs)
                         {
+                            
                             Board endBoard = Board.Clone(baa);
                             endBoard.EndTurn();
 
@@ -294,6 +319,7 @@ namespace HREngine.Bots
                             {
                                 endBoard.CalculateEnemyTurn();
                                 Board worstBoard = endBoard.EnemyTurnWorseBoard;
+
                                 if (worstBoard == null)
                                     worstBoard = endBoard;
 
@@ -301,6 +327,14 @@ namespace HREngine.Bots
                                 {
                                     bestBoard = endBoard;
                                 }
+                                else if(worstBoard.GetValue() == bestBoard.EnemyTurnWorseBoard.GetValue())
+                                {
+                                    if (endBoard.GetValue() > bestBoard.GetValue())
+                                    {
+                                        bestBoard = endBoard;
+                                    }
+                                }
+
                             }
                             else
                             {
@@ -328,7 +362,7 @@ namespace HREngine.Bots
             }
 
             Action actionPrior = null;
-
+            
             
             foreach (Action acc in bestBoard.ActionsStack)
             {
@@ -352,7 +386,7 @@ namespace HREngine.Bots
                 }
             }
             
-
+          
             List<Action> finalStack = new List<Action>();
             if (actionPrior != null)
             {
@@ -367,22 +401,25 @@ namespace HREngine.Bots
                         }
 
                     }
-                    foreach (Action a in bestBoard.ActionsStack)
-                    {
-                        if (!finalStack.Contains(a))
-                        {
-                            finalStack.Add(a);
-                        }
-                    }
+                    
                 }
 
+                foreach (Action a in bestBoard.ActionsStack)
+                {
+                    if (a != actionPrior || a.Type == Action.ActionType.RESIMULATE)
+                    {
+                        if (a.Type == Action.ActionType.RESIMULATE && finalStack[finalStack.Count - 1].Type == Action.ActionType.RESIMULATE)
+                            continue;
 
+                        finalStack.Add(a);
+                    }
+                }
             }
             else
             {
                 finalStack = bestBoard.ActionsStack;
             }
-
+            
 
 
 
@@ -398,8 +435,6 @@ namespace HREngine.Bots
             Console.WriteLine(bestBoard.ToString());
             Console.WriteLine("---------------------------------");
 
-            Log("");
-            Log("Actions:");
 
             foreach (HREngine.Bots.Action a in ActionStack)
             {
