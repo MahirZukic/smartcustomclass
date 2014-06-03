@@ -33,7 +33,7 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
-            if (target.CurrentHealth == target.MaxHealth)
+            if (target.CurrentHealth != target.MaxHealth)
                 return false;
             return true;
         }

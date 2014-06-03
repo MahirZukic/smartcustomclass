@@ -39,6 +39,10 @@ namespace HREngine.Bots
 				if(!target.HasBadBuffs())
 					return false;
 			}
+			if(!target.IsFriend && !target.HasGoodBuffs())
+				return false;
+			if(!target.IsFriend && target.HasBadBuffs())
+				return false;
             return true;
 		}
 
