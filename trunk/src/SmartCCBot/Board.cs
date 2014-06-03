@@ -26,13 +26,17 @@ namespace HREngine.Bots
         public int FriendCardDraw { get; set; }
         public int EnemyCardDraw { get; set; }
         public int WastedATK { get; set; }
-        public int EnemyTurnValue { get; set; }
+        public int TurnCount { get; set; }
+
         public Board EnemyTurnWorseBoard { get; set; }
         public bool EnemyTurnCalculated = false;
 
         static int lastIdGen = 10000;
 
 
+        private int Value = 0;
+        private int FriendValue = 0;
+        private int EnemyValue = 0;
 
         public int GetValue()
         {
@@ -40,18 +44,21 @@ namespace HREngine.Bots
 
             foreach (Card c in MinionEnemy)
             {
-                value -= c.GetValue(this);
+                value -= c.GetValue(this) + (int)c.Behavior.GetKillPriority(this);
             }
 
             value += Secret.Count * ValuesInterface.ValueSecret;
 
-            value -= (HeroEnemy.CurrentHealth * ValuesInterface.ValueHealthEnemy) + HeroEnemy.CurrentArmor * ValuesInterface.ValueArmorEnemy;
+            EnemyValue = ((HeroEnemy.CurrentHealth * ValuesInterface.ValueHealthEnemy) + HeroEnemy.CurrentArmor * ValuesInterface.ValueArmorEnemy);
+            value -= EnemyValue;
 
             foreach (Card c in MinionFriend)
             {
                 value += c.GetValue(this);
             }
-            value += (HeroFriend.CurrentHealth * ValuesInterface.ValueHealthFriend) + HeroFriend.CurrentArmor * ValuesInterface.ValueArmorFriend;
+
+            FriendValue = ((HeroFriend.CurrentHealth * ValuesInterface.ValueHealthFriend) + HeroFriend.CurrentArmor * ValuesInterface.ValueArmorFriend);
+            value += FriendValue;
 
             value += FriendCardDraw * ValuesInterface.ValueFriendCardDraw;
             value -= EnemyCardDraw * ValuesInterface.ValueEnemyCardDraw;
@@ -72,7 +79,8 @@ namespace HREngine.Bots
             if (HeroFriend.CurrentHealth < 1)
                 value -= 100000;
 
-            return value + EnemyTurnValue;
+            Value = value;
+            return value;
         }
 
         public Board CalculateEnemyTurnValue()
@@ -83,19 +91,8 @@ namespace HREngine.Bots
             childss.Add(Board.Clone(this));
             Board worseBoard = null;
 
-            int maxWide = 3;
-            foreach (Card Friend in MinionFriend)
-            {
-                if (Friend.IsTaunt && !Friend.IsStealth)
-                {
-                    maxWide = 8;
-                    break;
-                }
-                    
-            }
+            int maxWide = 40;
 
-
-            
             int wide = 0;
             while (childss.Count != 0)
             {
@@ -144,50 +141,50 @@ namespace HREngine.Bots
             {
                 if (EnemyAbility.TargetTypeOnPlay == Card.TargetType.MINION_ENEMY || EnemyAbility.TargetTypeOnPlay == Card.TargetType.MINION_BOTH
                            || EnemyAbility.TargetTypeOnPlay == Card.TargetType.BOTH_ENEMY || EnemyAbility.TargetTypeOnPlay == Card.TargetType.ALL)
+                {
+                    foreach (Card Friend in MinionFriend)
                     {
-                        foreach (Card Friend in MinionFriend)
-                        {
-                            if (!Friend.IsTargetable || Friend.IsStealth)
-                                continue;
-                            Action a = null;
-                            a = new Action(Action.ActionType.CAST_ABILITY, EnemyAbility, Friend);
-                            enemyActions.Add(a);
-                        }
+                        if (!Friend.IsTargetable || Friend.IsStealth)
+                            continue;
+                        Action a = null;
+                        a = new Action(Action.ActionType.CAST_ABILITY, EnemyAbility, Friend);
+                        enemyActions.Add(a);
                     }
+                }
                 if (EnemyAbility.TargetTypeOnPlay == Card.TargetType.MINION_FRIEND || EnemyAbility.TargetTypeOnPlay == Card.TargetType.MINION_BOTH
                         || EnemyAbility.TargetTypeOnPlay == Card.TargetType.BOTH_FRIEND || EnemyAbility.TargetTypeOnPlay == Card.TargetType.ALL)
+                {
+                    foreach (Card Enemy in MinionEnemy)
                     {
-                        foreach (Card Enemy in MinionEnemy)
-                        {
-                            if (!Enemy.IsTargetable || Enemy.IsStealth)
-                                continue;
-                            Action a = null;
-                            a = new Action(Action.ActionType.CAST_ABILITY, EnemyAbility, Enemy);
-                            enemyActions.Add(a);
-                        }
+                        if (!Enemy.IsTargetable || Enemy.IsStealth)
+                            continue;
+                        Action a = null;
+                        a = new Action(Action.ActionType.CAST_ABILITY, EnemyAbility, Enemy);
+                        enemyActions.Add(a);
                     }
+                }
                 if (EnemyAbility.TargetTypeOnPlay == Card.TargetType.HERO_ENEMY || EnemyAbility.TargetTypeOnPlay == Card.TargetType.HERO_BOTH
                         || EnemyAbility.TargetTypeOnPlay == Card.TargetType.BOTH_ENEMY || EnemyAbility.TargetTypeOnPlay == Card.TargetType.ALL)
-                    {
-                        Action a = null;
-                        a = new Action(Action.ActionType.CAST_ABILITY, EnemyAbility, HeroFriend);
-                        enemyActions.Add(a);
-                    }
+                {
+                    Action a = null;
+                    a = new Action(Action.ActionType.CAST_ABILITY, EnemyAbility, HeroFriend);
+                    enemyActions.Add(a);
+                }
                 if (EnemyAbility.TargetTypeOnPlay == Card.TargetType.HERO_FRIEND || EnemyAbility.TargetTypeOnPlay == Card.TargetType.HERO_BOTH
                         || EnemyAbility.TargetTypeOnPlay == Card.TargetType.BOTH_FRIEND || EnemyAbility.TargetTypeOnPlay == Card.TargetType.ALL)
-                    {
-                        Action a = null;
-                        a = new Action(Action.ActionType.CAST_ABILITY, EnemyAbility, HeroEnemy);
-                        enemyActions.Add(a);
-                    }
+                {
+                    Action a = null;
+                    a = new Action(Action.ActionType.CAST_ABILITY, EnemyAbility, HeroEnemy);
+                    enemyActions.Add(a);
+                }
 
                 if (EnemyAbility.TargetTypeOnPlay == Card.TargetType.NONE)
-                    {
-                        Action a = null;
-                        a = new Action(Action.ActionType.CAST_ABILITY, EnemyAbility);
-                        enemyActions.Add(a);
-                    }
-                
+                {
+                    Action a = null;
+                    a = new Action(Action.ActionType.CAST_ABILITY, EnemyAbility);
+                    enemyActions.Add(a);
+                }
+
             }
 
             List<Card> taunts = new List<Card>();
@@ -285,6 +282,7 @@ namespace HREngine.Bots
             ActionsStack = new List<Action>();
             HealFactor = 1;
             EnemyHealFactor = 1;
+            TurnCount = 1;
         }
 
         public bool PlayCardFromHand(int id)
@@ -312,6 +310,25 @@ namespace HREngine.Bots
                         WeaponFriend = tmp[i];
                     }
 
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool RemoveCardFromHand(int id)
+        {
+            List<Card> tmp = new List<Card>();
+            foreach (Card c in Hand)
+            {
+                tmp.Add(c);
+            }
+            for (int i = 0; i < tmp.Count; i++)
+            {
+                if (tmp[i].Id == id)
+                {
+                    Hand.RemoveAt(i);
                     return true;
                 }
             }
@@ -364,6 +381,23 @@ namespace HREngine.Bots
             return false;
         }
 
+        public Card SpawnMinion(string id, int idx, int cost = 0)
+        {
+            Card c = Card.Create(id, true, GenId(), idx);
+            ManaAvailable -= cost;
+
+            foreach (Card ca in MinionFriend)
+            {
+                if (ca.Index >= idx)
+                    ca.Index++;
+            }
+            c.IsTired = true;
+            MinionFriend.Add(c);
+            Resimulate();
+
+            return c;
+        }
+
         public void PlayAbility()
         {
             ManaAvailable -= Ability.CurrentCost;
@@ -381,7 +415,16 @@ namespace HREngine.Bots
 
         public void Resimulate()
         {
-            ActionsStack.Add(new Action(Action.ActionType.RESIMULATE, null));
+            if (ActionsStack.Count > 0)
+            {
+                if (ActionsStack[ActionsStack.Count - 1].Type != Action.ActionType.RESIMULATE)
+                    ActionsStack.Add(new Action(Action.ActionType.RESIMULATE, null));
+            }
+            else
+            {
+
+            }
+
         }
 
         public static int GenId()
@@ -417,35 +460,14 @@ namespace HREngine.Bots
 
         public bool HasFriendBuffer()
         {
-            int foundIndex = -1;
-
+            return true;
             foreach (Card c in MinionFriend)
             {
                 if (c.TestAllIndexOnPlay)
                 {
-                    foundIndex = c.Index;
-                    break;
+                    return true;
                 }
             }
-            if (foundIndex != -1)
-            {
-                bool right = false;
-                bool left = false;
-
-                foreach (Card c in MinionFriend)
-                {
-                    if (c.Index == foundIndex - 1)
-                        right = true;
-                    if (c.Index == foundIndex + 1)
-                        left = true;
-                }
-
-                if (right && left)
-                    return false;
-
-                return true;
-            }
-
 
             return false;
         }
@@ -596,13 +618,13 @@ namespace HREngine.Bots
                 case Action.ActionType.CAST_MINION:
                     if (a.Target != null)
                     {
-                        a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id), a.Index);
+                        a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id), a.Index, a.Choice);
                     }
                     else
                     {
-                        a.Actor.OnPlay(ref child, null, a.Index);
+                        a.Actor.OnPlay(ref child, null, a.Index, a.Choice);
                     }
-
+                    child.Update();
                     foreach (Card c in child.GetAllMinionsOnBoard())
                     {
                         if (a.Actor.Equals(c))
@@ -617,9 +639,12 @@ namespace HREngine.Bots
 
                 case Action.ActionType.CAST_SPELL:
                     if (a.Target != null)
-                        a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id));
+                        a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id), 0, a.Choice);
                     else
-                        a.Actor.OnPlay(ref child, null);
+                        a.Actor.OnPlay(ref child, null, 0, a.Choice);
+
+                    child.Update();
+
                     foreach (Card c in child.GetAllMinionsOnBoard())
                     {
                         c.OnCastSpell(ref child, child.GetCard(a.Actor.Id));
@@ -663,14 +688,6 @@ namespace HREngine.Bots
 
         public List<Action> CalculateAvailableActions()
         {
-            /*if(ActionsStack.Count > 0)
-            {
-                if (ActionsStack[ActionsStack.Count - 1].Type == Action.ActionType.RESIMULATE)
-                {
-                    return new List<Action>();
-                }
-            }*/
-
             List<Action> availableActions = new List<Action>();
             if (Ability != null)
             {
@@ -728,9 +745,51 @@ namespace HREngine.Bots
             {
                 if (c.CurrentCost <= ManaAvailable && c.Behavior.ShouldBePlayed(this))
                 {
+
+                    if (c.TargetTypeOnPlay == Card.TargetType.MINION_BOTH)
+                    {
+                        Action a = null;
+                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 1 && MinionEnemy.Count < 1 && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
+                        {
+                            if (c.HasChoices)
+                            {
+                                a = new Action(Action.ActionType.CAST_MINION, c, null, 0, 1);
+                                if (c.ChoiceOneTarget)
+                                    availableActions.Add(a);
+                                a = new Action(Action.ActionType.CAST_MINION, c, null, 0, 2);
+                                if (c.ChoiceTwoTarget)
+                                    availableActions.Add(a);
+                            }
+                            else
+                            {
+                                a = new Action(Action.ActionType.CAST_MINION, c);
+                                availableActions.Add(a);
+                            }
+                        }
+                    }
+
                     if (c.TargetTypeOnPlay == Card.TargetType.MINION_ENEMY || c.TargetTypeOnPlay == Card.TargetType.MINION_BOTH
                         || c.TargetTypeOnPlay == Card.TargetType.BOTH_ENEMY || c.TargetTypeOnPlay == Card.TargetType.ALL)
                     {
+                        Action a = null;
+                        if (c.Type == Card.CType.MINION && MinionEnemy.Count < 1 && c.TargetTypeOnPlay != Card.TargetType.MINION_BOTH && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
+                        {
+                            if (c.HasChoices)
+                            {
+                                a = new Action(Action.ActionType.CAST_MINION, c, null, 0, 1);
+                                if (c.ChoiceOneTarget)
+                                    availableActions.Add(a);
+                                a = new Action(Action.ActionType.CAST_MINION, c, null, 0, 2);
+                                if (c.ChoiceTwoTarget)
+                                    availableActions.Add(a);
+                            }
+                            else
+                            {
+                                a = new Action(Action.ActionType.CAST_MINION, c);
+                                availableActions.Add(a);
+                            }
+                        }
+
                         foreach (Card Enemy in MinionEnemy)
                         {
                             if (c.Type == Card.CType.SPELL)
@@ -741,46 +800,95 @@ namespace HREngine.Bots
 
                             if (Enemy.IsStealth)
                                 continue;
-                            Action a = null;
-                            if (c.Type == Card.CType.MINION && MinionFriend.Count < 7)
+                            if (c.Type == Card.CType.MINION && MinionFriend.Count < 7 && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
                             {
+
                                 if (c.TestAllIndexOnPlay || HasFriendBuffer())
                                 {
-                                    for (int i = 0; i < MinionFriend.Count; i++)
+                                    if (c.HasChoices)
                                     {
-                                        if (MinionFriend.Count > 1 && !HasFriendBuffer())
+                                        for (int i = 0; i <= MinionFriend.Count; i++)
                                         {
-                                            if (i == 0)
-                                                continue;
-                                            if (i == MinionFriend.Count)
-                                                continue;
+                                            a = new Action(Action.ActionType.CAST_MINION, c, Enemy, i, 1);
+                                            if (c.Behavior.ShouldBePlayedOnTarget(Enemy))
+                                            {
+                                                if (c.ChoiceOneTarget)
+                                                    availableActions.Add(a);
+                                            }
+                                            a = new Action(Action.ActionType.CAST_MINION, c, Enemy, i, 2);
+                                            if (c.Behavior.ShouldBePlayedOnTarget(Enemy))
+                                            {
+                                                if (c.ChoiceTwoTarget)
+                                                    availableActions.Add(a);
+                                            }
                                         }
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i <= MinionFriend.Count; i++)
+                                        {
+                                            a = new Action(Action.ActionType.CAST_MINION, c, Enemy, i);
+                                            if (c.Behavior.ShouldBePlayedOnTarget(Enemy))
+                                            {
+                                                availableActions.Add(a);
+                                            }
+                                        }
+                                    }
 
+                                }
+                                else
+                                {
+                                    if (c.HasChoices)
+                                    {
 
-                                        a = new Action(Action.ActionType.CAST_MINION, c, Enemy, i);
+                                        a = new Action(Action.ActionType.CAST_MINION, c, Enemy, 0, 1);
+                                        if (c.Behavior.ShouldBePlayedOnTarget(Enemy))
+                                        {
+                                            if (c.ChoiceOneTarget)
+                                                availableActions.Add(a);
+                                        }
+                                        a = new Action(Action.ActionType.CAST_MINION, c, Enemy, 0, 2);
+                                        if (c.Behavior.ShouldBePlayedOnTarget(Enemy))
+                                        {
+                                            if (c.ChoiceTwoTarget)
+                                                availableActions.Add(a);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        a = new Action(Action.ActionType.CAST_MINION, c, Enemy);
                                         if (c.Behavior.ShouldBePlayedOnTarget(Enemy))
                                         {
                                             availableActions.Add(a);
                                         }
                                     }
                                 }
+                            }
+                            else if (c.Type == Card.CType.SPELL)
+                            {
+                                if (c.HasChoices)
+                                {
+                                    a = new Action(Action.ActionType.CAST_SPELL, c, Enemy, 0, 1);
+                                    if (c.Behavior.ShouldBePlayedOnTarget(Enemy))
+                                    {
+                                        if (c.ChoiceOneTarget)
+                                            availableActions.Add(a);
+                                    }
+                                    a = new Action(Action.ActionType.CAST_SPELL, c, Enemy, 0, 2);
+                                    if (c.Behavior.ShouldBePlayedOnTarget(Enemy))
+                                    {
+                                        if (c.ChoiceTwoTarget)
+                                            availableActions.Add(a);
+                                    }
+                                }
                                 else
                                 {
-                                    a = new Action(Action.ActionType.CAST_MINION, c, Enemy);
+                                    a = new Action(Action.ActionType.CAST_SPELL, c, Enemy);
                                     if (c.Behavior.ShouldBePlayedOnTarget(Enemy))
                                     {
                                         availableActions.Add(a);
                                     }
                                 }
-                            }
-                            else if (c.Type == Card.CType.SPELL)
-                            {
-                                a = new Action(Action.ActionType.CAST_SPELL, c, Enemy);
-                                if (c.Behavior.ShouldBePlayedOnTarget(Enemy))
-                                {
-                                    availableActions.Add(a);
-                                }
-
                             }
                             else if (c.Type == Card.CType.WEAPON)
                             {
@@ -796,6 +904,24 @@ namespace HREngine.Bots
                     if (c.TargetTypeOnPlay == Card.TargetType.MINION_FRIEND || c.TargetTypeOnPlay == Card.TargetType.MINION_BOTH
                         || c.TargetTypeOnPlay == Card.TargetType.BOTH_FRIEND || c.TargetTypeOnPlay == Card.TargetType.ALL)
                     {
+                        Action a = null;
+                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 1 && c.TargetTypeOnPlay != Card.TargetType.MINION_BOTH && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
+                        {
+                            if (c.HasChoices)
+                            {
+                                a = new Action(Action.ActionType.CAST_MINION, c, null, 0, 1);
+                                if (c.ChoiceOneTarget)
+                                    availableActions.Add(a);
+                                a = new Action(Action.ActionType.CAST_MINION, c, null, 0, 2);
+                                if (c.ChoiceTwoTarget)
+                                    availableActions.Add(a);
+                            }
+                            else
+                            {
+                                a = new Action(Action.ActionType.CAST_MINION, c);
+                                availableActions.Add(a);
+                            }
+                        }
 
                         foreach (Card friend in MinionFriend)
                         {
@@ -805,43 +931,92 @@ namespace HREngine.Bots
                                     continue;
                             }
 
-                            Action a = null;
-                            if (c.Type == Card.CType.MINION && MinionFriend.Count < 7)
+                            if (c.Type == Card.CType.MINION && MinionFriend.Count < 7 && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
                             {
                                 if (c.TestAllIndexOnPlay || HasFriendBuffer())
                                 {
-                                    for (int i = 0; i < MinionFriend.Count; i++)
+                                    if (c.HasChoices)
                                     {
-                                        if (MinionFriend.Count > 1 && !HasFriendBuffer())
+                                        for (int i = 0; i <= MinionFriend.Count; i++)
                                         {
-                                            if (i == 0)
-                                                continue;
-                                            if (i == MinionFriend.Count)
-                                                continue;
+                                            a = new Action(Action.ActionType.CAST_MINION, c, friend, i, 1);
+                                            if (c.Behavior.ShouldBePlayedOnTarget(friend))
+                                            {
+                                                if (c.ChoiceOneTarget)
+                                                    availableActions.Add(a);
+                                            }
+                                            a = new Action(Action.ActionType.CAST_MINION, c, friend, i, 2);
+                                            if (c.Behavior.ShouldBePlayedOnTarget(friend))
+                                            {
+                                                if (c.ChoiceTwoTarget)
+                                                    availableActions.Add(a);
+                                            }
                                         }
-                                        a = new Action(Action.ActionType.CAST_MINION, c, friend, i);
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i <= MinionFriend.Count; i++)
+                                        {
+                                            a = new Action(Action.ActionType.CAST_MINION, c, friend, i);
+                                            if (c.Behavior.ShouldBePlayedOnTarget(friend))
+                                            {
+                                                availableActions.Add(a);
+                                            }
+                                        }
+                                    }
+
+                                }
+                                else
+                                {
+                                    if (c.HasChoices)
+                                    {
+                                        a = new Action(Action.ActionType.CAST_MINION, c, friend, 0, 1);
+                                        if (c.Behavior.ShouldBePlayedOnTarget(friend))
+                                        {
+                                            if (c.ChoiceOneTarget)
+                                                availableActions.Add(a);
+                                        }
+                                        a = new Action(Action.ActionType.CAST_MINION, c, friend, 0, 2);
+                                        if (c.Behavior.ShouldBePlayedOnTarget(friend))
+                                        {
+                                            if (c.ChoiceTwoTarget)
+                                                availableActions.Add(a);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        a = new Action(Action.ActionType.CAST_MINION, c, friend);
                                         if (c.Behavior.ShouldBePlayedOnTarget(friend))
                                         {
                                             availableActions.Add(a);
                                         }
-
-                                    }
-                                }
-                                else
-                                {
-                                    a = new Action(Action.ActionType.CAST_MINION, c, friend);
-                                    if (c.Behavior.ShouldBePlayedOnTarget(friend))
-                                    {
-                                        availableActions.Add(a);
                                     }
                                 }
                             }
                             else if (c.Type == Card.CType.SPELL)
                             {
-                                a = new Action(Action.ActionType.CAST_SPELL, c, friend);
-                                if (c.Behavior.ShouldBePlayedOnTarget(friend))
+                                if (c.HasChoices)
                                 {
-                                    availableActions.Add(a);
+                                    a = new Action(Action.ActionType.CAST_SPELL, c, friend, 0, 1);
+                                    if (c.Behavior.ShouldBePlayedOnTarget(friend))
+                                    {
+                                        if (c.ChoiceOneTarget)
+                                            availableActions.Add(a);
+                                    }
+                                    a = new Action(Action.ActionType.CAST_SPELL, c, friend, 0, 2);
+                                    if (c.Behavior.ShouldBePlayedOnTarget(friend))
+                                    {
+                                        if (c.ChoiceTwoTarget)
+                                            availableActions.Add(a);
+                                    }
+                                }
+                                else
+                                {
+                                    a = new Action(Action.ActionType.CAST_SPELL, c, friend);
+                                    if (c.Behavior.ShouldBePlayedOnTarget(friend))
+                                    {
+                                        availableActions.Add(a);
+                                    }
                                 }
                             }
                             else if (c.Type == Card.CType.WEAPON)
@@ -859,41 +1034,93 @@ namespace HREngine.Bots
                     {
 
                         Action a = null;
-                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 7)
+                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 7 && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
                         {
                             if (c.TestAllIndexOnPlay || HasFriendBuffer())
                             {
-                                for (int i = 0; i < MinionFriend.Count; i++)
+                                if (c.HasChoices)
                                 {
-                                    if (MinionFriend.Count > 1 && !HasFriendBuffer())
+                                    for (int i = 0; i <= MinionFriend.Count; i++)
                                     {
-                                        if (i == 0)
-                                            continue;
-                                        if (i == MinionFriend.Count)
-                                            continue;
+                                        a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy, i, 1);
+                                        if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                        {
+                                            if (c.ChoiceOneTarget)
+                                                availableActions.Add(a);
+                                        }
+                                        a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy, i, 2);
+                                        if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                        {
+                                            if (c.ChoiceTwoTarget)
+                                                availableActions.Add(a);
+                                        }
                                     }
-                                    a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy, i);
+                                }
+                                else
+                                {
+                                    for (int i = 0; i <= MinionFriend.Count; i++)
+                                    {
+                                        a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy, i);
+                                        if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                        {
+                                            availableActions.Add(a);
+                                        }
+                                    }
+                                }
+
+                            }
+                            else
+                            {
+                                if (c.HasChoices)
+                                {
+                                    a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy, 0, 1);
+
+                                    if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                    {
+                                        if (c.ChoiceOneTarget)
+                                            availableActions.Add(a);
+                                    }
+                                    a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy, 0, 2);
+                                    if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                    {
+                                        if (c.ChoiceTwoTarget)
+                                            availableActions.Add(a);
+                                    }
+                                }
+                                else
+                                {
+                                    a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy);
                                     if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
                                     {
                                         availableActions.Add(a);
                                     }
                                 }
                             }
+                        }
+                        else if (c.Type == Card.CType.SPELL)
+                        {
+                            if (c.HasChoices)
+                            {
+                                a = new Action(Action.ActionType.CAST_SPELL, c, HeroEnemy, 0, 1);
+                                if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                {
+                                    if (c.ChoiceOneTarget)
+                                        availableActions.Add(a);
+                                }
+                                a = new Action(Action.ActionType.CAST_SPELL, c, HeroEnemy, 0, 2);
+                                if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                {
+                                    if (c.ChoiceTwoTarget)
+                                        availableActions.Add(a);
+                                }
+                            }
                             else
                             {
-                                a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy);
+                                a = new Action(Action.ActionType.CAST_SPELL, c, HeroEnemy);
                                 if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
                                 {
                                     availableActions.Add(a);
                                 }
-                            }
-                        }
-                        else if (c.Type == Card.CType.SPELL)
-                        {
-                            a = new Action(Action.ActionType.CAST_SPELL, c, HeroEnemy);
-                            if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
-                            {
-                                availableActions.Add(a);
                             }
                         }
                         else if (c.Type == Card.CType.WEAPON)
@@ -909,41 +1136,93 @@ namespace HREngine.Bots
                         || c.TargetTypeOnPlay == Card.TargetType.BOTH_FRIEND || c.TargetTypeOnPlay == Card.TargetType.ALL)
                     {
                         Action a = null;
-                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 7)
+                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 7 && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
                         {
                             if (c.TestAllIndexOnPlay || HasFriendBuffer())
                             {
-                                for (int i = 0; i < MinionFriend.Count; i++)
+                                if (c.HasChoices)
                                 {
-                                    if (MinionFriend.Count > 1 && !HasFriendBuffer())
+                                    for (int i = 0; i <= MinionFriend.Count; i++)
                                     {
-                                        if (i == 0)
-                                            continue;
-                                        if (i == MinionFriend.Count)
-                                            continue;
+                                        a = new Action(Action.ActionType.CAST_MINION, c, HeroFriend, i, 1);
+                                        if (c.Behavior.ShouldBePlayedOnTarget(HeroFriend))
+                                        {
+                                            if (c.ChoiceOneTarget)
+                                                availableActions.Add(a);
+                                        }
+                                        a = new Action(Action.ActionType.CAST_MINION, c, HeroFriend, i, 2);
+                                        if (c.Behavior.ShouldBePlayedOnTarget(HeroFriend))
+                                        {
+                                            if (c.ChoiceTwoTarget)
+                                                availableActions.Add(a);
+                                        }
                                     }
-                                    a = new Action(Action.ActionType.CAST_MINION, c, HeroFriend, i);
+                                }
+                                else
+                                {
+                                    for (int i = 0; i <= MinionFriend.Count; i++)
+                                    {
+                                        a = new Action(Action.ActionType.CAST_MINION, c, HeroFriend, i);
+                                        if (c.Behavior.ShouldBePlayedOnTarget(HeroFriend))
+                                        {
+                                            availableActions.Add(a);
+                                        }
+                                    }
+                                }
+
+                            }
+                            else
+                            {
+                                if (c.HasChoices)
+                                {
+                                    a = new Action(Action.ActionType.CAST_MINION, c, HeroFriend, 0, 1);
+                                    if (c.Behavior.ShouldBePlayedOnTarget(HeroFriend))
+                                    {
+                                        if (c.ChoiceOneTarget)
+                                            availableActions.Add(a);
+                                    }
+
+                                    a = new Action(Action.ActionType.CAST_MINION, c, HeroFriend, 0, 2);
+                                    if (c.Behavior.ShouldBePlayedOnTarget(HeroFriend))
+                                    {
+                                        if (c.ChoiceTwoTarget)
+                                            availableActions.Add(a);
+                                    }
+                                }
+                                else
+                                {
+                                    a = new Action(Action.ActionType.CAST_MINION, c, HeroFriend);
                                     if (c.Behavior.ShouldBePlayedOnTarget(HeroFriend))
                                     {
                                         availableActions.Add(a);
                                     }
                                 }
                             }
+                        }
+                        else if (c.Type == Card.CType.SPELL)
+                        {
+                            if (c.HasChoices)
+                            {
+                                a = new Action(Action.ActionType.CAST_SPELL, c, HeroFriend, 0, 1);
+                                if (c.Behavior.ShouldBePlayedOnTarget(HeroFriend))
+                                {
+                                    if (c.ChoiceOneTarget)
+                                        availableActions.Add(a);
+                                }
+                                a = new Action(Action.ActionType.CAST_SPELL, c, HeroFriend, 0, 2);
+                                if (c.Behavior.ShouldBePlayedOnTarget(HeroFriend))
+                                {
+                                    if (c.ChoiceTwoTarget)
+                                        availableActions.Add(a);
+                                }
+                            }
                             else
                             {
-                                a = new Action(Action.ActionType.CAST_MINION, c, HeroFriend);
+                                a = new Action(Action.ActionType.CAST_SPELL, c, HeroFriend);
                                 if (c.Behavior.ShouldBePlayedOnTarget(HeroFriend))
                                 {
                                     availableActions.Add(a);
                                 }
-                            }
-                        }
-                        else if (c.Type == Card.CType.SPELL)
-                        {
-                            a = new Action(Action.ActionType.CAST_SPELL, c, HeroFriend);
-                            if (c.Behavior.ShouldBePlayedOnTarget(HeroFriend))
-                            {
-                                availableActions.Add(a);
                             }
                         }
                         else if (c.Type == Card.CType.WEAPON)
@@ -956,37 +1235,70 @@ namespace HREngine.Bots
                         }
                     }
 
-                    if (c.TargetTypeOnPlay == Card.TargetType.NONE || c.TargetTypeOnPlay == Card.TargetType.ALL)
+                    if (c.TargetTypeOnPlay == Card.TargetType.NONE || (c.HasChoices && (!c.ChoiceOneTarget || !c.ChoiceTwoTarget)))
                     {
                         Action a = null;
-                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 7)
+                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 7 && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
                         {
                             if (c.TestAllIndexOnPlay || HasFriendBuffer())
                             {
-                                for (int i = 0; i < MinionFriend.Count; i++)
+                                if (c.HasChoices)
                                 {
-                                    if (MinionFriend.Count > 1 && !HasFriendBuffer())
+                                    for (int i = 0; i <= MinionFriend.Count; i++)
                                     {
-                                        if (i == 0)
-                                            continue;
-                                        if (i == MinionFriend.Count)
-                                            continue;
-                                    }
-                                    a = new Action(Action.ActionType.CAST_MINION, c, null, i);
+                                        a = new Action(Action.ActionType.CAST_MINION, c, null, i, 1);
+                                        if (!c.ChoiceOneTarget)
+                                            availableActions.Add(a);
 
-                                    availableActions.Add(a);
+                                        a = new Action(Action.ActionType.CAST_MINION, c, null, i, 2);
+                                        if (!c.ChoiceTwoTarget)
+                                            availableActions.Add(a);
+                                    }
                                 }
+                                else
+                                {
+                                    for (int i = 0; i <= MinionFriend.Count; i++)
+                                    {
+                                        a = new Action(Action.ActionType.CAST_MINION, c, null, i);
+                                        availableActions.Add(a);
+                                    }
+                                }
+
                             }
                             else
                             {
-                                a = new Action(Action.ActionType.CAST_MINION, c);
-                                availableActions.Add(a);
+                                if (c.HasChoices)
+                                {
+                                    a = new Action(Action.ActionType.CAST_MINION, c, null, 0, 1);
+                                    if (!c.ChoiceOneTarget)
+                                        availableActions.Add(a);
+                                    a = new Action(Action.ActionType.CAST_MINION, c, null, 0, 2);
+                                    if (!c.ChoiceTwoTarget)
+                                        availableActions.Add(a);
+                                }
+                                else
+                                {
+                                    a = new Action(Action.ActionType.CAST_MINION, c, null);
+                                    availableActions.Add(a);
+                                }
                             }
                         }
                         else if (c.Type == Card.CType.SPELL)
                         {
-                            a = new Action(Action.ActionType.CAST_SPELL, c);
-                            availableActions.Add(a);
+                            if (c.HasChoices)
+                            {
+                                a = new Action(Action.ActionType.CAST_SPELL, c, null, 0, 1);
+                                if (!c.ChoiceOneTarget)
+                                    availableActions.Add(a);
+                                a = new Action(Action.ActionType.CAST_SPELL, c, null, 0, 2);
+                                if (!c.ChoiceTwoTarget)
+                                    availableActions.Add(a);
+                            }
+                            else
+                            {
+                                a = new Action(Action.ActionType.CAST_SPELL, c, null);
+                                availableActions.Add(a);
+                            }
                         }
                         else if (c.Type == Card.CType.WEAPON)
                         {
@@ -1010,6 +1322,17 @@ namespace HREngine.Bots
             {
                 if (!minion.CanAttack || !minion.Behavior.ShouldAttack(this))
                     continue;
+
+                bool containsSimilarMinion = false;
+                foreach (Card cc in attackers)
+                {
+                    if (cc.IsSimilar(minion))
+                        containsSimilarMinion = true;
+                }
+                if (containsSimilarMinion)
+                    continue;
+
+                attackers.Add(minion);
 
                 if (taunts.Count == 0)
                 {
@@ -1037,7 +1360,7 @@ namespace HREngine.Bots
 
             if (WeaponFriend != null)
             {
-                if (WeaponFriend.CurrentDurability > 0 && WeaponFriend.CanAttack)
+                if (WeaponFriend.CurrentDurability > 0 && WeaponFriend.CanAttack && !HeroFriend.IsFrozen && ProfileInterface.Behavior.ShouldAttackWithWeapon(this))
                 {
                     if (taunts.Count == 0)
                     {
@@ -1045,11 +1368,19 @@ namespace HREngine.Bots
                         {
                             if (Enemy.IsStealth)
                                 continue;
+
+                            if (!ProfileInterface.Behavior.ShouldAttackTargetWithWeapon(WeaponFriend, Enemy))
+                                continue;
                             Action a = new Action(Action.ActionType.HERO_ATTACK, WeaponFriend, Enemy);
                             availableActions.Add(a);
                         }
-                        Action ac = new Action(Action.ActionType.HERO_ATTACK, WeaponFriend, HeroEnemy);
-                        availableActions.Add(ac);
+
+                        if (ProfileInterface.Behavior.ShouldAttackTargetWithWeapon(WeaponFriend, HeroEnemy))
+                        {
+                            Action ac = new Action(Action.ActionType.HERO_ATTACK, WeaponFriend, HeroEnemy);
+                            availableActions.Add(ac);
+                        }
+
                     }
                     else
                     {
@@ -1088,8 +1419,6 @@ namespace HREngine.Bots
 
             }
 
-
-
             return availableActions;
         }
 
@@ -1098,10 +1427,14 @@ namespace HREngine.Bots
             foreach (Card c in MinionEnemy)
             {
                 c.OnEndTurn(this);
+                c.TempAtk = 0;
+                c.IsImmune = false;
             }
             foreach (Card c in MinionFriend)
             {
                 c.OnEndTurn(this);
+                c.TempAtk = 0;
+                c.IsImmune = false;
             }
             Update();
 
@@ -1297,6 +1630,7 @@ namespace HREngine.Bots
         public static Board Clone(Board baseInstance)
         {
             Board newBoard = new Board();
+            newBoard.TurnCount = baseInstance.TurnCount;
             foreach (Card c in baseInstance.Hand)
             {
                 newBoard.Hand.Add(Card.Clone(c));
@@ -1376,7 +1710,7 @@ namespace HREngine.Bots
         {
             string ret = "";
 
-            ret += "Board --- (" + HeroFriend.CurrentHealth.ToString() + "-" + HeroEnemy.CurrentHealth.ToString() + "): " + Environment.NewLine;
+            ret += "Board --- (" + HeroFriend.CurrentHealth.ToString() + "/" + HeroFriend.CurrentArmor.ToString() + "-" + HeroEnemy.CurrentHealth.ToString() + "/" + HeroEnemy.CurrentArmor.ToString() + "): " + Environment.NewLine;
             ret += "Mana : " + ManaAvailable.ToString() + Environment.NewLine;
             ret += "Enemy secret: " + SecretEnemy.ToString() + Environment.NewLine;
 

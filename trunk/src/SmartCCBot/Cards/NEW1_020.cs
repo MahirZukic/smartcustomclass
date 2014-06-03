@@ -25,7 +25,7 @@ public class NEW1_020 : Card
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0)
+        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);
         }
@@ -42,7 +42,6 @@ public class NEW1_020 : Card
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
             if(IsFriend)
             {
                 foreach (Card c in board.MinionFriend)
@@ -54,6 +53,8 @@ public class NEW1_020 : Card
                     c.Damage(1, ref board);
                 }
             }
+            base.OnCastSpell(ref board, Spell);
+
         }
 		
 	

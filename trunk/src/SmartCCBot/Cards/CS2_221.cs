@@ -30,24 +30,47 @@ namespace HREngine.Bots
 
         public override void OnUpdate(Board board)
         {
+           
             if (IsEnraged)
             {
                 if (board.WeaponFriend != null)
                 {
-                    board.WeaponFriend.currentAtk += 2;
+                    if (IsFriend && board.WeaponFriend.currentAtk == board.WeaponFriend.template.Atk)
+                    {
+                        board.WeaponFriend.currentAtk += 2;
+                    }
+                }
+                if(board.WeaponEnemy != null)
+                {
+                    if(!IsFriend && board.WeaponEnemy.currentAtk == board.WeaponEnemy.template.Atk)
+                    {
+                        board.WeaponEnemy.currentAtk += 2;
+
+                    }
                 }
             }
             else
             {
                 if (board.WeaponFriend != null)
                 {
-                    board.WeaponFriend.currentAtk -= 2;
+                    if (IsFriend && board.WeaponFriend.currentAtk > board.WeaponFriend.template.Atk)
+                    {
+                        board.WeaponFriend.currentAtk -= 2;
+                    }
+                }
+                if (board.WeaponEnemy != null)
+                {
+                    if (!IsFriend && board.WeaponEnemy.currentAtk > board.WeaponEnemy.template.Atk)
+                    {
+                        board.WeaponEnemy.currentAtk -= 2;
+
+                    }
                 }
             }
             base.OnUpdate(board);
         }
 
-        public override void OnPlay(ref Board board, Card target = null, int index = 0)
+        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target, index);
         }
@@ -64,7 +87,18 @@ namespace HREngine.Bots
             {
                 if (board.WeaponFriend != null)
                 {
-                    board.WeaponFriend.currentAtk -= 2;
+                    if (IsFriend && board.WeaponFriend.currentAtk > board.WeaponFriend.template.Atk)
+                    {
+                        board.WeaponFriend.currentAtk -= 2;
+                    }
+                }
+                if (board.WeaponEnemy != null)
+                {
+                    if (!IsFriend && board.WeaponEnemy.currentAtk > board.WeaponEnemy.template.Atk)
+                    {
+                        board.WeaponEnemy.currentAtk -= 2;
+
+                    }
                 }
             }
         }

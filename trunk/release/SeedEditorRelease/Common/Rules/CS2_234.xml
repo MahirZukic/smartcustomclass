@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<HREngineRules card="CS2_234">
+    <PlayRule condition="0">
+        <Rule entity="1" method="1" operator="2" paramValue="3" paramString="">
+            <RuleChild method="1" operator="5" paramValue="0" paramString=""/>
+        </Rule>
+        <Rule entity="0" method="10" operator="0" paramValue="0" paramString="EX1_565"/>
+        <Rule entity="0" method="10" operator="0" paramValue="0" paramString="EX1_565o"/>
+    </PlayRule>
+</HREngineRules>

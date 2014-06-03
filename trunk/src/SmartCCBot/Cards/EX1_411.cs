@@ -25,10 +25,23 @@ public class EX1_411 : Card
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0)
+        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);
             board.ReplaceWeapon("EX1_411");
+        }
+
+        public override void OnWeaponDeath(ref Board board)
+        {
+            if(board.WeaponFriend.CurrentAtk > 1)
+            {
+                board.WeaponFriend.CurrentDurability = 1;
+                board.WeaponFriend.currentAtk--;
+            }
+            else
+            {
+                base.OnWeaponDeath(ref board);
+            }
         }
 
         public override void OnDeath(ref Board board)
