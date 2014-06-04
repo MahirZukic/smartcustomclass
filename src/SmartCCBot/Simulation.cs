@@ -45,12 +45,15 @@ namespace HREngine.Bots
 
         public void InsertChoiceAction(int choice)
         {
-            ActionStack.Insert(0, new Action(Action.ActionType.CHOICE, null,null,0,choice));
+            ActionStack.Insert(0, new Action(Action.ActionType.CHOICE, null, null, 0, choice));
         }
         public void InsertTargetAction(Card target)
         {
-            ActionStack.Insert(0, new Action(Action.ActionType.TARGET,null,target));
+            ActionStack.Insert(0, new Action(Action.ActionType.TARGET, null, target));
         }
+
+        //             List<Thread> BgThreads = new List<Thread>();
+        // int nbThread = 0;
 
         public Simulation()
         {
@@ -59,6 +62,13 @@ namespace HREngine.Bots
             NeedCalculation = true;
             SimuCount = 0;
             ChoiceTarget = null;
+
+            /*for (int i = 0; i < nbThread; i++)
+            {
+                SimulationThread thread = new SimulationThread();
+                Thread threadl = new Thread(new ParameterizedThreadStart(thread.Calculate));
+                BgThreads.Add(threadl);
+            }*/
         }
 
         public bool SeedSimulation(Board b)
@@ -71,8 +81,8 @@ namespace HREngine.Bots
 
         public void CreateLogFolder()
         {
-            DateTime time = DateTime.Now;             
-            string format = "dd-MM-yy HH-mm-ss";           
+            DateTime time = DateTime.Now;
+            string format = "dd-MM-yy HH-mm-ss";
             string nameFolder = time.ToString(format);
             System.IO.Directory.CreateDirectory(CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Logs" + Path.DirectorySeparatorChar + "" + nameFolder);
             CurrentFolder = CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Logs" + Path.DirectorySeparatorChar + "" + nameFolder;
@@ -109,6 +119,11 @@ namespace HREngine.Bots
             int depth = 0;
             int maxDepth = 15;
             int maxWide = 3000;
+            int maxBoards = 2000;
+
+            int maxWideT = 5000;
+            int maxBoardsT = 3000;
+
             int skipped = 0;
             root.Update();
             bool tryToSkipEqualBoards = true;
@@ -119,12 +134,10 @@ namespace HREngine.Bots
             Console.WriteLine(root.ToString());
             bool foundearly = false;
 
+            List<Board> Roots = new List<Board>();
+            List<Board> Childs = new List<Board>();
             if (threaded)
             {
-                int nbThread = Environment.ProcessorCount;
-                List<Board> Roots = new List<Board>();
-                List<Board> Childs = new List<Board>();
-
                 foreach (HREngine.Bots.Action a in root.CalculateAvailableActions())
                 {
                     Board tmp = root.ExecuteAction(a);
@@ -132,100 +145,102 @@ namespace HREngine.Bots
                     Childs.Add(tmp);
                 }
 
-                if (Roots.Count < nbThread)
-                    nbThread = Roots.Count;
-
                 Childs.Add(root);
-                int[] tab = new int[nbThread];
 
-                int roll = 0;
-                //lazy dispatch(tired lol)
-                for (int i = Roots.Count; i > 0; i--)
+               
+
+                while (Roots.Count > 0)
                 {
+                    wide = Roots.Count;
+                    if (Roots.Count > maxWideT)
+                        wide = maxWideT;
 
-                    tab[roll]++;
+                    float widePerTree = 0;
+                    float wideTree = 0;
+                    widePerTree =2;
 
-                    if (roll == nbThread - 1)
-                        roll = 0;
-                    else
-                        roll++;
-                }
+                    ManualResetEvent[] doneEvents = new ManualResetEvent[wide];
 
-                int parsed = 0;
-                StreamReader str = new StreamReader(CardTemplate.DatabasePath + "Bots/SmartCC/Config/searchLevel");
-                string use = str.ReadLine();
-
-                str.Close();
-
-                if (use == "low")
-                {
-                    parsed = 5000;
-                }
-                else if (use == "medium")
-                {
-                    parsed = 10000;
-                }
-                else if (use == "high")
-                {
-                    parsed = 15000;
-                }
-                else if (use == "ultra")
-                {
-                    parsed = 20000;
-                }
-
-                int maxWidePerThread = parsed;
-                if (nbThread > 0)
-                    maxWidePerThread = parsed / nbThread;
-
-                bool useQuickSearch = false;
-                int lastStartRange = 0;
-                List<Thread> tt = new List<Thread>();
-                for (int i = 0; i < nbThread; i++)
-                {
-                    List<Board> input = null;
-
-                    input = Roots.GetRange(lastStartRange, tab[i]);
-                    lastStartRange += tab[i];
-                    if (i == 0 && useQuickSearch)
+                    for (int i = 0; i < wide; i++)
                     {
-                        SimulationThread threadQuickSearch = new SimulationThread(maxWidePerThread / 3);
-                        Thread threadlQuickSearch = new Thread(new ParameterizedThreadStart(threadQuickSearch.Calculate));
+                        doneEvents[i] = new ManualResetEvent(false);
+                        SimulationThread thread = new SimulationThread();
 
-                        List<Board> quickSearchBoards = new List<Board>();
-                        foreach (Board v in input)
+                        ThreadPool.QueueUserWorkItem(thread.Calculate, (object)new SimulationThreadStart(Roots[i], ref Childs, doneEvents[i], widePerTree));
+                    }
+                    foreach (var e in doneEvents)
+                        e.WaitOne();
+
+                    bool foundLethal = false;
+                    foreach (Board baa in Childs)
+                    {
+                        if (baa == null)
+                            continue;
+
+                        if(baa.GetValue() > 10000)
                         {
-                            quickSearchBoards.Add(Board.Clone(v));
+                            foundLethal = true;
+                            bestBoard = baa;
+                            break;
                         }
 
-                        threadlQuickSearch.Start((object)new SimulationThreadStart(quickSearchBoards, ref Childs));
-                        tt.Add(threadlQuickSearch);
+
+
+                        Board endBoard = Board.Clone(baa);
+                        endBoard.EndTurn();
+
+                        bestBoard.CalculateEnemyTurn();
+                        if (bestBoard.EnemyTurnWorseBoard != null)
+                        {
+                            endBoard.CalculateEnemyTurn();
+                            Board worstBoard = endBoard.EnemyTurnWorseBoard;
+
+                            if (worstBoard == null)
+                                worstBoard = endBoard;
+
+                            if (worstBoard.GetValue() > bestBoard.EnemyTurnWorseBoard.GetValue())
+                            {
+                                bestBoard = endBoard;
+                            }
+                            else if (worstBoard.GetValue() == bestBoard.EnemyTurnWorseBoard.GetValue())
+                            {
+                                if (endBoard.GetValue() > bestBoard.GetValue())
+                                {
+                                    bestBoard = endBoard;
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            if (endBoard.GetValue() > bestBoard.GetValue())
+                            {
+                                bestBoard = endBoard;
+                            }
+                        }
                     }
 
-                    SimulationThread thread = new SimulationThread(maxWidePerThread);
-                    Thread threadl = new Thread(new ParameterizedThreadStart(thread.Calculate));
-                    threadl.Start((object)new SimulationThreadStart(input, ref Childs));
-                    tt.Add(threadl);
+                    if (foundLethal)
+                        break;
+                    Roots.Clear();
+                    int boardsAdded = 0;
+                    //Childs.RemoveAll(item => item == null);
+                    //Childs.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
+
+                    foreach (Board bbb in Childs)
+                    {
+                        if (bbb != null)
+                        {
+                            Roots.Add(bbb);
+                            boardsAdded++;
+                            if (boardsAdded > maxBoardsT)
+                                break;
+                        }
+                           
+                    }
+                    Childs.Clear();
                 }
 
-                foreach (Thread t in tt)
-                {
-                    t.Join();
-                }
-
-                Board BestBoard = null;
-                foreach (Board b in Childs)
-                {
-                    Board endBoard = Board.Clone(b);
-                    endBoard.EndTurn();
-                    endBoard = endBoard.EnemyTurnWorseBoard;
-
-                    if (BestBoard == null)
-                        BestBoard = endBoard;
-                    else if (endBoard.GetValue() > BestBoard.GetValue())
-                        BestBoard = endBoard;
-                }
-                bestBoard = BestBoard;
 
             }
             else
@@ -308,14 +323,23 @@ namespace HREngine.Bots
 
                     if (!foundearly)
                     {
+                        List<Board> bestBoards = new List<Board>();
+
+                        int limit = maxBoards;
+                        if (childs.Count < maxBoards)
+                            limit = childs.Count;
+
+                        childs.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
+                        childs = new List<Board>(childs.GetRange(0, limit));
+                        
                         foreach (Board baa in childs)
                         {
-                            
+
                             Board endBoard = Board.Clone(baa);
                             endBoard.EndTurn();
 
                             bestBoard.CalculateEnemyTurn();
-                            if(bestBoard.EnemyTurnWorseBoard != null)
+                            if (bestBoard.EnemyTurnWorseBoard != null)
                             {
                                 endBoard.CalculateEnemyTurn();
                                 Board worstBoard = endBoard.EnemyTurnWorseBoard;
@@ -327,7 +351,7 @@ namespace HREngine.Bots
                                 {
                                     bestBoard = endBoard;
                                 }
-                                else if(worstBoard.GetValue() == bestBoard.EnemyTurnWorseBoard.GetValue())
+                                else if (worstBoard.GetValue() == bestBoard.EnemyTurnWorseBoard.GetValue())
                                 {
                                     if (endBoard.GetValue() > bestBoard.GetValue())
                                     {
@@ -362,8 +386,8 @@ namespace HREngine.Bots
             }
 
             Action actionPrior = null;
-            
-            
+
+
             foreach (Action acc in bestBoard.ActionsStack)
             {
                 if (actionPrior == null && acc.Actor != null)
@@ -385,8 +409,8 @@ namespace HREngine.Bots
                     }
                 }
             }
-            
-          
+
+
             List<Action> finalStack = new List<Action>();
             if (actionPrior != null)
             {
@@ -401,7 +425,7 @@ namespace HREngine.Bots
                         }
 
                     }
-                    
+
                 }
 
                 foreach (Action a in bestBoard.ActionsStack)
@@ -419,7 +443,7 @@ namespace HREngine.Bots
             {
                 finalStack = bestBoard.ActionsStack;
             }
-            
+
 
 
 
@@ -447,78 +471,137 @@ namespace HREngine.Bots
     }
     class SimulationThreadStart
     {
-        public List<Board> input = null;
+        public Board root = null;
         public List<Board> output = null;
-        public SimulationThreadStart(List<Board> input, ref List<Board> output)
+        public ManualResetEvent doneEvent;
+        public float maxWidePerTree = 0;
+
+        public SimulationThreadStart(Board root, ref List<Board> output, ManualResetEvent doneEvent,float maxWidePerTree)
         {
-            this.input = input;
+            this.root = root;
             this.output = output;
+            this.doneEvent = doneEvent;
+            this.maxWidePerTree = maxWidePerTree;
+
         }
     }
 
     class SimulationThread
     {
-        int maxWide = 0;
-        List<Board> input = null;
+        Board root = null;
         List<Board> output = null;
-        public SimulationThread(int maxWide)
+        public ManualResetEvent doneEvent;
+        public float maxWidePerTree = 0;
+        public static volatile bool FoundLethal = false;
+        public SimulationThread()
         {
-            this.maxWide = maxWide;
         }
 
         public void Calculate(object start)
         {
-            //ValuesInterface.LoadValuesFromFile();
-            SimulationThreadStart starter = start as SimulationThreadStart;
-            this.input = starter.input;
-            this.output = starter.output;
+
+            SimulationThreadStart st = (SimulationThreadStart)start;
+            root = st.root;
+            output = st.output;
+            doneEvent = st.doneEvent;
+            maxWidePerTree = st.maxWidePerTree;
+            if(FoundLethal)
+            {
+                doneEvent.Set();
+                return;
+            }
+
 
             int wide = 0;
-            if (input == null)
-                return;
-            if (output == null)
-                return;
-            Board BestBoard = null;
+            int skipped = 0;
 
-            List<Board> childaas = new List<Board>();
+            List<Board> boards = new List<Board>();
 
-            while (input.Count > 0)
+            boards.Add(root);
+            root.Update();
+
+
+            bool tryToSkipEqualBoards = false;
+            Board bestBoard = null;
+
+            wide = 0;
+            skipped = 0;
+            List<Board> childs = new List<Board>();
+
+            foreach (Board b in boards)
             {
-                childaas.Clear();
-                wide = 0;
-                foreach (Board b in input)
+                if (FoundLethal)
                 {
-                    foreach (HREngine.Bots.Action a in b.CalculateAvailableActions())
+                    doneEvent.Set();
+                    return;
+                }
+                if (wide > maxWidePerTree)
+                    break;
+                List<Action> actions = b.CalculateAvailableActions();
+                foreach (Action a in actions)
+                {
+                    if (FoundLethal)
                     {
-                        wide++;
-                        Board bb = b.ExecuteAction(a);
-                        childaas.Add(bb);
-                        if (wide > maxWide)
-                            break;                        
+                        doneEvent.Set();
+                        return;
                     }
-                    if (wide > maxWide)
+                    if (wide > maxWidePerTree)
                         break;
-                }
-                foreach (Board baa in childaas)
-                {
-                    if (BestBoard == null)
-                        BestBoard = baa;
-                    if (baa.GetValue() > BestBoard.GetValue())
-                        BestBoard = baa;
-                }
-                input.Clear();
-                foreach (Board aaa in childaas)
-                {
-                    input.Add(aaa);
+
+                    Board bb = b.ExecuteAction(a);
+
+                    if (bb != null)
+                    {
+                        if (bb.GetValue() > 10000)
+                        {
+                            FoundLethal = true;
+                            bestBoard = bb;
+                            if (bestBoard != null)
+                            {
+                                output.Add(bestBoard);
+                            }
+                            doneEvent.Set();
+                            return;
+                        }
+                        if (tryToSkipEqualBoards)
+                        {
+                            bool found = false;
+                            foreach (Board lol in output.ToArray())
+                            {
+                              
+                                if (bb.Equals(lol))
+                                {
+                                    found = true;
+                                    break;
+                                }
+                            }
+
+                            if (!found)
+                            {
+                                wide++;
+                                childs.Add(bb);
+                            }
+                            else
+                            {
+                                skipped++;
+                            }
+                        }
+                        else
+                        {
+                            wide++;
+                            childs.Add(bb);
+                        }
+                    }
                 }
             }
 
-            if (BestBoard != null)
+            foreach (Board b in childs)
             {
-                output.Add(BestBoard);
+                if (b != null)
+                    output.Add(b);
             }
-            return;
-        }
+            doneEvent.Set();
 
+        }
     }
 }
