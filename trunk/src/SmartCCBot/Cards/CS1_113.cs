@@ -33,6 +33,7 @@ public class CS1_113 : Card
             {
                 board.MinionEnemy.Remove(target);
                 board.MinionFriend.Add(target);
+                target.IsTired = !target.IsCharge;
                 board.Resimulate();
 
             }
