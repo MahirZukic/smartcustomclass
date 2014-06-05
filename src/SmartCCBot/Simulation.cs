@@ -116,8 +116,32 @@ namespace HREngine.Bots
             int wide = 0;
             int depth = 0;
             int maxDepth = 15;
+
+            StreamReader str = new StreamReader(CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Config" + Path.DirectorySeparatorChar + "useProfiles");
+            string SearchLevel = str.ReadLine();
             int maxWide = 3000;
             int maxBoards = 2000;
+            switch(SearchLevel)
+            {
+                case "low":
+                    maxWide = 2000;
+                    maxBoards = 1000;
+                    break;
+                case "medium":
+                    maxWide = 3000;
+                    maxBoards = 2000;
+                    break;
+                case "high":
+                    maxWide = 5000;
+                    maxBoards = 3000;
+                    break;
+                default:
+                    maxWide = 3000;
+                    maxBoards = 2000;
+                    break;
+            }
+
+          
 
             int maxWideT = 5000;
             int maxBoardsT = 3000;
@@ -154,7 +178,6 @@ namespace HREngine.Bots
                         wide = maxWideT;
 
                     float widePerTree = 0;
-                    float wideTree = 0;
                     widePerTree =2;
 
                     ManualResetEvent[] doneEvents = new ManualResetEvent[wide];

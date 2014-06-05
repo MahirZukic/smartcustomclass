@@ -33,7 +33,9 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
-            return true;
+            if (target.IsFriend && target.CanAttack)
+                return true;
+            return false;
         }
 
         public override int GetPriorityPlay(Board board)
