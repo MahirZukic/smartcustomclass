@@ -18,7 +18,17 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-            return true;
+			foreach(Card c in board.MinionEnemy)
+			{
+				if(c.HasGoodBuffs())
+					return true;
+			}
+            foreach(Card c in board.MinionFriend)
+			{
+				if(c.HasBadBuffs())
+					return true;
+			}
+			return false;
         }
 
         public override bool ShouldAttack(Board board)
