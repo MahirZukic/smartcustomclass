@@ -43,5 +43,19 @@ namespace HREngine.Bots
             return 1;
         }
 		
+		public override int GetHandValue(Board board)
+		{
+			int ret = 0;
+			foreach(Card c in board.MinionFriend)
+			{
+				if(c.template.Id == "EX1_559")
+				{
+					ret += 4;
+				}
+			}
+			
+			return ret;
+		}
+		
     }
 }

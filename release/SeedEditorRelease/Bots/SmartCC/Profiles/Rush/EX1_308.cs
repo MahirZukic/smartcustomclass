@@ -18,6 +18,14 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			foreach(Card c in board.Hand)
+			{
+				if(c.CurrentCost <= board.ManaAvailable && c.Type == Card.CType.MINION)
+				{
+					return false;
+				}
+			}
+			
             return true;
         }
 
@@ -32,7 +40,8 @@ namespace HREngine.Bots
         }
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
-        {
+        {			
+			
             if (target.CurrentHealth > 4)
                     return false;
 

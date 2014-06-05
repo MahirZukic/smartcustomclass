@@ -27,6 +27,8 @@ namespace HREngine.Bots
         public int EnemyCardDraw { get; set; }
         public int WastedATK { get; set; }
         public int TurnCount { get; set; }
+        public int SpellCastCost { get; set; }
+
 
         public Board EnemyTurnWorseBoard { get; set; }
         public bool EnemyTurnCalculated = false;
@@ -78,6 +80,13 @@ namespace HREngine.Bots
 
             if (HeroFriend.CurrentHealth < 1)
                 value -= 100000;
+
+            foreach(Card c in Hand)
+            {
+                value += c.Behavior.GetHandValue(this);
+            }
+
+            value -= SpellCastCost;
 
             Value = value;
             return value;
@@ -283,6 +292,7 @@ namespace HREngine.Bots
             HealFactor = 1;
             EnemyHealFactor = 1;
             TurnCount = 1;
+            SpellCastCost = 0;
         }
 
         public bool PlayCardFromHand(int id)
@@ -303,7 +313,16 @@ namespace HREngine.Bots
                     //int idx = Hand.IndexOf(c);
                     Hand.RemoveAt(i);
                     if (tmp[i].Type != Card.CType.WEAPON)
-                        FriendCardDraw--;
+                    {
+                        if (tmp[i].Behavior.GetHandValue(this) > 0)
+                        {
+                            SpellCastCost += tmp[i].Behavior.GetHandValue(this);
+                        }
+                        else
+                        {
+                            FriendCardDraw--;
+                        }
+                    }
                     ManaAvailable -= tmp[i].CurrentCost;
                     if (tmp[i].Type == Card.CType.WEAPON)
                     {
@@ -1867,6 +1886,7 @@ namespace HREngine.Bots
         {
             Board newBoard = new Board();
             newBoard.TurnCount = baseInstance.TurnCount;
+            newBoard.SpellCastCost = baseInstance.SpellCastCost;
             foreach (Card c in baseInstance.Hand)
             {
                 newBoard.Hand.Add(Card.Clone(c));

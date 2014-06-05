@@ -41,7 +41,7 @@ namespace HREngine.Bots
 					if(c.template.Id == s)
 						isBlackListed = true;
 				}
-				if(c.CurrentCost > MaxManaCost || isBlackListed ||CardsToKeep.Contains(c))
+				if(c.CurrentCost >= MaxManaCost || isBlackListed ||CardsToKeep.Contains(c))
 					continue;
 					
 				CardsToKeep.Add(c);
