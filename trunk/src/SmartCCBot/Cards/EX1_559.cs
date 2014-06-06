@@ -8,16 +8,18 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_559 : Card
+    public class EX1_559 : Card
     {
-		public EX1_559() : base()
+        public EX1_559()
+            : base()
         {
-            
+
         }
-		
-        public EX1_559(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_559(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -25,9 +27,9 @@ public class EX1_559 : Card
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
+            base.OnPlay(ref board, target, index);
         }
 
         public override void OnDeath(ref Board board)
@@ -42,10 +44,14 @@ public class EX1_559 : Card
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
-            board.Hand.Add(Card.Create("CS2_029", true, 888889));
-            board.Resimulate();
+            base.OnCastSpell(ref board, Spell);
+            if (IsFriend)
+            {
+                board.Hand.Add(Card.Create("CS2_029", true, 888889));
+                board.Resimulate();
+            }
+
         }
-		
+
     }
 }
