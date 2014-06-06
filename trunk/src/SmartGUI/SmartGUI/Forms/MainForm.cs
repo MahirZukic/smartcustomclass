@@ -515,6 +515,11 @@ namespace SmartGUI
             ThreadPool.QueueUserWorkItem(this.CheckUpdates, true);
 
         }
+
+        private void EraseButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class Counter
@@ -535,9 +540,11 @@ namespace SmartGUI
             write.WriteLine(rev.ToString());
             write.Close();
 
-            File.Delete(temppath);
 
             ftpClient.upload("smartcc.royalwebhosting.net/" + temppath, temppath);
+            Thread.Sleep(1000);
+            File.Delete(temppath);
+
         }
     }
 
