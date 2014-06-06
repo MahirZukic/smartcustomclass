@@ -639,7 +639,7 @@ namespace HREngine.Bots
         {
             if (CurrentAtk < template.Atk)
                 return true;
-            if (CurrentHealth < template.Health)
+            if (MaxHealth < template.Health)
                 return true;
             if (IsFrozen)
                 return true;
