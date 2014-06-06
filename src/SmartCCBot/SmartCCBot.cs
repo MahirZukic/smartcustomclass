@@ -87,7 +87,7 @@ namespace HREngine.Bots
                 }
 
                 List<HRCard> CardsToKeep = new List<HRCard>();
-                foreach(Card c in ProfileInterface.Behavior.HandleMulligan(ParsedChoices))
+                foreach (Card c in ProfileInterface.Behavior.HandleMulligan(ParsedChoices))
                 {
                     foreach (HRCard card in Choices)
                     {
@@ -102,7 +102,7 @@ namespace HREngine.Bots
                         HRMulligan.ToggleCard(card);
                 }
                 return null;
-           
+
             }
             return null;
 
@@ -315,10 +315,10 @@ namespace HREngine.Bots
                             HREntity targett = GetEntityById(ActionToDo.Target.Id);
                             return new HREngine.API.Actions.TargetAction(targett);
                         case Action.ActionType.CHOICE:
-                            if(HREngine.API.HRChoice.IsChoiceActive())
+                            if (HREngine.API.HRChoice.IsChoiceActive())
                             {
                                 List<HREntity> choices = HRChoice.GetChoiceCards();
-                                if(SmartCc.ChoiceTarget != null)
+                                if (SmartCc.ChoiceTarget != null)
                                 {
                                     SmartCc.InsertTargetAction(SmartCc.ChoiceTarget);
                                     SmartCc.ChoiceTarget = null;
@@ -334,11 +334,11 @@ namespace HREngine.Bots
                             if (ActionToDo.Target != null)
                             {
                                 HREntity target = GetEntityById(ActionToDo.Target.Id);
-                                return new HREngine.API.Actions.PlayCardAction(cardAbility, target, ActionToDo.Index);
+                                return new HREngine.API.Actions.PlayCardAction(cardAbility, target, ActionToDo.Index + 1);
                             }
                             else
                             {
-                                return new HREngine.API.Actions.PlayCardAction(cardAbility, null, ActionToDo.Index);
+                                return new HREngine.API.Actions.PlayCardAction(cardAbility, null, ActionToDo.Index + 1);
                             }
                         case Action.ActionType.CAST_WEAPON:
                         case Action.ActionType.CAST_MINION:
@@ -355,11 +355,11 @@ namespace HREngine.Bots
                             if (ActionToDo.Target != null)
                             {
                                 HREntity target = GetEntityById(ActionToDo.Target.Id);
-                                return new HREngine.API.Actions.PlayCardAction(card, target, ActionToDo.Index);
+                                return new HREngine.API.Actions.PlayCardAction(card, target, ActionToDo.Index + 1);
                             }
                             else
                             {
-                                return new HREngine.API.Actions.PlayCardAction(card, null, ActionToDo.Index);
+                                return new HREngine.API.Actions.PlayCardAction(card, null, ActionToDo.Index + 1);
                             }
 
 
