@@ -334,11 +334,11 @@ namespace HREngine.Bots
                             if (ActionToDo.Target != null)
                             {
                                 HREntity target = GetEntityById(ActionToDo.Target.Id);
-                                return new HREngine.API.Actions.PlayCardAction(cardAbility, target, ActionToDo.Index + 1);
+                                return new HREngine.API.Actions.PlayCardAction(cardAbility, target, ActionToDo.Index);
                             }
                             else
                             {
-                                return new HREngine.API.Actions.PlayCardAction(cardAbility, null, ActionToDo.Index + 1);
+                                return new HREngine.API.Actions.PlayCardAction(cardAbility, null, ActionToDo.Index);
                             }
                         case Action.ActionType.CAST_WEAPON:
                         case Action.ActionType.CAST_MINION:
@@ -355,11 +355,11 @@ namespace HREngine.Bots
                             if (ActionToDo.Target != null)
                             {
                                 HREntity target = GetEntityById(ActionToDo.Target.Id);
-                                return new HREngine.API.Actions.PlayCardAction(card, target, ActionToDo.Index + 1);
+                                return new HREngine.API.Actions.PlayCardAction(card, target, ActionToDo.Index);
                             }
                             else
                             {
-                                return new HREngine.API.Actions.PlayCardAction(card, null, ActionToDo.Index + 1);
+                                return new HREngine.API.Actions.PlayCardAction(card, null, ActionToDo.Index);
                             }
 
 

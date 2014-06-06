@@ -117,7 +117,7 @@ namespace HREngine.Bots
             int depth = 0;
             int maxDepth = 15;
 
-            StreamReader str = new StreamReader(CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Config" + Path.DirectorySeparatorChar + "useProfiles");
+            StreamReader str = new StreamReader(CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Config" + Path.DirectorySeparatorChar + "searchLevel");
             string SearchLevel = str.ReadLine();
             int maxWide = 3000;
             int maxBoards = 2000;
