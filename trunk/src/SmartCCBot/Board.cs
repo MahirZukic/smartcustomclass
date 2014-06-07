@@ -2125,8 +2125,14 @@ namespace HREngine.Bots
                 foreach (Card c2 in list2)
                 {
                     if (c1.Id == c2.Id)
+                    {
                         if (c1.CountAttack != c2.CountAttack)
                             return false;
+
+                        if (c1.Index != c2.Index)
+                            return false;
+                    }
+                        
                 }
             }
 
