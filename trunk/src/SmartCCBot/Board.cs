@@ -1764,7 +1764,7 @@ namespace HREngine.Bots
 
             }
             */
-
+            //Console.WriteLine("");
             return availableActions;
         }
 
@@ -2145,7 +2145,7 @@ namespace HREngine.Bots
             }
             int dam2 = 0;
             int hp2 = 0;
-            foreach (Card c2 in list1)
+            foreach (Card c2 in list2)
             {
                 dam2 += c2.CurrentAtk;
                 hp2 += c2.CurrentHealth;
