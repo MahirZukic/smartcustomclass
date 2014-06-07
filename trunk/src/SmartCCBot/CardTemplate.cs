@@ -17,9 +17,9 @@ namespace HREngine.Bots
 
         public string Name { get; set; }
 
-        public string Type { get; set; }
+        public Card.CType Type { get; set; }
 
-        public string Race { get; set; }
+        public Card.CRace Race { get; set; }
 
         public int Atk { get; set; }
 
@@ -36,8 +36,6 @@ namespace HREngine.Bots
             Id = String.Empty;
             Cost = 0;
             Name = String.Empty;
-            Type = String.Empty;
-            Race = String.Empty;
             Atk = 0;
             Health = 0;
             Mechanics = new List<string>();
@@ -84,11 +82,55 @@ namespace HREngine.Bots
                     }
                     else if (node.Name == "Type")
                     {
-                        template.Type = node.InnerText;
+                        if (node.InnerText.Contains("Minion"))
+                        {
+                            template.Type = Card.CType.MINION;
+                        }
+                        else if (node.InnerText.Contains("Spell"))
+                        {
+                            template.Type = Card.CType.SPELL;
+                        }
+                        else if (node.InnerText.Contains("Weapon"))
+                        {
+                            template.Type = Card.CType.WEAPON;
+                        }
+                        else if (node.InnerText.Contains("Hero") && !node.InnerText.Contains("Power"))
+                        {
+                            template.Type = Card.CType.HERO;
+                        }
+                        else if (node.InnerText.Contains("Hero Power"))
+                        {
+                            template.Type = Card.CType.HERO_POWER;
+                        }
                     }
                     else if (node.Name == "Race")
                     {
-                        template.Race = node.InnerText;
+                        template.Race = Card.CRace.NONE;
+
+                        if (node.InnerText.Contains("Murloc"))
+                        {
+                            template.Race = Card.CRace.MURLOC;
+                        }
+                        else if (node.InnerText.Contains("Beast"))
+                        {
+                            template.Race = Card.CRace.BEAST;
+                        }
+                        else if (node.InnerText.Contains("Demon"))
+                        {
+                            template.Race = Card.CRace.DEMON;
+                        }
+                        else if (node.InnerText.Contains("Pirate"))
+                        {
+                            template.Race = Card.CRace.PIRATE;
+                        }
+                        else if (node.InnerText.Contains("Totem"))
+                        {
+                            template.Race = Card.CRace.TOTEM;
+                        }
+                        else if (node.InnerText.Contains("Dragon"))
+                        {
+                            template.Race = Card.CRace.DRAGON;
+                        }
                     }
                     else if (node.Name == "Atk")
                     {
@@ -113,16 +155,16 @@ namespace HREngine.Bots
 
             ret += "CardTemplate{[" + Id + "][" + Name + "][" + Cost.ToString() + "][" + Type + "]";
 
-            if (Type == "Minion")
+            if (Type == Card.CType.MINION)
             {
-                if (Race != String.Empty)
+                if (Race != Card.CRace.NONE)
                 {
                     ret += "[" + Race + "]";
                 }
                 ret += "[" + Atk.ToString() + "]";
                 ret += "[" + Health.ToString() + "]";
             }
-            else if (Type == "Weapon")
+            else if (Type == Card.CType.WEAPON)
             {
                 ret += "[" + Atk.ToString() + "]";
                 ret += "[" + Durability.ToString() + "]";

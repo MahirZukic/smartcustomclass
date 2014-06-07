@@ -25,10 +25,7 @@ public class NEW1_021 : Card
             base.OnEndTurn(board);
             if(!IsFriend && !IsSilenced)
             {
-                foreach(Card c in board.MinionFriend.ToArray())
-                {
-                    board.RemoveCardFromBoard(c.Id);
-                }
+                board.MinionFriend.Clear();
             }
         }
 

@@ -660,56 +660,8 @@ namespace HREngine.Bots
             SpellPower = 0;
             TempAtk = 0;
             TestAllIndexOnPlay = false;
-            if (template.Type.Contains("Minion"))
-            {
-                Type = CType.MINION;
-            }
-            else if (template.Type.Contains("Spell"))
-            {
-                Type = CType.SPELL;
-            }
-            else if (template.Type.Contains("Weapon"))
-            {
-                Type = CType.WEAPON;
-            }
-            else if (template.Type.Contains("Hero") && !template.Type.Contains("Power"))
-            {
-                Type = CType.HERO;
-            }
-            else if (template.Type.Contains("Hero Power"))
-            {
-                Type = CType.HERO_POWER;
-            }
-
-            if (template.Race == string.Empty)
-            {
-                Race = Card.CRace.NONE;
-            }
-            else if (template.Race.Contains("Murloc"))
-            {
-                Race = Card.CRace.MURLOC;
-            }
-            else if (template.Race.Contains("Beast"))
-            {
-                Race = Card.CRace.BEAST;
-            }
-            else if (template.Race.Contains("Demon"))
-            {
-                Race = Card.CRace.DEMON;
-            }
-            else if (template.Race.Contains("Pirate"))
-            {
-                Race = Card.CRace.PIRATE;
-            }
-            else if (template.Race.Contains("Totem"))
-            {
-                Race = Card.CRace.TOTEM;
-            }
-            else if (template.Race.Contains("Dragon"))
-            {
-                Race = Card.CRace.DRAGON;
-            }
-
+            Type = newTemplate.Type;
+            Race = newTemplate.Race;
             CurrentAtk = template.Atk;
             CurrentHealth = template.Health;
             MaxHealth = template.Health;
@@ -752,55 +704,8 @@ namespace HREngine.Bots
             SpellPower = 0;
             TempAtk = 0;
             TestAllIndexOnPlay = false;
-            if (template.Type.Contains("Minion"))
-            {
-                Type = CType.MINION;
-            }
-            else if (template.Type.Contains("Spell"))
-            {
-                Type = CType.SPELL;
-            }
-            else if (template.Type.Contains("Weapon"))
-            {
-                Type = CType.WEAPON;
-            }
-            else if (template.Type.Contains("Hero") && !template.Type.Contains("Power"))
-            {
-                Type = CType.HERO;
-            }
-            else if (template.Type.Contains("Hero Power"))
-            {
-                Type = CType.HERO_POWER;
-            }
-
-            if (template.Race == string.Empty)
-            {
-                Race = Card.CRace.NONE;
-            }
-            else if (template.Race.Contains("Murloc"))
-            {
-                Race = Card.CRace.MURLOC;
-            }
-            else if (template.Race.Contains("Beast"))
-            {
-                Race = Card.CRace.BEAST;
-            }
-            else if (template.Race.Contains("Demon"))
-            {
-                Race = Card.CRace.DEMON;
-            }
-            else if (template.Race.Contains("Pirate"))
-            {
-                Race = Card.CRace.PIRATE;
-            }
-            else if (template.Race.Contains("Totem"))
-            {
-                Race = Card.CRace.TOTEM;
-            }
-            else if (template.Race.Contains("Dragon"))
-            {
-                Race = Card.CRace.DRAGON;
-            }
+            Type = newTemplate.Type;
+            Race = newTemplate.Race;
 
             CurrentAtk = template.Atk;
             CurrentHealth = template.Health;

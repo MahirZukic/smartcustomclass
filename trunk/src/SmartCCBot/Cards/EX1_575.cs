@@ -41,7 +41,7 @@ public class EX1_575 : Card
             base.OnEndTurn(board);
             if(IsFriend)
             {
-                board.FriendCardDraw++;
+                //board.FriendCardDraw++;
 
             }
             else
