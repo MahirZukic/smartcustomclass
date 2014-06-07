@@ -182,9 +182,10 @@ namespace HREngine.Bots
         {
             if (target == null)
                 return;
-            Card me = board.GetCard(Id);
-            Card tar = board.GetCard(target.Id);
-
+           Card me = board.GetCard(Id);
+           Card tar = board.GetCard(target.Id);
+            //Card me = this;
+           // Card tar = target;
             if (me.Type == CType.MINION)
             {
                 me.CountAttack++;

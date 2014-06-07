@@ -324,10 +324,6 @@ namespace HREngine.Bots
                         }
                     }
                     ManaAvailable -= tmp[i].CurrentCost;
-                    if (tmp[i].Type == Card.CType.WEAPON)
-                    {
-                        WeaponFriend = tmp[i];
-                    }
 
                     return true;
                 }
@@ -685,7 +681,16 @@ namespace HREngine.Bots
             Random random = new Random();
             int randomNumber = random.Next(88888, 99999);
 
+            int oldCountAttack = 0;
+
+            if(WeaponFriend != null)
+            {
+                oldCountAttack = WeaponFriend.CountAttack;
+            }
+
             WeaponFriend = Card.Create(id, true, randomNumber);
+            WeaponFriend.CountAttack = oldCountAttack;
+
             Resimulate();
         }
 
@@ -818,19 +823,19 @@ namespace HREngine.Bots
             {
                 case Action.ActionType.CAST_WEAPON:
                     if (a.Target != null)
-                        a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id));
+                       child.GetCard(a.Actor.Id).OnPlay(ref child, child.GetCard(a.Target.Id));
                     else
-                        a.Actor.OnPlay(ref child, null);
+                        child.GetCard(a.Actor.Id).OnPlay(ref child, null);
                     break;
 
                 case Action.ActionType.CAST_MINION:
                     if (a.Target != null)
                     {
-                        a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id), a.Index, a.Choice);
+                        child.GetCard(a.Actor.Id).OnPlay(ref child, child.GetCard(a.Target.Id), a.Index, a.Choice);
                     }
                     else
                     {
-                        a.Actor.OnPlay(ref child, null, a.Index, a.Choice);
+                        child.GetCard(a.Actor.Id).OnPlay(ref child, null, a.Index, a.Choice);
                     }
                     child.Update();
                     foreach (Card c in child.GetAllMinionsOnBoard())
@@ -847,9 +852,9 @@ namespace HREngine.Bots
 
                 case Action.ActionType.CAST_SPELL:
                     if (a.Target != null)
-                        a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id), 0, a.Choice);
+                        child.GetCard(a.Actor.Id).OnPlay(ref child, child.GetCard(a.Target.Id), 0, a.Choice);
                     else
-                        a.Actor.OnPlay(ref child, null, 0, a.Choice);
+                        child.GetCard(a.Actor.Id).OnPlay(ref child, null, 0, a.Choice);
 
                     child.Update();
 
@@ -861,9 +866,9 @@ namespace HREngine.Bots
 
                 case Action.ActionType.HERO_ATTACK:
                     if (a.Target != null)
-                        a.Actor.OnAttack(ref child, child.GetCard(a.Target.Id));
+                        child.GetCard(a.Actor.Id).OnAttack(ref child, child.GetCard(a.Target.Id));
                     else
-                        a.Actor.OnAttack(ref child, null);
+                        child.GetCard(a.Actor.Id).OnAttack(ref child, null);
 
                     if (SecretEnemy)
                     {
@@ -873,9 +878,9 @@ namespace HREngine.Bots
 
                 case Action.ActionType.MINION_ATTACK:
                     if (a.Target != null)
-                        a.Actor.OnAttack(ref child, child.GetCard(a.Target.Id));
+                        child.GetCard(a.Actor.Id).OnAttack(ref child, child.GetCard(a.Target.Id));
                     else
-                        a.Actor.OnAttack(ref child, null);
+                        child.GetCard(a.Actor.Id).OnAttack(ref child, null);
                     if (SecretEnemy)
                     {
                         child.Resimulate();
@@ -884,9 +889,9 @@ namespace HREngine.Bots
 
                 case Action.ActionType.CAST_ABILITY:
                     if (a.Target != null)
-                        a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id));
+                        child.GetCard(a.Actor.Id).OnPlay(ref child, child.GetCard(a.Target.Id));
                     else
-                        a.Actor.OnPlay(ref child, null);
+                        child.GetCard(a.Actor.Id).OnPlay(ref child, null);
                     break;
             }
 
@@ -996,7 +1001,7 @@ namespace HREngine.Bots
                     }
                 }
             }
-            else if (HeroFriend.CurrentAtk > 0 && HeroFriend.CanAttack)
+            else if (HeroFriend.CurrentAtk > 0 && HeroFriend.CanAttack && WeaponFriend == null)
             {
 
                 if (taunts.Count == 0)
@@ -1670,10 +1675,12 @@ namespace HREngine.Bots
             /*foreach (Action aa in availableActions)
             {
                 if (aa.Type == Action.ActionType.CAST_MINION)
-                    Console.WriteLine("");
+                   
 
             }
             */
+            //Console.WriteLine("");
+
             return availableActions;
         }
 

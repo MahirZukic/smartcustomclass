@@ -305,7 +305,8 @@ namespace HREngine.Bots
                                     foundearly = true;
                                     break;
                                 }
-
+                                if (foundearly)
+                                    break;
                                 if (tryToSkipEqualBoards)
                                 {
                                     bool found = false;
