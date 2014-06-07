@@ -823,19 +823,19 @@ namespace HREngine.Bots
             {
                 case Action.ActionType.CAST_WEAPON:
                     if (a.Target != null)
-                       child.GetCard(a.Actor.Id).OnPlay(ref child, child.GetCard(a.Target.Id));
+                        a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id));
                     else
-                        child.GetCard(a.Actor.Id).OnPlay(ref child, null);
+                        a.Actor.OnPlay(ref child, null);
                     break;
 
                 case Action.ActionType.CAST_MINION:
                     if (a.Target != null)
                     {
-                        child.GetCard(a.Actor.Id).OnPlay(ref child, child.GetCard(a.Target.Id), a.Index, a.Choice);
+                        a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id), a.Index, a.Choice);
                     }
                     else
                     {
-                        child.GetCard(a.Actor.Id).OnPlay(ref child, null, a.Index, a.Choice);
+                        a.Actor.OnPlay(ref child, null, a.Index, a.Choice);
                     }
                     child.Update();
                     foreach (Card c in child.GetAllMinionsOnBoard())
@@ -852,9 +852,9 @@ namespace HREngine.Bots
 
                 case Action.ActionType.CAST_SPELL:
                     if (a.Target != null)
-                        child.GetCard(a.Actor.Id).OnPlay(ref child, child.GetCard(a.Target.Id), 0, a.Choice);
+                        a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id), 0, a.Choice);
                     else
-                        child.GetCard(a.Actor.Id).OnPlay(ref child, null, 0, a.Choice);
+                        a.Actor.OnPlay(ref child, null, 0, a.Choice);
 
                     child.Update();
 
@@ -866,9 +866,9 @@ namespace HREngine.Bots
 
                 case Action.ActionType.HERO_ATTACK:
                     if (a.Target != null)
-                        child.GetCard(a.Actor.Id).OnAttack(ref child, child.GetCard(a.Target.Id));
+                        a.Actor.OnAttack(ref child, child.GetCard(a.Target.Id));
                     else
-                        child.GetCard(a.Actor.Id).OnAttack(ref child, null);
+                        a.Actor.OnAttack(ref child, null);
 
                     if (SecretEnemy)
                     {
@@ -878,9 +878,9 @@ namespace HREngine.Bots
 
                 case Action.ActionType.MINION_ATTACK:
                     if (a.Target != null)
-                        child.GetCard(a.Actor.Id).OnAttack(ref child, child.GetCard(a.Target.Id));
+                        a.Actor.OnAttack(ref child, child.GetCard(a.Target.Id));
                     else
-                        child.GetCard(a.Actor.Id).OnAttack(ref child, null);
+                        a.Actor.OnAttack(ref child, null);
                     if (SecretEnemy)
                     {
                         child.Resimulate();
@@ -889,9 +889,9 @@ namespace HREngine.Bots
 
                 case Action.ActionType.CAST_ABILITY:
                     if (a.Target != null)
-                        child.GetCard(a.Actor.Id).OnPlay(ref child, child.GetCard(a.Target.Id));
+                        a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id));
                     else
-                        child.GetCard(a.Actor.Id).OnPlay(ref child, null);
+                        a.Actor.OnPlay(ref child, null);
                     break;
             }
 
