@@ -86,6 +86,8 @@ namespace HREngine.Bots
                 value += c.Behavior.GetHandValue(this);
             }
 
+            value -= GetSpellPowerEnemy() * 2;
+
             value -= SpellCastCost;
 
             Value = value;
@@ -306,6 +308,19 @@ namespace HREngine.Bots
             int ret = 0;
             foreach (Card c in MinionFriend)
             {
+                if (c.IsSilenced)
+                    continue;
+                ret += c.SpellPower;
+            }
+            return ret;
+        }
+        public int GetSpellPowerEnemy()
+        {
+            int ret = 0;
+            foreach (Card c in MinionEnemy)
+            {
+                if (c.IsSilenced)
+                    continue;
                 ret += c.SpellPower;
             }
             return ret;
