@@ -1764,7 +1764,7 @@ namespace HREngine.Bots
 
             }
             */
-            //Console.WriteLine("");
+      //      Console.WriteLine("");
             return availableActions;
         }
 
