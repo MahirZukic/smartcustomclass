@@ -28,6 +28,11 @@ public class EX1_575 : Card
             }
             else
             {
+                if (board.Hand.Count < 4)
+                {
+                    return base.GetValue(board) + 5;
+                }
+
                 return base.GetValue(board);
             }
         }

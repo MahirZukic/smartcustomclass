@@ -1764,7 +1764,6 @@ namespace HREngine.Bots
 
             }
             */
-          //  Console.WriteLine("");
 
             return availableActions;
         }
@@ -2120,6 +2119,17 @@ namespace HREngine.Bots
                     return false;
             }
             */
+
+            foreach (Card c1 in list1)
+            {
+                foreach (Card c2 in list2)
+                {
+                    if (c1.Id == c2.Id)
+                        if (c1.CountAttack != c2.CountAttack)
+                            return false;
+                }
+            }
+
             int dam1 = 0;
             int hp1 = 0;
             foreach (Card c1 in list1)
@@ -2129,12 +2139,11 @@ namespace HREngine.Bots
             }
             int dam2 = 0;
             int hp2 = 0;
-            foreach (Card c2 in list2)
+            foreach (Card c2 in list1)
             {
                 dam2 += c2.CurrentAtk;
                 hp2 += c2.CurrentHealth;
             }
-
             if (dam1 != dam2)
                 return false;
             if (hp1 != hp2)
