@@ -81,7 +81,7 @@ namespace HREngine.Bots
             if (HeroFriend.CurrentHealth < 1)
                 value -= 100000;
 
-            foreach(Card c in Hand)
+            foreach (Card c in Hand)
             {
                 value += c.Behavior.GetHandValue(this);
             }
@@ -151,6 +151,7 @@ namespace HREngine.Bots
                 if (EnemyAbility.TargetTypeOnPlay == Card.TargetType.MINION_ENEMY || EnemyAbility.TargetTypeOnPlay == Card.TargetType.MINION_BOTH
                            || EnemyAbility.TargetTypeOnPlay == Card.TargetType.BOTH_ENEMY || EnemyAbility.TargetTypeOnPlay == Card.TargetType.ALL)
                 {
+
                     foreach (Card Friend in MinionFriend)
                     {
                         if (!Friend.IsTargetable || Friend.IsStealth)
@@ -208,12 +209,35 @@ namespace HREngine.Bots
 
             foreach (Card minion in MinionEnemy)
             {
+
+                bool containsSimilarMinion = false;
+                foreach (Card cc in attackers)
+                {
+                    if (cc.IsSimilar(minion))
+                        containsSimilarMinion = true;
+                }
+                if (containsSimilarMinion)
+                    continue;
+
+                attackers.Add(minion);
+
                 if (!minion.CanAttack)
                     continue;
                 if (taunts.Count == 0)
                 {
+                    List<Card> attacked = new List<Card>();
+
                     foreach (Card Friend in MinionFriend)
                     {
+                        bool containsSimilarFriend = false;
+                        foreach (Card cc in attacked)
+                        {
+                            if (cc.IsSimilar(minion))
+                                containsSimilarFriend = true;
+                        }
+                        if (containsSimilarFriend)
+                            continue;
+                        attacked.Add(minion);
                         if (Friend.IsStealth)
                             continue;
 
@@ -225,8 +249,20 @@ namespace HREngine.Bots
                 }
                 else
                 {
+                    List<Card> attacked = new List<Card>();
+
                     foreach (Card taunt in taunts)
                     {
+                        bool containsSimilarFriend = false;
+                        foreach (Card cc in attacked)
+                        {
+                            if (cc.IsSimilar(minion))
+                                containsSimilarFriend = true;
+                        }
+                        if (containsSimilarFriend)
+                            continue;
+                        attacked.Add(minion);
+
                         Action a = new Action(Action.ActionType.MINION_ATTACK, minion, taunt);
                         enemyActions.Add(a);
                     }
@@ -683,7 +719,7 @@ namespace HREngine.Bots
 
             int oldCountAttack = 0;
 
-            if(WeaponFriend != null)
+            if (WeaponFriend != null)
             {
                 oldCountAttack = WeaponFriend.CountAttack;
             }
@@ -944,22 +980,47 @@ namespace HREngine.Bots
 
                 if (taunts.Count == 0)
                 {
+                    List<Card> attacked = new List<Card>();
+
                     foreach (Card Enemy in MinionEnemy)
                     {
+
+                        bool containsSimilarEnemyMinion = false;
+                        foreach (Card cc in attacked)
+                        {
+                            if (cc.IsSimilar(Enemy))
+                                containsSimilarEnemyMinion = true;
+                        }
+                        if (containsSimilarEnemyMinion)
+                            continue;
+
                         if (Enemy.IsStealth)
                             continue;
                         if (HasLethal)
                             continue;
                         Action a = new Action(Action.ActionType.MINION_ATTACK, minion, Enemy);
                         availableActions.Add(a);
+                        attacked.Add(Enemy);
                     }
                     Action ac = new Action(Action.ActionType.MINION_ATTACK, minion, HeroEnemy);
                     availableActions.Add(ac);
                 }
                 else
                 {
+                    List<Card> attackedTaunts = new List<Card>();
                     foreach (Card taunt in taunts)
                     {
+                        bool containsSimilarTaunt = false;
+                        foreach (Card cc in attackedTaunts)
+                        {
+                            if (cc.IsSimilar(taunt))
+                                containsSimilarTaunt = true;
+                        }
+                        if (containsSimilarTaunt)
+                            continue;
+
+                        attackedTaunts.Add(taunt);
+
                         Action a = new Action(Action.ActionType.MINION_ATTACK, minion, taunt);
                         availableActions.Add(a);
                     }
@@ -973,8 +1034,21 @@ namespace HREngine.Bots
                 {
                     if (taunts.Count == 0)
                     {
+                        List<Card> attacked = new List<Card>();
+
                         foreach (Card Enemy in MinionEnemy)
                         {
+                            bool containsSimilar = false;
+                            foreach (Card cc in attacked)
+                            {
+                                if (cc.IsSimilar(Enemy))
+                                    containsSimilar = true;
+                            }
+                            if (containsSimilar)
+                                continue;
+
+                            attacked.Add(Enemy);
+
                             if (Enemy.IsStealth)
                                 continue;
 
@@ -993,8 +1067,19 @@ namespace HREngine.Bots
                     }
                     else
                     {
+                        List<Card> attackedTaunts = new List<Card>();
                         foreach (Card taunt in taunts)
                         {
+                            bool containsSimilarTaunt = false;
+                            foreach (Card cc in attackedTaunts)
+                            {
+                                if (cc.IsSimilar(taunt))
+                                    containsSimilarTaunt = true;
+                            }
+                            if (containsSimilarTaunt)
+                                continue;
+
+                            attackedTaunts.Add(taunt);
                             Action a = new Action(Action.ActionType.HERO_ATTACK, WeaponFriend, taunt);
                             availableActions.Add(a);
                         }
