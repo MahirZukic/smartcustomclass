@@ -22,59 +22,5 @@ namespace SmartGUI.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string defaultBotPath {
-            get {
-                return ((string)(this["defaultBotPath"]));
-            }
-            set {
-                this["defaultBotPath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Unknown")]
-        public string username {
-            get {
-                return ((string)(this["username"]));
-            }
-            set {
-                this["username"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool firstUse {
-            get {
-                return ((bool)(this["firstUse"]));
-            }
-            set {
-                this["firstUse"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("postmaster@sandbox4b9e7f5d6c714676a2b42c73e3897061.mailgun.org")]
-        public string smptUser {
-            get {
-                return ((string)(this["smptUser"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("05khli43nwc1")]
-        public string smptPass {
-            get {
-                return ((string)(this["smptPass"]));
-            }
-        }
     }
 }
