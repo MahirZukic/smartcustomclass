@@ -19,6 +19,12 @@ public class EX1_298 : Card
         {
             
         }
+
+        public override void OnEndTurn(Board board)
+        {
+            base.OnEndTurn(board);
+            board.DoRandomDamage(8, !IsFriend);
+        }
 		
 		public override void OnUpdate(Board board)
 		{
