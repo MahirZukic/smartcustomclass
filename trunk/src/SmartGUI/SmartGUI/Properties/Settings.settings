@@ -1,21 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SmartGUI.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
   <Profiles />
-  <Settings>
-    <Setting Name="defaultBotPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="username" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Unknown</Value>
-    </Setting>
-    <Setting Name="firstUse" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
-    <Setting Name="smptUser" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">postmaster@sandbox4b9e7f5d6c714676a2b42c73e3897061.mailgun.org</Value>
-    </Setting>
-    <Setting Name="smptPass" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">05khli43nwc1</Value>
-    </Setting>
-  </Settings>
+  <Settings />
 </SettingsFile>
