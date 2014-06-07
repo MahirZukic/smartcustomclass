@@ -117,6 +117,11 @@ namespace HREngine.Bots
             int depth = 0;
             int maxDepth = 15;
 
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+
+
+       
             StreamReader str = new StreamReader(CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Config" + Path.DirectorySeparatorChar + "searchLevel");
             string SearchLevel = str.ReadLine();
             int maxWide = 3000;
@@ -351,8 +356,8 @@ namespace HREngine.Bots
                         if (childs.Count < maxBoards)
                             limit = childs.Count;
 
-                        childs.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
-                        childs = new List<Board>(childs.GetRange(0, limit));
+                        //childs.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
+                        //childs = new List<Board>(childs.GetRange(0, limit));
                         
                         foreach (Board baa in childs)
                         {
@@ -481,13 +486,15 @@ namespace HREngine.Bots
             Console.WriteLine(bestBoard.ToString());
             Console.WriteLine("---------------------------------");
 
-
             foreach (HREngine.Bots.Action a in ActionStack)
             {
                 Log(a.ToString());
 
                 Console.WriteLine(a.ToString());
             }
+            stopWatch.Stop();
+
+            Log("Simulation stopped after :" + (stopWatch.ElapsedMilliseconds / 1000.0f).ToString());
 
         }
     }
