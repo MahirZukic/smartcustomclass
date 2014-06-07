@@ -189,10 +189,11 @@ namespace HREngine.Bots
             if (me.Type == CType.MINION)
             {
                 me.CountAttack++;
+                Card meTmp = Card.Clone(me);
                 if (target.Type != CType.HERO)
                     me.OnHit(ref board, tar);
 
-                tar.OnHit(ref board, me);
+                tar.OnHit(ref board, meTmp);
 
             }
             else if (me.Type == CType.WEAPON)
