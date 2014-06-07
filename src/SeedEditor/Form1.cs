@@ -334,7 +334,6 @@ namespace SeedEditor
             Seed.ManaAvailable = (int)Mana.Value;
 
             Card AbilityFriend = null;
-            string hero = "";
             switch (cmbBoxLocalHero.Text)
             {
                 case "Druid":

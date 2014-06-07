@@ -11,6 +11,7 @@ namespace HREngine.Bots
 	[Serializable]
     public class bEX1_238 : Behavior
     {
+		private int spellPower = 0;
 		public bEX1_238() : base()
         {
             
@@ -18,6 +19,7 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			spellPower = board.GetSpellPower();
             return true;
         }
 
@@ -33,6 +35,8 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
+			if(target.CurrentHealth > 3 + spellPower)
+				return false;
             return true;
         }
 

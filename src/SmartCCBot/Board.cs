@@ -716,13 +716,32 @@ namespace HREngine.Bots
 
         public bool HasFriendBuffer()
         {
+            List<Card> buffers = new List<Card>();
             foreach (Card c in MinionFriend)
             {
                 if (c.TestAllIndexOnPlay)
                 {
-                    return true;
+                    buffers.Add(c);
                 }
             }
+
+            if (buffers.Count > 0)
+            {
+                foreach(Card c in buffers)
+                {
+                    int bufferIndex = c.Index;
+                                        
+                    foreach(Card cc in MinionFriend)
+                    {
+                        if (cc.Index == bufferIndex - 1 && !cc.CanAttack)
+                            return true;
+                        if (cc.Index == bufferIndex + 1 && !cc.CanAttack)
+                            return true;
+                    }
+                }
+            }
+
+
 
             return false;
         }
@@ -1779,7 +1798,7 @@ namespace HREngine.Bots
 
             }
             */
-           // Console.WriteLine("");
+            //Console.WriteLine("");
             return availableActions;
         }
 
