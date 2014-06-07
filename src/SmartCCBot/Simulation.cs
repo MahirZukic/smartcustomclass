@@ -126,6 +126,7 @@ namespace HREngine.Bots
             string SearchLevel = str.ReadLine();
             int maxWide = 3000;
             int maxBoards = 2000;
+
             switch(SearchLevel)
             {
                 case "low":
@@ -250,8 +251,8 @@ namespace HREngine.Bots
                         break;
                     Roots.Clear();
                     int boardsAdded = 0;
-                    //Childs.RemoveAll(item => item == null);
-                    //Childs.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
+                    Childs.RemoveAll(item => item == null);
+                    Childs.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
 
                     foreach (Board bbb in Childs)
                     {
@@ -271,8 +272,6 @@ namespace HREngine.Bots
             }
             else
             {
-                float widePerTree = 0;
-                float wideTree = 0;
                 while (boards.Count != 0)
                 {
                     if (depth >= maxDepth)
@@ -282,18 +281,12 @@ namespace HREngine.Bots
                     skipped = 0;
                     List<Board> childs = new List<Board>();
 
-                    widePerTree = maxWide / boards.Count;
-
                     foreach (Board b in boards)
                     {
-                        wideTree = 0;
-
                         List<Action> actions = b.CalculateAvailableActions();
                         foreach (Action a in actions)
                         {
                             if (wide > maxWide)
-                                break;
-                            if (wideTree >= widePerTree)
                                 break;
 
                             Board bb = b.ExecuteAction(a);
@@ -326,7 +319,6 @@ namespace HREngine.Bots
 
                                     if (!found)
                                     {
-                                        wideTree++;
                                         wide++;
                                         childs.Add(bb);
                                     }
@@ -337,7 +329,6 @@ namespace HREngine.Bots
                                 }
                                 else
                                 {
-                                    wideTree++;
                                     wide++;
                                     childs.Add(bb);
                                 }
@@ -356,8 +347,8 @@ namespace HREngine.Bots
                         if (childs.Count < maxBoards)
                             limit = childs.Count;
 
-                        //childs.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
-                        //childs = new List<Board>(childs.GetRange(0, limit));
+                        childs.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
+                        childs = new List<Board>(childs.GetRange(0, limit));
                         
                         foreach (Board baa in childs)
                         {
