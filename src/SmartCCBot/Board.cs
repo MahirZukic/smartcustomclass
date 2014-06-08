@@ -299,6 +299,8 @@ namespace HREngine.Bots
                 }
             }
 
+            Console.WriteLine("");
+
             return enemyActions;
 
         }

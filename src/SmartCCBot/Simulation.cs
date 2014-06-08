@@ -121,13 +121,13 @@ namespace HREngine.Bots
             stopWatch.Start();
 
 
-       
+
             StreamReader str = new StreamReader(CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Config" + Path.DirectorySeparatorChar + "searchLevel");
             string SearchLevel = str.ReadLine();
             int maxWide = 3000;
             int maxBoards = 2000;
 
-            switch(SearchLevel)
+            switch (SearchLevel)
             {
                 case "low":
                     maxWide = 2000;
@@ -147,7 +147,7 @@ namespace HREngine.Bots
                     break;
             }
 
-          
+
 
             int maxWideT = 5000;
             int maxBoardsT = 3000;
@@ -175,7 +175,7 @@ namespace HREngine.Bots
 
                 Childs.Add(root);
 
-               
+
 
                 while (Roots.Count > 0)
                 {
@@ -184,7 +184,7 @@ namespace HREngine.Bots
                         wide = maxWideT;
 
                     float widePerTree = 0;
-                    widePerTree =2;
+                    widePerTree = 2;
 
                     ManualResetEvent[] doneEvents = new ManualResetEvent[wide];
 
@@ -204,7 +204,7 @@ namespace HREngine.Bots
                         if (baa == null)
                             continue;
 
-                        if(baa.GetValue() > 10000)
+                        if (baa.GetValue() > 10000)
                         {
                             foundLethal = true;
                             bestBoard = baa;
@@ -263,7 +263,7 @@ namespace HREngine.Bots
                             if (boardsAdded > maxBoardsT)
                                 break;
                         }
-                           
+
                     }
                     Childs.Clear();
                 }
@@ -349,7 +349,7 @@ namespace HREngine.Bots
 
                         childs.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
                         childs = new List<Board>(childs.GetRange(0, limit));
-                        
+
                         foreach (Board baa in childs)
                         {
 
@@ -364,13 +364,14 @@ namespace HREngine.Bots
 
                                 if (worstBoard == null)
                                     worstBoard = endBoard;
-                                if (endBoard.GetValue() > bestBoard.GetValue())
+
+                                if (worstBoard.GetValue() > bestBoard.EnemyTurnWorseBoard.GetValue())
                                 {
-                                    if (worstBoard.GetValue() > bestBoard.EnemyTurnWorseBoard.GetValue())
-                                    {
-                                        bestBoard = endBoard;
-                                    }
-                                    else if (worstBoard.GetValue() == bestBoard.EnemyTurnWorseBoard.GetValue())
+                                    bestBoard = endBoard;
+                                }
+                                else if (worstBoard.GetValue() == bestBoard.EnemyTurnWorseBoard.GetValue())
+                                {
+                                    if (endBoard.GetValue() > bestBoard.GetValue())
                                     {
                                         bestBoard = endBoard;
                                     }
@@ -495,7 +496,7 @@ namespace HREngine.Bots
         public ManualResetEvent doneEvent;
         public float maxWidePerTree = 0;
 
-        public SimulationThreadStart(Board root, ref List<Board> output, ManualResetEvent doneEvent,float maxWidePerTree)
+        public SimulationThreadStart(Board root, ref List<Board> output, ManualResetEvent doneEvent, float maxWidePerTree)
         {
             this.root = root;
             this.output = output;
@@ -524,7 +525,7 @@ namespace HREngine.Bots
             output = st.output;
             doneEvent = st.doneEvent;
             maxWidePerTree = st.maxWidePerTree;
-            if(FoundLethal)
+            if (FoundLethal)
             {
                 doneEvent.Set();
                 return;
@@ -587,7 +588,7 @@ namespace HREngine.Bots
                             bool found = false;
                             foreach (Board lol in output.ToArray())
                             {
-                              
+
                                 if (bb.Equals(lol))
                                 {
                                     found = true;
