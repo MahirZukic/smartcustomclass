@@ -23,12 +23,14 @@ public class GAME_005 : Card
         public override void Init()
         {
             base.Init();
+            TargetTypeOnPlay = TargetType.NONE;
         }
 
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);
             board.ManaAvailable++;
+            board.FriendCardDraw++;
         }
 
         public override void OnDeath(ref Board board)

@@ -245,10 +245,8 @@ namespace HREngine.Bots
             {
                 root.Ability = Card.Create(HRPlayer.GetLocalPlayer().GetHeroPower().GetCardId(), true, HRPlayer.GetLocalPlayer().GetHeroPower().GetEntityId());
             }
-            if (!HRPlayer.GetEnemyPlayer().GetHeroPower().IsExhausted())
-            {
-                root.EnemyAbility = Card.Create(HRPlayer.GetEnemyPlayer().GetHeroPower().GetCardId(), false, HRPlayer.GetEnemyPlayer().GetHeroPower().GetEntityId());
-            }
+
+            root.EnemyAbility = Card.Create(HRPlayer.GetEnemyPlayer().GetHeroPower().GetCardId(), false, HRPlayer.GetEnemyPlayer().GetHeroPower().GetEntityId());
             root.TurnCount = SmartCc.TurnCount + 1;
             SmartCc.root = root;
         }
@@ -265,6 +263,8 @@ namespace HREngine.Bots
             }
             while (true)
             {
+                if (SmartCc == null)
+                    return null;
                 if (SmartCc.NeedCalculation)
                 {
 
@@ -302,6 +302,8 @@ namespace HREngine.Bots
                 ActionToDo = SmartCc.GetNextAction();
                 try
                 {
+                    if (ActionToDo == null)
+                        return null;
                     switch (ActionToDo.Type)
                     {
                         case Action.ActionType.TARGET:

@@ -1800,7 +1800,7 @@ namespace HREngine.Bots
 
             }
             */
-            //Console.WriteLine("");
+
             return availableActions;
         }
 
@@ -2093,9 +2093,24 @@ namespace HREngine.Bots
         {
             string ret = "";
 
-            ret += "Board --- (" + HeroFriend.CurrentHealth.ToString() + "/" + HeroFriend.CurrentArmor.ToString() + "-" + HeroEnemy.CurrentHealth.ToString() + "/" + HeroEnemy.CurrentArmor.ToString() + "): " + Environment.NewLine;
+            ret += "Board --- " + HeroFriend.template.Name + "(" + HeroFriend.CurrentHealth.ToString() + "/" + HeroFriend.CurrentArmor.ToString() + "-" + HeroEnemy.CurrentHealth.ToString() + "/" + HeroEnemy.CurrentArmor.ToString() + ")" + HeroEnemy.template.Name + " " + Environment.NewLine;
+            ret += Environment.NewLine;
+            if(WeaponFriend != null)
+                ret += "WeaponEnemy : " + WeaponEnemy.ToString() + Environment.NewLine;
+            if (WeaponEnemy != null)
+                ret += "WeaponFriend : " + WeaponFriend.ToString() + Environment.NewLine;
+            ret += Environment.NewLine;
+
+            if(Ability != null)
+            ret += "AbilityFriend : " + Ability.ToString() + Environment.NewLine;
+
+            if(EnemyAbility != null)
+            ret += "AbilityEnemy : " + EnemyAbility.ToString() + Environment.NewLine;
+            ret += Environment.NewLine;
+
             ret += "Mana : " + ManaAvailable.ToString() + Environment.NewLine;
             ret += "Enemy secret: " + SecretEnemy.ToString() + Environment.NewLine;
+            ret += Environment.NewLine;
 
             ret += "Friends : " + Environment.NewLine;
 
@@ -2103,12 +2118,15 @@ namespace HREngine.Bots
             {
                 ret += c.ToString() + Environment.NewLine;
             }
+            ret += Environment.NewLine;
+
             ret += "Enemy : " + Environment.NewLine;
 
             foreach (Card c in MinionEnemy)
             {
                 ret += c.ToString() + Environment.NewLine;
             }
+            ret += Environment.NewLine;
 
             ret += "Hand : " + Environment.NewLine;
 
@@ -2116,13 +2134,7 @@ namespace HREngine.Bots
             {
                 ret += c.ToString() + Environment.NewLine;
             }
-            if (WeaponFriend != null)
-            {
-                ret += "Weapon : " + Environment.NewLine;
-
-
-                ret += WeaponFriend.ToString() + Environment.NewLine;
-            }
+            ret += Environment.NewLine;
 
             ret += "draw : " + FriendCardDraw.ToString();
 
