@@ -2955,7 +2955,7 @@ namespace HREngine.Bots
             ret += template.Name + "[" + template.Id + "]";
             if (Type == CType.MINION)
             {
-                ret += "-T[" + IsTired.ToString() + "][" + CurrentAtk.ToString() + "/" + CurrentHealth.ToString() + "]CAN[" + CanAttack.ToString() + "]IDX[" + Index.ToString() + "]";
+                ret +="[" + CurrentAtk.ToString() + "/" + CurrentHealth.ToString() + "]CAN[" + CanAttack.ToString() + "]IDX[" + Index.ToString() + "]";
 
             }
             else if (Type == CType.WEAPON)
@@ -2964,6 +2964,28 @@ namespace HREngine.Bots
 
             }
 
+            if (IsTaunt)
+                ret += "[T]";
+            if (IsFrozen)
+                ret += "[F]";
+            if (IsEnraged)
+                ret += "[ENR]";
+            if (IsDivineShield)
+                ret += "[D]";
+            if (IsCharge)
+                ret += "[C]";
+            if (IsSilenced)
+                ret += "[SLC]";
+            if (IsStealth)
+                ret += "[ST]";
+            if (IsWindfury)
+                ret += "[W]";
+            if (IsImmune)
+                ret += "[I]";
+            if (HasPoison)
+                ret += "[P]";
+            if (!IsTargetable)
+                ret += "[NT]";
             return ret;
         }
         public virtual string ToStringShort()
