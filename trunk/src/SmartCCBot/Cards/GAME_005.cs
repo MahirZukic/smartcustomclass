@@ -30,7 +30,6 @@ public class GAME_005 : Card
         {
             base.OnPlay(ref board, target,index);
             board.ManaAvailable++;
-            board.FriendCardDraw++;
         }
 
         public override void OnDeath(ref Board board)
