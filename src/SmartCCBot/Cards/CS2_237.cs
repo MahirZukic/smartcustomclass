@@ -43,6 +43,8 @@ public class CS2_237 : Card
         public override void OnPlayOtherMinion(ref Board board, Card Minion)
         {
             base.OnPlayOtherMinion(ref board, Minion);
+            if(Minion == null)
+            { return; }
             if (Minion.Race == CRace.BEAST)
             {
                 board.FriendCardDraw++;
