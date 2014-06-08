@@ -1237,7 +1237,7 @@ namespace HREngine.Bots
             {
                 if(c.Type == Card.CType.WEAPON && WeaponFriend != null)
                 {
-                    if (c.CurrentAtk <= WeaponFriend.CurrentAtk)
+                    if (c.CurrentAtk <= WeaponFriend.CurrentAtk && WeaponFriend.CurrentDurability > 0)
                         continue;
                 }
 
