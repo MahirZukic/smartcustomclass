@@ -33,6 +33,11 @@ public class NEW1_040 : Card
                 board.AddCardToBoard("NEW1_040t", true);
 
             }
+            else
+            {
+                board.AddCardToBoard("NEW1_040t", false);
+
+            }
         }
 
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
