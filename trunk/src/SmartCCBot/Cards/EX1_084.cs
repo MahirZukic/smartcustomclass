@@ -40,7 +40,7 @@ public class EX1_084 : Card
             base.OnPlayOtherMinion(ref board, Minion);
 
             
-            if(Minion.CurrentAtk <= 3 && Minion.Id != Id)
+            if(Minion.CurrentAtk <= 3 && Minion.Id != Id && Minion.IsFriend == IsFriend)
             {
                 Minion.IsCharge = true;
             }
