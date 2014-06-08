@@ -1831,7 +1831,7 @@ namespace HREngine.Bots
                 c.TempAtk = 0;
                 c.IsImmune = false;
             }*/
-            foreach (Card c in MinionFriend)
+            foreach (Card c in MinionFriend.ToArray())
             {
                 c.OnEndTurn(this);
                 c.TempAtk = 0;
@@ -1847,7 +1847,7 @@ namespace HREngine.Bots
         }
         public void EndEnemyTurn()
         {
-              foreach (Card c in MinionEnemy)
+              foreach (Card c in MinionEnemy.ToArray())
               {
                   c.OnEndTurn(this);
                   c.TempAtk = 0;
