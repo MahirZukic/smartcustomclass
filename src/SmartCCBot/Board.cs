@@ -102,7 +102,7 @@ namespace HREngine.Bots
             childss.Add(Board.Clone(this));
             Board worseBoard = null;
 
-            int maxWide = 50;
+            int maxWide = 25;
 
             int wide = 0;
             while (childss.Count != 0)
