@@ -31,16 +31,16 @@ public class EX1_411 : Card
             board.ReplaceWeapon("EX1_411");
         }
 
-        public override void OnWeaponDeath(ref Board board)
+        public override void OnAttack(ref Board board, Card target)
         {
-            if(board.WeaponFriend.CurrentAtk > 1)
+            if(target.Type == CType.MINION)
             {
-                board.WeaponFriend.CurrentDurability = 1;
-                board.WeaponFriend.currentAtk--;
+                board.GetCard(Id).CurrentDurability++;
             }
-            else
+            base.OnAttack(ref board, target);
+            if (target.Type == CType.MINION)
             {
-                base.OnWeaponDeath(ref board);
+                board.GetCard(Id).currentAtk--;
             }
         }
 
