@@ -35,8 +35,6 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
-		if(target.CurrentHealth > 1 + spellPower)
-				return false;
             return true;
         }
 
