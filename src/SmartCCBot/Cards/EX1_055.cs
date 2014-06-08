@@ -43,7 +43,11 @@ public class EX1_055 : Card
         public override void OnCastSpell(ref Board board, Card Spell)
         {
 		    base.OnCastSpell(ref board, Spell);
-            board.GetCard(Id).TempAtk += 2;
+            if(IsFriend && !IsSilenced)
+            {
+                board.GetCard(Id).TempAtk += 2;
+
+            }
         }
 
     }
