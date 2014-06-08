@@ -20,6 +20,22 @@ public class CS2_227 : Card
             
         }
 
+        public override void OnUpdate(Board board)
+        {
+            base.OnUpdate(board);
+            if(IsFriend)
+            {
+                foreach (Card c in board.Hand)
+                {
+                    if (c.Type == CType.MINION)
+                    {
+                        c.CurrentCost = c.template.Cost + 3 ;
+                    }
+                }
+            }
+            
+        }
+
         public override void Init()
         {
             base.Init();
@@ -28,18 +44,22 @@ public class CS2_227 : Card
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);
-            foreach(Card c in board.Hand)
-            {
-                if(c.Type == CType.MINION)
-                {
-                    c.CurrentCost += 3;
-                }
-            }
+            
         }
 
         public override void OnDeath(ref Board board)
         {
             base.OnDeath(ref board);
+            if (IsFriend)
+            {
+                foreach (Card c in board.Hand)
+                {
+                    if (c.Type == CType.MINION)
+                    {
+                        c.CurrentCost = c.template.Cost;
+                    }
+                }
+            }
         }
 
         public override void OnPlayOtherMinion(ref Board board, Card Minion)
