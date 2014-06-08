@@ -364,14 +364,13 @@ namespace HREngine.Bots
 
                                 if (worstBoard == null)
                                     worstBoard = endBoard;
-
-                                if (worstBoard.GetValue() > bestBoard.EnemyTurnWorseBoard.GetValue())
+                                if (endBoard.GetValue() > bestBoard.GetValue())
                                 {
-                                    bestBoard = endBoard;
-                                }
-                                else if (worstBoard.GetValue() == bestBoard.EnemyTurnWorseBoard.GetValue())
-                                {
-                                    if (endBoard.GetValue() > bestBoard.GetValue())
+                                    if (worstBoard.GetValue() > bestBoard.EnemyTurnWorseBoard.GetValue())
+                                    {
+                                        bestBoard = endBoard;
+                                    }
+                                    else if (worstBoard.GetValue() == bestBoard.EnemyTurnWorseBoard.GetValue())
                                     {
                                         bestBoard = endBoard;
                                     }
