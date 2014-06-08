@@ -79,7 +79,7 @@ namespace HREngine.Bots
                 value += 100000;
 
             if (HeroFriend.CurrentHealth < 1)
-                value -= 100000;
+                value -= 1000000;
 
             foreach (Card c in Hand)
             {
@@ -102,7 +102,7 @@ namespace HREngine.Bots
             childss.Add(Board.Clone(this));
             Board worseBoard = null;
 
-            int maxWide = 25;
+            int maxWide = 20;
 
             int wide = 0;
             while (childss.Count != 0)
@@ -301,8 +301,6 @@ namespace HREngine.Bots
                     }
                 }
             }
-
-            Console.WriteLine("");
 
             return enemyActions;
 
