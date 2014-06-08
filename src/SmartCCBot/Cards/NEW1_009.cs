@@ -22,10 +22,21 @@ public class NEW1_009 : Card
         public override void OnEndTurn(Board board)
         {
             base.OnEndTurn(board);
-            foreach(Card c in board.MinionFriend)
+            if(IsFriend)
             {
-                c.Heal(1, ref board);
+                foreach (Card c in board.MinionFriend)
+                {
+                    c.Heal(1, ref board);
+                }
             }
+            else
+            {
+                foreach (Card c in board.MinionEnemy)
+                {
+                    c.Heal(1, ref board);
+                }
+            }
+            
         }
         public override void Init()
         {

@@ -129,6 +129,9 @@ namespace HREngine.Bots
 
                 foreach (Board baa in childs)
                 {
+                    Board endBoard = Board.Clone(baa);
+                    endBoard.EndEnemyTurn();
+
                     if (worseBoard == null)
                         worseBoard = baa;
                     if (worseBoard.GetValue() > baa.GetValue())
@@ -303,6 +306,70 @@ namespace HREngine.Bots
 
             return enemyActions;
 
+        }
+
+        public Card GetBestMinion()
+        {
+            Card ret = null;
+            foreach(Card c in MinionFriend)
+            {
+                if(ret == null)
+                {
+                    ret = c;
+                    continue;
+                }
+                if (c.GetValue(this) > ret.GetValue(this))
+                    ret = c;
+            }
+            return ret;
+        }
+
+        public Card GetWorstMinion()
+        {
+            Card ret = null;
+            foreach (Card c in MinionFriend)
+            {
+                if (ret == null)
+                {
+                    ret = c;
+                    continue;
+                }
+                if (c.GetValue(this) < ret.GetValue(this))
+                    ret = c;
+            }
+            return ret;
+        }
+
+        public Card GetBestEnemyMinion()
+        {
+            Card ret = null;
+            foreach (Card c in MinionEnemy)
+            {
+                if (ret == null)
+                {
+                    ret = c;
+                    continue;
+                }
+                if (c.GetValue(this) > ret.GetValue(this))
+                    ret = c;
+            }
+            return ret;
+        }
+
+        public Card GetWorstEnemyMinion()
+        {
+            Card ret = null;
+            foreach (Card c in MinionEnemy)
+            {
+                if (ret == null)
+                {
+                    ret = c;
+                    continue;
+                }
+                if (c.GetValue(this) < ret.GetValue(this))
+                    ret = c;
+            }
+            return ret;
         }
 
         public int GetSpellPower()
@@ -492,18 +559,7 @@ namespace HREngine.Bots
                 {
                     if (KillableMinions.Count > 0)
                     {
-                        Card bestMinion = null;
-                        foreach (Card c in MinionFriend)
-                        {
-                            if (bestMinion == null)
-                            {
-                                bestMinion = c;
-                                continue;
-                            }
-
-                            if (bestMinion.GetValue(this) > c.GetValue(this))
-                                bestMinion = c;
-                        }
+                        Card bestMinion = GetWorstMinion();
                         if (bestMinion != null)
                         {
                             RemoveCardFromBoard(bestMinion.Id);
@@ -513,18 +569,7 @@ namespace HREngine.Bots
                     {
                         if (MinionFriend.Count > 0)
                         {
-                            Card bestMinion = null;
-                            foreach (Card c in MinionFriend)
-                            {
-                                if (bestMinion == null)
-                                {
-                                    bestMinion = c;
-                                    continue;
-                                }
-
-                                if (bestMinion.GetValue(this) < c.GetValue(this))
-                                    bestMinion = c;
-                            }
+                            Card bestMinion = GetBestMinion();
                             if (bestMinion != null)
                             {
                                 bestMinion.CurrentHealth -= damage;
@@ -562,20 +607,7 @@ namespace HREngine.Bots
                 {
                     if (MinionEnemy.Count - KillableMinions.Count > 0)
                     {
-                        Card worstMinion = null;
-                        foreach (Card c in MinionEnemy)
-                        {
-                            if (KillableMinions.Contains(c))
-                                continue;
-                            if (worstMinion == null)
-                            {
-                                worstMinion = c;
-                                continue;
-                            }
-
-                            if (worstMinion.GetValue(this) > c.GetValue(this))
-                                worstMinion = c;
-                        }
+                        Card worstMinion = GetWorstEnemyMinion();
                         if (worstMinion != null)
                         {
                             worstMinion.CurrentHealth -= damage;
@@ -600,20 +632,7 @@ namespace HREngine.Bots
                 {
                     if (MinionEnemy.Count - KillableMinions.Count > 0)
                     {
-                        Card worstMinion = null;
-                        foreach (Card c in MinionEnemy)
-                        {
-                            if (KillableMinions.Contains(c))
-                                continue;
-                            if (worstMinion == null)
-                            {
-                                worstMinion = c;
-                                continue;
-                            }
-
-                            if (worstMinion.GetValue(this) > c.GetValue(this))
-                                worstMinion = c;
-                        }
+                        Card worstMinion = GetWorstEnemyMinion();
                         if (worstMinion != null)
                         {
                             worstMinion.CurrentHealth -= damage;
@@ -1806,12 +1825,12 @@ namespace HREngine.Bots
 
         public void EndTurn()
         {
-            foreach (Card c in MinionEnemy)
+          /*  foreach (Card c in MinionEnemy)
             {
                 c.OnEndTurn(this);
                 c.TempAtk = 0;
                 c.IsImmune = false;
-            }
+            }*/
             foreach (Card c in MinionFriend)
             {
                 c.OnEndTurn(this);
@@ -1826,7 +1845,28 @@ namespace HREngine.Bots
                       ActionsStack.Clear();
               }*/
         }
+        public void EndEnemyTurn()
+        {
+              foreach (Card c in MinionEnemy)
+              {
+                  c.OnEndTurn(this);
+                  c.TempAtk = 0;
+                  c.IsImmune = false;
+              }
+           /* foreach (Card c in MinionFriend)
+            {
+                c.OnEndTurn(this);
+                c.TempAtk = 0;
+                c.IsImmune = false;
+            }*/
+            Update();
 
+            /*  if(ActionsStack.Count == 1)
+              {
+                  if (ActionsStack[0].Type == Action.ActionType.RESIMULATE)
+                      ActionsStack.Clear();
+              }*/
+        }
         public void CalculateEnemyTurn()
         {
             if (EnemyTurnCalculated)
@@ -2095,9 +2135,9 @@ namespace HREngine.Bots
 
             ret += "Board --- " + HeroFriend.template.Name + "(" + HeroFriend.CurrentHealth.ToString() + "/" + HeroFriend.CurrentArmor.ToString() + "-" + HeroEnemy.CurrentHealth.ToString() + "/" + HeroEnemy.CurrentArmor.ToString() + ")" + HeroEnemy.template.Name + " " + Environment.NewLine;
             ret += Environment.NewLine;
-            if(WeaponFriend != null)
+            if(WeaponEnemy != null)
                 ret += "WeaponEnemy : " + WeaponEnemy.ToString() + Environment.NewLine;
-            if (WeaponEnemy != null)
+            if (WeaponFriend != null)
                 ret += "WeaponFriend : " + WeaponFriend.ToString() + Environment.NewLine;
             ret += Environment.NewLine;
 

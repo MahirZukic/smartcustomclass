@@ -22,10 +22,23 @@ public class EX1_004 : Card
 
         public override void OnEndTurn(Board board)
         {
-            if (board.MinionFriend.Count == 1)
+            if(IsFriend)
             {
-                board.MinionFriend[0].maxHealth += 1;
-                board.MinionFriend[0].CurrentHealth += 1;
+                Card MinionToBuff = board.GetWorstMinion();
+                if(MinionToBuff != null)
+                {
+                    MinionToBuff.maxHealth += 1;
+                    MinionToBuff.CurrentHealth += 1;
+                }
+            }
+            else
+            {
+                Card MinionToBuff = board.GetWorstEnemyMinion();
+                if (MinionToBuff != null)
+                {
+                    MinionToBuff.maxHealth += 1;
+                    MinionToBuff.CurrentHealth += 1;
+                }
             }
         }
         public override void Init()
