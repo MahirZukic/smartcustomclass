@@ -1834,6 +1834,32 @@ namespace HREngine.Bots
             return availableActions;
         }
 
+        public void CleanDestroyedEOT(bool friends)
+        {
+            if(friends)
+            {
+                foreach (Card c in MinionFriend.ToArray())
+                {
+                    if (c.IsDestroyedEOT)
+                    {
+                        RemoveCardFromBoard(c.Id);
+                    }
+                }
+            }
+            else
+            {
+                foreach (Card c in MinionEnemy.ToArray())
+                {
+                    if (c.IsDestroyedEOT)
+                    {
+                        RemoveCardFromBoard(c.Id);
+                    }
+                }
+            }
+          
+          
+        }
+
         public void EndTurn()
         {
             /*  foreach (Card c in MinionEnemy)
@@ -1848,6 +1874,7 @@ namespace HREngine.Bots
                 c.TempAtk = 0;
                 c.IsImmune = false;
             }
+            CleanDestroyedEOT(true);
             Update();
 
             /*  if(ActionsStack.Count == 1)
@@ -1870,6 +1897,7 @@ namespace HREngine.Bots
                  c.TempAtk = 0;
                  c.IsImmune = false;
              }*/
+            CleanDestroyedEOT(false);
             Update();
 
             /*  if(ActionsStack.Count == 1)
@@ -1895,7 +1923,6 @@ namespace HREngine.Bots
                 if (c.IsDestroyed)
                 {
                     RemoveCardFromBoard(c.Id);
-
                 }
             }
             foreach (Card c in MinionFriend.ToArray())

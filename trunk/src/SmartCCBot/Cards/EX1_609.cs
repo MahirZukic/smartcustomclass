@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_609 : Card
+    public class EX1_609 : Card
     {
-		public override Card Create()
-{ return new EX1_609();}
-public EX1_609() : base()
+        public override Card Create()
+        { return new EX1_609(); }
+        public EX1_609()
+            : base()
         {
-            
+
         }
-		
-        public EX1_609(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_609(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -27,9 +29,9 @@ public EX1_609() : base()
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
+            base.OnPlay(ref board, target, index);
             board.Secret.Add(Card.Create("EX1_609", true, Id));
 
         }
@@ -46,7 +48,7 @@ public EX1_609() : base()
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
     }
 }
