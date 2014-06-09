@@ -33,9 +33,7 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
-            if (target.CurrentHealth > 4)
-                return true;
-            return false;
+            return true;
         }
 
         public override int GetPriorityPlay(Board board)
