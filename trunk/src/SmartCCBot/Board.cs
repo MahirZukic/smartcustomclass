@@ -289,7 +289,7 @@ namespace HREngine.Bots
                             Action a = new Action(Action.ActionType.HERO_ATTACK, WeaponEnemy, Friend);
                             enemyActions.Add(a);
                         }
-                        Action ac = new Action(Action.ActionType.HERO_ATTACK, WeaponEnemy, HeroEnemy);
+                        Action ac = new Action(Action.ActionType.HERO_ATTACK, WeaponEnemy, HeroFriend);
                         enemyActions.Add(ac);
                     }
                     else
@@ -302,6 +302,8 @@ namespace HREngine.Bots
                     }
                 }
             }
+
+            Console.WriteLine("");
 
             return enemyActions;
 
