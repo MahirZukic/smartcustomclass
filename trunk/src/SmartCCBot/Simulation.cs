@@ -353,7 +353,7 @@ namespace HREngine.Bots
                         foreach (Board baa in childs)
                         {
 
-                            Board endBoard = baa;
+                            Board endBoard = Board.Clone(baa) ;
                             endBoard.EndTurn();
 
                             bestBoard.CalculateEnemyTurn();

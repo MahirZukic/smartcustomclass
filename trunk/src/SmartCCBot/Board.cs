@@ -129,13 +129,13 @@ namespace HREngine.Bots
 
                 foreach (Board baa in childs)
                 {
-                   /* Board endBoard = Board.Clone(baa);
-                    endBoard.EndEnemyTurn();*/
-                    baa.EndEnemyTurn();
+                    Board endBoard = Board.Clone(baa);
+                    endBoard.EndEnemyTurn();
+                   // baa.EndEnemyTurn();
 
                     if (worseBoard == null)
                         worseBoard = baa;
-                    if (worseBoard.GetValue() > baa.GetValue())
+                    if (worseBoard.GetValue() > endBoard.GetValue())
                     {
                         worseBoard = baa;
                     }
