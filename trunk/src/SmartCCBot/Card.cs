@@ -26,7 +26,20 @@ namespace HREngine.Bots
             if (Type == CType.MINION)
             {
                 value += ValuesInterface.ValueHealthMinion * CurrentHealth;
-                value += ValuesInterface.ValueAttackMinion * CurrentAtk;
+
+
+                int lifeCoef = 1;
+
+                if(!IsFriend)
+                {
+                    if (board.HeroFriend.CurrentHealth < 20)
+                        lifeCoef = 2;
+                    if (board.HeroFriend.CurrentHealth < 10)
+                        lifeCoef = 3;
+                }
+
+
+                value += ValuesInterface.ValueAttackMinion * CurrentAtk *lifeCoef;
 
                 if (IsTaunt && IsFriend)
                 {
