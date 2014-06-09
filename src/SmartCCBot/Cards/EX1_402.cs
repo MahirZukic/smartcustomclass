@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_402 : Card
+    public class EX1_402 : Card
     {
-		public override Card Create()
-{ return new EX1_402();}
-public EX1_402() : base()
+        public override Card Create()
+        { return new EX1_402(); }
+        public EX1_402()
+            : base()
         {
-            
+
         }
-		
-        public EX1_402(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_402(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -30,7 +32,7 @@ public EX1_402() : base()
         public override void OnHit(ref Board board, Card actor)
         {
             base.OnHit(ref board, actor);
-            if(IsFriend)
+            if (IsFriend)
             {
                 board.HeroFriend.CurrentArmor++;
 
@@ -41,7 +43,7 @@ public EX1_402() : base()
 
             }
         }
-        public override void OnOtherMinionDamage(ref Board board,Card minionDamaged)
+        public override void OnOtherMinionDamage(ref Board board, Card minionDamaged)
         {
             base.OnOtherMinionDamage(ref board, minionDamaged);
             if (IsFriend && minionDamaged.IsFriend)
@@ -56,9 +58,9 @@ public EX1_402() : base()
             }
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
+            base.OnPlay(ref board, target, index);
         }
 
         public override void OnDeath(ref Board board)
@@ -73,8 +75,8 @@ public EX1_402() : base()
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-		
+
     }
 }
