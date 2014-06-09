@@ -8,24 +8,26 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class NEW1_021 : Card
+    public class NEW1_021 : Card
     {
-		public override Card Create()
-{ return new NEW1_021();}
-public NEW1_021() : base()
+        public override Card Create()
+        { return new NEW1_021(); }
+        public NEW1_021()
+            : base()
         {
-            
+
         }
-		
-        public NEW1_021(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public NEW1_021(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void OnEndTurn(Board board)
         {
             base.OnEndTurn(board);
-            if(!IsFriend && !IsSilenced)
+            if (!IsFriend && !IsSilenced)
             {
                 board.MinionFriend.Clear();
             }
@@ -36,9 +38,9 @@ public NEW1_021() : base()
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
+            base.OnPlay(ref board, target, index);
         }
 
         public override void OnDeath(ref Board board)
@@ -53,9 +55,9 @@ public NEW1_021() : base()
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
 
-		
+
     }
 }

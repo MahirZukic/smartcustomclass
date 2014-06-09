@@ -575,6 +575,8 @@ namespace HREngine.Bots
         public bool IsEnraged { get; set; }
         public bool IsSilenced { get; set; }
         public bool IsDestroyed { get; set; }
+        public bool IsDestroyedEOT { get; set; }
+
         public bool IsImmune { get; set; }
         public bool IsStuck { get; set; }
         public bool HasFreeze { get; set; }
@@ -706,6 +708,7 @@ namespace HREngine.Bots
             ChoiceSelected = -1;
             ChoiceOneTarget = false;
             ChoiceTwoTarget = false;
+            IsDestroyedEOT = false;
             Init();
 
         }
@@ -740,6 +743,7 @@ namespace HREngine.Bots
             IsTired = false;
             IsWindfury = false;
             IsTargetable = true;
+            IsDestroyedEOT = false;
             HasEnrage = false;
             HasFreeze = false;
             HasPoison = false;
@@ -2393,6 +2397,7 @@ namespace HREngine.Bots
             //clone = (Card)Activator.CreateInstance(baseInstance.GetType());
             // clone = (Card)baseInstance.GetType().CreateInstance();
             clone.InitInstance(baseInstance.template, baseInstance.IsFriend, baseInstance.Id);
+            clone.IsDestroyedEOT = baseInstance.IsDestroyedEOT;
             clone.Behavior = baseInstance.Behavior;
             clone.IsTargetable = baseInstance.IsTargetable;
             clone.Race = baseInstance.Race;
