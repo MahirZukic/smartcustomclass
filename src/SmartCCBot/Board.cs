@@ -131,7 +131,7 @@ namespace HREngine.Bots
                 {
                     Board endBoard = Board.Clone(baa);
                     endBoard.EndEnemyTurn();
-                   // baa.EndEnemyTurn();
+                    // baa.EndEnemyTurn();
 
                     if (worseBoard == null)
                         worseBoard = baa;
@@ -310,9 +310,9 @@ namespace HREngine.Bots
         public Card GetBestMinion()
         {
             Card ret = null;
-            foreach(Card c in MinionFriend)
+            foreach (Card c in MinionFriend)
             {
-                if(ret == null)
+                if (ret == null)
                 {
                     ret = c;
                     continue;
@@ -747,11 +747,11 @@ namespace HREngine.Bots
 
             if (buffers.Count > 0)
             {
-                foreach(Card c in buffers)
+                foreach (Card c in buffers)
                 {
                     int bufferIndex = c.Index;
-                                        
-                    foreach(Card cc in MinionFriend)
+
+                    foreach (Card cc in MinionFriend)
                     {
                         if (cc.Index == bufferIndex - 1 && !cc.CanAttack)
                             return true;
@@ -1234,7 +1234,7 @@ namespace HREngine.Bots
             List<Card> castedCards = new List<Card>();
             foreach (Card c in Hand)
             {
-                if(c.Type == Card.CType.WEAPON && WeaponFriend != null)
+                if (c.Type == Card.CType.WEAPON && WeaponFriend != null)
                 {
                     if (c.CurrentAtk <= WeaponFriend.CurrentAtk && WeaponFriend.CurrentDurability > 0)
                         continue;
@@ -1295,7 +1295,8 @@ namespace HREngine.Bots
                             else
                             {
                                 a = new Action(Action.ActionType.CAST_MINION, c);
-                                availableActions.Add(a);
+                                if (c.TargetTypeOnPlay != Card.TargetType.BOTH_ENEMY)
+                                    availableActions.Add(a);
                             }
                         }
 
@@ -1414,7 +1415,7 @@ namespace HREngine.Bots
                         || c.TargetTypeOnPlay == Card.TargetType.BOTH_FRIEND || c.TargetTypeOnPlay == Card.TargetType.ALL)
                     {
                         Action a = null;
-                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 1 && c.TargetTypeOnPlay != Card.TargetType.MINION_BOTH && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
+                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 1 && c.TargetTypeOnPlay != Card.TargetType.MINION_BOTH  && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
                         {
                             if (c.HasChoices)
                             {
@@ -1428,7 +1429,8 @@ namespace HREngine.Bots
                             else
                             {
                                 a = new Action(Action.ActionType.CAST_MINION, c);
-                                availableActions.Add(a);
+                                if (c.TargetTypeOnPlay != Card.TargetType.BOTH_FRIEND)
+                                    availableActions.Add(a);
                             }
                         }
 
@@ -1832,12 +1834,12 @@ namespace HREngine.Bots
 
         public void EndTurn()
         {
-          /*  foreach (Card c in MinionEnemy)
-            {
-                c.OnEndTurn(this);
-                c.TempAtk = 0;
-                c.IsImmune = false;
-            }*/
+            /*  foreach (Card c in MinionEnemy)
+              {
+                  c.OnEndTurn(this);
+                  c.TempAtk = 0;
+                  c.IsImmune = false;
+              }*/
             foreach (Card c in MinionFriend.ToArray())
             {
                 c.OnEndTurn(this);
@@ -1854,18 +1856,18 @@ namespace HREngine.Bots
         }
         public void EndEnemyTurn()
         {
-              foreach (Card c in MinionEnemy.ToArray())
-              {
-                  c.OnEndTurn(this);
-                  c.TempAtk = 0;
-                  c.IsImmune = false;
-              }
-           /* foreach (Card c in MinionFriend)
+            foreach (Card c in MinionEnemy.ToArray())
             {
                 c.OnEndTurn(this);
                 c.TempAtk = 0;
                 c.IsImmune = false;
-            }*/
+            }
+            /* foreach (Card c in MinionFriend)
+             {
+                 c.OnEndTurn(this);
+                 c.TempAtk = 0;
+                 c.IsImmune = false;
+             }*/
             Update();
 
             /*  if(ActionsStack.Count == 1)
@@ -2142,17 +2144,17 @@ namespace HREngine.Bots
 
             ret += "Board --- " + HeroFriend.template.Name + "(" + HeroFriend.CurrentHealth.ToString() + "/" + HeroFriend.CurrentArmor.ToString() + "-" + HeroEnemy.CurrentHealth.ToString() + "/" + HeroEnemy.CurrentArmor.ToString() + ")" + HeroEnemy.template.Name + " " + Environment.NewLine;
             ret += Environment.NewLine;
-            if(WeaponEnemy != null)
+            if (WeaponEnemy != null)
                 ret += "WeaponEnemy : " + WeaponEnemy.ToString() + Environment.NewLine;
             if (WeaponFriend != null)
                 ret += "WeaponFriend : " + WeaponFriend.ToString() + Environment.NewLine;
             ret += Environment.NewLine;
 
-            if(Ability != null)
-            ret += "AbilityFriend : " + Ability.ToString() + Environment.NewLine;
+            if (Ability != null)
+                ret += "AbilityFriend : " + Ability.ToString() + Environment.NewLine;
 
-            if(EnemyAbility != null)
-            ret += "AbilityEnemy : " + EnemyAbility.ToString() + Environment.NewLine;
+            if (EnemyAbility != null)
+                ret += "AbilityEnemy : " + EnemyAbility.ToString() + Environment.NewLine;
             ret += Environment.NewLine;
 
             ret += "Mana : " + ManaAvailable.ToString() + Environment.NewLine;
@@ -2195,25 +2197,25 @@ namespace HREngine.Bots
         {
             if (list1.Count != list2.Count)
                 return false;
-/*
-            foreach (Card c1 in list1)
-            {
-                bool found = false;
-                foreach (Card c2 in list2)
-                {
-                    if (c2.Id == c1.Id)
-                    {
-                        if (!c2.Equals(c1))
+            /*
+                        foreach (Card c1 in list1)
                         {
-                            return false;
+                            bool found = false;
+                            foreach (Card c2 in list2)
+                            {
+                                if (c2.Id == c1.Id)
+                                {
+                                    if (!c2.Equals(c1))
+                                    {
+                                        return false;
+                                    }
+                                    found = true;
+                                }
+                            }
+                            if (!found)
+                                return false;
                         }
-                        found = true;
-                    }
-                }
-                if (!found)
-                    return false;
-            }
-            */
+                        */
 
             foreach (Card c1 in list1)
             {
@@ -2227,7 +2229,7 @@ namespace HREngine.Bots
                         if (c1.Index != c2.Index)
                             return false;
                     }
-                        
+
                 }
             }
 
@@ -2250,7 +2252,7 @@ namespace HREngine.Bots
             if (hp1 != hp2)
                 return false;
 
-            
+
             return true;
         }
 
@@ -2273,17 +2275,17 @@ namespace HREngine.Bots
 
             if (Hand.Count != b.Hand.Count)
                 return false;
-            
-           
+
+
             if (HeroFriend.CurrentHealth + HeroFriend.CurrentArmor != b.HeroFriend.CurrentArmor + b.HeroFriend.CurrentHealth)
                 return false;
-           
+
             if (EnemyCardDraw != b.EnemyCardDraw)
                 return false;
 
             if (Secret.Count != b.Secret.Count)
                 return false;
-            
+
             if (!ListEquals(MinionEnemy, b.MinionEnemy))
                 return false;
             /*if (GetValue() != b.GetValue())
@@ -2340,7 +2342,7 @@ namespace HREngine.Bots
                 }
             }
              * */
-          
+
 
 
 
