@@ -32,10 +32,8 @@ namespace HREngine.Bots
 
                 if(!IsFriend)
                 {
-                    if (board.HeroFriend.CurrentHealth < 20)
-                        lifeCoef = 2;
                     if (board.HeroFriend.CurrentHealth < 10)
-                        lifeCoef = 3;
+                        lifeCoef = 2;
                 }
 
 
