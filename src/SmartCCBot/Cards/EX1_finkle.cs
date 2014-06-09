@@ -10,7 +10,9 @@ namespace HREngine.Bots
     [Serializable]
 public class EX1_finkle : Card
     {
-		public EX1_finkle() : base()
+		public override Card Create()
+{ return new EX1_finkle();}
+public EX1_finkle() : base()
         {
             
         }

@@ -99,7 +99,7 @@ namespace HREngine.Bots
             List<Action> enemyActions = CalculateEnemyAvailableActions();
 
             List<Board> childss = new List<Board>();
-            childss.Add(Board.Clone(this));
+            childss.Add(this);
             Board worseBoard = null;
 
             int maxWide = 20;
@@ -129,8 +129,9 @@ namespace HREngine.Bots
 
                 foreach (Board baa in childs)
                 {
-                    Board endBoard = Board.Clone(baa);
-                    endBoard.EndEnemyTurn();
+                   /* Board endBoard = Board.Clone(baa);
+                    endBoard.EndEnemyTurn();*/
+                    baa.EndEnemyTurn();
 
                     if (worseBoard == null)
                         worseBoard = baa;
@@ -2259,21 +2260,32 @@ namespace HREngine.Bots
                 return false;
             if (FriendCardDraw != b.FriendCardDraw)
                 return false;
-            if (EnemyCardDraw != b.EnemyCardDraw)
+            if (MinionFriend.Count != b.MinionFriend.Count)
                 return false;
-            if (Hand.Count != b.Hand.Count)
+
+            if (HeroEnemy.CurrentHealth + HeroEnemy.CurrentArmor != b.HeroEnemy.CurrentArmor + b.HeroEnemy.CurrentHealth)
                 return false;
             if (MinionEnemy.Count != b.MinionEnemy.Count)
                 return false;
-            if (MinionFriend.Count != b.MinionFriend.Count)
-                return false;
-            if (Secret.Count != b.Secret.Count)
-                return false;
-            if (HeroEnemy.CurrentHealth + HeroEnemy.CurrentArmor != b.HeroEnemy.CurrentArmor + b.HeroEnemy.CurrentHealth)
-                return false;
-            if (HeroFriend.CurrentHealth + HeroFriend.CurrentArmor != b.HeroFriend.CurrentArmor + b.HeroFriend.CurrentHealth)
+
+            if (!ListEquals(MinionFriend, b.MinionFriend))
                 return false;
 
+            if (Hand.Count != b.Hand.Count)
+                return false;
+            
+           
+            if (HeroFriend.CurrentHealth + HeroFriend.CurrentArmor != b.HeroFriend.CurrentArmor + b.HeroFriend.CurrentHealth)
+                return false;
+           
+            if (EnemyCardDraw != b.EnemyCardDraw)
+                return false;
+
+            if (Secret.Count != b.Secret.Count)
+                return false;
+            
+            if (!ListEquals(MinionEnemy, b.MinionEnemy))
+                return false;
             /*if (GetValue() != b.GetValue())
                 return false;
             */
@@ -2328,10 +2340,7 @@ namespace HREngine.Bots
                 }
             }
              * */
-            if (!ListEquals(MinionEnemy, b.MinionEnemy))
-                return false;
-            if (!ListEquals(MinionFriend, b.MinionFriend))
-                return false;
+          
 
 
 

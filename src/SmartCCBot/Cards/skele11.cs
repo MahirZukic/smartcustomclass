@@ -10,7 +10,9 @@ namespace HREngine.Bots
     [Serializable]
 public class skele11 : Card
     {
-		public skele11() : base()
+		public override Card Create()
+{ return new skele11();}
+public skele11() : base()
         {
             
         }

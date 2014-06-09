@@ -10,7 +10,9 @@ namespace HREngine.Bots
     [Serializable]
 public class DREAM_05 : Card
     {
-		public DREAM_05() : base()
+		public override Card Create()
+{ return new DREAM_05();}
+public DREAM_05() : base()
         {
             
         }

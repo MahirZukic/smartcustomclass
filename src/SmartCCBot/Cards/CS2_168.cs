@@ -10,7 +10,9 @@ namespace HREngine.Bots
     [Serializable]
 public class CS2_168 : Card
     {
-		public CS2_168() : base()
+		public override Card Create()
+{ return new CS2_168();}
+public CS2_168() : base()
         {
             
         }

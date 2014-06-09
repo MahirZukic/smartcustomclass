@@ -10,7 +10,9 @@ namespace HREngine.Bots
     [Serializable]
 public class Mekka3 : Card
     {
-		public Mekka3() : base()
+		public override Card Create()
+{ return new Mekka3();}
+public Mekka3() : base()
         {
             
         }

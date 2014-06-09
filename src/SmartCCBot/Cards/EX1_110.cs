@@ -10,7 +10,9 @@ namespace HREngine.Bots
     [Serializable]
 public class EX1_110 : Card
     {
-		public EX1_110() : base()
+		public override Card Create()
+{ return new EX1_110();}
+public EX1_110() : base()
         {
             
         }

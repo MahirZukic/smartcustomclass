@@ -10,7 +10,9 @@ namespace HREngine.Bots
     [Serializable]
 public class CS2_mirror : Card
     {
-		public CS2_mirror() : base()
+		public override Card Create()
+{ return new CS2_mirror();}
+public CS2_mirror() : base()
         {
             
         }
