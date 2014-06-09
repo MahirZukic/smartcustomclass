@@ -303,8 +303,6 @@ namespace HREngine.Bots
                 }
             }
 
-            Console.WriteLine("");
-
             return enemyActions;
 
         }
@@ -1830,6 +1828,8 @@ namespace HREngine.Bots
 
             }
             */
+
+            //Console.WriteLine("");
 
             return availableActions;
         }
