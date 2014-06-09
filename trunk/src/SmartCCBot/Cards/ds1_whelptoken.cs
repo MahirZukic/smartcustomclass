@@ -10,7 +10,9 @@ namespace HREngine.Bots
     [Serializable]
 public class ds1_whelptoken : Card
     {
-		public ds1_whelptoken() : base()
+		public override Card Create()
+{ return new ds1_whelptoken();}
+public ds1_whelptoken() : base()
         {
             
         }

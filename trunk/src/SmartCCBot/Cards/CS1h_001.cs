@@ -8,16 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class CS1h_001 : Card
+    public class CS1h_001 : Card
     {
-		public CS1h_001() : base()
+        public override Card Create()
+        { return new CS1h_001(); }
+        public CS1h_001()
+            : base()
         {
-            
+
         }
-		
-        public CS1h_001(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public CS1h_001(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -26,11 +30,11 @@ public class CS1h_001 : Card
             TargetTypeOnPlay = TargetType.ALL;
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
+            base.OnPlay(ref board, target, index);
 
-            if(IsFriend)
+            if (IsFriend)
             {
                 if (target != null)
                 {
@@ -44,7 +48,7 @@ public class CS1h_001 : Card
                     target.Heal(2 * board.EnemyHealFactor, ref board);
                 }
             }
-            
+
         }
 
         public override void OnDeath(ref Board board)
@@ -59,10 +63,10 @@ public class CS1h_001 : Card
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-		
-	
-		
+
+
+
     }
 }

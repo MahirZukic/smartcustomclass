@@ -10,7 +10,9 @@ namespace HREngine.Bots
     [Serializable]
 public class hexfrog : Card
     {
-		public hexfrog() : base()
+		public override Card Create()
+{ return new hexfrog();}
+public hexfrog() : base()
         {
             
         }
