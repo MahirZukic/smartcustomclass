@@ -26,11 +26,12 @@ namespace HREngine.Bots
 
         public override void OnEndTurn(Board board)
         {
-            base.OnEndTurn(board);
             if (!IsFriend && !IsSilenced)
             {
                 board.MinionFriend.Clear();
             }
+            base.OnEndTurn(board);
+          
         }
 
         public override void Init()
