@@ -90,6 +90,8 @@ namespace HREngine.Bots
 
             value -= SpellCastCost;
 
+            value += Hand.Count * 1;
+
             Value = value;
             return value;
         }
@@ -1415,7 +1417,7 @@ namespace HREngine.Bots
                         || c.TargetTypeOnPlay == Card.TargetType.BOTH_FRIEND || c.TargetTypeOnPlay == Card.TargetType.ALL)
                     {
                         Action a = null;
-                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 1 && c.TargetTypeOnPlay != Card.TargetType.MINION_BOTH  && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
+                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 1 && c.TargetTypeOnPlay != Card.TargetType.MINION_BOTH && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
                         {
                             if (c.HasChoices)
                             {
@@ -1836,7 +1838,7 @@ namespace HREngine.Bots
 
         public void CleanDestroyedEOT(bool friends)
         {
-            if(friends)
+            if (friends)
             {
                 foreach (Card c in MinionFriend.ToArray())
                 {
@@ -1856,8 +1858,8 @@ namespace HREngine.Bots
                     }
                 }
             }
-          
-          
+
+
         }
 
         public void EndTurn()
@@ -1912,6 +1914,14 @@ namespace HREngine.Bots
                 return;
 
             EnemyTurnWorseBoard = CalculateEnemyTurnValue();
+            if (EnemyTurnWorseBoard == null)
+            {
+                EnemyTurnWorseBoard = Board.Clone(this);
+
+                EnemyTurnWorseBoard.EndEnemyTurn();
+            }
+
+
             EnemyTurnCalculated = true;
         }
 
