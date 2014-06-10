@@ -134,10 +134,10 @@ namespace HREngine.Bots
                     // baa.EndEnemyTurn();
 
                     if (worseBoard == null)
-                        worseBoard = baa;
+                        worseBoard = endBoard;
                     if (worseBoard.GetValue() > endBoard.GetValue())
                     {
-                        worseBoard = baa;
+                        worseBoard = endBoard;
                     }
                 }
                 childss = childs;
