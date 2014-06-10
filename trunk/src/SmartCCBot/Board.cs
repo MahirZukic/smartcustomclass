@@ -107,7 +107,7 @@ namespace HREngine.Bots
 
             value -= SpellCastCost;
 
-            //value += Hand.Count * 1;
+            value += Hand.Count * 1;
 
             Value = value;
             return value;
