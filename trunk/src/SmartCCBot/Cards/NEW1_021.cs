@@ -29,6 +29,7 @@ namespace HREngine.Bots
             if (!IsFriend && !IsSilenced)
             {
                 board.MinionFriend.Clear();
+                board.MinionEnemy.Clear();
             }
             base.OnEndTurn(board);
           

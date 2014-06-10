@@ -60,7 +60,7 @@ namespace HREngine.Bots
             }
 
             FriendValue = ((HeroFriend.CurrentHealth * ValuesInterface.ValueHealthFriend) + HeroFriend.CurrentArmor * ValuesInterface.ValueArmorFriend);
-            value += FriendValue;
+            value += (int)((float)FriendValue * (float)((float)HeroFriend.CurrentHealth + (float)HeroFriend.CurrentArmor) / (float)HeroFriend.MaxHealth + (float)HeroFriend.CurrentArmor );
 
             value += FriendCardDraw * ValuesInterface.ValueFriendCardDraw;
             value -= EnemyCardDraw * ValuesInterface.ValueEnemyCardDraw;
