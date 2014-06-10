@@ -262,9 +262,9 @@
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(6, 67);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(86, 13);
+            this.label28.Size = new System.Drawing.Size(83, 13);
             this.label28.TabIndex = 11;
-            this.label28.Text = "Remote revision:";
+            this.label28.Text = "Current revision:";
             // 
             // groupBox6
             // 
@@ -333,28 +333,29 @@
             this.tabSettings.Size = new System.Drawing.Size(637, 431);
             this.tabSettings.TabIndex = 1;
             this.tabSettings.Text = "Settings";
+            this.tabSettings.Click += new System.EventHandler(this.tabSettings_Click);
             this.tabSettings.Enter += new System.EventHandler(this.tabSettings_Enter);
             this.tabSettings.Leave += new System.EventHandler(this.tabSettings_Leave);
             // 
             // btnExportSettings
             // 
-            this.btnExportSettings.Enabled = false;
             this.btnExportSettings.Location = new System.Drawing.Point(127, 395);
             this.btnExportSettings.Name = "btnExportSettings";
             this.btnExportSettings.Size = new System.Drawing.Size(133, 23);
             this.btnExportSettings.TabIndex = 7;
             this.btnExportSettings.Text = "Export settings";
             this.btnExportSettings.UseVisualStyleBackColor = true;
+            this.btnExportSettings.Click += new System.EventHandler(this.btnExportSettings_Click);
             // 
             // btnImportSettings
             // 
-            this.btnImportSettings.Enabled = false;
             this.btnImportSettings.Location = new System.Drawing.Point(7, 395);
             this.btnImportSettings.Name = "btnImportSettings";
             this.btnImportSettings.Size = new System.Drawing.Size(114, 23);
             this.btnImportSettings.TabIndex = 6;
             this.btnImportSettings.Text = "Import settings";
             this.btnImportSettings.UseVisualStyleBackColor = true;
+            this.btnImportSettings.Click += new System.EventHandler(this.btnImportSettings_Click);
             // 
             // groupBox5
             // 
@@ -488,9 +489,9 @@
             this.cmbSearchLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSearchLevel.FormattingEnabled = true;
             this.cmbSearchLevel.Items.AddRange(new object[] {
-            "slow",
+            "low",
             "medium",
-            "fast"});
+            "high"});
             this.cmbSearchLevel.Location = new System.Drawing.Point(170, 19);
             this.cmbSearchLevel.Name = "cmbSearchLevel";
             this.cmbSearchLevel.Size = new System.Drawing.Size(121, 21);
