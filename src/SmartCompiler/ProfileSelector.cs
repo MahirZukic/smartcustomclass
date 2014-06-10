@@ -15,6 +15,7 @@ namespace SmartCompiler
     public partial class ProfileSelector : Form
     {
         private string BotDirectory;
+        private int timer;
         public ProfileSelector(string directory)
         {
             InitializeComponent();
@@ -31,11 +32,11 @@ namespace SmartCompiler
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void CompileProfile()
         {
             if (comboBoxProfiles.Text != "")
             {
-                using (CodeCompiler compiler = new CodeCompiler(BotDirectory + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Profiles" + Path.DirectorySeparatorChar + "" + comboBoxProfiles.SelectedItem.ToString() +  Path.DirectorySeparatorChar , BotDirectory))
+                using (CodeCompiler compiler = new CodeCompiler(BotDirectory + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Profiles" + Path.DirectorySeparatorChar + "" + comboBoxProfiles.SelectedItem.ToString() + Path.DirectorySeparatorChar, BotDirectory))
                 {
                     if (compiler.Compile())
                     {
@@ -53,7 +54,32 @@ namespace SmartCompiler
             {
                 MessageBox.Show("Error: you didn't select a profile from the list", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            CompileProfile();
+        }
+
+        private void ProfileSelector_Shown(object sender, EventArgs e)
+        {
+            timer1.Interval = 100;
+            timer1.Start();
+
+            comboBoxProfiles.SelectedIndex = 0;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer += timer1.Interval;
+            string text = "GO \n";
+            btnGO.Text = text + "(" + (10 - (float)timer/1000.0f).ToString() + ")";
+
+            if(timer >= 10000)
+            {
+                CompileProfile();
+            }
         }
 
     }
