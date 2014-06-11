@@ -35,7 +35,13 @@ public EX1_007() : base()
         public override void OnHit(ref Board board, Card actor)
         {
             base.OnHit(ref board, actor);
-            if(IsFriend)
+            
+        }
+
+        public override void OnDamage(ref Board board)
+        {
+            base.OnDamage(ref board);
+            if (IsFriend)
             {
                 board.FriendCardDraw++;
 

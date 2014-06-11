@@ -18,6 +18,8 @@ namespace HREngine.Bots
         public List<Card> Secret { get; set; }
         public bool SecretEnemy { get; set; }
         public int ManaAvailable { get; set; }
+        public int MaxMana { get; set; }
+
         public Card Ability { get; set; }
         public Card EnemyAbility { get; set; }
 
@@ -108,6 +110,8 @@ namespace HREngine.Bots
             value -= SpellCastCost;
 
             value += Hand.Count * 1;
+
+            value += MaxMana * 8;
 
             Value = value;
             return value;
@@ -426,6 +430,7 @@ namespace HREngine.Bots
             Secret = new List<Card>();
             SecretEnemy = false;
             ManaAvailable = 0;
+            MaxMana = 0;
             ActionsStack = new List<Action>();
             HealFactor = 1;
             EnemyHealFactor = 1;
@@ -2119,6 +2124,7 @@ namespace HREngine.Bots
             Board newBoard = new Board();
             newBoard.TurnCount = baseInstance.TurnCount;
             newBoard.SpellCastCost = baseInstance.SpellCastCost;
+            newBoard.MaxMana = baseInstance.MaxMana;
             foreach (Card c in baseInstance.Hand)
             {
                 newBoard.Hand.Add(Card.Clone(c));
