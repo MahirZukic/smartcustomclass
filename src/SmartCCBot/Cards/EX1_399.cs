@@ -34,9 +34,9 @@ namespace HREngine.Bots
             base.OnHit(ref board, actor);
         }
 
-        public override void OnDamage()
+        public override void OnDamage(ref Board board)
         {
-            base.OnDamage();
+            base.OnDamage(ref board);
             if (!IsSilenced)
                 currentAtk += 3;
 

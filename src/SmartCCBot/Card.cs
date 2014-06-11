@@ -65,12 +65,12 @@ namespace HREngine.Bots
 
         }
 
-        public virtual void OnDamage()
+        public virtual void OnDamage(ref Board board)
         {
 
         }
 
-        public virtual void OnHeal()
+        public virtual void OnHeal(ref Board board)
         {
 
         }
@@ -261,7 +261,7 @@ namespace HREngine.Bots
 
 
 
-            OnDamage();
+            OnDamage(ref board);
 
             if (actor.HasFreeze)
                 IsFrozen = true;
@@ -321,7 +321,7 @@ namespace HREngine.Bots
                 return;
             }
 
-            OnHeal();
+            OnHeal(ref board);
 
             if (this.Type == CType.MINION)
             {
@@ -380,7 +380,7 @@ namespace HREngine.Bots
             }
 
 
-            OnDamage();
+            OnDamage(ref board);
             if (IsDivineShield && amount > 0)
             {
                 IsDivineShield = false;

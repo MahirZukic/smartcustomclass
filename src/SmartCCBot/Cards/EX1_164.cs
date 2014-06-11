@@ -33,7 +33,7 @@ public EX1_164() : base()
             base.OnPlay(ref board, target,index);
             if(choice == 1)
             {
-
+                board.MaxMana += 2;
             }
             else if(choice == 2)
             {
