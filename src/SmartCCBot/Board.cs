@@ -111,7 +111,7 @@ namespace HREngine.Bots
 
             value += Hand.Count * 1;
 
-            value += MaxMana * 8;
+            value += MaxMana * ValuesInterface.ValueMana;
 
             Value = value;
             return value;

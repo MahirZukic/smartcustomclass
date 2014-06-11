@@ -18,6 +18,8 @@ namespace HREngine.Bots
         public static int ValueEnemyMinionCount { get; set; }
         public static int ValueFriendMinionCount { get; set; }
         public static int ValueFriendCardDraw { get; set; }
+        public static int ValueMana { get; set; }
+
 
         //Cards
         public static int ValueDurabilityWeapon { get; set; }
@@ -104,6 +106,10 @@ namespace HREngine.Bots
                 if (line.Contains("ValueFrozen"))
                 {
                     ValueFrozen = int.Parse(line.Split('=')[1]);
+                }
+                if (line.Contains("ValueMana"))
+                {
+                    ValueMana = int.Parse(line.Split('=')[1]);
                 }
             }
 
