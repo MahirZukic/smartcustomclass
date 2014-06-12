@@ -18,21 +18,22 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-			int PlayableMinionInHand = 0;
+			bool PlayableMinionInHand = false;
 			foreach(Card c in board.Hand)
 			{
-				if(c.Behavior == this)
+				if(c.template.Id == "EX1_310")
 				{
 					continue;
 				}
 					
 				if(c.CurrentCost <= board.ManaAvailable && c.Type == Card.CType.MINION)
 				{
-                    PlayableMinionInHand++;
+					PlayableMinionInHand = true;
+					break;
 				}
 			}
 			
-			if(PlayableMinionInHand  > 2 && board.Hand.Count < 4 && board.HeroEnemy.CurrentHealth > 10)
+			if(PlayableMinionInHand && board.Hand.Count < 4)
 			{
 				return false;
 			}
