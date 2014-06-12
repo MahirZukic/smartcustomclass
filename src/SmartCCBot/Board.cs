@@ -933,7 +933,7 @@ namespace HREngine.Bots
                     comboAction.Add(a);
             }
 
-            return (comboAction.Count > 0);
+            return (comboAction.Count > 1);
         }
 
 
@@ -941,6 +941,7 @@ namespace HREngine.Bots
         {
             Board child = Board.Clone(this);
             child.Update();
+            child.ActionsStack.Add(a);
 
             switch (a.Type)
             {
@@ -1017,7 +1018,6 @@ namespace HREngine.Bots
                         a.Actor.OnPlay(ref child, null);
                     break;
             }
-            child.ActionsStack.Add(a);
 
             child.Update();
             return child;
