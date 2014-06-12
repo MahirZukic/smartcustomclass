@@ -21,7 +21,7 @@ namespace HREngine.Bots
 			bool PlayableMinionInHand = false;
 			foreach(Card c in board.Hand)
 			{
-				if(c.Behavior == this)
+				if(c.template.Id == "EX1_310")
 				{
 					continue;
 				}
