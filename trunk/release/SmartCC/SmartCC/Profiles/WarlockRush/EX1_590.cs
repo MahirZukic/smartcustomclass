@@ -18,6 +18,19 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			int nbShieldsOnBoard = 0;
+			foreach(Card c in board.MinionFriend)
+			{
+				if(c.IsDivineShield)
+					nbShieldsOnBoard++;
+			}
+			foreach(Card c in board.MinionEnemy)
+			{
+				if(c.IsDivineShield)
+					nbShieldsOnBoard++;
+			}
+			if(board.TurnCount < 4 && nbShieldsOnBoard == 0 && board.Hand.Count > 3)
+				return false;
             return true;
         }
 
