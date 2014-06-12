@@ -8,32 +8,34 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_133 : Card
+    public class EX1_133 : Card
     {
-		public override Card Create()
-{ return new EX1_133();}
-public EX1_133() : base()
+        public override Card Create()
+        { return new EX1_133(); }
+        public EX1_133()
+            : base()
         {
-            
+
         }
-		
-        public EX1_133(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_133(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
         {
             base.Init();
-            TargetTypeOnPlay = TargetType.ALL;
+            TargetTypeOnPlay = TargetType.BOTH_ENEMY;
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
-            if(target != null)
+            base.OnPlay(ref board, target, index);
+            if (target != null)
             {
-                if(board.IsCombo())
+                if (board.IsCombo())
                 {
                     target.Damage(2, ref board);
                 }
@@ -42,6 +44,7 @@ public EX1_133() : base()
                     target.Damage(1, ref board);
                 }
             }
+            board.ReplaceWeapon("EX1_133");
         }
 
         public override void OnDeath(ref Board board)
@@ -56,8 +59,8 @@ public EX1_133() : base()
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-				
+
     }
 }

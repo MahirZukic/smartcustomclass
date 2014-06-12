@@ -18,6 +18,8 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.TurnCount > 3)
+				return true;
             foreach(Card c in board.Hand)
             {
                 if (c.CurrentCost == board.ManaAvailable + 1)
