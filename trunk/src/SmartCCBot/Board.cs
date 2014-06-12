@@ -923,14 +923,23 @@ namespace HREngine.Bots
         }
         public bool IsCombo()
         {
-            return (ActionsStack.Count > 1);
+            List<Action> comboAction = new List<Action>();
+
+            foreach(Action a in ActionsStack)
+            {
+                if (a.Type == Action.ActionType.CAST_MINION ||
+                    a.Type == Action.ActionType.CAST_SPELL ||
+                    a.Type == Action.ActionType.CAST_WEAPON)
+                    comboAction.Add(a);
+            }
+
+            return (comboAction.Count > 0);
         }
 
 
         public Board ExecuteAction(Action a)
         {
             Board child = Board.Clone(this);
-            child.ActionsStack.Add(a);
             child.Update();
 
             switch (a.Type)
@@ -1008,6 +1017,7 @@ namespace HREngine.Bots
                         a.Actor.OnPlay(ref child, null);
                     break;
             }
+            child.ActionsStack.Add(a);
 
             child.Update();
             return child;
