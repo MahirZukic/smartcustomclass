@@ -22,7 +22,7 @@ public CS2_235() : base()
             
         }
 
-        public override int GetValue(Board board)
+        public override float GetValue(Board board)
         {
             if (!IsFriend)
             {

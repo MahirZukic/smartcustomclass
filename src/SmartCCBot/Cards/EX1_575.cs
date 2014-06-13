@@ -22,7 +22,7 @@ public EX1_575() : base()
             
         }
 
-        public override int GetValue(Board board)
+        public override float GetValue(Board board)
         {
             if(!IsFriend)
             {

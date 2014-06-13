@@ -27,7 +27,7 @@ public CS2_237() : base()
             base.Init();
         }
 
-        public override int GetValue(Board board)
+        public override float GetValue(Board board)
         {
             return base.GetValue(board) + 5;
         }

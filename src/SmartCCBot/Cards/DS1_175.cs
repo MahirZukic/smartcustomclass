@@ -62,7 +62,7 @@ public DS1_175()
             base.Init();
         }
 
-        public override int GetValue(Board board)
+        public override float GetValue(Board board)
         {
             return base.GetValue(board) + 5;
         }
