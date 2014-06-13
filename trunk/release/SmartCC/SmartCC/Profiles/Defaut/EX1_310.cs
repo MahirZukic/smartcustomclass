@@ -26,7 +26,7 @@ namespace HREngine.Bots
 			if(sum + 5 >= board.HeroEnemy.CurrentHealth)
 				return true;
 				
-			int PlayableMinionInHand = 0;
+			int PlayableInHand = 0;
 			foreach(Card c in board.Hand)
 			{
 				if(c.template.Id == "EX1_310")
@@ -34,14 +34,26 @@ namespace HREngine.Bots
 					continue;
 				}
 					
-				if(c.CurrentCost <= board.ManaAvailable && c.Type == Card.CType.MINION)
+				if(c.CurrentCost <= board.ManaAvailable && c.Type == Card.CType.MINION || c.Type == Card.CType.SPELL)
 				{
-					PlayableMinionInHand++;
-					break;
+					if(c.Type == Card.CType.SPELL)
+					{
+						foreach(Card cc in board.MinionEnemy)
+						{
+							if(c.Behavior.ShouldBePlayedOnTarget(cc))
+							{
+								PlayableInHand++;
+							}
+						}
+					}
+					else
+					{
+						PlayableInHand++;
+					}
 				}
 			}
 			
-			if(PlayableMinionInHand > 2 && board.Hand.Count < 4)
+			if(PlayableInHand > 1)
 			{
 				return false;
 			}

@@ -2272,41 +2272,6 @@ namespace HREngine.Bots
         {
             if (list1.Count != list2.Count)
                 return false;
-            /*
-                        foreach (Card c1 in list1)
-                        {
-                            bool found = false;
-                            foreach (Card c2 in list2)
-                            {
-                                if (c2.Id == c1.Id)
-                                {
-                                    if (!c2.Equals(c1))
-                                    {
-                                        return false;
-                                    }
-                                    found = true;
-                                }
-                            }
-                            if (!found)
-                                return false;
-                        }
-                        */
-
-            foreach (Card c1 in list1)
-            {
-                foreach (Card c2 in list2)
-                {
-                    if (c1.Id == c2.Id)
-                    {
-                        if (c1.CountAttack != c2.CountAttack)
-                            return false;
-
-                        if (c1.Index != c2.Index)
-                            return false;
-                    }
-
-                }
-            }
 
             int dam1 = 0;
             int hp1 = 0;
@@ -2326,6 +2291,20 @@ namespace HREngine.Bots
                 return false;
             if (hp1 != hp2)
                 return false;
+
+            foreach (Card c1 in list1)
+            {
+                foreach (Card c2 in list2)
+                {
+                    if (c1.Id == c2.Id)
+                    {
+                        if (!c1.IsSimilar(c2))
+                            return false;
+                           
+                    }
+                }
+            }
+
 
 
             return true;
