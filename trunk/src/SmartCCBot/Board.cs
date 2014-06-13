@@ -90,11 +90,11 @@ namespace HREngine.Bots
 
             if (WeaponFriend != null)
             {
-                if(MinionEnemy.Count != 0)
-                value += WeaponFriend.GetValue(this);
+                if (MinionEnemy.Count != 0)
+                    value += WeaponFriend.GetValue(this);
                 else
                 {
-                    if(WeaponFriend.CurrentAtk < 2)
+                    if (WeaponFriend.CurrentAtk < 2)
                         value += WeaponFriend.GetValue(this) * 0.5f;
                     else
                     {
@@ -1952,9 +1952,7 @@ namespace HREngine.Bots
             EnemyTurnWorseBoard = CalculateEnemyTurnValue();
             if (EnemyTurnWorseBoard == null)
             {
-                EnemyTurnWorseBoard = Board.Clone(this);
-
-                EnemyTurnWorseBoard.EndEnemyTurn();
+                EndEnemyTurn();
             }
 
 
