@@ -31,6 +31,18 @@ namespace HREngine.Bots
 			}
 			if(board.TurnCount < 4 && nbShieldsOnBoard == 0 && board.Hand.Count > 3)
 				return false;
+				
+			foreach(Card c in board.Hand)
+			{
+				if(c.IsDivineShield)
+				{
+					if(c.CurrentCost + 3 >= board.ManaAvailable)
+					{
+						return false;
+					}
+				}
+			}		
+				
             return true;
         }
 
