@@ -20,9 +20,9 @@ namespace HREngine.Bots
 
         public Behavior Behavior { get; set; }
 
-        public virtual int GetValue(Board board)
+        public virtual float GetValue(Board board)
         {
-            int value = 0;
+            float value = 0;
             if (Type == CType.MINION)
             {
                 value += ValuesInterface.ValueHealthMinion * CurrentHealth;
@@ -49,7 +49,6 @@ namespace HREngine.Bots
             {
                 value += (ValuesInterface.ValueAttackWeapon * CurrentAtk) /** (ValuesInterface.ValueDurabilityWeapon * CurrentDurability)*/;
                 value += ValuesInterface.ValueDurabilityWeapon * CurrentDurability;
-
             }
 
             return value;

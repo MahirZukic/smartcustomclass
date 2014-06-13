@@ -38,13 +38,13 @@ namespace HREngine.Bots
         static int lastIdGen = 10000;
 
 
-        private int Value = 0;
+        private float Value = 0;
         private int FriendValue = 0;
         private int EnemyValue = 0;
 
-        public int GetValue()
+        public float GetValue()
         {
-            int value = 0;
+            float value = 0;
 
             foreach (Card c in MinionEnemy)
             {
@@ -90,7 +90,18 @@ namespace HREngine.Bots
 
             if (WeaponFriend != null)
             {
+                if(MinionEnemy.Count != 0)
                 value += WeaponFriend.GetValue(this);
+                else
+                {
+                    if(WeaponFriend.CurrentAtk < 2)
+                        value += WeaponFriend.GetValue(this) * 0.5f;
+                    else
+                    {
+                        value += WeaponFriend.GetValue(this);
+                    }
+
+                }
             }
 
 

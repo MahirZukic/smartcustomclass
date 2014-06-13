@@ -28,7 +28,7 @@ public EX1_310() : base()
             IsCharge = true;
         }
 
-        public override int GetValue(Board board)
+        public override float GetValue(Board board)
         {
             return base.GetValue(board) + 6;
         }

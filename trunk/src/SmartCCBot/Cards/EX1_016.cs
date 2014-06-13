@@ -29,7 +29,7 @@ public EX1_016()
             base.Init();
         }
 
-        public override int GetValue(Board board)
+        public override float GetValue(Board board)
         {
             if(!IsFriend)
             {
