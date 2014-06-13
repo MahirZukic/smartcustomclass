@@ -12,6 +12,6 @@ ValueHealthMinion=2
 ValueAttackMinion=3
 ValueTaunt=2
 ValueDivineShield=4
-ValueAttackWeapon=1
+ValueAttackWeapon=2
 ValueFrozen=3
 ValueMana=15
