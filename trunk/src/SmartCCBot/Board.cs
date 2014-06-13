@@ -184,6 +184,7 @@ namespace HREngine.Bots
 
         public List<Action> CalculateEnemyAvailableActions()
         {
+            Update();
             List<Action> enemyActions = new List<Action>();
 
             if (EnemyAbility != null)
@@ -1029,6 +1030,7 @@ namespace HREngine.Bots
 
         public List<Action> CalculateAvailableActions()
         {
+            Update();
             List<Action> availableActions = new List<Action>();
             bool HasLethal = false;
 
