@@ -30,7 +30,7 @@ public EX1_131() : base()
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);
-            if(board.IsCombo())
+            if(board.IsCombo)
             {
                 board.AddCardToBoard("EX1_131t", IsFriend);
 

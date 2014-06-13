@@ -23,6 +23,7 @@ namespace HREngine.Bots
 
         public Card ChoiceTarget { get; set; }
 
+        public bool IsCombo { get; set; }
 
 
         private string CurrentFolder { get; set; }
@@ -32,6 +33,7 @@ namespace HREngine.Bots
             if (ActionStack.Count == 0 && !NeedCalculation)
             {
                 NeedCalculation = true;
+                IsCombo = false;
                 return new Action(Action.ActionType.END_TURN, null);
             }
 

@@ -35,7 +35,7 @@ namespace HREngine.Bots
             base.OnPlay(ref board, target, index);
             if (target != null)
             {
-                if (board.IsCombo())
+                if (board.IsCombo)
                     target.Damage(2, ref board);
             }
         }

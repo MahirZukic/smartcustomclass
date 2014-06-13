@@ -8,11 +8,11 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class CS2_073 : Card
+    public class CS2_073 : Card
     {
         public override Card Create()
-{ return new CS2_073();}
-public CS2_073()
+        { return new CS2_073(); }
+        public CS2_073()
             : base()
         {
 
@@ -30,13 +30,13 @@ public CS2_073()
             TargetTypeOnPlay = TargetType.MINION_FRIEND;
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
             base.OnPlay(ref board, target, index);
 
             if (target != null)
             {
-                if (board.IsCombo())
+                if (board.IsCombo)
                 {
                     target.currentAtk += 4;
                 }
