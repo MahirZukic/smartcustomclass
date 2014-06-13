@@ -48,8 +48,8 @@ namespace HREngine.Bots
             else if (Type == CType.WEAPON)
             {
                 value += (ValuesInterface.ValueAttackWeapon * CurrentAtk) /** (ValuesInterface.ValueDurabilityWeapon * CurrentDurability)*/;
-                if (CurrentAtk > 1)
-                    value += ValuesInterface.ValueDurabilityWeapon * CurrentDurability;
+                value += ValuesInterface.ValueDurabilityWeapon * CurrentDurability;
+
             }
 
             return value;
