@@ -436,6 +436,7 @@ namespace HREngine.Bots
             EnemyHealFactor = 1;
             TurnCount = 1;
             SpellCastCost = 0;
+            IsCombo = false;
         }
 
         public bool PlayCardFromHand(int id)
@@ -1110,7 +1111,7 @@ namespace HREngine.Bots
 
             if (WeaponFriend != null)
             {
-                if (WeaponFriend.CurrentDurability > 0 && WeaponFriend.CanAttack && !HeroFriend.IsFrozen && ProfileInterface.Behavior.ShouldAttackWithWeapon(this))
+                if (WeaponFriend.CurrentDurability > 0 && WeaponFriend.CanAttack && HeroFriend.CanAttackWithWeapon && ProfileInterface.Behavior.ShouldAttackWithWeapon(this))
                 {
                     if (taunts.Count == 0)
                     {
@@ -2127,6 +2128,7 @@ namespace HREngine.Bots
             newBoard.TurnCount = baseInstance.TurnCount;
             newBoard.SpellCastCost = baseInstance.SpellCastCost;
             newBoard.MaxMana = baseInstance.MaxMana;
+            newBoard.IsCombo = baseInstance.IsCombo;
             foreach (Card c in baseInstance.Hand)
             {
                 newBoard.Hand.Add(Card.Clone(c));

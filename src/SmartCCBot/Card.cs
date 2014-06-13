@@ -176,7 +176,16 @@ namespace HREngine.Bots
 
         public virtual void OnWeaponDeath(ref Board board)
         {
-            board.WeaponEnemy = null;
+            if(IsFriend)
+            {
+                board.WeaponFriend = null;
+
+            }
+            else
+            {
+                board.WeaponEnemy = null;
+
+            }
         }
 
         public virtual void OnAttack(ref Board board, Card target)
@@ -210,7 +219,7 @@ namespace HREngine.Bots
                     tar.OnHit(ref board, board.HeroFriend);
                     // tar.OnHit(ref board, me);
                     if (me.CurrentDurability < 1)
-                        OnWeaponDeath(ref board);
+                        me.OnWeaponDeath(ref board);
                 }
                 else
                 {
@@ -585,6 +594,21 @@ namespace HREngine.Bots
                     return false;
                 if (CurrentAtk < 1)
                     return false;
+                if (IsFrozen)
+                    return false;
+                if (CountAttack > 0 && !IsWindfury)
+                    return false;
+                if (CountAttack > 1 && IsWindfury)
+                    return false;
+
+                return true;
+            }
+        }
+
+        public bool CanAttackWithWeapon
+        {
+            get
+            {
                 if (IsFrozen)
                     return false;
                 if (CountAttack > 0 && !IsWindfury)
