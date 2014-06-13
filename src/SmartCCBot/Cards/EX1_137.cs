@@ -8,31 +8,33 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_137 : Card
+    public class EX1_137 : Card
     {
-		public override Card Create()
-{ return new EX1_137();}
-public EX1_137() : base()
+        public override Card Create()
+        { return new EX1_137(); }
+        public EX1_137()
+            : base()
         {
-            
+
         }
-		
-        public EX1_137(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_137(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
         {
             base.Init();
-            
+
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
-            board.HeroEnemy.Damage(2 + board.GetSpellPower(),ref board);
-            if (board.IsCombo())
+            base.OnPlay(ref board, target, index);
+            board.HeroEnemy.Damage(2 + board.GetSpellPower(), ref board);
+            if (board.IsCombo)
                 board.Hand.Add(Card.Create("EX1_137", true, Id));
         }
 
@@ -48,8 +50,8 @@ public EX1_137() : base()
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-		
+
     }
 }

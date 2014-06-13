@@ -62,20 +62,20 @@ namespace HREngine.Bots
             }
 
             FriendValue = ((HeroFriend.CurrentHealth * ValuesInterface.ValueHealthFriend) + HeroFriend.CurrentArmor * ValuesInterface.ValueArmorFriend);
-          /*  int MaxFriendValue = ((HeroFriend.MaxHealth * ValuesInterface.ValueHealthFriend) + HeroFriend.CurrentArmor * ValuesInterface.ValueArmorFriend);
+            /*  int MaxFriendValue = ((HeroFriend.MaxHealth * ValuesInterface.ValueHealthFriend) + HeroFriend.CurrentArmor * ValuesInterface.ValueArmorFriend);
 
-            if(FriendValue <= MaxFriendValue / 2)
-            {
-                value -= (MaxFriendValue / 2) - FriendValue; 
-            }
-            else
-            {
-                value += FriendValue;
-            }*/
+              if(FriendValue <= MaxFriendValue / 2)
+              {
+                  value -= (MaxFriendValue / 2) - FriendValue; 
+              }
+              else
+              {
+                  value += FriendValue;
+              }*/
 
             value += FriendValue;
 
-            if(HeroFriend.CurrentHealth <15)
+            if (HeroFriend.CurrentHealth < 15)
             {
                 value -= ((15 - HeroFriend.CurrentHealth) * (15 - HeroFriend.CurrentHealth));
 
@@ -921,20 +921,7 @@ namespace HREngine.Bots
             }
             return false;
         }
-        public bool IsCombo()
-        {
-            List<Action> comboAction = new List<Action>();
-
-            foreach(Action a in ActionsStack)
-            {
-                if (a.Type == Action.ActionType.CAST_MINION ||
-                    a.Type == Action.ActionType.CAST_SPELL ||
-                    a.Type == Action.ActionType.CAST_WEAPON)
-                    comboAction.Add(a);
-            }
-
-            return (comboAction.Count > 1);
-        }
+        public bool IsCombo { get; set; }
 
 
         public Board ExecuteAction(Action a)
@@ -950,6 +937,8 @@ namespace HREngine.Bots
                         a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id));
                     else
                         a.Actor.OnPlay(ref child, null);
+                    child.IsCombo = true;
+
                     break;
 
                 case Action.ActionType.CAST_MINION:
@@ -972,6 +961,7 @@ namespace HREngine.Bots
                     {
                         child.WeaponFriend.OnPlayOtherMinion(ref child, child.GetCard(a.Actor.Id));
                     }
+                    child.IsCombo = true;
                     break;
 
                 case Action.ActionType.CAST_SPELL:
@@ -986,6 +976,8 @@ namespace HREngine.Bots
                     {
                         c.OnCastSpell(ref child, child.GetCard(a.Actor.Id));
                     }
+                    child.IsCombo = true;
+
                     break;
 
                 case Action.ActionType.HERO_ATTACK:
@@ -1863,7 +1855,7 @@ namespace HREngine.Bots
             }
             */
 
-          //  Console.WriteLine("");
+            //  Console.WriteLine("");
 
             return availableActions;
         }
