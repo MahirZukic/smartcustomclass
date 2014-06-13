@@ -2352,6 +2352,21 @@ namespace HREngine.Bots
             if (Secret.Count != b.Secret.Count)
                 return false;
 
+            if (WeaponFriend != null)
+            {
+                if (b.WeaponFriend == null)
+                    return false;
+                if (!WeaponFriend.Equals(b.WeaponFriend))
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if (b.WeaponFriend != null)
+                    return false;
+            }
+
             if (!ListEquals(MinionEnemy, b.MinionEnemy))
                 return false;
             /*if (GetValue() != b.GetValue())
@@ -2378,16 +2393,8 @@ namespace HREngine.Bots
             }
              * */
             /*
-            if (Ability != null)
-            {
-                if (b.Ability == null)
-                    return false;
-                if (!Ability.Equals(b.Ability))
-                {
-                    return false;
-                }
-            }
-             * */
+            
+             
             /*
             if (WeaponEnemy != null)
             {
@@ -2398,15 +2405,7 @@ namespace HREngine.Bots
                     return false;
                 }
             }
-            if (WeaponFriend != null)
-            {
-                if (b.WeaponFriend == null)
-                    return false;
-                if (!WeaponFriend.Equals(b.WeaponFriend))
-                {
-                    return false;
-                }
-            }
+        
              * */
 
 
