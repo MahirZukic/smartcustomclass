@@ -107,6 +107,11 @@ namespace HREngine.Bots
             sw.Close();
         }
 
+        public void WriteWinFile()
+        {
+            StreamWriter sw = new StreamWriter(CurrentFolder + "" + Path.DirectorySeparatorChar + "zWIN", true);
+            sw.Close();
+        }
 
         public void Simulate(bool threaded)
         {
@@ -495,6 +500,8 @@ namespace HREngine.Bots
 
             Log("Simulation stopped after :" + (stopWatch.ElapsedMilliseconds / 1000.0f).ToString());
 
+            if (bestBoard.GetValue() > 9000)
+                WriteWinFile();
         }
     }
     class SimulationThreadStart

@@ -2357,48 +2357,6 @@ namespace HREngine.Bots
 
             if (!ListEquals(MinionEnemy, b.MinionEnemy))
                 return false;
-            /*if (GetValue() != b.GetValue())
-                return false;
-            */
-            /*
-            if (HeroEnemy != null)
-            {
-                if (b.HeroEnemy == null)
-                    return false;
-                if (!HeroEnemy.Equals(b.HeroEnemy))
-                {
-                    return false;
-                }
-            }
-            if (HeroFriend != null)
-            {
-                if (b.HeroFriend == null)
-                    return false;
-                if (!HeroFriend.Equals(b.HeroFriend))
-                {
-                    return false;
-                }
-            }
-             * */
-            /*
-            
-             
-            /*
-            if (WeaponEnemy != null)
-            {
-                if (b.WeaponEnemy == null)
-                    return false;
-                if (!WeaponEnemy.Equals(b.WeaponEnemy))
-                {
-                    return false;
-                }
-            }
-        
-             * */
-
-
-
-
 
             return true;
         }
