@@ -381,6 +381,11 @@ namespace HREngine.Bots
                                         {
                                             bestBoard = endBoard;
                                         }
+                                        else if (endBoard.GetValue() == bestBoard.GetValue())
+                                        {
+                                            if (endBoard.HeroEnemy.CurrentHealth < bestBoard.HeroEnemy.CurrentHealth)
+                                                bestBoard = endBoard;
+                                        }
                                     }
                                 }
                                 else
@@ -388,6 +393,11 @@ namespace HREngine.Bots
                                     if (endBoard.GetValue() > bestBoard.GetValue())
                                     {
                                         bestBoard = endBoard;
+                                    }
+                                    else if (endBoard.GetValue() == bestBoard.GetValue())
+                                    {
+                                        if (endBoard.HeroEnemy.CurrentHealth < bestBoard.HeroEnemy.CurrentHealth)
+                                            bestBoard = endBoard;
                                     }
                                 }
                             }
