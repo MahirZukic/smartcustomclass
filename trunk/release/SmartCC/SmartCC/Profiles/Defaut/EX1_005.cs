@@ -42,6 +42,8 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
+			if(target.CurrentAtk < 7)
+				return false;
             return true;
         }
 
