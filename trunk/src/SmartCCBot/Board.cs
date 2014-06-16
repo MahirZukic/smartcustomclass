@@ -1032,8 +1032,6 @@ namespace HREngine.Bots
         {
             Update();
             List<Action> availableActions = new List<Action>();
-            bool HasLethal = false;
-
             List<Card> taunts = new List<Card>();
 
             foreach (Card Enemy in MinionEnemy)
@@ -1042,17 +1040,6 @@ namespace HREngine.Bots
                     taunts.Add(Enemy);
             }
 
-
-            if (taunts.Count == 0)
-            {
-                int totalDamage = 0;
-                foreach (Card c in MinionFriend)
-                {
-                    totalDamage += c.CurrentAtk;
-                }
-                if (totalDamage >= HeroEnemy.CurrentHealth + HeroEnemy.CurrentArmor)
-                    HasLethal = true;
-            }
 
 
             List<Card> attackers = new List<Card>();
@@ -1090,8 +1077,7 @@ namespace HREngine.Bots
 
                         if (Enemy.IsStealth)
                             continue;
-                        if (HasLethal)
-                            continue;
+
                         Action a = new Action(Action.ActionType.MINION_ATTACK, minion, Enemy);
                         availableActions.Add(a);
                         attacked.Add(Enemy);
