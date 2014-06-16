@@ -1284,7 +1284,30 @@ namespace HREngine.Bots
                     if (c.TargetTypeOnPlay == Card.TargetType.MINION_BOTH)
                     {
                         Action a = null;
+                        bool stealth = true;
+                        foreach (Card Enemy in MinionEnemy)
+                        {
+                            if (!Enemy.IsStealth)
+                                stealth = false;
+                        }
                         if (c.Type == Card.CType.MINION && MinionFriend.Count < 1 && MinionEnemy.Count < 1 && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
+                        {
+                            if (c.HasChoices)
+                            {
+                                a = new Action(Action.ActionType.CAST_MINION, c, null, 0, 1);
+                                if (c.ChoiceOneTarget)
+                                    availableActions.Add(a);
+                                a = new Action(Action.ActionType.CAST_MINION, c, null, 0, 2);
+                                if (c.ChoiceTwoTarget)
+                                    availableActions.Add(a);
+                            }
+                            else
+                            {
+                                a = new Action(Action.ActionType.CAST_MINION, c);
+                                availableActions.Add(a);
+                            }
+                        }
+                        if (c.Type == Card.CType.MINION && MinionFriend.Count < 1 && stealth && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
                         {
                             if (c.HasChoices)
                             {
@@ -1307,6 +1330,8 @@ namespace HREngine.Bots
                         || c.TargetTypeOnPlay == Card.TargetType.BOTH_ENEMY || c.TargetTypeOnPlay == Card.TargetType.ALL)
                     {
                         Action a = null;
+
+
                         if (c.Type == Card.CType.MINION && MinionEnemy.Count < 1 && c.TargetTypeOnPlay != Card.TargetType.MINION_BOTH && ProfileInterface.Behavior.ShouldPlayMoreMinions(this))
                         {
                             if (c.HasChoices)
@@ -1855,7 +1880,7 @@ namespace HREngine.Bots
             }
             */
 
-            //  Console.WriteLine("");
+           // Console.WriteLine("");
 
             return availableActions;
         }
