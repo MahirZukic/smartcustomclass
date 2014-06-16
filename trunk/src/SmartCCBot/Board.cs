@@ -1918,6 +1918,11 @@ namespace HREngine.Bots
                 c.TempAtk = 0;
                 c.IsImmune = false;
             }
+            foreach (Card c in MinionEnemy.ToArray())
+            {
+                c.TempAtk = 0;
+                c.IsImmune = false;
+            }
             CleanDestroyedEOT(true);
             Update();
 
