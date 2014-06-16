@@ -18,19 +18,15 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-			int sum = 0;
-			foreach(Card c in board.MinionFriend)
-			{
-				sum += c.CurrentAtk;
-			}
-			if(sum + 5 >= board.HeroEnemy.CurrentHealth)
-				return true;
-				
-			int PlayableInHand = 0;
+			int CountPlayable = 0;
+			int ValuePlayable = 0;
+			int MyValue = 0;
+
 			foreach(Card c in board.Hand)
 			{
 				if(c.template.Id == "EX1_310")
 				{
+					MyValue = (int)c.GetValue(board);
 					continue;
 				}
 					
@@ -42,18 +38,31 @@ namespace HREngine.Bots
 						{
 							if(c.Behavior.ShouldBePlayedOnTarget(cc))
 							{
-								PlayableInHand++;
+								CountPlayable++;
+								ValuePlayable += (int)c.GetValue(board);
 							}
 						}
 					}
 					else
 					{
-						PlayableInHand++;
+						CountPlayable++;
+						ValuePlayable += (int)c.GetValue(board);
 					}
 				}
 			}
 			
-			if(PlayableInHand > 1)
+			int sum = 0;
+			foreach(Card c in board.MinionFriend)
+			{
+				sum += c.CurrentAtk;
+			}
+				
+		
+			if(sum + 5 >= board.HeroEnemy.CurrentHealth && CountPlayable < 3 && MyValue > ValuePlayable)
+				return true;
+				
+				
+			if(CountPlayable > 2)
 			{
 				return false;
 			}

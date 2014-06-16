@@ -37,6 +37,10 @@ public EX1_310() : base()
         {
             base.OnPlay(ref board, target,index);
             board.FriendCardDraw -= 2;
+
+            if (board.Hand.Count <= 2)
+                board.Hand.Clear();
+
             board.Resimulate();
         }
 
