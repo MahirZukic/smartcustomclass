@@ -34,7 +34,8 @@ public EX1_308()
         {
             base.OnPlay(ref board, target,index);
             target.Damage(4 + board.GetSpellPower(), ref board);
-
+            if (board.Hand.Count <= 1)
+                board.Hand.Clear();
 
             board.FriendCardDraw--;
 
