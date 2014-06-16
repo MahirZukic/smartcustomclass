@@ -1598,13 +1598,13 @@ namespace HREngine.Bots
                                     for (int i = 0; i <= MinionFriend.Count; i++)
                                     {
                                         a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy, i, 1);
-                                        if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                        if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy) && !HeroEnemy.IsImmune)
                                         {
                                             if (c.ChoiceOneTarget)
                                                 availableActions.Add(a);
                                         }
                                         a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy, i, 2);
-                                        if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                        if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy) && !HeroEnemy.IsImmune)
                                         {
                                             if (c.ChoiceTwoTarget)
                                                 availableActions.Add(a);
@@ -1616,7 +1616,7 @@ namespace HREngine.Bots
                                     for (int i = 0; i <= MinionFriend.Count; i++)
                                     {
                                         a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy, i);
-                                        if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                        if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy) && !HeroEnemy.IsImmune)
                                         {
                                             availableActions.Add(a);
                                         }
@@ -1630,13 +1630,13 @@ namespace HREngine.Bots
                                 {
                                     a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy, 0, 1);
 
-                                    if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                    if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy) && !HeroEnemy.IsImmune)
                                     {
                                         if (c.ChoiceOneTarget)
                                             availableActions.Add(a);
                                     }
                                     a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy, 0, 2);
-                                    if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                    if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy) && !HeroEnemy.IsImmune)
                                     {
                                         if (c.ChoiceTwoTarget)
                                             availableActions.Add(a);
@@ -1645,7 +1645,7 @@ namespace HREngine.Bots
                                 else
                                 {
                                     a = new Action(Action.ActionType.CAST_MINION, c, HeroEnemy);
-                                    if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                    if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy) && !HeroEnemy.IsImmune)
                                     {
                                         availableActions.Add(a);
                                     }
@@ -1657,13 +1657,13 @@ namespace HREngine.Bots
                             if (c.HasChoices)
                             {
                                 a = new Action(Action.ActionType.CAST_SPELL, c, HeroEnemy, 0, 1);
-                                if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy) && !HeroEnemy.IsImmune)
                                 {
                                     if (c.ChoiceOneTarget)
                                         availableActions.Add(a);
                                 }
                                 a = new Action(Action.ActionType.CAST_SPELL, c, HeroEnemy, 0, 2);
-                                if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy) && !HeroEnemy.IsImmune)
                                 {
                                     if (c.ChoiceTwoTarget)
                                         availableActions.Add(a);
@@ -1672,7 +1672,7 @@ namespace HREngine.Bots
                             else
                             {
                                 a = new Action(Action.ActionType.CAST_SPELL, c, HeroEnemy);
-                                if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                                if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy) && !HeroEnemy.IsImmune)
                                 {
                                     availableActions.Add(a);
                                 }
@@ -1681,7 +1681,7 @@ namespace HREngine.Bots
                         else if (c.Type == Card.CType.WEAPON)
                         {
                             a = new Action(Action.ActionType.CAST_WEAPON, c, HeroEnemy);
-                            if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy))
+                            if (c.Behavior.ShouldBePlayedOnTarget(HeroEnemy) && !HeroEnemy.IsImmune)
                             {
                                 availableActions.Add(a);
                             }
