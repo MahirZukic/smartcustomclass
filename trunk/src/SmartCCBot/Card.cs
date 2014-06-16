@@ -2573,6 +2573,9 @@ namespace HREngine.Bots
             if (IsDivineShield != c.IsDivineShield)
                 return false;
 
+            if (IsTargetable != c.IsTargetable)
+                return false;
+
             return true;
         }
     }

@@ -235,7 +235,6 @@ namespace HREngine.Bots
                     a = new Action(Action.ActionType.CAST_ABILITY, EnemyAbility);
                     enemyActions.Add(a);
                 }
-
             }
 
             List<Card> taunts = new List<Card>();
@@ -448,7 +447,7 @@ namespace HREngine.Bots
             EnemyHealFactor = 1;
             TurnCount = 1;
             SpellCastCost = 0;
-            IsCombo = false; 
+            IsCombo = false;
             EnemyCardCount = 0;
         }
 
@@ -1055,8 +1054,8 @@ namespace HREngine.Bots
                     if (cc.IsSimilar(minion))
                         containsSimilarMinion = true;
                 }
-                if (containsSimilarMinion)
-                    continue;
+               /* if (containsSimilarMinion)
+                    continue;*/
 
                 attackers.Add(minion);
 
@@ -1073,9 +1072,9 @@ namespace HREngine.Bots
                             if (cc.IsSimilar(Enemy))
                                 containsSimilarEnemyMinion = true;
                         }
-                        if (containsSimilarEnemyMinion)
+                      /*  if (containsSimilarEnemyMinion)
                             continue;
-
+                        */
                         if (Enemy.IsStealth)
                             continue;
 
@@ -2308,7 +2307,7 @@ namespace HREngine.Bots
                     {
                         if (!c1.IsSimilar(c2))
                             return false;
-                           
+
                     }
                 }
             }
