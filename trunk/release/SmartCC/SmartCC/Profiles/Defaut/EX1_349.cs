@@ -18,6 +18,8 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.EnemyCardCount - board.Hand.Count > 2)
+				return false;
             return true;
         }
 
