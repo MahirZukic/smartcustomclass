@@ -161,7 +161,7 @@ namespace HREngine.Bots
 
             int skipped = 0;
             root.Update();
-            bool tryToSkipEqualBoards = true;
+            bool tryToSkipEqualBoards = true ;
             Board bestBoard = root;
             Log("ROOTBOARD : ");
             Log(root.ToString());
@@ -348,8 +348,6 @@ namespace HREngine.Bots
 
                     if (!foundearly)
                     {
-                        List<Board> bestBoards = new List<Board>();
-
                         int limit = maxBoards;
                         if (childs.Count < maxBoards)
                             limit = childs.Count;
@@ -359,8 +357,7 @@ namespace HREngine.Bots
 
                         foreach (Board baa in childs)
                         {
-
-                            Board endBoard = Board.Clone(baa) ;
+                            Board endBoard = Board.Clone(baa);
                             endBoard.EndTurn();
 
                             bestBoard.CalculateEnemyTurn();
@@ -406,6 +403,11 @@ namespace HREngine.Bots
                                 if (endBoard.GetValue() > bestBoard.GetValue())
                                 {
                                     bestBoard = endBoard;
+                                }
+                                else if (endBoard.GetValue() == bestBoard.GetValue())
+                                {
+                                    if (endBoard.HeroEnemy.CurrentHealth < bestBoard.HeroEnemy.CurrentHealth)
+                                        bestBoard = endBoard;
                                 }
                             }
                         }
