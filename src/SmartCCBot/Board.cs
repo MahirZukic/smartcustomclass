@@ -22,7 +22,7 @@ namespace HREngine.Bots
 
         public Card Ability { get; set; }
         public Card EnemyAbility { get; set; }
-
+        public int EnemyCardCount { get; set; }
         public int EnemyHealFactor { get; set; }
         public int HealFactor { get; set; }
         public int FriendCardDraw { get; set; }
@@ -448,7 +448,8 @@ namespace HREngine.Bots
             EnemyHealFactor = 1;
             TurnCount = 1;
             SpellCastCost = 0;
-            IsCombo = false;
+            IsCombo = false; 
+            EnemyCardCount = 0;
         }
 
         public bool PlayCardFromHand(int id)
@@ -2144,6 +2145,7 @@ namespace HREngine.Bots
             newBoard.SpellCastCost = baseInstance.SpellCastCost;
             newBoard.MaxMana = baseInstance.MaxMana;
             newBoard.IsCombo = baseInstance.IsCombo;
+            newBoard.EnemyCardCount = baseInstance.EnemyCardCount;
             foreach (Card c in baseInstance.Hand)
             {
                 newBoard.Hand.Add(Card.Clone(c));
