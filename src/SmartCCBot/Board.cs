@@ -1260,13 +1260,6 @@ namespace HREngine.Bots
             List<Card> castedCards = new List<Card>();
             foreach (Card c in Hand)
             {
-                if (c.Type == Card.CType.WEAPON && WeaponFriend != null)
-                {
-                    if (c.CurrentAtk <= WeaponFriend.CurrentAtk && WeaponFriend.CurrentDurability > 0)
-                        continue;
-                }
-
-
 
                 bool alreadyCasted = false;
                 foreach (Card cc in castedCards)
@@ -1880,7 +1873,7 @@ namespace HREngine.Bots
             }
             */
 
-           // Console.WriteLine("");
+            //Console.WriteLine("");
 
             return availableActions;
         }
