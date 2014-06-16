@@ -50,6 +50,7 @@ public EX1_007() : base()
             {
                 board.EnemyCardDraw++;
             }
+            board.Resimulate();
         }
         public override void OnDeath(ref Board board)
         {
