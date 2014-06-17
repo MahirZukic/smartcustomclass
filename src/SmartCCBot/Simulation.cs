@@ -123,7 +123,8 @@ namespace HREngine.Bots
             int wide = 0;
             int depth = 0;
             int maxDepth = 15;
-
+            if (root.SecretEnemy)
+                maxDepth = 1;
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
 
