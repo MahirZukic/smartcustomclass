@@ -49,9 +49,9 @@ public EX1_590() : base()
                 }
             }
 
-            board.GetCard(Id).currentAtk += 3 * shields;
-            board.GetCard(Id).CurrentHealth += 3 * shields;
-            board.GetCard(Id).maxHealth += 3 * shields;
+            currentAtk += 3 * shields;
+            CurrentHealth += 3 * shields;
+            maxHealth += 3 * shields;
         }
 
         public override void OnDeath(ref Board board)
