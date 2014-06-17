@@ -36,6 +36,7 @@ namespace HREngine.Bots
             if (target != null)
             {
                 target.IsDrawAttack = true;
+                board.FriendCardDraw++;
             }
         }
 
