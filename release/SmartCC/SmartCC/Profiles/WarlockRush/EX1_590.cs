@@ -36,7 +36,7 @@ namespace HREngine.Bots
 			{
 				if(c.IsDivineShield)
 				{
-					if(c.CurrentCost + 3 >= board.ManaAvailable)
+					if(c.CurrentCost + 3 <= board.ManaAvailable)
 					{
 						return false;
 					}
