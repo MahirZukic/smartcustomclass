@@ -197,6 +197,10 @@ namespace HREngine.Bots
             // Card tar = target;
             if (me.Type == CType.MINION)
             {
+                if(me.IsDrawAttack)
+                {
+                        board.FriendCardDraw++;
+                }
                 me.CountAttack++;
                 Card meTmp = Card.Clone(me);
                 if (target.Type != CType.HERO)
@@ -572,6 +576,7 @@ namespace HREngine.Bots
         public bool IsSilenced { get; set; }
         public bool IsDestroyed { get; set; }
         public bool IsDestroyedEOT { get; set; }
+        public bool IsDrawAttack { get; set; }
 
         public bool IsImmune { get; set; }
         public bool IsStuck { get; set; }
@@ -734,6 +739,7 @@ namespace HREngine.Bots
             ChoiceTwoTarget = false;
             IsDestroyedEOT = false;
             HasDeathRattle = template.Mechanics.Contains("Deathrattle");
+            IsDrawAttack = false;
             Init();
 
         }
@@ -2455,6 +2461,7 @@ namespace HREngine.Bots
             clone.TestAllIndexOnPlay = baseInstance.TestAllIndexOnPlay;
             clone.IsStuck = baseInstance.IsStuck;
             clone.HasDeathRattle = baseInstance.HasDeathRattle;
+            clone.IsDrawAttack = baseInstance.IsDrawAttack;
             foreach (Buff b in baseInstance.buffs)
             {
                 Buff ba = new Buff();

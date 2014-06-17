@@ -8,33 +8,34 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_363 : Card
+    public class EX1_363 : Card
     {
-		public override Card Create()
-{ return new EX1_363();}
-public EX1_363() : base()
+        public override Card Create()
+        { return new EX1_363(); }
+        public EX1_363()
+            : base()
         {
-            
+
         }
-		
-        public EX1_363(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_363(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
         {
             base.Init();
-            TargetTypeOnPlay = TargetType.MINION_FRIEND;
+            TargetTypeOnPlay = TargetType.MINION_BOTH;
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
-            if(target != null)
+            base.OnPlay(ref board, target, index);
+            if (target != null)
             {
-                if (target.CanAttack)
-                    board.FriendCardDraw++;
+                target.IsDrawAttack = true;
             }
         }
 
@@ -50,9 +51,9 @@ public EX1_363() : base()
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
 
-		
+
     }
 }
