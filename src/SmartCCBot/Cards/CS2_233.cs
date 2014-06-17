@@ -41,7 +41,7 @@ namespace HREngine.Bots
                 }
                 board.HeroEnemy.Damage(board.WeaponFriend.CurrentAtk, ref board);
 
-                board.WeaponFriend = null;
+                board.DeleteWeapon();
             }
 
         }

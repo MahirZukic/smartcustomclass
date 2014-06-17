@@ -141,11 +141,11 @@ namespace HREngine.Bots
                     maxBoards = 1000;
                     break;
                 case "medium":
-                    maxWide = 3000;
+                    maxWide = 5000;
                     maxBoards = 2000;
                     break;
                 case "high":
-                    maxWide = 5000;
+                    maxWide = 8000;
                     maxBoards = 3000;
                     break;
                 default:

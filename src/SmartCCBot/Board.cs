@@ -803,6 +803,16 @@ namespace HREngine.Bots
             return false;
         }
 
+        public void DeleteWeapon()
+        {
+            WeaponFriend = null;
+            if(HeroFriend != null)
+            {
+                HeroFriend.currentAtk = 0;
+                HeroFriend.TempAtk = 0;
+            }
+            
+        }
         public void ReplaceWeapon(string id)
         {
             Random random = new Random();
@@ -928,7 +938,7 @@ namespace HREngine.Bots
             {
                 if (WeaponFriend.Id == id)
                 {
-                    WeaponFriend = null;
+                    DeleteWeapon();
                     return true;
                 }
             }
@@ -1054,8 +1064,8 @@ namespace HREngine.Bots
                     if (cc.IsSimilar(minion))
                         containsSimilarMinion = true;
                 }
-               /* if (containsSimilarMinion)
-                    continue;*/
+                if (containsSimilarMinion)
+                    continue;
 
                 attackers.Add(minion);
 
@@ -1072,9 +1082,9 @@ namespace HREngine.Bots
                             if (cc.IsSimilar(Enemy))
                                 containsSimilarEnemyMinion = true;
                         }
-                      /*  if (containsSimilarEnemyMinion)
+                        if (containsSimilarEnemyMinion)
                             continue;
-                        */
+                        
                         if (Enemy.IsStealth)
                             continue;
 
@@ -2181,7 +2191,7 @@ namespace HREngine.Bots
             }
             else
             {
-                newBoard.WeaponFriend = null;
+                newBoard.DeleteWeapon();
             }
             if (baseInstance.Ability != null)
             {
