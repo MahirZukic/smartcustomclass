@@ -177,7 +177,7 @@ namespace HREngine.Bots
         {
             if(IsFriend)
             {
-                board.WeaponFriend = null;
+                board.DeleteWeapon();
 
             }
             else
@@ -579,6 +579,19 @@ namespace HREngine.Bots
         public bool HasPoison { get; set; }
         public bool HasEnrage { get; set; }
 
+        private bool hasDeathRattle;
+        public bool HasDeathRattle
+        {
+            get
+            {
+                return !IsSilenced && hasDeathRattle;
+            }
+            set
+            {
+                hasDeathRattle = value;
+            }
+        }
+
         public int SpellPower { get; set; }
 
 
@@ -720,6 +733,7 @@ namespace HREngine.Bots
             ChoiceOneTarget = false;
             ChoiceTwoTarget = false;
             IsDestroyedEOT = false;
+            HasDeathRattle = template.Mechanics.Contains("Deathrattle");
             Init();
 
         }
@@ -2440,6 +2454,7 @@ namespace HREngine.Bots
             clone.Index = baseInstance.Index;
             clone.TestAllIndexOnPlay = baseInstance.TestAllIndexOnPlay;
             clone.IsStuck = baseInstance.IsStuck;
+            clone.HasDeathRattle = baseInstance.HasDeathRattle;
             foreach (Buff b in baseInstance.buffs)
             {
                 Buff ba = new Buff();
@@ -2574,6 +2589,9 @@ namespace HREngine.Bots
                 return false;
 
             if (IsTargetable != c.IsTargetable)
+                return false;
+
+            if (HasDeathRattle)
                 return false;
 
             return true;

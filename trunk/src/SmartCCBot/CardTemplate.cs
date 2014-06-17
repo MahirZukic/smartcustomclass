@@ -144,6 +144,14 @@ namespace HREngine.Bots
                     {
                         template.Durability = int.Parse(node.InnerText);
                     }
+                    else if (node.Name == "Mechanics")
+                    {
+                        foreach (XmlNode mec in node.ChildNodes)
+                        {
+                            template.Mechanics.Add(node.InnerText);
+                        }
+
+                    }
                 }
                 templateList.Add(template);
             }
