@@ -372,7 +372,25 @@ namespace HREngine.Bots
             }
             return ret;
         }
-
+        public Card GetWorstMinionCanAttack()
+        {
+            Card ret = null;
+            foreach (Card c in MinionFriend)
+            {
+                if (ret == null)
+                {
+                    if (c.CanAttack)
+                    {
+                        ret = c;
+                        continue;
+                    }
+                }
+                else if (c.GetValue(this) < ret.GetValue(this))
+                    if (c.CanAttack)
+                        ret = c;
+            }
+            return ret;
+        }
         public Card GetBestEnemyMinion()
         {
             Card ret = null;
@@ -806,12 +824,12 @@ namespace HREngine.Bots
         public void DeleteWeapon()
         {
             WeaponFriend = null;
-            if(HeroFriend != null)
+            if (HeroFriend != null)
             {
                 HeroFriend.currentAtk = 0;
                 HeroFriend.TempAtk = 0;
             }
-            
+
         }
         public void ReplaceWeapon(string id)
         {
@@ -1041,7 +1059,105 @@ namespace HREngine.Bots
         public List<Action> CalculateAvailableActions()
         {
             Update();
+            List<Card> CastableCards = new List<Card>();
+
             List<Action> availableActions = new List<Action>();
+
+            if (SecretEnemy)
+            {
+                bool HasAlreadyTryAttack = false;
+
+                foreach (Card c in MinionFriend)
+                {
+                    if (c.CountAttack > 0)
+                    {
+                        HasAlreadyTryAttack = true;
+                        break;
+                    }
+                }
+
+                Card minion = GetWorstMinionCanAttack();
+                if (MinionFriend.Count > 0 && !HasAlreadyTryAttack && minion != null)
+                {
+                    List<Card> tauntss = new List<Card>();
+
+                    foreach (Card Enemy in MinionEnemy)
+                    {
+                        if (Enemy.IsTaunt && !Enemy.IsStealth)
+                            tauntss.Add(Enemy);
+                    }
+
+                    if (tauntss.Count == 0)
+                    {
+                        List<Card> attacked = new List<Card>();
+                        foreach (Card Enemy in MinionEnemy)
+                        {
+                            bool containsSimilarEnemyMinion = false;
+                            foreach (Card cc in attacked)
+                            {
+                                if (cc.IsSimilar(Enemy))
+                                    containsSimilarEnemyMinion = true;
+                            }
+                            if (containsSimilarEnemyMinion)
+                                continue;
+
+                            if (Enemy.IsStealth)
+                                continue;
+
+                            Action a = new Action(Action.ActionType.MINION_ATTACK, minion, Enemy);
+                            availableActions.Add(a);
+                            attacked.Add(Enemy);
+                        }
+                        Action ac = new Action(Action.ActionType.MINION_ATTACK, minion, HeroEnemy);
+                        availableActions.Add(ac);
+                    }
+                    else
+                    {
+                        List<Card> attackedTaunts = new List<Card>();
+                        foreach (Card taunt in tauntss)
+                        {
+                            bool containsSimilarTaunt = false;
+                            foreach (Card cc in attackedTaunts)
+                            {
+                                if (cc.IsSimilar(taunt))
+                                    containsSimilarTaunt = true;
+                            }
+                            if (containsSimilarTaunt)
+                                continue;
+
+                            attackedTaunts.Add(taunt);
+
+                            Action a = new Action(Action.ActionType.MINION_ATTACK, minion, taunt);
+                            availableActions.Add(a);
+                        }
+                    }
+                    if (availableActions.Count > 0)
+                        return availableActions;
+                }
+                else
+                {
+                    Card worstMinionInHand = null;
+
+                    foreach (Card c in Hand)
+                    {
+                        if (c.Type == Card.CType.MINION)
+                        {
+                            if (worstMinionInHand == null)
+                                worstMinionInHand = c;
+                            if (worstMinionInHand.GetValue(this) > c.GetValue(this))
+                                worstMinionInHand = c;
+                        }
+                    }
+
+                    if (worstMinionInHand != null)
+                        CastableCards.Add(worstMinionInHand);
+
+                }
+            }
+
+            if (CastableCards.Count == 0)
+                CastableCards = Hand;
+
             List<Card> taunts = new List<Card>();
 
             foreach (Card Enemy in MinionEnemy)
@@ -1049,8 +1165,6 @@ namespace HREngine.Bots
                 if (Enemy.IsTaunt && !Enemy.IsStealth)
                     taunts.Add(Enemy);
             }
-
-
 
             List<Card> attackers = new List<Card>();
             foreach (Card minion in MinionFriend)
@@ -1084,7 +1198,7 @@ namespace HREngine.Bots
                         }
                         if (containsSimilarEnemyMinion)
                             continue;
-                        
+
                         if (Enemy.IsStealth)
                             continue;
 
@@ -1203,7 +1317,7 @@ namespace HREngine.Bots
 
             }
 
-            if (Ability != null)
+            if (Ability != null && CastableCards != Hand)
             {
                 if (Ability.CurrentCost <= ManaAvailable && Ability.Behavior.ShouldBePlayed(this))
                 {
@@ -1268,7 +1382,7 @@ namespace HREngine.Bots
                 }
             }
             List<Card> castedCards = new List<Card>();
-            foreach (Card c in Hand)
+            foreach (Card c in CastableCards)
             {
                 if (c.Type == Card.CType.WEAPON && WeaponFriend != null)
                 {
