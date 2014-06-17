@@ -41,7 +41,7 @@ public DS1_178() : base()
         public override void OnPlayOtherMinion(ref Board board, Card Minion)
         {
             base.OnPlayOtherMinion(ref board, Minion);
-            if (Minion.Race == CRace.BEAST)
+            if (Minion.Race == CRace.BEAST && Minion.IsFriend == IsFriend)
                 Minion.IsCharge = true;
         }
 
