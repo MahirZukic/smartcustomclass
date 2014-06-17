@@ -1317,7 +1317,7 @@ namespace HREngine.Bots
 
             }
 
-            if (Ability != null && CastableCards != Hand)
+            if (Ability != null && CastableCards == Hand)
             {
                 if (Ability.CurrentCost <= ManaAvailable && Ability.Behavior.ShouldBePlayed(this))
                 {
