@@ -31,6 +31,7 @@ public CS2_023() : base()
         {
             base.OnPlay(ref board, target,index);
             board.FriendCardDraw += 2;
+            board.Resimulate();
         }
 
         public override void OnDeath(ref Board board)
