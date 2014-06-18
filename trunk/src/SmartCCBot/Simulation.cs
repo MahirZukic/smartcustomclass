@@ -128,8 +128,6 @@ namespace HREngine.Bots
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
 
-
-
             StreamReader str = new StreamReader(CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Config" + Path.DirectorySeparatorChar + "searchLevel");
             string SearchLevel = str.ReadLine();
             int maxWide = 3000;
@@ -162,7 +160,7 @@ namespace HREngine.Bots
 
             int skipped = 0;
             root.Update();
-            bool tryToSkipEqualBoards = true ;
+            bool tryToSkipEqualBoards = true;
             Board bestBoard = root;
             Log("ROOTBOARD : ");
             Log(root.ToString());
@@ -290,11 +288,15 @@ namespace HREngine.Bots
                     skipped = 0;
                     List<Board> childs = new List<Board>();
 
-                    foreach (Board b in boards.ToArray())
+                    //foreach (Board b in boards.ToArray())
+                    for (int i = 0; i < boards.Count; i++)
                     {
+                        Board b = boards[i];
                         List<Action> actions = b.CalculateAvailableActions();
-                        foreach (Action a in actions.ToArray())
+                        //foreach (Action a in actions.ToArray())
+                        for (int u = 0; u < actions.Count; u++)
                         {
+                            Action a = actions[u];
                             if (wide > maxWide)
                                 break;
 
@@ -317,8 +319,10 @@ namespace HREngine.Bots
                                 if (tryToSkipEqualBoards)
                                 {
                                     bool found = false;
-                                    foreach (Board lol in childs.ToArray())
+                                    //foreach (Board lol in childs.ToArray())
+                                    for (int y = 0; y < childs.Count; y++)
                                     {
+                                        Board lol = childs[y];
                                         if (bb.Equals(lol))
                                         {
                                             found = true;
@@ -349,14 +353,14 @@ namespace HREngine.Bots
                         if (foundearly)
                             break;
                     }
-                    
-                    if(foundearly)
+
+                    if (foundearly)
                     {
                         Log("Found early at : " + depth.ToString() + " | " + wide.ToString());
                         Console.WriteLine("Found Early");
                         break;
                     }
-               
+
 
                     Log("Simulation :" + depth.ToString() + " | " + wide.ToString() + " | " + skipped.ToString());
                     Console.WriteLine("Simulation :" + depth.ToString() + " | " + wide.ToString() + " | " + skipped.ToString());
@@ -377,8 +381,10 @@ namespace HREngine.Bots
                 AllBoards.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
                 AllBoards = new List<Board>(AllBoards.GetRange(0, limit));
 
-                foreach (Board baa in AllBoards)
+                //foreach (Board baa in AllBoards)
+                for (int i = 0; i < AllBoards.Count; i++)
                 {
+                    Board baa = AllBoards[i];
                     Board endBoard = Board.Clone(baa);
                     endBoard.EndTurn();
 
@@ -438,8 +444,10 @@ namespace HREngine.Bots
             Action actionPrior = null;
 
 
-            foreach (Action acc in bestBoard.ActionsStack)
+            //foreach (Action acc in bestBoard.ActionsStack)
+            for (int i = 0; i < bestBoard.ActionsStack.Count; i++)
             {
+                Action acc = bestBoard.ActionsStack[i];
                 if (actionPrior == null && acc.Actor != null)
                 {
                     if (acc.Actor.Behavior.GetPriorityPlay(bestBoard) > 1 && acc.Type != Action.ActionType.MINION_ATTACK && acc.Type != Action.ActionType.HERO_ATTACK)

@@ -42,7 +42,8 @@ namespace HREngine.Bots
                 
                 if (IsFrozen)
                     value -= ValuesInterface.ValueFrozen;
-
+                if (hasDeathRattle)
+                    value += 1;
 
             }
             else if (Type == CType.WEAPON)
@@ -738,7 +739,7 @@ namespace HREngine.Bots
             ChoiceOneTarget = false;
             ChoiceTwoTarget = false;
             IsDestroyedEOT = false;
-            HasDeathRattle = template.Mechanics.Contains("Deathrattle");
+            HasDeathRattle = template.HasDeathrattle;
             IsDrawAttack = false;
             Init();
 
@@ -2462,8 +2463,10 @@ namespace HREngine.Bots
             clone.IsStuck = baseInstance.IsStuck;
             clone.HasDeathRattle = baseInstance.HasDeathRattle;
             clone.IsDrawAttack = baseInstance.IsDrawAttack;
-            foreach (Buff b in baseInstance.buffs)
+            //foreach (Buff b in baseInstance.buffs)
+            for (int i = 0; i < baseInstance.buffs.Count; i++ )
             {
+                Buff b = baseInstance.buffs[i];
                 Buff ba = new Buff();
                 ba.Atk = b.Atk;
                 ba.Hp = b.Hp;
