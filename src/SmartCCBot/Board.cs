@@ -144,12 +144,16 @@ namespace HREngine.Bots
                 wide = 0;
                 List<Board> childs = new List<Board>();
 
-                foreach (Board b in childss)
+                //foreach (Board b in childss)
+                for (int i = 0; i < childss.Count; i++)
                 {
+                    Board b = childss[i];
                     List<Action> actions = b.CalculateEnemyAvailableActions();
 
-                    foreach (Action a in actions)
+                    //foreach (Action a in actions)
+                    for (int u = 0; u < actions.Count; u++)
                     {
+                        Action a = actions[u];
                         if (wide >= maxWide)
                             break;
                         wide++;
@@ -160,9 +164,10 @@ namespace HREngine.Bots
                     if (wide >= maxWide)
                         break;
                 }
-
-                foreach (Board baa in childs)
+                for (int i = 0; i < childs.Count; i++)
+                //foreach (Board baa in childs)
                 {
+                    Board baa = childs[i];
                     Board endBoard = Board.Clone(baa);
                     endBoard.EndEnemyTurn();
                     // baa.EndEnemyTurn();
@@ -791,7 +796,7 @@ namespace HREngine.Bots
 
         public bool HasLethal()
         {
-            foreach(Card c in MinionEnemy)
+            foreach (Card c in MinionEnemy)
             {
                 if (c.IsTaunt)
                     return false;
@@ -799,7 +804,7 @@ namespace HREngine.Bots
 
             int minionsDamages = 0;
 
-            foreach(Card c in MinionFriend)
+            foreach (Card c in MinionFriend)
             {
                 if (c.CanAttack)
                     minionsDamages += c.CurrentAtk;
@@ -807,7 +812,7 @@ namespace HREngine.Bots
 
             int weapDamage = 0;
 
-            if(WeaponFriend != null)
+            if (WeaponFriend != null)
             {
                 weapDamage = WeaponFriend.CurrentAtk;
             }
@@ -1346,9 +1351,9 @@ namespace HREngine.Bots
 
             }
 
-           /* if (HasLethal())
-                return availableActions;
-            */
+            /* if (HasLethal())
+                 return availableActions;
+             */
 
 
 
@@ -2448,23 +2453,56 @@ namespace HREngine.Bots
 
             int dam1 = 0;
             int hp1 = 0;
+
+            for (int i = 0; i < list1.Count; i++)
+            {
+                Card c = list1[i];
+                dam1 += c.CurrentAtk;
+                hp1 += c.CurrentHealth;
+            }
+            /*
             foreach (Card c1 in list1)
             {
                 dam1 += c1.CurrentAtk;
                 hp1 += c1.CurrentHealth;
             }
+            */
+
             int dam2 = 0;
             int hp2 = 0;
-            foreach (Card c2 in list2)
+            /*foreach (Card c2 in list2)
             {
                 dam2 += c2.CurrentAtk;
                 hp2 += c2.CurrentHealth;
+            }*/
+
+            for (int i = 0; i < list2.Count; i++)
+            {
+                Card c = list2[i];
+                dam2 += c.CurrentAtk;
+                hp2 += c.CurrentHealth;
             }
+
             if (dam1 != dam2)
                 return false;
             if (hp1 != hp2)
                 return false;
 
+            for (int i = 0; i < list1.Count; i++)
+            {
+                Card c1 = list1[i];
+                for (int u = 0; u < list2.Count; u++)
+                {
+                    Card c2 = list2[u];
+                    if (c1.Id == c2.Id)
+                    {
+                        if (!c1.IsSimilar(c2))
+                            return false;
+
+                    }
+                }
+            }
+            /*
             foreach (Card c1 in list1)
             {
                 foreach (Card c2 in list2)
@@ -2477,7 +2515,7 @@ namespace HREngine.Bots
                     }
                 }
             }
-
+            */
 
 
             return true;

@@ -26,6 +26,7 @@ namespace HREngine.Bots
         public int Health { get; set; }
 
         public int Durability { get; set; }
+        public bool  HasDeathrattle { get; set; }
 
         public List<string> Mechanics { get; set; }
 
@@ -148,7 +149,10 @@ namespace HREngine.Bots
                     {
                         foreach (XmlNode mec in node.ChildNodes)
                         {
-                            template.Mechanics.Add(node.InnerText);
+                            string m = mec.InnerText;
+                            template.Mechanics.Add(m);
+                            if (m.Contains("Deathrattle"))
+                                template.HasDeathrattle = true;
                         }
 
                     }
