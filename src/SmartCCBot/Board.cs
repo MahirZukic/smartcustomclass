@@ -142,10 +142,14 @@ namespace HREngine.Bots
             Board worseBoard = null;
 
             int maxWide = 20;
-
+            int maxDepth = 15;
             int wide = 0;
+            int depth = 0;
             while (childss.Count != 0)
             {
+                if (depth > maxDepth)
+                    break;
+                depth++;
                 wide = 0;
                 List<Board> childs = new List<Board>();
 
