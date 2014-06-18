@@ -123,8 +123,6 @@ namespace HREngine.Bots
             int wide = 0;
             int depth = 0;
             int maxDepth = 15;
-            if (root.SecretEnemy)
-                maxDepth = 1;
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
 
@@ -470,7 +468,7 @@ namespace HREngine.Bots
 
 
             List<Action> finalStack = new List<Action>();
-            if (actionPrior != null)
+            if (actionPrior != null && !root.SecretEnemy)
             {
                 finalStack.Add(actionPrior);
                 if (bestBoard.ActionsStack.IndexOf(actionPrior) + 2 <= bestBoard.ActionsStack.Count)
