@@ -142,8 +142,8 @@ namespace HREngine.Bots
                     maxBoards = 1000;
                     break;
                 case "medium":
-                    maxWide = 5000;
-                    maxBoards = 2000;
+                    maxWide = 3000;
+                    maxBoards = 1000;
                     break;
                 case "high":
                     maxWide = 8000;
@@ -170,6 +170,7 @@ namespace HREngine.Bots
             Console.WriteLine(root.ToString());
             bool foundearly = false;
 
+            List<Board> AllBoards = new List<Board>();
             List<Board> Roots = new List<Board>();
             List<Board> Childs = new List<Board>();
             if (threaded)
@@ -289,10 +290,10 @@ namespace HREngine.Bots
                     skipped = 0;
                     List<Board> childs = new List<Board>();
 
-                    foreach (Board b in boards)
+                    foreach (Board b in boards.ToArray())
                     {
                         List<Action> actions = b.CalculateAvailableActions();
-                        foreach (Action a in actions)
+                        foreach (Action a in actions.ToArray())
                         {
                             if (wide > maxWide)
                                 break;
@@ -316,7 +317,7 @@ namespace HREngine.Bots
                                 if (tryToSkipEqualBoards)
                                 {
                                     bool found = false;
-                                    foreach (Board lol in childs)
+                                    foreach (Board lol in childs.ToArray())
                                     {
                                         if (bb.Equals(lol))
                                         {
@@ -329,6 +330,7 @@ namespace HREngine.Bots
                                     {
                                         wide++;
                                         childs.Add(bb);
+                                        AllBoards.Add(bb);
                                     }
                                     else
                                     {
@@ -339,67 +341,60 @@ namespace HREngine.Bots
                                 {
                                     wide++;
                                     childs.Add(bb);
+                                    AllBoards.Add(bb);
+
                                 }
                             }
                         }
                         if (foundearly)
                             break;
                     }
-
-
-                    if (!foundearly)
+                    
+                    if(foundearly)
                     {
-                        int limit = maxBoards;
-                        if (childs.Count < maxBoards)
-                            limit = childs.Count;
+                        Log("Found early at : " + depth.ToString() + " | " + wide.ToString());
+                        Console.WriteLine("Found Early");
+                        break;
+                    }
+               
 
-                        childs.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
-                        childs = new List<Board>(childs.GetRange(0, limit));
+                    Log("Simulation :" + depth.ToString() + " | " + wide.ToString() + " | " + skipped.ToString());
+                    Console.WriteLine("Simulation :" + depth.ToString() + " | " + wide.ToString() + " | " + skipped.ToString());
+                    boards.Clear();
+                    boards = childs;
+                    depth++;
+                }
+            }
 
-                        foreach (Board baa in childs)
+
+
+            if (!foundearly)
+            {
+                int limit = maxBoards;
+                if (AllBoards.Count < maxBoards)
+                    limit = AllBoards.Count;
+
+                AllBoards.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
+                AllBoards = new List<Board>(AllBoards.GetRange(0, limit));
+
+                foreach (Board baa in AllBoards)
+                {
+                    Board endBoard = Board.Clone(baa);
+                    endBoard.EndTurn();
+
+                    bestBoard.CalculateEnemyTurn();
+                    if (bestBoard.EnemyTurnWorseBoard != null)
+                    {
+                        endBoard.CalculateEnemyTurn();
+                        Board worstBoard = endBoard.EnemyTurnWorseBoard;
+
+                        if (worstBoard != null)
                         {
-                            Board endBoard = Board.Clone(baa);
-                            endBoard.EndTurn();
-
-                            bestBoard.CalculateEnemyTurn();
-                            if (bestBoard.EnemyTurnWorseBoard != null)
+                            if (worstBoard.GetValue() > bestBoard.EnemyTurnWorseBoard.GetValue())
                             {
-                                endBoard.CalculateEnemyTurn();
-                                Board worstBoard = endBoard.EnemyTurnWorseBoard;
-
-                                if (worstBoard != null)
-                                {
-                                    if (worstBoard.GetValue() > bestBoard.EnemyTurnWorseBoard.GetValue())
-                                    {
-                                        bestBoard = endBoard;
-                                    }
-                                    else if (worstBoard.GetValue() == bestBoard.EnemyTurnWorseBoard.GetValue())
-                                    {
-                                        if (endBoard.GetValue() > bestBoard.GetValue())
-                                        {
-                                            bestBoard = endBoard;
-                                        }
-                                        else if (endBoard.GetValue() == bestBoard.GetValue())
-                                        {
-                                            if (endBoard.HeroEnemy.CurrentHealth < bestBoard.HeroEnemy.CurrentHealth)
-                                                bestBoard = endBoard;
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    if (endBoard.GetValue() > bestBoard.GetValue())
-                                    {
-                                        bestBoard = endBoard;
-                                    }
-                                    else if (endBoard.GetValue() == bestBoard.GetValue())
-                                    {
-                                        if (endBoard.HeroEnemy.CurrentHealth < bestBoard.HeroEnemy.CurrentHealth)
-                                            bestBoard = endBoard;
-                                    }
-                                }
+                                bestBoard = endBoard;
                             }
-                            else
+                            else if (worstBoard.GetValue() == bestBoard.EnemyTurnWorseBoard.GetValue())
                             {
                                 if (endBoard.GetValue() > bestBoard.GetValue())
                                 {
@@ -412,20 +407,31 @@ namespace HREngine.Bots
                                 }
                             }
                         }
+                        else
+                        {
+                            if (endBoard.GetValue() > bestBoard.GetValue())
+                            {
+                                bestBoard = endBoard;
+                            }
+                            else if (endBoard.GetValue() == bestBoard.GetValue())
+                            {
+                                if (endBoard.HeroEnemy.CurrentHealth < bestBoard.HeroEnemy.CurrentHealth)
+                                    bestBoard = endBoard;
+                            }
+                        }
                     }
                     else
                     {
-                        Log("Found early at : " + depth.ToString() + " | " + wide.ToString());
-                        Console.WriteLine("Found Early");
-                        break;
-
+                        if (endBoard.GetValue() > bestBoard.GetValue())
+                        {
+                            bestBoard = endBoard;
+                        }
+                        else if (endBoard.GetValue() == bestBoard.GetValue())
+                        {
+                            if (endBoard.HeroEnemy.CurrentHealth < bestBoard.HeroEnemy.CurrentHealth)
+                                bestBoard = endBoard;
+                        }
                     }
-
-                    Log("Simulation :" + depth.ToString() + " | " + wide.ToString() + " | " + skipped.ToString());
-                    Console.WriteLine("Simulation :" + depth.ToString() + " | " + wide.ToString() + " | " + skipped.ToString());
-                    boards.Clear();
-                    boards = childs;
-                    depth++;
                 }
             }
 
