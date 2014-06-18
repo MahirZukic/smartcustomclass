@@ -35,7 +35,7 @@ public EX1_002() : base()
             {
                 if(target.IsTaunt)
                 {
-                    board.RemoveCardFromBoard(target.Id);
+                    target.IsDestroyed = true;
                 }
             }
         }
