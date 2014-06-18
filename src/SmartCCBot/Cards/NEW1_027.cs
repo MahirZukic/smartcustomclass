@@ -57,6 +57,7 @@ public NEW1_027() : base()
         public override void Init()
         {
             base.Init();
+            IsBuffer = true;
         }
 
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)

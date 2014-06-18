@@ -65,6 +65,7 @@ public EX1_565() : base()
         {
             base.Init();
             TestAllIndexOnPlay = true;
+            IsBuffer = true;
         }
 
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
@@ -88,8 +89,6 @@ public EX1_565() : base()
                 {
                     c.RemoveBuffById(Id);
                 }
-
-                Console.WriteLine("");
             }
         }
 

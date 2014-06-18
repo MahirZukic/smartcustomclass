@@ -39,11 +39,15 @@ namespace HREngine.Bots
 
                 if (IsDivineShield)
                     value += ValuesInterface.ValueDivineShield;
-                
+
                 if (IsFrozen)
                     value -= ValuesInterface.ValueFrozen;
                 if (hasDeathRattle)
                     value += 1;
+
+                if (IsBuffer)
+                    value += 2;
+
 
             }
             else if (Type == CType.WEAPON)
@@ -176,7 +180,7 @@ namespace HREngine.Bots
 
         public virtual void OnWeaponDeath(ref Board board)
         {
-            if(IsFriend)
+            if (IsFriend)
             {
                 board.DeleteWeapon();
 
@@ -198,9 +202,9 @@ namespace HREngine.Bots
             // Card tar = target;
             if (me.Type == CType.MINION)
             {
-                if(me.IsDrawAttack)
+                if (me.IsDrawAttack)
                 {
-                        board.FriendCardDraw++;
+                    board.FriendCardDraw++;
                 }
                 me.CountAttack++;
                 Card meTmp = Card.Clone(me);
@@ -552,6 +556,7 @@ namespace HREngine.Bots
         public int CurrentDurability { get; set; }
 
         public bool IsFriend { get; set; }
+        public bool IsBuffer { get; set; }
 
         public int Id { get; set; }
 
@@ -642,7 +647,7 @@ namespace HREngine.Bots
 
         public Card()
         {
-
+            //IsBuffer = Buff.GetBuffById(template.Id) != null;
         }
 
         public void AddBuff(Buff b)
@@ -741,6 +746,7 @@ namespace HREngine.Bots
             IsDestroyedEOT = false;
             HasDeathRattle = template.HasDeathrattle;
             IsDrawAttack = false;
+            IsBuffer = (Buff.GetBuffById(template.Id) != null);
             Init();
 
         }
@@ -2424,11 +2430,12 @@ namespace HREngine.Bots
                 return null;
             }
             Card clone = baseInstance.Create();
-           
+
 
             //clone = (Card)Activator.CreateInstance(baseInstance.GetType());
             // clone = (Card)baseInstance.GetType().CreateInstance();
             clone.InitInstance(baseInstance.template, baseInstance.IsFriend, baseInstance.Id);
+            clone.IsBuffer = baseInstance.IsBuffer;
             clone.IsDestroyedEOT = baseInstance.IsDestroyedEOT;
             clone.Behavior = baseInstance.Behavior;
             clone.IsTargetable = baseInstance.IsTargetable;
@@ -2464,7 +2471,7 @@ namespace HREngine.Bots
             clone.HasDeathRattle = baseInstance.HasDeathRattle;
             clone.IsDrawAttack = baseInstance.IsDrawAttack;
             //foreach (Buff b in baseInstance.buffs)
-            for (int i = 0; i < baseInstance.buffs.Count; i++ )
+            for (int i = 0; i < baseInstance.buffs.Count; i++)
             {
                 Buff b = baseInstance.buffs[i];
                 Buff ba = new Buff();
@@ -2601,7 +2608,10 @@ namespace HREngine.Bots
             if (IsTargetable != c.IsTargetable)
                 return false;
 
-            if (HasDeathRattle)
+            if (HasDeathRattle || c.HasDeathRattle)
+                return false;
+
+            if (IsBuffer || c.IsBuffer)
                 return false;
 
             return true;

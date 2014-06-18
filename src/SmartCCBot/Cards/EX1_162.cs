@@ -67,6 +67,7 @@ public EX1_162() : base()
         {
             base.Init();
             TestAllIndexOnPlay = true;
+            IsBuffer = true;
         }
 
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)

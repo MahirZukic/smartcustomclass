@@ -25,6 +25,7 @@ public CS2_222() : base()
         public override void Init()
         {
             base.Init();
+            IsBuffer = true;
         }
 
         public override void OnUpdate(Board board)
