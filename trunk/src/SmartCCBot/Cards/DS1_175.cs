@@ -60,6 +60,7 @@ public DS1_175()
         public override void Init()
         {
             base.Init();
+            IsBuffer = true;
         }
 
         public override float GetValue(Board board)
