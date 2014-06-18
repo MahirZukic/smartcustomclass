@@ -789,6 +789,35 @@ namespace HREngine.Bots
             Resimulate();
         }
 
+        public bool HasLethal()
+        {
+            foreach(Card c in MinionEnemy)
+            {
+                if (c.IsTaunt)
+                    return false;
+            }
+
+            int minionsDamages = 0;
+
+            foreach(Card c in MinionFriend)
+            {
+                if (c.CanAttack)
+                    minionsDamages += c.CurrentAtk;
+            }
+
+            int weapDamage = 0;
+
+            if(WeaponFriend != null)
+            {
+                weapDamage = WeaponFriend.CurrentAtk;
+            }
+
+            if (weapDamage + minionsDamages >= HeroEnemy.CurrentHealth + HeroEnemy.CurrentArmor)
+                return true;
+
+            return false;
+        }
+
         public bool HasFriendBuffer()
         {
             List<Card> buffers = new List<Card>();
@@ -1316,6 +1345,12 @@ namespace HREngine.Bots
                 }
 
             }
+
+           /* if (HasLethal())
+                return availableActions;
+            */
+
+
 
             if (Ability != null && CastableCards == Hand)
             {
@@ -2028,8 +2063,6 @@ namespace HREngine.Bots
                     }
                 }
             }
-
-
         }
 
         public void EndTurn()
