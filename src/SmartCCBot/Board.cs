@@ -1429,6 +1429,20 @@ namespace HREngine.Bots
                     if (c.CurrentAtk <= WeaponFriend.CurrentAtk && WeaponFriend.CurrentDurability > 0)
                         continue;
                 }
+                else if(c.Type == Card.CType.SPELL)
+                {
+                    if(Secret.Count > 0)
+                    {
+                        bool found = false;
+                        foreach(Card secr in Secret)
+                        {
+                            if (secr.template.Id == c.template.Id)
+                                found = true;
+                        }
+                        if (found)
+                            continue;
+                    }
+                }
                 bool alreadyCasted = false;
                 foreach (Card cc in castedCards)
                 {
