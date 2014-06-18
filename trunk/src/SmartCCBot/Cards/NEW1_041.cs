@@ -45,7 +45,8 @@ public NEW1_041() : base()
                 if (worstTarget.GetValue(board) > c.GetValue(board))
                     worstTarget = c;
             }
-            board.RemoveCardFromBoard(worstTarget.Id);
+            if(worstTarget != null)
+                board.RemoveCardFromBoard(worstTarget.Id);
             
         }
 
