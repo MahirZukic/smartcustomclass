@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-//Stampeding Kodo
+//Stampeding $
 namespace HREngine.Bots
 {
     [Serializable]
@@ -37,12 +37,16 @@ public NEW1_041() : base()
                 if (c.CurrentAtk <= 2)
                     targets.Add(c);
             }
-            if (targets.Count > 1)
-                board.Resimulate();
-            else if(targets.Count  == 1)
+            Card worstTarget = null;
+            foreach(Card c in targets)
             {
-                board.RemoveCardFromBoard(targets[0].Id);
+                if (worstTarget == null)
+                    worstTarget = c;
+                if (worstTarget.GetValue(board) > c.GetValue(board))
+                    worstTarget = c;
             }
+            board.RemoveCardFromBoard(worstTarget.Id);
+            
         }
 
         public override void OnDeath(ref Board board)
@@ -50,9 +54,9 @@ public NEW1_041() : base()
             base.OnDeath(ref board);
         }
 
-        public override void OnPlayOtherMinion(ref Board board, Card Minion)
+        public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board, Minion);
+            base.OnPlayOtherMinion(ref board,ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)

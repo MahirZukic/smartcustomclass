@@ -57,6 +57,9 @@ namespace HREngine.Bots
 		
 		public override bool ShouldAttackWithWeapon(Board board)
         {
+			if(board.WeaponFriend != null)
+				if(board.WeaponFriend.template.Id == "EX1_366")
+					return false;
             return true;
         }
 

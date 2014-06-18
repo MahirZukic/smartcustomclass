@@ -37,9 +37,9 @@ public EX1_044() : base()
             base.OnDeath(ref board);
         }
 
-        public override void OnPlayOtherMinion(ref Board board, Card Minion)
+        public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board, Minion);
+            base.OnPlayOtherMinion(ref board,ref Minion);
             board.GetCard(Id).currentAtk += 1;
             board.GetCard(Id).maxHealth += 1;
             board.GetCard(Id).CurrentHealth += 1;

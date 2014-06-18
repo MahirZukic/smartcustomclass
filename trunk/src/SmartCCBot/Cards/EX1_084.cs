@@ -37,9 +37,9 @@ public EX1_084() : base()
             base.OnDeath(ref board);
         }
 
-        public override void OnPlayOtherMinion(ref Board board, Card Minion)
+        public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board, Minion);
+            base.OnPlayOtherMinion(ref board,ref Minion);
 
             
             if(Minion.CurrentAtk <= 3 && Minion.Id != Id && Minion.IsFriend == IsFriend)

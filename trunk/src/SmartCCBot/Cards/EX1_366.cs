@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_366 : Card
+    public class EX1_366 : Card
     {
-		public override Card Create()
-{ return new EX1_366();}
-public EX1_366() : base()
+        public override Card Create()
+        { return new EX1_366(); }
+        public EX1_366()
+            : base()
         {
-            
+
         }
-		
-        public EX1_366(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_366(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -27,9 +29,10 @@ public EX1_366() : base()
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
+            base.OnPlay(ref board, target, index);
+            board.ReplaceWeapon("EX1_366");
         }
 
         public override void OnDeath(ref Board board)
@@ -37,12 +40,12 @@ public EX1_366() : base()
             base.OnDeath(ref board);
         }
 
-        public override void OnPlayOtherMinion(ref Board board, Card Minion)
+        public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board, Minion);
-            if(board.WeaponFriend != null)
+            base.OnPlayOtherMinion(ref board,ref Minion);
+            if (board.WeaponFriend != null)
             {
-                if(board.WeaponFriend.CurrentDurability > 0)
+                if (board.WeaponFriend.CurrentDurability > 0)
                 {
                     Minion.currentAtk += 1;
                     Minion.CurrentHealth += 1;
@@ -50,13 +53,14 @@ public EX1_366() : base()
                     board.WeaponFriend.CurrentDurability--;
                 }
             }
+            
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-		
+
 
     }
 }
