@@ -2474,12 +2474,15 @@ namespace HREngine.Bots
 
             int dam1 = 0;
             int hp1 = 0;
+            int potDam1 = 0;
 
             for (int i = 0; i < list1.Count; i++)
             {
                 Card c = list1[i];
                 dam1 += c.CurrentAtk;
                 hp1 += c.CurrentHealth;
+                if (c.CanAttack)
+                    potDam1 += c.CurrentAtk;
             }
             /*
             foreach (Card c1 in list1)
@@ -2491,6 +2494,8 @@ namespace HREngine.Bots
 
             int dam2 = 0;
             int hp2 = 0;
+            int potDam2 = 0;
+
             /*foreach (Card c2 in list2)
             {
                 dam2 += c2.CurrentAtk;
@@ -2502,11 +2507,15 @@ namespace HREngine.Bots
                 Card c = list2[i];
                 dam2 += c.CurrentAtk;
                 hp2 += c.CurrentHealth;
+                if (c.CanAttack)
+                    potDam2 += c.CurrentAtk;
             }
 
             if (dam1 != dam2)
                 return false;
             if (hp1 != hp2)
+                return false;
+            if (potDam1 != potDam2)
                 return false;
 
             for (int i = 0; i < list1.Count; i++)
