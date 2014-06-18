@@ -17,6 +17,11 @@ namespace HREngine.Bots
         public Card HeroFriend { get; set; }
         public List<Card> Secret { get; set; }
         public bool SecretEnemy { get; set; }
+
+        public bool ShoudTryToAttack { get; set; }
+
+        public bool ShouldTryToCastMinion { get; set; }
+
         public int ManaAvailable { get; set; }
         public int MaxMana { get; set; }
 
@@ -472,6 +477,8 @@ namespace HREngine.Bots
             SpellCastCost = 0;
             IsCombo = false;
             EnemyCardCount = 0;
+             ShoudTryToAttack = false;
+             ShouldTryToCastMinion = false;
         }
 
         public bool PlayCardFromHand(int id)
@@ -1099,19 +1106,8 @@ namespace HREngine.Bots
 
             if (SecretEnemy)
             {
-                bool HasAlreadyTryAttack = false;
-
-                foreach (Card c in MinionFriend)
-                {
-                    if (c.CountAttack > 0)
-                    {
-                        HasAlreadyTryAttack = true;
-                        break;
-                    }
-                }
-
                 Card minion = GetWorstMinionCanAttack();
-                if (MinionFriend.Count > 0 && !HasAlreadyTryAttack && minion != null)
+                if (MinionFriend.Count > 0 && ShoudTryToAttack && minion != null)
                 {
                     List<Card> tauntss = new List<Card>();
 
@@ -1166,15 +1162,18 @@ namespace HREngine.Bots
                         }
                     }
                     if (availableActions.Count > 0)
+                    {
+                        ShoudTryToAttack = false;
                         return availableActions;
+                    }
                 }
-                else
+                else if (ShouldTryToCastMinion)
                 {
                     Card worstMinionInHand = null;
 
                     foreach (Card c in Hand)
                     {
-                        if (c.Type == Card.CType.MINION)
+                        if (c.Type == Card.CType.MINION && c.CurrentCost <= ManaAvailable)
                         {
                             if (worstMinionInHand == null)
                                 worstMinionInHand = c;
@@ -1190,7 +1189,13 @@ namespace HREngine.Bots
             }
 
             if (CastableCards.Count == 0)
+            {
                 CastableCards = Hand;
+            }
+            else
+            {
+                ShouldTryToCastMinion = false;
+            }
 
             List<Card> taunts = new List<Card>();
 
@@ -2330,6 +2335,8 @@ namespace HREngine.Bots
             newBoard.MaxMana = baseInstance.MaxMana;
             newBoard.IsCombo = baseInstance.IsCombo;
             newBoard.EnemyCardCount = baseInstance.EnemyCardCount;
+            newBoard.ShoudTryToAttack = baseInstance.ShoudTryToAttack;
+            newBoard.ShouldTryToCastMinion = baseInstance.ShouldTryToCastMinion;
             foreach (Card c in baseInstance.Hand)
             {
                 newBoard.Hand.Add(Card.Clone(c));
