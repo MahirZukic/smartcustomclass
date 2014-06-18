@@ -17,6 +17,8 @@ namespace HREngine.Bots
 
         public List<Action> ActionStack { get; set; }
         public Board root { get; set; }
+        public Board BestBoardFinal { get; set; }
+
         public int TurnCount { get; set; }
 
         public int SimuCount { get; set; }
@@ -25,7 +27,7 @@ namespace HREngine.Bots
 
         public bool IsCombo { get; set; }
 
-
+        public bool EnemyHasSecret { get; set; }
         private string CurrentFolder { get; set; }
 
         public Action GetNextAction()
@@ -62,7 +64,7 @@ namespace HREngine.Bots
             NeedCalculation = true;
             SimuCount = 0;
             ChoiceTarget = null;
-
+            EnemyHasSecret = false;
             /*for (int i = 0; i < nbThread; i++)
             {
                 SimulationThread thread = new SimulationThread();
@@ -123,6 +125,7 @@ namespace HREngine.Bots
             int wide = 0;
             int depth = 0;
             int maxDepth = 15;
+
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
 
@@ -524,7 +527,7 @@ namespace HREngine.Bots
             stopWatch.Stop();
 
             Log("Simulation stopped after :" + (stopWatch.ElapsedMilliseconds / 1000.0f).ToString());
-
+            BestBoardFinal = bestBoard;
             if (bestBoard.GetValue() > 9000)
                 WriteWinFile();
         }
