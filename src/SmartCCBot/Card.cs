@@ -148,7 +148,7 @@ namespace HREngine.Bots
 
         }
 
-        public virtual void OnPlayOtherMinion(ref Board board, Card Minion)
+        public virtual void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
 
         }

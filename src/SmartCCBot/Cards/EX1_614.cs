@@ -37,9 +37,9 @@ public EX1_614() : base()
             base.OnDeath(ref board);
         }
 
-        public override void OnPlayOtherMinion(ref Board board, Card Minion)
+        public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board, Minion);
+            base.OnPlayOtherMinion(ref board,ref Minion);
             if(IsFriend)
                 board.AddCardToBoard("EX1_614t", true);
         }

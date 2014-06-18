@@ -39,9 +39,9 @@ namespace HREngine.Bots
             base.OnDeath(ref board);
         }
 
-        public override void OnPlayOtherMinion(ref Board board, Card Minion)
+        public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board, Minion);
+            base.OnPlayOtherMinion(ref board,ref Minion);
 
             board.DoRandomDamage(1, !IsFriend);
             board.Resimulate();

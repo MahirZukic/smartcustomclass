@@ -99,7 +99,7 @@ namespace HREngine.Bots
                     value += WeaponFriend.GetValue(this);
                 else
                 {
-                    if (WeaponFriend.CurrentAtk < 2)
+                    if (WeaponFriend.CurrentAtk < 2 && WeaponFriend.CurrentDurability < 3)
                         value += WeaponFriend.GetValue(this) * 0.5f;
                     else
                     {
@@ -477,8 +477,8 @@ namespace HREngine.Bots
             SpellCastCost = 0;
             IsCombo = false;
             EnemyCardCount = 0;
-             ShoudTryToAttack = false;
-             ShouldTryToCastMinion = false;
+            ShoudTryToAttack = false;
+            ShouldTryToCastMinion = false;
         }
 
         public bool PlayCardFromHand(int id)
@@ -797,6 +797,19 @@ namespace HREngine.Bots
                 }
 
                 MinionFriend.Add(c);
+                foreach (Card cc in GetAllMinionsOnBoard())
+                {
+                    if (cc.Id == c.Id)
+                        continue;
+
+                    Board tBoard = this;
+                    cc.OnPlayOtherMinion(ref tBoard, ref c);
+                }
+                if (WeaponFriend != null)
+                {
+                    Board tBoard = this;
+                    WeaponFriend.OnPlayOtherMinion(ref tBoard, ref c);
+                }
             }
             Resimulate();
         }
@@ -1033,15 +1046,17 @@ namespace HREngine.Bots
                         a.Actor.OnPlay(ref child, null, a.Index, a.Choice);
                     }
                     child.Update();
+                    Card playedMinion = child.GetCard(a.Actor.Id);
                     foreach (Card c in child.GetAllMinionsOnBoard())
                     {
                         if (a.Actor.Id == c.Id)
                             continue;
-                        c.OnPlayOtherMinion(ref child, child.GetCard(a.Actor.Id));
+
+                        c.OnPlayOtherMinion(ref child, ref playedMinion);
                     }
                     if (child.WeaponFriend != null)
                     {
-                        child.WeaponFriend.OnPlayOtherMinion(ref child, child.GetCard(a.Actor.Id));
+                        child.WeaponFriend.OnPlayOtherMinion(ref child, ref playedMinion);
                     }
                     child.IsCombo = true;
                     break;
@@ -1434,12 +1449,12 @@ namespace HREngine.Bots
                     if (c.CurrentAtk <= WeaponFriend.CurrentAtk && WeaponFriend.CurrentDurability > 0)
                         continue;
                 }
-                else if(c.Type == Card.CType.SPELL)
+                else if (c.Type == Card.CType.SPELL)
                 {
-                    if(Secret.Count > 0)
+                    if (Secret.Count > 0)
                     {
                         bool found = false;
-                        foreach(Card secr in Secret)
+                        foreach (Card secr in Secret)
                         {
                             if (secr.template.Id == c.template.Id)
                                 found = true;

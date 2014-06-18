@@ -37,9 +37,9 @@ public DS1_183() : base()
             base.OnDeath(ref board);
         }
 
-        public override void OnPlayOtherMinion(ref Board board, Card Minion)
+        public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board, Minion);
+            base.OnPlayOtherMinion(ref board,ref Minion);
             board.MinionEnemy[0].Damage(3, ref board);
             board.MinionEnemy[1].Damage(3, ref board);
             board.Resimulate();
