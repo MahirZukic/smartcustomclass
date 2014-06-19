@@ -129,8 +129,22 @@ namespace HREngine.Bots
 
             value += MaxMana * ValuesInterface.ValueMana;
 
+
+            value -= GetOverload() * ValuesInterface.ValueOverload;
+
             Value = value;
             return value;
+        }
+
+        public int GetOverload()
+        {
+            int ret = 0;
+            foreach(Action a in ActionsStack)
+            {
+                if(a.Type == Action.ActionType.CAST_MINION || a.Type == Action.ActionType.CAST_SPELL || a.Type == Action.ActionType.CAST_WEAPON)
+                    ret += a.Actor.Overload;
+            }
+            return ret;
         }
 
         public Board CalculateEnemyTurnValue()

@@ -29,6 +29,7 @@ namespace HREngine.Bots
         public static int ValueDivineShield { get; set; }
         public static int ValueAttackWeapon { get; set; }
         public static int ValueFrozen { get; set; }
+        public static int ValueOverload { get; set; }
 
         public static void LoadValuesFromFile()
         {
@@ -110,6 +111,10 @@ namespace HREngine.Bots
                 if (line.Contains("ValueMana"))
                 {
                     ValueMana = int.Parse(line.Split('=')[1]);
+                }
+                if (line.Contains("ValueOverload"))
+                {
+                    ValueOverload = int.Parse(line.Split('=')[1]);
                 }
             }
 

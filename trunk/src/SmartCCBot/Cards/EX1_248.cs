@@ -25,6 +25,7 @@ public EX1_248() : base()
         public override void Init()
         {
             base.Init();
+            Overload = 2;
         }
 
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
