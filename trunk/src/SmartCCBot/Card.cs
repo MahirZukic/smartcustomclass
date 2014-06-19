@@ -2608,12 +2608,12 @@ namespace HREngine.Bots
             if (IsTargetable != c.IsTargetable)
                 return false;
 
-            if (HasDeathRattle || c.HasDeathRattle)
+            if (HasDeathRattle)
                 return false;
-
+/*
             if (IsBuffer || c.IsBuffer)
                 return false;
-
+            */
             return true;
         }
     }
