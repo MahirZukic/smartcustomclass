@@ -650,6 +650,7 @@ namespace HREngine.Bots
 
         public void DoRandomDamage(int damage, bool FriendSide)
         {
+            Board tBoard = this;
             List<Card> KillableMinions = new List<Card>();
             bool IsHeroKillable = false;
 
@@ -720,72 +721,39 @@ namespace HREngine.Bots
 
                 if (!IsHeroKillable)
                 {
-                    if (MinionEnemy.Count - KillableMinions.Count > 0)
+                    if(KillableMinions.Count > 0)
                     {
-                        Card worstMinion = GetWorstEnemyMinion();
-                        if (worstMinion != null)
-                        {
-                            worstMinion.CurrentHealth -= damage;
-                        }
-                    }
-                    else
-                    {
-                        if (HeroEnemy.CurrentArmor < 1)
-                        {
-                            HeroEnemy.CurrentHealth -= damage;
-                        }
-                        else
-                        {
-                            int tmp = damage - HeroEnemy.CurrentArmor;
-                            HeroFriend.CurrentArmor -= (damage - tmp);
-                            HeroFriend.CurrentHealth -= tmp;
-                        }
-                    }
-
-                }
-                else
-                {
-                    if (MinionEnemy.Count - KillableMinions.Count > 0)
-                    {
-                        Card worstMinion = GetWorstEnemyMinion();
-                        if (worstMinion != null)
-                        {
-                            worstMinion.CurrentHealth -= damage;
-                        }
-                    }
-                    else if (KillableMinions.Count > 0)
-                    {
-
                         Card bestMinion = null;
-                        foreach (Card c in KillableMinions)
+
+                        foreach(Card ccc in KillableMinions)
                         {
                             if (bestMinion == null)
-                            {
-                                bestMinion = c;
-                                continue;
-                            }
-
-                            if (bestMinion.GetValue(this) < c.GetValue(this))
-                                bestMinion = c;
+                                bestMinion = ccc;
+                            if (bestMinion.GetValue(this) < ccc.GetValue(this))
+                                bestMinion = ccc;
                         }
                         if (bestMinion != null)
                         {
-                            RemoveCardFromBoard(bestMinion.Id);
+                            bestMinion.Damage(damage, ref tBoard);
+                        }
+
+                    }
+                    else if (MinionEnemy.Count > 0)
+                    {
+                        Card worstMinion = GetWorstEnemyMinion();
+                        if (worstMinion != null)
+                        {
+                            worstMinion.Damage(damage, ref tBoard);
                         }
                     }
                     else
                     {
-                        if (HeroEnemy.CurrentArmor < 1)
-                        {
-                            HeroEnemy.CurrentHealth -= damage;
-                        }
-                        else
-                        {
-                            int tmp = damage - HeroEnemy.CurrentArmor;
-                            HeroFriend.CurrentArmor -= (damage - tmp);
-                            HeroFriend.CurrentHealth -= tmp;
-                        }
+                        HeroEnemy.Damage(damage, ref tBoard);
                     }
+                }
+                else
+                {
+                    HeroEnemy.Damage(damage, ref tBoard);
                 }
             }
         }
@@ -899,6 +867,36 @@ namespace HREngine.Bots
             return false;
         }
 
+        public bool HasCardInHand(string id)
+        {
+            foreach(Card c in Hand)
+            {
+                if (c.template.Id == id)
+                    return true;
+            }
+            return false;
+        }
+        public bool HasMinionOnBoard(string id,bool FriendSide)
+        {
+            if(FriendSide)
+            {
+                foreach (Card c in MinionFriend)
+                {
+                    if (c.template.Id == id)
+                        return true;
+                }
+            }
+            else
+            {
+                foreach (Card c in MinionEnemy)
+                {
+                    if (c.template.Id == id)
+                        return true;
+                }
+            }
+            
+            return false;
+        }
         public bool HasFriendBuffer()
         {
             List<Card> buffers = new List<Card>();
