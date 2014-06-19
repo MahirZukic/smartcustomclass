@@ -50,8 +50,64 @@ namespace HREngine.Bots
             return CardsToKeep;
         }
 		
-		public override bool ShouldPlayMoreMinions(Board board)
+        public string EnemyClass(string id)
         {
+            /*  WARRIOR  = "HERO_01"
+                SHAMAN   = "HERO_02"
+                ROGUE    = "HERO_03"
+                PALADIN  = "HERO_04"
+                HUNTER   = "HERO_05"
+                DRUID    = "HERO_06"
+                WARLOCK  = "HERO_07"
+                MAGE     = "HERO_08"
+                PRIEST   = "HERO_09"
+                JARAXXUS = "EX1_323h"  */
+
+            switch (id)
+            {
+                case "HERO_01":
+                    return "warrior";
+                case "HERO_02":
+                    return "shaman";
+                case "HERO_03":
+                    return "rogue";
+                case "HERO_04":
+                    return "paladin";
+                case "HERO_05":
+                    return "hunter";
+                case "HERO_06":
+                    return "druid";
+                case "HERO_07":
+                    return "warlock";
+                case "HERO_08":
+                    return "mage";
+                case "HERO_09":
+                    return "priest";
+                case "EX1_323h":
+                    return "lordjaraxxus";
+                default:
+                    return "Unknown ID: " + id;
+            }
+        }
+
+        public override bool ShouldPlayMoreMinions(Board board)
+        {
+			int worthyMinion = 0;
+		
+			foreach(Card c in board.MinionFriend)
+			{
+				if(c.GetValue(board) > 10)
+					worthyMinion++;
+			}
+		
+            string enemy = EnemyClass(board.HeroEnemy.template.Id);
+
+            if (enemy == "mage" || enemy == "shaman")
+            {
+                if (worthyMinion >= 3 && board.Hand.Count < 4 && board.MinionEnemy.Count < worthyMinion)
+                    return false;
+            }
+            
             return true;
         }
 		
