@@ -26,7 +26,7 @@ namespace HREngine.Bots
 			
 			/* Setup BlackList */
 			
-			
+			int taunts = 0;
 			
 			foreach(Card c in Choices)
 			{
@@ -43,8 +43,12 @@ namespace HREngine.Bots
 				}
 				if(c.CurrentCost > MaxManaCost || isBlackListed ||CardsToKeep.Contains(c))
 					continue;
-					
-				CardsToKeep.Add(c);
+				if(taunts < 2)
+				{
+					if(c.IsTaunt)
+						taunts++;
+					CardsToKeep.Add(c);
+				}				
 			}
 			
             return CardsToKeep;
