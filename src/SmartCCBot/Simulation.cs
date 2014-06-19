@@ -321,9 +321,9 @@ namespace HREngine.Bots
                                 {
                                     bool found = false;
                                     //foreach (Board lol in childs.ToArray())
-                                    for (int y = 0; y < AllBoards.Count; y++)
+                                    for (int y = 0; y < childs.Count; y++)
                                     {
-                                        Board lol = AllBoards[y];
+                                        Board lol = childs[y];
                                         if (bb.Equals(lol))
                                         {
                                             found = true;
