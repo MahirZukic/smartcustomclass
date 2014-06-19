@@ -37,8 +37,6 @@ public EX1_308()
             if (board.Hand.Count <= 1)
                 board.Hand.Clear();
 
-            board.FriendCardDraw--;
-
             board.Resimulate();
 
         }

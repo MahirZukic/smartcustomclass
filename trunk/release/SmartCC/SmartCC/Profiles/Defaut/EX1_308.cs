@@ -22,6 +22,8 @@ namespace HREngine.Bots
 
 			foreach(Card c in board.Hand)
 			{	
+				if(c.template.Id == "EX1_308")
+					continue;
 				if(c.CurrentCost <= board.ManaAvailable && c.Type == Card.CType.MINION || c.Type == Card.CType.SPELL)
 				{
 					if(c.Type == Card.CType.SPELL)
