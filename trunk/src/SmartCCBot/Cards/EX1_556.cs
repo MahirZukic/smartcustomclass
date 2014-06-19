@@ -27,6 +27,11 @@ public EX1_556() : base()
             base.Init();
         }
 
+        public override float GetValue(Board board)
+        {
+            return base.GetValue(board) + 5;
+        }
+
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);

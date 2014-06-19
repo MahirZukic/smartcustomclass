@@ -26,7 +26,8 @@ namespace HREngine.Bots
             if (Type == CType.MINION)
             {
                 value += ValuesInterface.ValueHealthMinion * CurrentHealth;
-                value += ValuesInterface.ValueAttackMinion * CurrentAtk;
+                if (!IsStuck)
+                    value += ValuesInterface.ValueAttackMinion * CurrentAtk;
 
                 if (IsTaunt && IsFriend)
                 {
@@ -2613,10 +2614,10 @@ namespace HREngine.Bots
 
             if (HasDeathRattle != c.HasDeathRattle)
                 return false;
-/*
-            if (IsBuffer || c.IsBuffer)
-                return false;
-            */
+            /*
+                        if (IsBuffer || c.IsBuffer)
+                            return false;
+                        */
             return true;
         }
     }

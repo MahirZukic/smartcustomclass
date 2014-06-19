@@ -44,13 +44,20 @@ public EX1_258() : base()
             {
                 currentAtk++;
                 CurrentHealth++;
-                maxHealth++;
+                MaxHealth++;
             }
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
 		    base.OnCastSpell(ref board, Spell);
+
+            if(Spell.Overload > 0)
+            {
+                currentAtk++;
+                CurrentHealth++;
+                MaxHealth++;
+            }
             board.Resimulate();
         }
 		
