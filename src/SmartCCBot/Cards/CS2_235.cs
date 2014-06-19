@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class CS2_235 : Card
+    public class CS2_235 : Card
     {
-		public override Card Create()
-{ return new CS2_235();}
-public CS2_235() : base()
+        public override Card Create()
+        { return new CS2_235(); }
+        public CS2_235()
+            : base()
         {
-            
+
         }
-		
-        public CS2_235(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public CS2_235(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override float GetValue(Board board)
@@ -38,14 +40,22 @@ public CS2_235() : base()
         {
             base.Init();
         }
-        public override void OnOtherMinionHeal()
+        public override void OnOtherMinionHeal(ref Board board, Card minionHealed)
         {
-            base.OnOtherMinionHeal();
-
+            base.OnOtherMinionHeal(ref board, minionHealed);
+            if (IsFriend)
+            {
+                board.FriendCardDraw++;
+                board.Resimulate();
+            }
+            else
+            {
+                board.EnemyCardDraw++;
+            }
         }
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
+            base.OnPlay(ref board, target, index);
         }
 
         public override void OnDeath(ref Board board)
@@ -55,14 +65,14 @@ public CS2_235() : base()
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board,ref Minion);
+            base.OnPlayOtherMinion(ref board, ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
 
-		
+
     }
 }

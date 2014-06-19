@@ -256,7 +256,7 @@ namespace HREngine.Bots
         {
 
         }
-        public virtual void OnOtherMinionHeal()
+        public virtual void OnOtherMinionHeal(ref Board board, Card minionHealed)
         {
 
         }
@@ -346,12 +346,12 @@ namespace HREngine.Bots
             {
                 foreach (Card c in board.MinionFriend)
                 {
-                    c.OnOtherMinionHeal();
+                    c.OnOtherMinionHeal(ref board,this);
                 }
 
                 foreach (Card c in board.MinionEnemy)
                 {
-                    c.OnOtherMinionHeal();
+                    c.OnOtherMinionHeal(ref board,this);
                 }
 
 
