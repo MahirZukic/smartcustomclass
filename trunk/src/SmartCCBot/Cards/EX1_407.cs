@@ -30,7 +30,10 @@ public EX1_407() : base()
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);
+            Card best = board.GetBestEnemyMinion();
+            board.MinionFriend.Clear();
             board.MinionEnemy.Clear();
+            board.MinionEnemy.Add(best);
             board.Resimulate();
         }
 
