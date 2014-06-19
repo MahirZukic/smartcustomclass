@@ -51,8 +51,5 @@ namespace HREngine.Bots
         {
             base.OnCastSpell(ref board, Spell);
         }
-
-
-
     }
 }
