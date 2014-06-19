@@ -33,7 +33,7 @@ public EX1_049() : base()
             base.OnPlay(ref board, target,index);
             if (target != null)
             {
-                target.IsDestroyed = true;
+                board.RemoveCardFromBoard(target.Id);
                 board.FriendCardDraw++;
                 board.Resimulate();
 

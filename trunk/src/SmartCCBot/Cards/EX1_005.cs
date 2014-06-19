@@ -35,7 +35,7 @@ public EX1_005() : base()
             {
                 if(target.CurrentAtk >= 7)
                 {
-                    target.IsDestroyed = true;
+                    board.RemoveCardFromBoard(target.Id);
                 }
             }
         }

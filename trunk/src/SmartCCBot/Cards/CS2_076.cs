@@ -33,7 +33,7 @@ public CS2_076() : base()
             base.OnPlay(ref board, target,index);
             if(target != null)
             {
-                target.IsDestroyed = true;
+                board.RemoveCardFromBoard(target.Id);
 
             }
         }
