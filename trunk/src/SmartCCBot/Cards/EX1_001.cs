@@ -27,9 +27,9 @@ public EX1_001() : base()
             base.Init();
         }
 
-        public override void OnOtherMinionHeal()
+        public override void OnOtherMinionHeal(ref Board board, Card minionHealed)
         {
-            base.OnOtherMinionHeal();
+            base.OnOtherMinionHeal(ref board, minionHealed);
             currentAtk += 2;
         }
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)

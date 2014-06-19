@@ -27,7 +27,7 @@ namespace HREngine.Bots
         public override void Init()
         {
             base.Init();
-            TargetTypeOnPlay = TargetType.ALL;
+            TargetTypeOnPlay = TargetType.BOTH_ENEMY;
         }
 
         public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
