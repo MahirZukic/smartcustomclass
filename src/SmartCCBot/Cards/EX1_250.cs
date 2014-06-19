@@ -26,6 +26,7 @@ public EX1_250() : base()
         {
             base.Init();
             IsTaunt = true;
+            Overload = 3;
         }
 
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)

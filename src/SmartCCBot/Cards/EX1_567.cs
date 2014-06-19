@@ -26,6 +26,7 @@ public EX1_567() : base()
         {
             base.Init();
             IsWindfury = true;
+            Overload = 2;
         }
 
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)

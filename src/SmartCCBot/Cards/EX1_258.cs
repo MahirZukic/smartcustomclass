@@ -40,6 +40,12 @@ public EX1_258() : base()
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
             base.OnPlayOtherMinion(ref board,ref Minion);
+            if(Minion.Overload > 0)
+            {
+                currentAtk++;
+                CurrentHealth++;
+                maxHealth++;
+            }
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)

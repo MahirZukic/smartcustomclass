@@ -557,6 +557,7 @@ namespace HREngine.Bots
 
         public bool IsFriend { get; set; }
         public bool IsBuffer { get; set; }
+        public int Overload { get; set; }
 
         public int Id { get; set; }
 
@@ -747,6 +748,7 @@ namespace HREngine.Bots
             HasDeathRattle = template.HasDeathrattle;
             IsDrawAttack = false;
             IsBuffer = (Buff.GetBuffById(template.Id) != null);
+            Overload = 0;
             Init();
 
         }
@@ -2470,6 +2472,7 @@ namespace HREngine.Bots
             clone.IsStuck = baseInstance.IsStuck;
             clone.HasDeathRattle = baseInstance.HasDeathRattle;
             clone.IsDrawAttack = baseInstance.IsDrawAttack;
+            clone.Overload = baseInstance.Overload;
             //foreach (Buff b in baseInstance.buffs)
             for (int i = 0; i < baseInstance.buffs.Count; i++)
             {
