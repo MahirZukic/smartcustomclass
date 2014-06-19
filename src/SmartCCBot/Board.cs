@@ -779,7 +779,7 @@ namespace HREngine.Bots
             return lastIdGen++;
         }
 
-        public void AddCardToBoard(string id, bool friend)
+        public void AddCardToBoard(string id, bool friend, int index = -1)
         {
 
             if (!friend)
@@ -789,6 +789,10 @@ namespace HREngine.Bots
                 {
                     c.IsTired = true;
                 }
+                if (index == -1)
+                    c.Index = MinionEnemy.Count;
+                else
+                    c.Index = index;
 
                 MinionEnemy.Add(c);
             }
@@ -799,7 +803,10 @@ namespace HREngine.Bots
                 {
                     c.IsTired = true;
                 }
-
+                if (index == -1)
+                    c.Index = MinionFriend.Count;
+                else
+                    c.Index = index;
                 MinionFriend.Add(c);
                 foreach (Card cc in GetAllMinionsOnBoard())
                 {
@@ -1388,8 +1395,19 @@ namespace HREngine.Bots
                     if (Ability.TargetTypeOnPlay == Card.TargetType.MINION_ENEMY || Ability.TargetTypeOnPlay == Card.TargetType.MINION_BOTH
                            || Ability.TargetTypeOnPlay == Card.TargetType.BOTH_ENEMY || Ability.TargetTypeOnPlay == Card.TargetType.ALL)
                     {
+                        List<Card> targets = new List<Card>();
                         foreach (Card Enemy in MinionEnemy)
                         {
+                            bool containsSimilarEnemyMinion = false;
+                            foreach (Card cc in targets)
+                            {
+                                if (cc.IsSimilar(Enemy))
+                                    containsSimilarEnemyMinion = true;
+                            }
+                            if (containsSimilarEnemyMinion)
+                                continue;
+                            targets.Add(Enemy);
+
                             if (!Enemy.IsTargetable || Enemy.IsStealth)
                                 continue;
                             if (!Ability.Behavior.ShouldBePlayedOnTarget(Enemy))
@@ -1402,8 +1420,19 @@ namespace HREngine.Bots
                     if (Ability.TargetTypeOnPlay == Card.TargetType.MINION_FRIEND || Ability.TargetTypeOnPlay == Card.TargetType.MINION_BOTH
                         || Ability.TargetTypeOnPlay == Card.TargetType.BOTH_FRIEND || Ability.TargetTypeOnPlay == Card.TargetType.ALL)
                     {
+                        List<Card> targets = new List<Card>();
                         foreach (Card friend in MinionFriend)
                         {
+                            bool containsSimilarEnemyMinion = false;
+                            foreach (Card cc in targets)
+                            {
+                                if (cc.IsSimilar(friend))
+                                    containsSimilarEnemyMinion = true;
+                            }
+                            if (containsSimilarEnemyMinion)
+                                continue;
+                            targets.Add(friend);
+
                             if (!friend.IsTargetable || friend.IsStealth)
                                 continue;
                             if (!Ability.Behavior.ShouldBePlayedOnTarget(friend))
@@ -1549,9 +1578,19 @@ namespace HREngine.Bots
                                     availableActions.Add(a);
                             }
                         }
-
+                        List<Card> targets = new List<Card>();
                         foreach (Card Enemy in MinionEnemy)
                         {
+                            bool containsSimilarEnemyMinion = false;
+                            foreach (Card cc in targets)
+                            {
+                                if (cc.IsSimilar(Enemy))
+                                    containsSimilarEnemyMinion = true;
+                            }
+                            if (containsSimilarEnemyMinion)
+                                continue;
+                            targets.Add(Enemy);
+
                             if (c.Type == Card.CType.SPELL)
                             {
                                 if (!Enemy.IsTargetable)
@@ -1684,8 +1723,19 @@ namespace HREngine.Bots
                             }
                         }
 
+                        List<Card> targets = new List<Card>();
                         foreach (Card friend in MinionFriend)
                         {
+                            bool containsSimilarEnemyMinion = false;
+                            foreach (Card cc in targets)
+                            {
+                                if (cc.IsSimilar(friend))
+                                    containsSimilarEnemyMinion = true;
+                            }
+                            if (containsSimilarEnemyMinion)
+                                continue;
+                            targets.Add(friend);
+
                             if (c.Type == Card.CType.SPELL)
                             {
                                 if (!friend.IsTargetable)

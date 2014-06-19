@@ -35,8 +35,8 @@ namespace HREngine.Bots
             base.OnPlay(ref board, target, index);
             if (target != null)
             {
-                target.IsDestroyed = true;
-                board.AddCardToBoard("hexfrog", target.IsFriend);
+                board.RemoveCardFromBoard(target.Id);
+                board.AddCardToBoard("hexfrog", target.IsFriend,target.Index);
                 board.Resimulate();
             }
         }

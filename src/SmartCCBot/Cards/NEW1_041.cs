@@ -46,7 +46,7 @@ public NEW1_041() : base()
                     worstTarget = c;
             }
             if (worstTarget != null)
-                worstTarget.IsDestroyed = true;
+                board.RemoveCardFromBoard(worstTarget.Id);
             
         }
 

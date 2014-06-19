@@ -142,7 +142,7 @@ namespace HREngine.Bots
                     break;
                 case "medium":
                     maxWide = 5000;
-                    maxBoards = 2000;
+                    maxBoards = 1000;
                     break;
                 case "high":
                     maxWide = 8000;
@@ -321,9 +321,9 @@ namespace HREngine.Bots
                                 {
                                     bool found = false;
                                     //foreach (Board lol in childs.ToArray())
-                                    for (int y = 0; y < childs.Count; y++)
+                                    for (int y = 0; y < AllBoards.Count; y++)
                                     {
-                                        Board lol = childs[y];
+                                        Board lol = AllBoards[y];
                                         if (bb.Equals(lol))
                                         {
                                             found = true;

@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_604 : Card
+    public class EX1_604 : Card
     {
-		public override Card Create()
-{ return new EX1_604();}
-public EX1_604() : base()
+        public override Card Create()
+        { return new EX1_604(); }
+        public EX1_604()
+            : base()
         {
-            
+
         }
-		
-        public EX1_604(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_604(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -27,14 +29,15 @@ public EX1_604() : base()
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
+            base.OnPlay(ref board, target, index);
         }
 
-        public override void OnOtherMinionDamage(ref Board board,Card minionDamaged)
+        public override void OnOtherMinionDamage(ref Board board, Card minionDamaged)
         {
-            currentAtk++;
+            if (!IsSilenced)
+                currentAtk++;
         }
 
         public override void OnDeath(ref Board board)
@@ -44,12 +47,12 @@ public EX1_604() : base()
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board,ref Minion);
+            base.OnPlayOtherMinion(ref board, ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
 
     }
