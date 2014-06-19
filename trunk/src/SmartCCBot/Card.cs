@@ -46,7 +46,7 @@ namespace HREngine.Bots
                     value += 1;
 
                 if (IsBuffer)
-                    value += 2;
+                    value += 5;
 
 
             }
