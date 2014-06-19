@@ -20,6 +20,25 @@ namespace HREngine.Bots
         {
             if (board.MinionEnemy.Count == 0 && board.HeroEnemy.CurrentHealth > 15)
                 return false;
+				
+			int nbTarget = 0;
+			int targetHp = 2;
+			if(board.MinionEnemy.Count > 2)
+			{
+				targetHp = 1;
+			}
+			
+			foreach(Card c in board.MinionEnemy)
+			{
+				if(c.CurrentHealth <= targetHp)
+				{
+					nbTarget++;
+				}
+			}
+			
+			if(nbTarget < 1)
+				return false;
+			
             return true;
         }
 
