@@ -350,6 +350,32 @@ namespace HREngine.Bots
                     }
                 }
             }
+            else if (HeroEnemy.CurrentAtk > 0 && HeroEnemy.CanAttack && WeaponEnemy == null)
+            {
+
+                if (taunts.Count == 0)
+                {
+                    foreach (Card Friend in MinionFriend)
+                    {
+                        if (Friend.IsStealth)
+                            continue;
+                        Action a = new Action(Action.ActionType.HERO_ATTACK, HeroEnemy, Friend);
+                        enemyActions.Add(a);
+                    }
+                    Action ac = new Action(Action.ActionType.HERO_ATTACK, HeroEnemy, HeroFriend);
+                    enemyActions.Add(ac);
+                }
+                else
+                {
+                    foreach (Card taunt in taunts)
+                    {
+                        Action a = new Action(Action.ActionType.HERO_ATTACK, HeroEnemy, taunt);
+                        enemyActions.Add(a);
+                    }
+
+                }
+
+            }
 
             return enemyActions;
 
