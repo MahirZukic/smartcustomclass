@@ -32,7 +32,7 @@ public EX1_335() : base()
             base.OnUpdate(board);
             if (IsSilenced)
                 return;
-
+            TempAtk = 0;
             currentAtk = CurrentHealth;
         }
 
