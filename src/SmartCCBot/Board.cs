@@ -129,7 +129,12 @@ namespace HREngine.Bots
 
             value += MaxMana * ValuesInterface.ValueMana;
 
+            int playableCardthisTurn = 0;
+            int playableCardNextTurn = 0;
+            foreach(Card c in Hand)
+            {
 
+            }
             value -= GetOverload() * ValuesInterface.ValueOverload;
 
             Value = value;
@@ -1122,7 +1127,7 @@ namespace HREngine.Bots
 
                     foreach (Card c in child.GetAllMinionsOnBoard())
                     {
-                        c.OnCastSpell(ref child, child.GetCard(a.Actor.Id));
+                        c.OnCastSpell(ref child, a.Actor);
                     }
                     child.IsCombo = true;
 
