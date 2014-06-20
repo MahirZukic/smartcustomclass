@@ -74,9 +74,11 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {			
+			if(target.CurrentHealth < 3 && target.Type == Card.CType.MINION )
+				return false;
 			
             if (target.CurrentHealth > 4)
-                    return false;
+                return false;
 
             return true;
         }
