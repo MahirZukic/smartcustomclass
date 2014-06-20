@@ -49,6 +49,9 @@ namespace HREngine.Bots
 
         public float GetValue()
         {
+            if (Value != 0)
+                return Value;
+            
             float value = 0;
 
             foreach (Card c in MinionEnemy)
@@ -2185,7 +2188,7 @@ namespace HREngine.Bots
             }
             */
 
-            Console.WriteLine("");
+            //Console.WriteLine("");
 
             return availableActions;
         }
