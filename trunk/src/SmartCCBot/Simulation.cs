@@ -134,7 +134,7 @@ namespace HREngine.Bots
             int maxWide = 3000;
             int maxBoards = 2000;
             int maxSkip = 150000;
-            float rootValue = root.GetValue() - 10;
+            float rootValue = root.GetValue() - 30;
             switch (SearchLevel)
             {
                 case "low":
@@ -142,8 +142,9 @@ namespace HREngine.Bots
                     maxBoards = 5;
                     break;
                 case "medium":
-                    maxWide = 5000;
-                    maxBoards = 10;
+                    maxWide = 10000;
+                    maxBoards = 1000;
+                    maxSkip = 50000;
                     break;
                 case "high":
                     maxWide = 8000;
@@ -219,7 +220,7 @@ namespace HREngine.Bots
                                 bool found = false;
                                 if (bbValue <= rootValue)
                                 {
-                                    // found = true;
+                                    found = true;
                                 }
                                 else
                                 {
@@ -274,6 +275,14 @@ namespace HREngine.Bots
                 Log("Simulation :" + depth.ToString() + " | " + wide.ToString() + " | " + skipped.ToString());
                 Console.WriteLine("Simulation :" + depth.ToString() + " | " + wide.ToString() + " | " + skipped.ToString());
                 boards.Clear();
+
+                int limit = maxBoards;
+                if (childs.Count < maxBoards)
+                    limit = childs.Count;
+                
+                childs.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
+                childs = new List<Board>(childs.GetRange(0, limit));
+
                 boards = childs;
                 depth++;
             }
