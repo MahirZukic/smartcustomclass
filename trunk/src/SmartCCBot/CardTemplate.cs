@@ -27,6 +27,7 @@ namespace HREngine.Bots
 
         public int Durability { get; set; }
         public bool  HasDeathrattle { get; set; }
+        public bool IsBuffer { get; set; }
 
         public List<string> Mechanics { get; set; }
 
@@ -39,6 +40,7 @@ namespace HREngine.Bots
             Name = String.Empty;
             Atk = 0;
             Health = 0;
+            IsBuffer = false;
             Mechanics = new List<string>();
         }
 
@@ -158,6 +160,8 @@ namespace HREngine.Bots
                     }
                 }
                 templateList.Add(template);
+                if (Buff.GetBuffById(template.Id) != null)
+                    template.IsBuffer = true;
             }
         }
 
