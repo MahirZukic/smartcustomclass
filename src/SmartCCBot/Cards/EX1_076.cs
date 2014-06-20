@@ -34,6 +34,11 @@ public EX1_076() : base()
 
         public override void OnDeath(ref Board board)
         {
+            foreach(Card c in board.Hand)
+            {
+                if (c.Type == CType.MINION && c.CurrentCost < c.template.Cost)
+                    c.CurrentCost++;
+            }
             base.OnDeath(ref board);
         }
 

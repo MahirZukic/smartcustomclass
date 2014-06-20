@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_362 : Card
+    public class EX1_362 : Card
     {
-		public override Card Create()
-{ return new EX1_362();}
-public EX1_362() : base()
+        public override Card Create()
+        { return new EX1_362(); }
+        public EX1_362()
+            : base()
         {
-            
+
         }
-		
-        public EX1_362(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_362(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -28,10 +30,10 @@ public EX1_362() : base()
             TargetTypeOnPlay = TargetType.MINION_FRIEND;
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
-            if(target != null)
+            base.OnPlay(ref board, target, index);
+            if (target != null)
             {
                 target.IsDivineShield = true;
             }
@@ -44,14 +46,14 @@ public EX1_362() : base()
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board,ref Minion);
+            base.OnPlayOtherMinion(ref board, ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-		
-		
+
+
     }
 }
