@@ -43,7 +43,7 @@ namespace HREngine.Bots
 		
 		public override int GetHandValue(Board board)
 		{
-			int ret = 0;
+			int ret = 6;
 			foreach(Card c in board.MinionFriend)
 			{
 				if(c.template.Id == "EX1_559")
