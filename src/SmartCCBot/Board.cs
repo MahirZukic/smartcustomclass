@@ -160,7 +160,7 @@ namespace HREngine.Bots
             childss.Add(this);
             Board worseBoard = null;
 
-            int maxWide = 20;
+            int maxWide = 1000;
             int maxDepth = 15;
             int wide = 0;
             int depth = 0;

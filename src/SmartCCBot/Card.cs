@@ -748,7 +748,7 @@ namespace HREngine.Bots
             IsDestroyedEOT = false;
             HasDeathRattle = template.HasDeathrattle;
             IsDrawAttack = false;
-            IsBuffer = (Buff.GetBuffById(template.Id) != null);
+            IsBuffer = template.IsBuffer;
             Overload = 0;
             Init();
 
