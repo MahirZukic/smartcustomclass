@@ -569,6 +569,7 @@ namespace HREngine.Bots
 
         public bool RemoveCardFromHand(int id)
         {
+
             List<Card> tmp = new List<Card>();
             foreach (Card c in Hand)
             {
@@ -579,8 +580,20 @@ namespace HREngine.Bots
                 if (tmp[i].Id == id)
                 {
                     Hand.RemoveAt(i);
+
+
+                    if (tmp[i].Behavior.GetHandValue(this) > 0)
+                    {
+                        SpellCastCost += tmp[i].Behavior.GetHandValue(this);
+                    }
+                    else
+                    {
+                        SpellCastCost += 4;
+                    }
+
                     return true;
                 }
+
             }
 
             return false;
