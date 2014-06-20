@@ -42,9 +42,11 @@ namespace HREngine.Bots
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
             base.OnPlayOtherMinion(ref board,ref Minion);
-
-            board.DoRandomDamage(1, !IsFriend);
-            board.Resimulate();
+            if (!IsSilenced)
+            {
+                board.DoRandomDamage(1, !IsFriend);
+                board.Resimulate();
+            }
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
