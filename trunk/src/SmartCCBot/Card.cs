@@ -27,7 +27,18 @@ namespace HREngine.Bots
             {
                 value += ValuesInterface.ValueHealthMinion * CurrentHealth;
                 if (!IsStuck)
-                    value += ValuesInterface.ValueAttackMinion * CurrentAtk;
+                {
+                    if (!IsEnraged)
+                        value += ValuesInterface.ValueAttackMinion * CurrentAtk;
+                    else
+                    {
+                        if (!CanAttack && CountAttack == 0)
+                            value += ValuesInterface.ValueAttackMinion * template.Atk;
+                        else
+                            value += ValuesInterface.ValueAttackMinion * CurrentAtk;
+                    }
+
+                }
 
                 if (IsTaunt && IsFriend)
                 {
@@ -346,12 +357,12 @@ namespace HREngine.Bots
             {
                 foreach (Card c in board.MinionFriend)
                 {
-                    c.OnOtherMinionHeal(ref board,this);
+                    c.OnOtherMinionHeal(ref board, this);
                 }
 
                 foreach (Card c in board.MinionEnemy)
                 {
-                    c.OnOtherMinionHeal(ref board,this);
+                    c.OnOtherMinionHeal(ref board, this);
                 }
 
 

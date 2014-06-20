@@ -45,12 +45,18 @@ namespace HREngine.Bots
             base.OnOtherMinionHeal(ref board, minionHealed);
             if (IsFriend)
             {
-                board.FriendCardDraw++;
-                board.Resimulate();
+                if(minionHealed.CurrentHealth < minionHealed.MaxHealth)
+                {
+                    board.FriendCardDraw++;
+                    board.Resimulate();
+                }
             }
             else
             {
-                board.EnemyCardDraw++;
+                if (minionHealed.CurrentHealth < minionHealed.MaxHealth)
+                {
+                    board.EnemyCardDraw++;
+                }
             }
         }
         public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)

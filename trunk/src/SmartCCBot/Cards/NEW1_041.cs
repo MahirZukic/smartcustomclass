@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class NEW1_041 : Card
+    public class NEW1_041 : Card
     {
-		public override Card Create()
-{ return new NEW1_041();}
-public NEW1_041() : base()
+        public override Card Create()
+        { return new NEW1_041(); }
+        public NEW1_041()
+            : base()
         {
-            
+
         }
-		
-        public NEW1_041(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public NEW1_041(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -27,18 +29,18 @@ public NEW1_041() : base()
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
+            base.OnPlay(ref board, target, index);
 
             List<Card> targets = new List<Card>();
-            foreach(Card c in board.MinionEnemy)
+            foreach (Card c in board.MinionEnemy)
             {
                 if (c.CurrentAtk <= 2)
                     targets.Add(c);
             }
             Card worstTarget = null;
-            foreach(Card c in targets)
+            foreach (Card c in targets)
             {
                 if (worstTarget == null)
                     worstTarget = c;
@@ -47,7 +49,8 @@ public NEW1_041() : base()
             }
             if (worstTarget != null)
                 board.RemoveCardFromBoard(worstTarget.Id);
-            
+
+            board.Resimulate();
         }
 
         public override void OnDeath(ref Board board)
@@ -57,13 +60,13 @@ public NEW1_041() : base()
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board,ref Minion);
+            base.OnPlayOtherMinion(ref board, ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-		
+
     }
 }
