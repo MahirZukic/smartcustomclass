@@ -352,11 +352,19 @@ namespace HREngine.Bots
 
             Action actionPrior = null;
 
-
             //foreach (Action acc in bestBoard.ActionsStack)
             for (int i = 0; i < bestBoard.ActionsStack.Count; i++)
             {
+               
                 Action acc = bestBoard.ActionsStack[i];
+
+                if (acc.Actor.template.Id == "GAME_005")
+                {
+                    actionPrior = null;
+                    break;
+                }
+
+
                 if (actionPrior == null && acc.Actor != null)
                 {
                     if (acc.Actor.Behavior.GetPriorityPlay(bestBoard) > 1 && acc.Type != Action.ActionType.MINION_ATTACK && acc.Type != Action.ActionType.HERO_ATTACK)
