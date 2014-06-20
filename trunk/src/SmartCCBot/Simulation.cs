@@ -217,9 +217,9 @@ namespace HREngine.Bots
                             if (tryToSkipEqualBoards)
                             {
                                 bool found = false;
-                                if (bbValue <= rootValue )
+                                if (bbValue <= rootValue)
                                 {
-                                    found = true;
+                                    // found = true;
                                 }
                                 else
                                 {
@@ -234,7 +234,7 @@ namespace HREngine.Bots
                                         }
                                     }
                                 }
-                                
+
 
                                 if (!found)
                                 {
@@ -355,15 +355,16 @@ namespace HREngine.Bots
             //foreach (Action acc in bestBoard.ActionsStack)
             for (int i = 0; i < bestBoard.ActionsStack.Count; i++)
             {
-               
+
                 Action acc = bestBoard.ActionsStack[i];
-
-                if (acc.Actor.template.Id == "GAME_005")
+                if (acc.Actor != null)
                 {
-                    actionPrior = null;
-                    break;
+                    if (acc.Actor.template.Id == "GAME_005")
+                    {
+                        actionPrior = null;
+                        break;
+                    }
                 }
-
 
                 if (actionPrior == null && acc.Actor != null)
                 {
@@ -584,7 +585,7 @@ namespace HREngine.Bots
         }
     }
 
-     class FilterThreadStart
+    class FilterThreadStart
     {
 
         public FilterThreadStart()
@@ -593,19 +594,19 @@ namespace HREngine.Bots
         }
     }
 
-     class FilterThread
-     {
+    class FilterThread
+    {
 
-         public FilterThread()
-         {
-         }
+        public FilterThread()
+        {
+        }
 
-         public void Calculate(object start)
-         {
-             FilterThreadStart starter = (FilterThreadStart)start;
+        public void Calculate(object start)
+        {
+            FilterThreadStart starter = (FilterThreadStart)start;
 
 
 
-         }
-     }
+        }
+    }
 }
