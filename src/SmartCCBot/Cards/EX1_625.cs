@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_625 : Card
+    public class EX1_625 : Card
     {
-		public override Card Create()
-{ return new EX1_625();}
-public EX1_625() : base()
+        public override Card Create()
+        { return new EX1_625(); }
+        public EX1_625()
+            : base()
         {
-            
+
         }
-		
-        public EX1_625(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_625(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -27,10 +29,10 @@ public EX1_625() : base()
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
-            if(board.Ability == null)
+            base.OnPlay(ref board, target, index);
+            if (board.Ability == null)
             {
                 board.Ability = Card.Create("EX1_625t", true, 999999);
                 board.Resimulate();
@@ -59,12 +61,12 @@ public EX1_625() : base()
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board,ref Minion);
+            base.OnPlayOtherMinion(ref board, ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
 
     }
