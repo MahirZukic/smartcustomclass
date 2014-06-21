@@ -25,7 +25,16 @@ namespace HREngine.Bots
             float value = 0;
             if (Type == CType.MINION)
             {
-                value += ValuesInterface.ValueHealthMinion * CurrentHealth;
+                if(currentAtk == 0 && IsSilenced)
+                {
+
+                }
+                else
+                {
+                    value += ValuesInterface.ValueHealthMinion * CurrentHealth;
+
+                }
+
                 if (!IsStuck)
                 {
                     if (!IsEnraged)
@@ -39,16 +48,16 @@ namespace HREngine.Bots
                     }
 
                 }
-
+                /*
                 if (IsTaunt && IsFriend)
                 {
-                    value += ValuesInterface.ValueTaunt * 2;
+                    value += ValuesInterface.ValueTaunt *2;
                 }
                 else if (IsTaunt && !IsFriend)
                 {
                     value += ValuesInterface.ValueTaunt;
                 }
-
+                */
                 if (IsDivineShield)
                     value += ValuesInterface.ValueDivineShield;
 
@@ -835,6 +844,7 @@ namespace HREngine.Bots
 
 
             CurrentAtk = template.Atk;
+            TempAtk = 0;
         }
 
         public static Card Create(string cardId, bool isFriend, int id, int index = 0)
