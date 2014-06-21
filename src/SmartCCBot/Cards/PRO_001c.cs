@@ -30,6 +30,8 @@ public PRO_001c() : base()
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);
+            board.AddCardToBoard("CS2_179", true);
+            board.Resimulate();
         }
 
         public override void OnDeath(ref Board board)

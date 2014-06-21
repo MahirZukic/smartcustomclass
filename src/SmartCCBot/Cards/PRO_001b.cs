@@ -25,11 +25,18 @@ public PRO_001b() : base()
         public override void Init()
         {
             base.Init();
+            TargetTypeOnPlay = TargetType.BOTH_ENEMY;
         }
 
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);
+            if(target != null)
+            {
+                target.Damage(4, ref board);
+                board.FriendCardDraw++;
+                board.Resimulate();
+            }
         }
 
         public override void OnDeath(ref Board board)
