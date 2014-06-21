@@ -30,6 +30,10 @@ public PRO_001a() : base()
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);
+            board.AddCardToBoard("EX1_506a", true);
+            board.AddCardToBoard("EX1_506a", true);
+            board.AddCardToBoard("EX1_506a", true);
+            board.Resimulate();
         }
 
         public override void OnDeath(ref Board board)
