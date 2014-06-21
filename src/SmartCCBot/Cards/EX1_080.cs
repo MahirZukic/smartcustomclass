@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_080 : Card
+    public class EX1_080 : Card
     {
-		public override Card Create()
-{ return new EX1_080();}
-public EX1_080() : base()
+        public override Card Create()
+        { return new EX1_080(); }
+        public EX1_080()
+            : base()
         {
-            
+
         }
-		
-        public EX1_080(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_080(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -27,9 +29,9 @@ public EX1_080() : base()
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
+            base.OnPlay(ref board, target, index);
         }
 
         public override void OnDeath(ref Board board)
@@ -39,13 +41,20 @@ public EX1_080() : base()
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board,ref Minion);
+            base.OnPlayOtherMinion(ref board, ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-		
+
+        public override void OnPlaySecret(ref Board board, Card Secret)
+        {
+            base.OnPlaySecret(ref board, Secret);
+            currentAtk++;
+            CurrentHealth++;
+            maxHealth++;
+        }
     }
 }

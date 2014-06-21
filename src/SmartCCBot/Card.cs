@@ -168,7 +168,10 @@ namespace HREngine.Bots
         {
 
         }
+        public virtual void OnPlaySecret(ref Board board, Card Secret)
+        {
 
+        }
         public virtual void OnEndTurn(Board board)
         {
 
