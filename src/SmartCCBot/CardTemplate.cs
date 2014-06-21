@@ -70,6 +70,7 @@ namespace HREngine.Bots
             foreach (XmlNode xmlNode in xmlDoc.DocumentElement.ChildNodes)
             {
                 CardTemplate template = new CardTemplate();
+                template.Race = Card.CRace.NONE;
 
                 foreach (XmlNode node in xmlNode.ChildNodes)
                 {
@@ -110,7 +111,6 @@ namespace HREngine.Bots
                     }
                     else if (node.Name == "Race")
                     {
-                        template.Race = Card.CRace.NONE;
 
                         if (node.InnerText.Contains("Murloc"))
                         {
