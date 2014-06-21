@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class CS2_114 : Card
+    public class CS2_114 : Card
     {
-		public override Card Create()
-{ return new CS2_114();}
-public CS2_114() : base()
+        public override Card Create()
+        { return new CS2_114(); }
+        public CS2_114()
+            : base()
         {
-            
+
         }
-		
-        public CS2_114(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public CS2_114(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -27,37 +29,37 @@ public CS2_114() : base()
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
+            base.OnPlay(ref board, target, index);
 
             Card first = null;
             Card second = null;
 
 
-            foreach(Card c in board.MinionEnemy)
+            foreach (Card c in board.MinionEnemy)
             {
                 if (first == null)
                     first = c;
-                if(first != null)
+                if (first != null)
                 {
                     if (c.CurrentHealth < first.CurrentHealth)
                         first = c;
                 }
-                
+
             }
 
-            foreach(Card c in board.MinionEnemy)
+            foreach (Card c in board.MinionEnemy)
             {
                 if (second == null && c != first)
                     second = c;
 
-                if(second != null)
+                if (second != null)
                 {
                     if (c.CurrentHealth <= second.CurrentHealth && c != first)
                         second = c;
                 }
-                
+
             }
 
 
@@ -77,15 +79,15 @@ public CS2_114() : base()
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board,ref Minion);
+            base.OnPlayOtherMinion(ref board, ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-		
 
-		
+
+
     }
 }

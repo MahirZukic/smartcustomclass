@@ -24,8 +24,9 @@ namespace HREngine.Bots
 				if(c.CurrentHealth <= 2)
 					countMinionBelow2Hp++;
 			}
-            if (board.MinionEnemy.Count >= 2 && countMinionBelow2Hp > 1)
+            if (board.MinionEnemy.Count >= 2 && countMinionBelow2Hp > 0)
                 return true;
+				
             return false;
         }
 
