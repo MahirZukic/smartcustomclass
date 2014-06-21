@@ -88,7 +88,11 @@ namespace HREngine.Bots
                 value -= ((15 - HeroFriend.CurrentHealth) * (15 - HeroFriend.CurrentHealth));
 
             }
+            /*if (HeroEnemy.CurrentHealth < 15)
+            {
+                value += ((15 - HeroEnemy.CurrentHealth) * (15 - HeroEnemy.CurrentHealth));
 
+            }*/
             value += FriendCardDraw * ValuesInterface.ValueFriendCardDraw;
             value -= EnemyCardDraw * ValuesInterface.ValueEnemyCardDraw;
 

@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_621 : Card
+    public class EX1_621 : Card
     {
-		public override Card Create()
-{ return new EX1_621();}
-public EX1_621() : base()
+        public override Card Create()
+        { return new EX1_621(); }
+        public EX1_621()
+            : base()
         {
-            
+
         }
-		
-        public EX1_621(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_621(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -27,14 +29,14 @@ public EX1_621() : base()
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
-            foreach(Card c in board.MinionFriend)
+            base.OnPlay(ref board, target, index);
+            foreach (Card c in board.MinionFriend)
             {
                 c.Heal(4 * board.HealFactor, ref board);
             }
-            foreach(Card c in board.MinionEnemy)
+            foreach (Card c in board.MinionEnemy)
             {
                 c.Heal(4 * board.HealFactor, ref board);
             }
@@ -47,13 +49,13 @@ public EX1_621() : base()
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board,ref Minion);
+            base.OnPlayOtherMinion(ref board, ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-		
+
     }
 }

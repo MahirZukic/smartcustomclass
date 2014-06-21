@@ -30,6 +30,10 @@ public EX1_082() : base()
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);
+            board.DoRandomDamage(1, true);
+            board.DoRandomDamage(1, true);
+            board.DoRandomDamage(1, true);
+
             board.Resimulate();
         }
 
