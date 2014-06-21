@@ -1140,6 +1140,15 @@ namespace HREngine.Bots
                         a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id), 0, a.Choice);
                     else
                         a.Actor.OnPlay(ref child, null, 0, a.Choice);
+                    
+                    if(a.Actor.template.IsSecret)
+                    {
+                        foreach (Card c in child.GetAllMinionsOnBoard())
+                        {
+                            c.OnPlaySecret(ref child, a.Actor);
+                        }
+                    }
+
 
                     child.Update();
 

@@ -28,6 +28,7 @@ namespace HREngine.Bots
         public int Durability { get; set; }
         public bool  HasDeathrattle { get; set; }
         public bool IsBuffer { get; set; }
+        public bool IsSecret { get; set; }
 
         public List<string> Mechanics { get; set; }
 
@@ -41,6 +42,7 @@ namespace HREngine.Bots
             Atk = 0;
             Health = 0;
             IsBuffer = false;
+            IsSecret = false;
             Mechanics = new List<string>();
         }
 
@@ -155,6 +157,8 @@ namespace HREngine.Bots
                             template.Mechanics.Add(m);
                             if (m.Contains("Deathrattle"))
                                 template.HasDeathrattle = true;
+                            if (m.Contains("Secret"))
+                                template.IsSecret = true;
                         }
 
                     }
