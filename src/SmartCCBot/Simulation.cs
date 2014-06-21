@@ -133,6 +133,7 @@ namespace HREngine.Bots
             string SearchLevel = str.ReadLine();
             int maxWide = 3000;
             int maxBoards = 2000;
+            int maxEnemySimu = 100;
             int maxSkip = 150000;
             float rootValue = root.GetValue() - 30;
             switch (SearchLevel)
@@ -144,6 +145,7 @@ namespace HREngine.Bots
                 case "medium":
                     maxWide = 10000;
                     maxBoards = 1000;
+                    maxEnemySimu = 10;
                     maxSkip = 50000;
                     break;
                 case "high":
@@ -292,8 +294,8 @@ namespace HREngine.Bots
 
             if (!foundearly)
             {
-                int limit = maxBoards;
-                if (AllBoards.Count < maxBoards)
+                int limit = maxEnemySimu;
+                if (AllBoards.Count < maxEnemySimu)
                     limit = AllBoards.Count;
 
                 AllBoards.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
