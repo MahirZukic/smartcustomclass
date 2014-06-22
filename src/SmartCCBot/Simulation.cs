@@ -13,7 +13,7 @@ namespace HREngine.Bots
 {
     public class Simulation
     {
-        public int VERSION = 222;
+        public int VERSION = 223;
         public bool NeedCalculation { get; set; }
 
         public List<Action> ActionStack { get; set; }
@@ -146,7 +146,7 @@ namespace HREngine.Bots
                 case "medium":
                     maxWide = 10000;
                     maxBoards = 1000;
-                    maxEnemySimu = 30;
+                    maxEnemySimu = 100;
                     maxSkip = 50000;
                     break;
                 case "high":

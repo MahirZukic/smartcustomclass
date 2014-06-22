@@ -26,6 +26,9 @@ namespace HREngine.Bots
 			
 			/* Setup BlackList */
 			
+			BlackList.Add("EX1_007");//Acolyte of Pain
+			BlackList.Add("EX1_349");//Divine Favor
+			BlackList.Add("CS2_023");//Arcane Intellect
 			
 			
 			foreach(Card c in Choices)

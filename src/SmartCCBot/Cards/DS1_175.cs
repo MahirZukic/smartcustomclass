@@ -65,7 +65,7 @@ public DS1_175()
 
         public override float GetValue(Board board)
         {
-            return base.GetValue(board) + 5;
+            return base.GetValue(board) ;
         }
 
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)

@@ -31,6 +31,11 @@ public CS2_038() : base()
         public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
         {
             base.OnPlay(ref board, target,index);
+            if(target != null)
+            {
+                target.HasDeathRattle = true;
+                target.enchantements.Add(template.Id);
+            }
         }
 
         public override void OnDeath(ref Board board)
