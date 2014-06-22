@@ -2529,11 +2529,15 @@ namespace HREngine.Bots
                 ba.OwnerId = b.OwnerId;
                 clone.buffs.Add(ba);
             }
-            for (int i = 0; i < baseInstance.enchantements.Count; i++)
+            if(baseInstance.enchantements != null)
             {
-                string tmp = baseInstance.enchantements[i];
-                clone.enchantements.Add(tmp);
+                for (int i = 0; i < baseInstance.enchantements.Count; i++)
+                {
+                    string tmp = baseInstance.enchantements[i];
+                    clone.enchantements.Add(tmp);
+                }
             }
+            
             clone.HasChoices = baseInstance.HasChoices;
             clone.ChoiceIdOne = baseInstance.ChoiceIdOne;
             clone.ChoiceIdTwo = baseInstance.ChoiceIdTwo;
