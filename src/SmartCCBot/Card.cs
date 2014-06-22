@@ -172,6 +172,7 @@ namespace HREngine.Bots
                 else if(s == "CS2_038")
                 {
                     board.AddCardToBoard(template.Id, IsFriend);
+                    board.Resimulate();
                 }
             }
             foreach (Card c in board.MinionFriend)
