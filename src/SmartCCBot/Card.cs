@@ -25,39 +25,47 @@ namespace HREngine.Bots
             float value = 0;
             if (Type == CType.MINION)
             {
+
+                int valAtk = 0;
+                int valHp = 0;
+
+                if(IsFriend)
+                {
+                    valAtk = ValuesInterface.ValueAttackMinionFriend;
+                    valHp = ValuesInterface.ValueHealthMinionFriend;
+                }
+                else
+                {
+                    valAtk = ValuesInterface.ValueAttackMinionEnemy;
+                    valHp = ValuesInterface.ValueHealthMinionEnemy;
+                }
+
+
                 if(currentAtk == 0 && IsSilenced)
                 {
 
                 }
                 else
                 {
-                    value += ValuesInterface.ValueHealthMinion * CurrentHealth;
+                    value += valHp * CurrentHealth;
 
                 }
 
                 if (!IsStuck)
                 {
                     if (!IsEnraged)
-                        value += ValuesInterface.ValueAttackMinion * CurrentAtk;
+                        value += valAtk * CurrentAtk;
                     else
                     {
                         if (!CanAttack && CountAttack == 0)
-                            value += ValuesInterface.ValueAttackMinion * template.Atk;
+                            value += valAtk * template.Atk;
                         else
-                            value += ValuesInterface.ValueAttackMinion * CurrentAtk;
+                            value += valAtk * CurrentAtk;
                     }
+                }
 
-                }
-                /*
-                if (IsTaunt && IsFriend)
-                {
-                    value += ValuesInterface.ValueTaunt *2;
-                }
-                else if (IsTaunt && !IsFriend)
-                {
-                    value += ValuesInterface.ValueTaunt;
-                }
-                */
+                value += ValuesInterface.ValueTaunt;
+
                 if (IsDivineShield)
                     value += ValuesInterface.ValueDivineShield;
 

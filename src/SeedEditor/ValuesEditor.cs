@@ -22,7 +22,7 @@ namespace SeedEditor
         {
             ValueArmorEnemy.Value = ValuesInterface.ValueArmorEnemy;
             ValueArmorFriend.Value = ValuesInterface.ValueArmorFriend;
-            ValueAttackMinion.Value = ValuesInterface.ValueAttackMinion;
+            ValueAttackMinion.Value = ValuesInterface.ValueAttackMinionFriend;
             ValueAttackWeapon.Value = ValuesInterface.ValueAttackWeapon;
             ValueDivineShield.Value = ValuesInterface.ValueDivineShield;
             ValueDurabilityWeapon.Value = ValuesInterface.ValueDurabilityWeapon;
@@ -33,7 +33,7 @@ namespace SeedEditor
             ValueFrozen.Value = ValuesInterface.ValueFrozen;
             ValueHealthEnemy.Value = ValuesInterface.ValueHealthEnemy;
             ValueHealthFriend.Value = ValuesInterface.ValueHealthFriend;
-            ValueHealthMinion.Value = ValuesInterface.ValueHealthMinion;
+            ValueHealthMinion.Value = ValuesInterface.ValueHealthMinionFriend;
             ValueSecret.Value = ValuesInterface.ValueSecret;
             ValueTaunt.Value = ValuesInterface.ValueTaunt;
 
@@ -100,13 +100,13 @@ namespace SeedEditor
 
         private void ValueHealthMinion_ValueChanged(object sender, EventArgs e)
         {
-            ValuesInterface.ValueHealthMinion = (int)ValueHealthMinion.Value;
+            ValuesInterface.ValueHealthMinionFriend = (int)ValueHealthMinion.Value;
 
         }
 
         private void ValueAttackMinion_ValueChanged(object sender, EventArgs e)
         {
-            ValuesInterface.ValueAttackMinion = (int)ValueAttackMinion.Value;
+            ValuesInterface.ValueAttackMinionFriend = (int)ValueAttackMinion.Value;
 
         }
 
