@@ -55,7 +55,7 @@ namespace HREngine.Bots
 
         public virtual int GetHandValue(Board board)
         {
-            return 3;
+            return 5;
         }
     }
 }

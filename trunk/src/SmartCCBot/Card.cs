@@ -162,7 +162,18 @@ namespace HREngine.Bots
 
         public virtual void OnDeath(ref Board board)
         {
-
+            foreach(string s in enchantements.ToArray())
+            {
+                if (s == "EX1_158")
+                {
+                    board.AddCardToBoard("EX1_158t", IsFriend);
+                    board.Resimulate();
+                }
+                else if(s == "CS2_038")
+                {
+                    board.AddCardToBoard(template.Id, IsFriend);
+                }
+            }
             foreach (Card c in board.MinionFriend)
             {
                 c.OnOtherMinionDeath(ref board, IsFriend, this);
@@ -234,7 +245,7 @@ namespace HREngine.Bots
             // Card tar = target;
             if (me.Type == CType.MINION)
             {
-                if (me.IsDrawAttack)
+                if (me.enchantements.Contains("EX1_363"));
                 {
                     board.FriendCardDraw++;
                 }
@@ -582,6 +593,7 @@ namespace HREngine.Bots
         public int TempAtk { get; set; }
 
         public List<Buff> buffs { get; set; }
+        public List<string> enchantements { get; set; }
 
         public int CurrentArmor { get; set; }
 
@@ -738,6 +750,7 @@ namespace HREngine.Bots
         public void InitInstance(CardTemplate newTemplate, bool isFriend, int id)
         {
             buffs = new List<Buff>();
+            enchantements = new List<string>();
             Id = id;
             IsFriend = isFriend;
             template = newTemplate;
@@ -2515,6 +2528,11 @@ namespace HREngine.Bots
                 ba.Hp = b.Hp;
                 ba.OwnerId = b.OwnerId;
                 clone.buffs.Add(ba);
+            }
+            for (int i = 0; i < baseInstance.enchantements.Count; i++)
+            {
+                string tmp = baseInstance.enchantements[i];
+                clone.enchantements.Add(tmp);
             }
             clone.HasChoices = baseInstance.HasChoices;
             clone.ChoiceIdOne = baseInstance.ChoiceIdOne;

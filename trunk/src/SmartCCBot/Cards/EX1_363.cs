@@ -35,7 +35,7 @@ namespace HREngine.Bots
             base.OnPlay(ref board, target, index);
             if (target != null)
             {
-                target.IsDrawAttack = true;
+                target.enchantements.Add(template.Id);
                 board.FriendCardDraw++;
             }
         }

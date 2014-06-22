@@ -51,7 +51,7 @@ namespace HREngine.Bots
         {
             if (Value != 0)
                 return Value;
-            
+
             float value = 0;
 
             foreach (Card c in MinionEnemy)
@@ -140,7 +140,7 @@ namespace HREngine.Bots
 
             int playableCardthisTurn = 0;
             int playableCardNextTurn = 0;
-            foreach(Card c in Hand)
+            foreach (Card c in Hand)
             {
 
             }
@@ -153,9 +153,9 @@ namespace HREngine.Bots
         public int GetOverload()
         {
             int ret = 0;
-            foreach(Action a in ActionsStack)
+            foreach (Action a in ActionsStack)
             {
-                if(a.Type == Action.ActionType.CAST_MINION || a.Type == Action.ActionType.CAST_SPELL || a.Type == Action.ActionType.CAST_WEAPON)
+                if (a.Type == Action.ActionType.CAST_MINION || a.Type == Action.ActionType.CAST_SPELL || a.Type == Action.ActionType.CAST_WEAPON)
                     ret += a.Actor.Overload;
             }
             return ret;
@@ -169,7 +169,7 @@ namespace HREngine.Bots
             childss.Add(this);
             Board worseBoard = null;
 
-            int maxWide = 1000;
+            int maxWide = 100;
             int maxDepth = 15;
             int wide = 0;
             int depth = 0;
@@ -736,11 +736,11 @@ namespace HREngine.Bots
 
                 if (!IsHeroKillable)
                 {
-                    if(KillableMinions.Count > 0)
+                    if (KillableMinions.Count > 0)
                     {
                         Card bestMinion = null;
 
-                        foreach(Card ccc in KillableMinions)
+                        foreach (Card ccc in KillableMinions)
                         {
                             if (bestMinion == null)
                                 bestMinion = ccc;
@@ -884,16 +884,16 @@ namespace HREngine.Bots
 
         public bool HasCardInHand(string id)
         {
-            foreach(Card c in Hand)
+            foreach (Card c in Hand)
             {
                 if (c.template.Id == id)
                     return true;
             }
             return false;
         }
-        public bool HasMinionOnBoard(string id,bool FriendSide)
+        public bool HasMinionOnBoard(string id, bool FriendSide)
         {
-            if(FriendSide)
+            if (FriendSide)
             {
                 foreach (Card c in MinionFriend)
                 {
@@ -909,7 +909,7 @@ namespace HREngine.Bots
                         return true;
                 }
             }
-            
+
             return false;
         }
         public bool HasFriendBuffer()
@@ -1135,8 +1135,8 @@ namespace HREngine.Bots
                         a.Actor.OnPlay(ref child, child.GetCard(a.Target.Id), 0, a.Choice);
                     else
                         a.Actor.OnPlay(ref child, null, 0, a.Choice);
-                    
-                    if(a.Actor.template.IsSecret)
+
+                    if (a.Actor.template.IsSecret)
                     {
                         foreach (Card c in child.GetAllMinionsOnBoard())
                         {
@@ -1339,7 +1339,8 @@ namespace HREngine.Bots
                         attacked.Add(Enemy);
                     }
                     Action ac = new Action(Action.ActionType.MINION_ATTACK, minion, HeroEnemy);
-                    availableActions.Add(ac);
+                    if (!HeroEnemy.IsImmune)
+                        availableActions.Add(ac);
                 }
                 else
                 {

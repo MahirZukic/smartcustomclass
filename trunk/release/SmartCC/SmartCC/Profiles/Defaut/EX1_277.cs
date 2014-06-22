@@ -18,6 +18,18 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			int cardInHand = 0;
+			
+			foreach(Card c in board.Hand)
+			{
+				if(c.template.Id == "EX1_277")
+					cardInHand++;
+			}
+			
+			if(board.HeroEnemy.CurrentHealth + board.HeroEnemy.CurrentArmor <= cardInHand * (3 + board.GetSpellPower()))
+				return true;
+			
+			
             if (board.MinionEnemy.Count == 0 && board.HeroEnemy.CurrentHealth > 15)
                 return false;
 				
