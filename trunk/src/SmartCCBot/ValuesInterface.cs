@@ -20,11 +20,12 @@ namespace HREngine.Bots
         public static int ValueFriendCardDraw { get; set; }
         public static int ValueMana { get; set; }
 
-
         //Cards
         public static int ValueDurabilityWeapon { get; set; }
-        public static int ValueHealthMinion { get; set; }
-        public static int ValueAttackMinion { get; set; }
+        public static int ValueHealthMinionFriend { get; set; }
+        public static int ValueAttackMinionFriend { get; set; }
+        public static int ValueHealthMinionEnemy { get; set; }
+        public static int ValueAttackMinionEnemy { get; set; }
         public static int ValueTaunt { get; set; }
         public static int ValueDivineShield { get; set; }
         public static int ValueAttackWeapon { get; set; }
@@ -84,13 +85,21 @@ namespace HREngine.Bots
                 {
                     ValueDurabilityWeapon = int.Parse(line.Split('=')[1]);
                 }
-                if (line.Contains("ValueHealthMinion"))
+                if (line.Contains("ValueHealthMinionFriend"))
                 {
-                    ValueHealthMinion = int.Parse(line.Split('=')[1]);
+                    ValueHealthMinionFriend = int.Parse(line.Split('=')[1]);
                 }
-                if (line.Contains("ValueAttackMinion"))
+                if (line.Contains("ValueAttackMinionFriend"))
                 {
-                    ValueAttackMinion = int.Parse(line.Split('=')[1]);
+                    ValueAttackMinionFriend = int.Parse(line.Split('=')[1]);
+                }
+                if (line.Contains("ValueHealthMinionEnemy"))
+                {
+                    ValueHealthMinionEnemy = int.Parse(line.Split('=')[1]);
+                }
+                if (line.Contains("ValueAttackMinionEnemy"))
+                {
+                    ValueAttackMinionEnemy = int.Parse(line.Split('=')[1]);
                 }
                 if (line.Contains("ValueTaunt"))
                 {
