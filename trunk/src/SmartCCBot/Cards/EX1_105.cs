@@ -22,6 +22,12 @@ public EX1_105() : base()
             
         }
 
+        public override void OnUpdate(Board board)
+        {
+            base.OnUpdate(board);
+            CurrentCost = template.Cost - board.Hand.Count;
+        }
+
         public override void Init()
         {
             base.Init();
