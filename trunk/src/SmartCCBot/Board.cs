@@ -125,6 +125,8 @@ namespace HREngine.Bots
 
             foreach (Card c in Hand)
             {
+                if (c.Type != Card.CType.SPELL)
+                    continue;
                 value += c.Behavior.GetHandValue(this);
             }
 
