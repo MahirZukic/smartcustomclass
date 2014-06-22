@@ -556,14 +556,7 @@ namespace HREngine.Bots
                     Hand.RemoveAt(i);
                     if (tmp[i].Type != Card.CType.WEAPON)
                     {
-                        if (tmp[i].Behavior.GetHandValue(this) > 0)
-                        {
-                            SpellCastCost += tmp[i].Behavior.GetHandValue(this);
-                        }
-                        else
-                        {
-                            FriendCardDraw--;
-                        }
+                        SpellCastCost += tmp[i].Behavior.GetHandValue(this);
                     }
                     ManaAvailable -= tmp[i].CurrentCost;
 
