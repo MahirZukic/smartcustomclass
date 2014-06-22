@@ -85,7 +85,7 @@ namespace HREngine.Bots
 
             if (HeroFriend.CurrentHealth < 15)
             {
-                value -= ((15 - HeroFriend.CurrentHealth) * (15 - HeroFriend.CurrentHealth));
+                value -= ((15 - HeroFriend.CurrentHealth * ValuesInterface.ValueHealthFriend));
 
             }
             /*if (HeroEnemy.CurrentHealth < 15)

@@ -146,7 +146,7 @@ namespace HREngine.Bots
                 case "medium":
                     maxWide = 10000;
                     maxBoards = 1000;
-                    maxEnemySimu = 10;
+                    maxEnemySimu = 30;
                     maxSkip = 50000;
                     break;
                 case "high":
