@@ -42,7 +42,7 @@ public EX1_258() : base()
             base.OnPlayOtherMinion(ref board,ref Minion);
             if(Minion != null)
             {
-                if (Minion.Overload > 0)
+                if (Minion.Overload > 0 && IsFriend)
                 {
                     currentAtk++;
                     CurrentHealth++;
@@ -56,7 +56,7 @@ public EX1_258() : base()
         {
 		    base.OnCastSpell(ref board, Spell);
 
-            if(Spell.Overload > 0)
+            if(Spell.Overload > 0 && IsFriend)
             {
                 currentAtk++;
                 CurrentHealth++;
