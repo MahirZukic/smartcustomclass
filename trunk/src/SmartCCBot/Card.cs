@@ -50,7 +50,7 @@ namespace HREngine.Bots
                     value += valHp * CurrentHealth;
 
                 }
-
+                
                 if (!IsStuck)
                 {
                     if (!IsEnraged)
@@ -63,6 +63,7 @@ namespace HREngine.Bots
                             value += valAtk * CurrentAtk;
                     }
                 }
+
                 if(IsTaunt)
                     value += ValuesInterface.ValueTaunt;
 
@@ -251,7 +252,7 @@ namespace HREngine.Bots
             // Card tar = target;
             if (me.Type == CType.MINION)
             {
-                if (me.enchantements.Contains("EX1_363"));
+                if (me.enchantements.Contains("EX1_363"))
                 {
                     board.FriendCardDraw++;
                 }
