@@ -13,7 +13,7 @@ namespace HREngine.Bots
 {
     public class Simulation
     {
-        public int VERSION = 236;
+        public int VERSION = 237;
         public bool NeedCalculation { get; set; }
 
         public List<Action> ActionStack { get; set; }
@@ -159,15 +159,9 @@ namespace HREngine.Bots
                     break;
             }
 
-
-
-            int maxWideT = 5000;
-            int maxBoardsT = 3000;
-
             int skipped = 0;
             root.Update();
             bool tryToSkipEqualBoards = true;
-            bool tryToSkipEqualBoardsSecondPass = true;
 
             Board bestBoard = root;
             Log("VERSION : " + VERSION.ToString());
