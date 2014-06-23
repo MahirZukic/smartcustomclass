@@ -33,13 +33,13 @@ public CS1_112() : base()
 
             foreach(Card c in board.MinionFriend)
             {
-                c.Heal(2 + board.GetSpellPower() * board.HealFactor, ref board);
+                c.Heal((2 + board.GetSpellPower()) * board.HealFactor, ref board);
             }
             foreach (Card c in board.MinionEnemy)
             {
                 c.Damage(2 + board.GetSpellPower(), ref board);
             }
-            board.HeroFriend.Heal(2 + board.GetSpellPower() * board.HealFactor, ref board);
+            board.HeroFriend.Heal((2 + board.GetSpellPower()) * board.HealFactor, ref board);
             board.HeroEnemy.Damage(2 + board.GetSpellPower(), ref board);
 
         }

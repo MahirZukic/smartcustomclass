@@ -93,7 +93,14 @@ namespace HREngine.Bots
                 value += ((15 - HeroEnemy.CurrentHealth) * (15 - HeroEnemy.CurrentHealth));
 
             }*/
-            value += FriendCardDraw * ValuesInterface.ValueFriendCardDraw;
+
+            if(Hand.Count + FriendCardDraw > 8)
+                value -= (FriendCardDraw) * ValuesInterface.ValueFriendCardDraw ;
+            else
+                value += FriendCardDraw * ValuesInterface.ValueFriendCardDraw;
+
+
+
             value -= EnemyCardDraw * ValuesInterface.ValueEnemyCardDraw;
 
             value -= MinionEnemy.Count * ValuesInterface.ValueEnemyMinionCount;
