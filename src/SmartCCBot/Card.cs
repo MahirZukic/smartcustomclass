@@ -63,8 +63,8 @@ namespace HREngine.Bots
                             value += valAtk * CurrentAtk;
                     }
                 }
-
-                value += ValuesInterface.ValueTaunt;
+                if(IsTaunt)
+                    value += ValuesInterface.ValueTaunt;
 
                 if (IsDivineShield)
                     value += ValuesInterface.ValueDivineShield;
@@ -2670,6 +2670,9 @@ namespace HREngine.Bots
                 return false;
 
             if (IsDivineShield != c.IsDivineShield)
+                return false;
+
+            if (IsTaunt != c.IsTaunt)
                 return false;
 
             if (IsTargetable != c.IsTargetable)

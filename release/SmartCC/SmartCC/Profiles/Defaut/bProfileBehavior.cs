@@ -31,7 +31,7 @@ namespace HREngine.Bots
 			BlackList.Add("CS2_023");//Arcane Intellect
 			BlackList.Add("CS2_011");//Savage roar
 			BlackList.Add("EX1_622");//Shadow Word Death
-			
+			BlackList.Add("EX1_625");//Shadow Form
 			
 			/* -----PRIEST----- */
 			WhiteList.Add("CS2_181");
@@ -40,6 +40,7 @@ namespace HREngine.Bots
 				if(c.template.Id == "CS2_181")
 					WhiteList.Add("EX1_621");
 			}
+			
 			
 
 			
