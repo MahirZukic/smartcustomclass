@@ -99,6 +99,11 @@ namespace HREngine.Bots
 
         }
 
+        public virtual void OnUpdateHand(Board board)
+        {
+
+        }
+
         public virtual void OnDamage(ref Board board)
         {
 

@@ -2203,7 +2203,7 @@ namespace HREngine.Bots
             }
             */
 
-            //Console.WriteLine("");
+            Console.WriteLine("");
 
             return availableActions;
         }
@@ -2315,6 +2315,10 @@ namespace HREngine.Bots
                 {
                     RemoveCardFromBoard(c.Id);
                 }
+            }
+            foreach(Card c in Hand)
+            {
+                c.OnUpdateHand(this);
             }
 
 
