@@ -1,5 +1,5 @@
 ValueHealthEnemy=1
-ValueHealthFriend=2
+ValueHealthFriend=1
 ValueArmorEnemy=1
 ValueArmorFriend=2
 ValueSecret=15
