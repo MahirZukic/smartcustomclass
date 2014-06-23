@@ -43,7 +43,10 @@ namespace HREngine.Bots
 		
 		public override int GetHandValue(Board board)
 		{
-			return 2;
+			if(board.HasMinionOnBoard("CS2_181",true))
+				return 2;
+			else
+				return 5;
 		}
 		
     }

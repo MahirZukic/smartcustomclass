@@ -40,8 +40,7 @@ public EX1_001() : base()
         public override void OnDeath(ref Board board)
         {
             base.OnDeath(ref board);
-            board.FriendCardDraw++;
-            board.Resimulate();
+
         }
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
