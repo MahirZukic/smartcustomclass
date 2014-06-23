@@ -26,7 +26,7 @@ namespace HREngine.Bots
 
         public override void OnEndTurn(Board board)
         {
-            if (!IsFriend && !IsSilenced)
+            if (!IsSilenced)
             {
                 board.MinionFriend.Clear();
                 board.MinionEnemy.Clear();
