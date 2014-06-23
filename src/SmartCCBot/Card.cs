@@ -388,6 +388,9 @@ namespace HREngine.Bots
                 return;
             }
 
+            if (CurrentHealth == MaxHealth)
+                return;
+
             OnHeal(ref board);
 
             if (this.Type == CType.MINION)
