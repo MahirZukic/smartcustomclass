@@ -49,5 +49,12 @@ public EX1_110() : base()
 		    base.OnCastSpell(ref board, Spell);
         }
 
+        public override float GetValue(Board board)
+        {
+            if (IsFriend)
+                return base.GetValue(board) + 5;
+            else
+                return base.GetValue(board);
+        }
     }
 }

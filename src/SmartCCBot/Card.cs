@@ -72,7 +72,7 @@ namespace HREngine.Bots
                 if (IsFrozen)
                     value -= ValuesInterface.ValueFrozen;
                 if (hasDeathRattle)
-                    value += 1;
+                    value += 2;
 
                 if (IsBuffer)
                     value += 5;
