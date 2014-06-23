@@ -379,7 +379,7 @@ namespace HREngine.Bots
         {
             if (amount < 0)
             {
-                Damage(amount, ref board);
+                Damage(-amount, ref board);
                 return;
             }
 
