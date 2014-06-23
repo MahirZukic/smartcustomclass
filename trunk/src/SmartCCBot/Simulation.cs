@@ -13,7 +13,7 @@ namespace HREngine.Bots
 {
     public class Simulation
     {
-        public int VERSION = 233;
+        public int VERSION = 234;
         public bool NeedCalculation { get; set; }
 
         public List<Action> ActionStack { get; set; }
@@ -372,7 +372,7 @@ namespace HREngine.Bots
                 Action acc = bestBoard.ActionsStack[i];
                 if (acc.Actor != null)
                 {
-                    if (acc.Actor.template.Id == "GAME_005")
+                    if (acc.Actor.template.Id == "GAME_005" || acc.Actor.template.Id == "DREAM_02")
                     {
                         actionPrior = null;
                         break;
