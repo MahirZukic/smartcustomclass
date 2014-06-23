@@ -645,7 +645,7 @@ namespace HREngine.Bots
         public bool IsDestroyed { get; set; }
         public bool IsDestroyedEOT { get; set; }
         public bool IsDrawAttack { get; set; }
-
+        public bool IsUsed { get; set; }
         public bool IsImmune { get; set; }
         public bool IsStuck { get; set; }
         public bool HasFreeze { get; set; }
@@ -809,6 +809,7 @@ namespace HREngine.Bots
             IsDestroyedEOT = false;
             HasDeathRattle = template.HasDeathrattle;
             IsDrawAttack = false;
+            IsUsed = false;
             IsBuffer = template.IsBuffer;
             Overload = 0;
             Init();
@@ -852,6 +853,7 @@ namespace HREngine.Bots
             IsImmune = false;
             IsStuck = false;
             CountAttack = 0;
+            IsUsed = false;
             Init();
         }
 
@@ -2500,6 +2502,7 @@ namespace HREngine.Bots
             //clone = (Card)Activator.CreateInstance(baseInstance.GetType());
             // clone = (Card)baseInstance.GetType().CreateInstance();
             clone.InitInstance(baseInstance.template, baseInstance.IsFriend, baseInstance.Id);
+            clone.IsUsed = baseInstance.IsUsed;
             clone.IsBuffer = baseInstance.IsBuffer;
             clone.IsDestroyedEOT = baseInstance.IsDestroyedEOT;
             clone.Behavior = baseInstance.Behavior;

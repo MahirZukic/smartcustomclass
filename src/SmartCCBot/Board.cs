@@ -43,14 +43,15 @@ namespace HREngine.Bots
         static int lastIdGen = 10000;
 
 
-        private float Value = 0;
+        private float Value = -1;
+        private bool calculated = false;
         private int FriendValue = 0;
         private int EnemyValue = 0;
 
         public float GetValue()
         {
-           if (Value != 0)
-               return Value;
+            if (calculated)
+                return Value;
             
             float value = 0;
 
@@ -78,8 +79,8 @@ namespace HREngine.Bots
 
             }
 
-            if(Hand.Count + FriendCardDraw > 8)
-                value -= (FriendCardDraw) * ValuesInterface.ValueFriendCardDraw ;
+            if (Hand.Count + FriendCardDraw > 8)
+                value -= (FriendCardDraw) * ValuesInterface.ValueFriendCardDraw;
             else
                 value += FriendCardDraw * ValuesInterface.ValueFriendCardDraw;
 
@@ -135,6 +136,7 @@ namespace HREngine.Bots
             value -= GetOverload() * ValuesInterface.ValueOverload;
 
             Value = value;
+            calculated = true;
             return value;
         }
 
@@ -525,6 +527,7 @@ namespace HREngine.Bots
             EnemyCardCount = 0;
             ShoudTryToAttack = false;
             ShouldTryToCastMinion = false;
+            Value = -1;
         }
 
         public bool PlayCardFromHand(int id)
@@ -764,7 +767,7 @@ namespace HREngine.Bots
         public void PlayAbility()
         {
             ManaAvailable -= Ability.CurrentCost;
-            Ability = null;
+            Ability.IsUsed = true;
             if (SecretEnemy)
             {
                 Resimulate();
@@ -1443,9 +1446,10 @@ namespace HREngine.Bots
              */
 
 
-
-            if (Ability != null && CastableCards == Hand)
+            //Console.WriteLine("");
+            if (!Ability.IsUsed && CastableCards == Hand)
             {
+
                 if (Ability.CurrentCost <= ManaAvailable && Ability.Behavior.ShouldBePlayed(this))
                 {
                     if (Ability.TargetTypeOnPlay == Card.TargetType.MINION_ENEMY || Ability.TargetTypeOnPlay == Card.TargetType.MINION_BOTH
@@ -2298,7 +2302,7 @@ namespace HREngine.Bots
                     RemoveCardFromBoard(c.Id);
                 }
             }
-            foreach(Card c in Hand)
+            foreach (Card c in Hand)
             {
                 c.OnUpdateHand(this);
             }
@@ -2553,7 +2557,7 @@ namespace HREngine.Bots
                 ret += "WeaponFriend : " + WeaponFriend.ToString() + Environment.NewLine;
             ret += Environment.NewLine;
 
-            if (Ability != null)
+            if (!Ability.IsUsed)
                 ret += "AbilityFriend : " + Ability.ToString() + Environment.NewLine;
 
             if (EnemyAbility != null)
@@ -2645,7 +2649,7 @@ namespace HREngine.Bots
                     haveBuffer2 = true;
             }
 
-            
+
 
             for (int i = 0; i < list1.Count; i++)
             {
@@ -2690,6 +2694,9 @@ namespace HREngine.Bots
 
         public bool Equals(Board b)
         {
+           /* if (Ability.template.Id != b.Ability.template.Id)
+                return false;*/
+            
             if (ManaAvailable != b.ManaAvailable)
                 return false;
             if (FriendCardDraw != b.FriendCardDraw)
@@ -2702,7 +2709,7 @@ namespace HREngine.Bots
             if (MinionEnemy.Count != b.MinionEnemy.Count)
                 return false;
 
-            if(WastedATK != b.WastedATK)
+            if (WastedATK != b.WastedATK)
                 return false;
 
             if (!ListEquals(MinionFriend, b.MinionFriend))

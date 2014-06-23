@@ -32,12 +32,7 @@ namespace HREngine.Bots
         public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
             base.OnPlay(ref board, target, index);
-            if (board.Ability == null)
-            {
-                board.Ability = Card.Create("EX1_625t", true, 999999);
-                board.Resimulate();
-                return;
-            }
+
             if (board.Ability.template.Id == "CS1h_001")
             {
 
