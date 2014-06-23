@@ -45,8 +45,12 @@ public EX1_095() : base()
         public override void OnCastSpell(ref Board board, Card Spell)
         {
 		    base.OnCastSpell(ref board, Spell);
-            board.FriendCardDraw++;
-            board.Resimulate();
+            if(IsFriend)
+            {
+                board.FriendCardDraw++;
+                board.Resimulate();
+            }
+            
         }
 		
     }

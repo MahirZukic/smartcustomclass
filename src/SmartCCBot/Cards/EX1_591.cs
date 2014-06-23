@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class EX1_591 : Card
+    public class EX1_591 : Card
     {
-		public override Card Create()
-{ return new EX1_591();}
-public EX1_591() : base()
+        public override Card Create()
+        { return new EX1_591(); }
+        public EX1_591()
+            : base()
         {
-            
+
         }
-		
-        public EX1_591(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public EX1_591(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -27,21 +29,26 @@ public EX1_591() : base()
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
-            if(IsFriend)
+            base.OnPlay(ref board, target, index);
+            if (IsFriend)
             {
-                board.HealFactor *= -1;
+                if (board.HealFactor > 0)
+                    board.HealFactor *= -1;
             }
-            
+
         }
         public override void OnUpdate(Board board)
         {
             base.OnUpdate(board);
-            if(!IsFriend && board.EnemyHealFactor > 0)
+            if (!IsFriend && board.EnemyHealFactor > 0)
             {
                 board.EnemyHealFactor *= -1;
+            }
+            else if(IsFriend && board.HealFactor > 0)
+            {
+                board.HealFactor *= -1;
             }
         }
 
@@ -52,13 +59,13 @@ public EX1_591() : base()
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board,ref Minion);
+            base.OnPlayOtherMinion(ref board, ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-				
+
     }
 }
