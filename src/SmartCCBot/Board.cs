@@ -49,9 +49,9 @@ namespace HREngine.Bots
 
         public float GetValue()
         {
-            if (Value != 0)
-                return Value;
-
+           if (Value != 0)
+               return Value;
+            
             float value = 0;
 
             foreach (Card c in MinionEnemy)
@@ -70,17 +70,6 @@ namespace HREngine.Bots
             }
 
             FriendValue = ((HeroFriend.CurrentHealth * ValuesInterface.ValueHealthFriend) + HeroFriend.CurrentArmor * ValuesInterface.ValueArmorFriend);
-            /*  int MaxFriendValue = ((HeroFriend.MaxHealth * ValuesInterface.ValueHealthFriend) + HeroFriend.CurrentArmor * ValuesInterface.ValueArmorFriend);
-
-              if(FriendValue <= MaxFriendValue / 2)
-              {
-                  value -= (MaxFriendValue / 2) - FriendValue; 
-              }
-              else
-              {
-                  value += FriendValue;
-              }*/
-
             value += FriendValue;
 
             if (HeroFriend.CurrentHealth < 15)
@@ -88,18 +77,11 @@ namespace HREngine.Bots
                 value -= ((15 - HeroFriend.CurrentHealth * ValuesInterface.ValueHealthFriend));
 
             }
-            /*if (HeroEnemy.CurrentHealth < 15)
-            {
-                value += ((15 - HeroEnemy.CurrentHealth) * (15 - HeroEnemy.CurrentHealth));
-
-            }*/
 
             if(Hand.Count + FriendCardDraw > 8)
                 value -= (FriendCardDraw) * ValuesInterface.ValueFriendCardDraw ;
             else
                 value += FriendCardDraw * ValuesInterface.ValueFriendCardDraw;
-
-
 
             value -= EnemyCardDraw * ValuesInterface.ValueEnemyCardDraw;
 
