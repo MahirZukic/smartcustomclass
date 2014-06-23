@@ -13,7 +13,7 @@ namespace HREngine.Bots
 {
     public class Simulation
     {
-        public int VERSION = 235;
+        public int VERSION = 236;
         public bool NeedCalculation { get; set; }
 
         public List<Action> ActionStack { get; set; }

@@ -2702,6 +2702,9 @@ namespace HREngine.Bots
             if (MinionEnemy.Count != b.MinionEnemy.Count)
                 return false;
 
+            if(WastedATK != b.WastedATK)
+                return false;
+
             if (!ListEquals(MinionFriend, b.MinionFriend))
                 return false;
 
