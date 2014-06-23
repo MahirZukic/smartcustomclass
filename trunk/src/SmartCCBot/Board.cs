@@ -2203,7 +2203,7 @@ namespace HREngine.Bots
             }
             */
 
-            Console.WriteLine("");
+            //Console.WriteLine("");
 
             return availableActions;
         }
@@ -2663,14 +2663,7 @@ namespace HREngine.Bots
                     haveBuffer2 = true;
             }
 
-            if (dam1 != dam2)
-                return false;
-            if (hp1 != hp2)
-                return false;
-            if (potDam1 != potDam2)
-                return false;
-            if (haveBuffer1 != haveBuffer2)
-                return false;
+            
 
             for (int i = 0; i < list1.Count; i++)
             {
@@ -2701,6 +2694,14 @@ namespace HREngine.Bots
             }
             */
 
+            if (dam1 != dam2)
+                return false;
+            if (hp1 != hp2)
+                return false;
+            if (potDam1 != potDam2)
+                return false;
+            if (haveBuffer1 != haveBuffer2)
+                return false;
 
             return true;
         }
