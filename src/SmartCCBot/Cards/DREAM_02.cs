@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class DREAM_02 : Card
+    public class DREAM_02 : Card
     {
-		public override Card Create()
-{ return new DREAM_02();}
-public DREAM_02() : base()
+        public override Card Create()
+        { return new DREAM_02(); }
+        public DREAM_02()
+            : base()
         {
-            
+
         }
-		
-        public DREAM_02(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public DREAM_02(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -27,14 +29,14 @@ public DREAM_02() : base()
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
-            foreach(Card c in board.MinionEnemy)
+            base.OnPlay(ref board, target, index);
+            foreach (Card c in board.MinionEnemy)
             {
                 c.Damage(5, ref board);
             }
-            foreach(Card c in board.MinionFriend)
+            foreach (Card c in board.MinionFriend)
             {
                 if (c.template.Id == "EX1_572")
                     continue;
@@ -51,14 +53,14 @@ public DREAM_02() : base()
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board,ref Minion);
+            base.OnPlayOtherMinion(ref board, ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
 
-		
+
     }
 }

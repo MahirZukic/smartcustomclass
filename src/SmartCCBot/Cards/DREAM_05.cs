@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class DREAM_05 : Card
+    public class DREAM_05 : Card
     {
-		public override Card Create()
-{ return new DREAM_05();}
-public DREAM_05() : base()
+        public override Card Create()
+        { return new DREAM_05(); }
+        public DREAM_05()
+            : base()
         {
-            
+
         }
-		
-        public DREAM_05(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public DREAM_05(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -28,14 +30,15 @@ public DREAM_05() : base()
             TargetTypeOnPlay = TargetType.MINION_FRIEND;
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
-            if(target != null)
+            base.OnPlay(ref board, target, index);
+            if (target != null)
             {
                 target.maxHealth += 5;
                 target.CurrentHealth += 5;
                 target.currentAtk += 5;
+                target.IsDestroyedEOT = true;
             }
         }
 
@@ -46,13 +49,13 @@ public DREAM_05() : base()
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board,ref Minion);
+            base.OnPlayOtherMinion(ref board, ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-	
+
     }
 }
