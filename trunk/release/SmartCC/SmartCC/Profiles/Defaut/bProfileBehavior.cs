@@ -29,7 +29,19 @@ namespace HREngine.Bots
 			BlackList.Add("EX1_007");//Acolyte of Pain
 			BlackList.Add("EX1_349");//Divine Favor
 			BlackList.Add("CS2_023");//Arcane Intellect
+			BlackList.Add("CS2_011");//Savage roar
+			BlackList.Add("EX1_622");//Shadow Word Death
 			
+			
+			/* -----PRIEST----- */
+			WhiteList.Add("CS2_181");
+			foreach(Card c in Choices)
+			{
+				if(c.template.Id == "CS2_181")
+					WhiteList.Add("EX1_621");
+			}
+			
+
 			
 			foreach(Card c in Choices)
 			{

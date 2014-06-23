@@ -112,7 +112,6 @@ namespace HREngine.Bots
                     {
                         value += WeaponFriend.GetValue(this);
                     }
-
                 }
             }
 
