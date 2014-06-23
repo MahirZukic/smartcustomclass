@@ -29,7 +29,7 @@ namespace HREngine.Bots
                 int valAtk = 0;
                 int valHp = 0;
 
-                if(IsFriend)
+                if (IsFriend)
                 {
                     valAtk = ValuesInterface.ValueAttackMinionFriend;
                     valHp = ValuesInterface.ValueHealthMinionFriend;
@@ -41,7 +41,7 @@ namespace HREngine.Bots
                 }
 
 
-                if(currentAtk == 0 && IsSilenced)
+                if (currentAtk == 0 && IsSilenced)
                 {
 
                 }
@@ -50,7 +50,7 @@ namespace HREngine.Bots
                     value += valHp * CurrentHealth;
 
                 }
-                
+
                 if (!IsStuck)
                 {
                     if (!IsEnraged)
@@ -64,7 +64,7 @@ namespace HREngine.Bots
                     }
                 }
 
-                if(IsTaunt)
+                if (IsTaunt)
                     value += ValuesInterface.ValueTaunt;
 
                 if (IsDivineShield)
@@ -168,14 +168,14 @@ namespace HREngine.Bots
 
         public virtual void OnDeath(ref Board board)
         {
-            foreach(string s in enchantements.ToArray())
+            foreach (string s in enchantements.ToArray())
             {
                 if (s == "EX1_158")
                 {
                     board.AddCardToBoard("EX1_158t", IsFriend);
                     board.Resimulate();
                 }
-                else if(s == "CS2_038")
+                else if (s == "CS2_038")
                 {
                     board.AddCardToBoard(template.Id, IsFriend);
                     board.Resimulate();
@@ -248,6 +248,13 @@ namespace HREngine.Bots
                 return;
             Card me = board.GetCard(Id);
             Card tar = board.GetCard(target.Id);
+
+
+            int waste = me.CurrentAtk - tar.CurrentHealth;
+            if (waste > 0)
+                board.WastedATK += me.CurrentAtk - tar.CurrentHealth;
+
+
             //Card me = this;
             // Card tar = target;
             if (me.Type == CType.MINION)
@@ -2539,7 +2546,7 @@ namespace HREngine.Bots
                 ba.OwnerId = b.OwnerId;
                 clone.buffs.Add(ba);
             }
-            if(baseInstance.enchantements != null)
+            if (baseInstance.enchantements != null)
             {
                 for (int i = 0; i < baseInstance.enchantements.Count; i++)
                 {
@@ -2547,7 +2554,7 @@ namespace HREngine.Bots
                     clone.enchantements.Add(tmp);
                 }
             }
-            
+
             clone.HasChoices = baseInstance.HasChoices;
             clone.ChoiceIdOne = baseInstance.ChoiceIdOne;
             clone.ChoiceIdTwo = baseInstance.ChoiceIdTwo;
