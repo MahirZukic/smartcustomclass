@@ -41,11 +41,14 @@ public EX1_084() : base()
         {
             base.OnPlayOtherMinion(ref board,ref Minion);
 
-            
-            if(Minion.CurrentAtk <= 3 && Minion.Id != Id && Minion.IsFriend == IsFriend)
+            if(Minion != null)
             {
-                Minion.IsCharge = true;
+                if (Minion.CurrentAtk <= 3 && Minion.Id != Id && Minion.IsFriend == IsFriend)
+                {
+                    Minion.IsCharge = true;
+                }
             }
+            
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)

@@ -33,7 +33,7 @@ public EX1_607() : base()
             base.OnPlay(ref board, target,index);
             if(target != null)
             {
-                target.Damage(1, ref board);
+                target.Damage(1 + board.GetSpellPower(), ref board);
                 target.currentAtk += 2;
             }
         }
