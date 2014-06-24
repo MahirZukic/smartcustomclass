@@ -93,8 +93,6 @@ namespace HREngine.Bots
         {
             if (CurrentHealth < 1)
             {
-                if (!IsSilenced)
-                    OnDeath(ref board);
                 IsDestroyed = true;
             }
 
@@ -375,8 +373,6 @@ namespace HREngine.Bots
                 if (CurrentHealth <= 0 || actor.HasPoison)
                 {
                     IsDestroyed = true;
-                    if (!IsSilenced)
-                        OnDeath(ref board);
                 }
             }
         }
