@@ -219,10 +219,7 @@ namespace HREngine.Bots
             {
                 if (CurrentHealth <= 0)
                 {
-                    if (!IsSilenced)
-                        board.GetCard(Id).OnDeath(ref board);
-                    board.RemoveCardFromBoard(Id);
-
+                    IsDestroyed = true;
                 }
             }
 
@@ -377,7 +374,7 @@ namespace HREngine.Bots
 
                 if (CurrentHealth <= 0 || actor.HasPoison)
                 {
-                    board.RemoveCardFromBoard(Id);
+                    IsDestroyed = true;
                     if (!IsSilenced)
                         OnDeath(ref board);
                 }
@@ -723,11 +720,14 @@ namespace HREngine.Bots
 
         public void RemoveBuffById(int id)
         {
-            foreach (Buff b in buffs.ToArray())
+            
+            //foreach (Buff b in buffs.ToArray())
+            for (int i = 0; i < buffs.Count; i++ )
             {
+                Buff b = buffs[i];
                 if (b.OwnerId == id)
                 {
-                    buffs.Remove(b);
+                    buffs.RemoveAt(i);
                     currentAtk -= b.Atk;
                     if (CurrentHealth > MaxHealth)
                         CurrentHealth -= b.Hp;

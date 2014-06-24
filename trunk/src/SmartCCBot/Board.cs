@@ -52,7 +52,7 @@ namespace HREngine.Bots
         {
             if (calculated)
                 return Value;
-            
+
             float value = 0;
 
             foreach (Card c in MinionEnemy)
@@ -2196,6 +2196,8 @@ namespace HREngine.Bots
 
         public void CleanDestroyedEOT(bool friends)
         {
+            Board bbbb = this;
+
             if (friends)
             {
                 foreach (Card c in MinionFriend.ToArray())
@@ -2203,6 +2205,8 @@ namespace HREngine.Bots
                     if (c.IsDestroyedEOT)
                     {
                         RemoveCardFromBoard(c.Id);
+                        if (!c.IsSilenced)
+                            c.OnDeath(ref bbbb);
                     }
                 }
             }
@@ -2213,6 +2217,8 @@ namespace HREngine.Bots
                     if (c.IsDestroyedEOT)
                     {
                         RemoveCardFromBoard(c.Id);
+                        if (!c.IsSilenced)
+                            c.OnDeath(ref bbbb);
                     }
                 }
             }
@@ -2286,12 +2292,15 @@ namespace HREngine.Bots
 
         public void Update()
         {
+            Board bbbb = this;
             foreach (Card c in MinionEnemy.ToArray())
             {
                 c.OnUpdate(this);
                 if (c.IsDestroyed)
                 {
                     RemoveCardFromBoard(c.Id);
+                    if (!c.IsSilenced)
+                        c.OnDeath(ref bbbb);
                 }
             }
             foreach (Card c in MinionFriend.ToArray())
@@ -2300,6 +2309,9 @@ namespace HREngine.Bots
                 if (c.IsDestroyed)
                 {
                     RemoveCardFromBoard(c.Id);
+                    if (!c.IsSilenced)
+                        c.OnDeath(ref bbbb);
+
                 }
             }
             foreach (Card c in Hand)
@@ -2694,9 +2706,9 @@ namespace HREngine.Bots
 
         public bool Equals(Board b)
         {
-           /* if (Ability.template.Id != b.Ability.template.Id)
-                return false;*/
-            
+            /* if (Ability.template.Id != b.Ability.template.Id)
+                 return false;*/
+
             if (ManaAvailable != b.ManaAvailable)
                 return false;
             if (FriendCardDraw != b.FriendCardDraw)
