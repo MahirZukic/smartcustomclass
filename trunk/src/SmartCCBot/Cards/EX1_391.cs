@@ -43,7 +43,7 @@ public EX1_391()
                 }
 
 
-                target.Damage(2, ref board);
+                target.Damage(2 + board.GetSpellPower(), ref board);
             }
         }
 

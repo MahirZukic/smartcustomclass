@@ -45,6 +45,8 @@ namespace HREngine.Bots
 		{
 			if(board.HasMinionOnBoard("CS2_181",true))
 				return 2;
+			else if(board.HasCardInHand("EX1_591"))
+				return 8;
 			else
 				return 5;
 		}

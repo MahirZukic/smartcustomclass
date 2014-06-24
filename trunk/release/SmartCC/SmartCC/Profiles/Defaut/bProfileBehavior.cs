@@ -32,7 +32,8 @@ namespace HREngine.Bots
 			BlackList.Add("CS2_011");//Savage roar
 			BlackList.Add("EX1_622");//Shadow Word Death
 			BlackList.Add("EX1_625");//Shadow Form
-			
+			BlackList.Add("DS1_233");//Mind Blast
+
 			/* -----PRIEST----- */
 			WhiteList.Add("CS2_181");
 			foreach(Card c in Choices)
