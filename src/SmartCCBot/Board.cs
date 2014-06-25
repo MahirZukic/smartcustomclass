@@ -30,6 +30,18 @@ namespace HREngine.Bots
         public int EnemyCardCount { get; set; }
         public int EnemyHealFactor { get; set; }
         public int HealFactor { get; set; }
+        public int DamageFactor
+        {
+            get
+            {
+                int factor = 1;
+
+                if (HealFactor > 0)
+                    factor = HealFactor;
+
+                return factor;
+            }
+        }
         public int FriendCardDraw { get; set; }
         public int EnemyCardDraw { get; set; }
         public int WastedATK { get; set; }
@@ -798,7 +810,7 @@ namespace HREngine.Bots
             return lastIdGen++;
         }
 
-        public void AddCardToBoard(string id, bool friend, int index = -1)
+        public void AddCardToBoard(string id, bool friend, int index = -1, bool triggerOnPlayOtherMinion = true)
         {
 
             if (!friend)
@@ -817,6 +829,9 @@ namespace HREngine.Bots
             }
             else
             {
+                if (MinionFriend.Count >= 7)
+                    return;
+
                 Card c = Card.Create(id, true, GenId());
                 if (!c.IsCharge)
                 {
@@ -833,12 +848,14 @@ namespace HREngine.Bots
                         continue;
 
                     Board tBoard = this;
-                    cc.OnPlayOtherMinion(ref tBoard, ref c);
+                    if (triggerOnPlayOtherMinion)
+                        cc.OnPlayOtherMinion(ref tBoard, ref c);
                 }
                 if (WeaponFriend != null)
                 {
                     Board tBoard = this;
-                    WeaponFriend.OnPlayOtherMinion(ref tBoard, ref c);
+                    if (triggerOnPlayOtherMinion)
+                        WeaponFriend.OnPlayOtherMinion(ref tBoard, ref c);
                 }
             }
             Resimulate();

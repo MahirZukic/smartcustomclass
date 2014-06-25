@@ -8,18 +8,20 @@ using System.Text;
 namespace HREngine.Bots
 {
     [Serializable]
-public class CS1_112 : Card
+    public class CS1_112 : Card
     {
-		public override Card Create()
-{ return new CS1_112();}
-public CS1_112() : base()
+        public override Card Create()
+        { return new CS1_112(); }
+        public CS1_112()
+            : base()
         {
-            
+
         }
-		
-        public CS1_112(CardTemplate newTemplate, bool isFriend, int id) : base(newTemplate,isFriend,id)
+
+        public CS1_112(CardTemplate newTemplate, bool isFriend, int id)
+            : base(newTemplate, isFriend, id)
         {
-            
+
         }
 
         public override void Init()
@@ -27,20 +29,20 @@ public CS1_112() : base()
             base.Init();
         }
 
-        public override void OnPlay(ref Board board, Card target = null,int index = 0,int choice = 0)
+        public override void OnPlay(ref Board board, Card target = null, int index = 0, int choice = 0)
         {
-            base.OnPlay(ref board, target,index);
+            base.OnPlay(ref board, target, index);
 
-            foreach(Card c in board.MinionFriend)
+            foreach (Card c in board.MinionFriend)
             {
                 c.Heal((2 + board.GetSpellPower()) * board.HealFactor, ref board);
             }
             foreach (Card c in board.MinionEnemy)
             {
-                c.Damage(2 + board.GetSpellPower(), ref board);
+                c.Damage((2 + board.GetSpellPower()) * board.DamageFactor, ref board);
             }
             board.HeroFriend.Heal((2 + board.GetSpellPower()) * board.HealFactor, ref board);
-            board.HeroEnemy.Damage(2 + board.GetSpellPower(), ref board);
+            board.HeroEnemy.Damage((2 + board.GetSpellPower()) * board.DamageFactor, ref board);
 
         }
 
@@ -51,13 +53,13 @@ public CS1_112() : base()
 
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
-            base.OnPlayOtherMinion(ref board,ref Minion);
+            base.OnPlayOtherMinion(ref board, ref Minion);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
-		    base.OnCastSpell(ref board, Spell);
+            base.OnCastSpell(ref board, Spell);
         }
-		
+
     }
 }
