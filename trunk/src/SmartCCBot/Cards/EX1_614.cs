@@ -42,15 +42,15 @@ namespace HREngine.Bots
         public override void OnPlayOtherMinion(ref Board board, ref Card Minion)
         {
             base.OnPlayOtherMinion(ref board, ref Minion);
-            if (IsFriend)
-                board.AddCardToBoard("EX1_614t", true);
+            if (IsFriend && board.MinionFriend.Count < 7)
+                board.AddCardToBoard("EX1_614t", true, -1, false);
         }
 
         public override void OnCastSpell(ref Board board, Card Spell)
         {
             base.OnCastSpell(ref board, Spell);
-            if (IsFriend)
-                board.AddCardToBoard("EX1_614t", true);
+            if (IsFriend && board.MinionFriend.Count < 7)
+                board.AddCardToBoard("EX1_614t", true, -1, false);
         }
 
     }
