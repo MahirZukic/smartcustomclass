@@ -1,6 +1,6 @@
 ValueHealthEnemy=1
 ValueHealthFriend=1
-ValueArmorEnemy=1
+ValueArmorEnemy=2
 ValueArmorFriend=2
 ValueSecret=15
 ValueEnemyCardDraw=10
