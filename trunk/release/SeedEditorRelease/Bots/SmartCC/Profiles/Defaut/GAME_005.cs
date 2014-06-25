@@ -18,6 +18,8 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.TurnCount > 3)
+				return true;
             foreach(Card c in board.Hand)
             {
                 if (c.CurrentCost == board.ManaAvailable + 1)
@@ -41,10 +43,16 @@ namespace HREngine.Bots
         {
             return true;
         }
+		
+		public override int GetPriorityPlay(Board board)
+		{
+			return 1;
+		}
 
-        public override int GetPriorityPlay(Board board)
-        {
-            return 100;
-        }
+        public override int GetHandValue(Board board)
+		{
+			return 1;
+		}
+		
     }
 }

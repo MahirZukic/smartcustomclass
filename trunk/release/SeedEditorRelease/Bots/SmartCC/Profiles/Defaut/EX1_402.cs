@@ -41,5 +41,10 @@ namespace HREngine.Bots
             return 1;
         }
 		
+		public override KILLPRIORITY GetKillPriority(Board board)
+        {
+            return KILLPRIORITY.MEDIUM;
+        }
+		
     }
 }

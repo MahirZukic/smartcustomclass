@@ -20,6 +20,18 @@ namespace HREngine.Bots
         {
             if (board.MinionFriend.Count > 5)
                 return false;
+				
+			int otherDrop = 0;
+			foreach(Card c in board.Hand)
+			{
+				if(c.CurrentCost == 3)
+				{
+					otherDrop++;
+				}
+			}
+			/*if(otherDrop > 0)
+				return false;*/
+			
             return true;
         }
 

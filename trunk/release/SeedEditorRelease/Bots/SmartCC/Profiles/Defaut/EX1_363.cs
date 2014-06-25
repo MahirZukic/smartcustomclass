@@ -33,6 +33,9 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
+			if(target.CurrentHealth < 3)
+				return false;
+				
             return target.CanAttack;
         }
 

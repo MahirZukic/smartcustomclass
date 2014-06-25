@@ -18,6 +18,8 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.WeaponFriend == null)
+				return false;
             return true;
         }
 
@@ -40,6 +42,14 @@ namespace HREngine.Bots
         {
             return 1;
         }
+		
+		public override int GetHandValue(Board board)
+		{
+			if(board.WeaponFriend != null)
+				if(board.WeaponFriend.CurrentDurability >= 2)
+					return 2;
+			return 0;
+		}
 		
     }
 }
