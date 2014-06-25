@@ -18,6 +18,10 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.HasCardInHand("NEW1_019"))
+			{
+				return false;
+			}
             return true;
         }
 

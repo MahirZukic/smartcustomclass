@@ -18,6 +18,9 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.WeaponFriend != null)
+				if(board.WeaponFriend.CurrentAtk > 1)
+					return false;
             return true;
         }
 

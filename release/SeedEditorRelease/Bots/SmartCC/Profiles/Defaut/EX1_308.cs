@@ -18,27 +18,45 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+            int CountPlayable = 0;
+
 			foreach(Card c in board.Hand)
-			{
-				if(c.CurrentCost <= board.ManaAvailable && c.Type == Card.CType.MINION)
+			{	
+				if(c.template.Id == "EX1_308")
+					continue;
+				if(c.CurrentCost <= board.ManaAvailable && c.Type == Card.CType.MINION || c.Type == Card.CType.SPELL)
 				{
-					return false;
-				}
-				
-				
-				if(c.Type == Card.CType.SPELL)
-				{
-					if(c.Behavior == this || c.template.Id == "EX1_308")
-						continue;
-					foreach(Card enemy in board.MinionEnemy)
+					if(c.Type == Card.CType.SPELL)
 					{
-						if(c.Behavior.ShouldBePlayedOnTarget(enemy))
-							return false;
+						foreach(Card cc in board.MinionEnemy)
+						{
+							if(c.Behavior.ShouldBePlayedOnTarget(cc))
+							{
+								CountPlayable++;
+							}
+						}
 					}
-				
-					if(c.Behavior.ShouldBePlayedOnTarget(board.HeroEnemy))
-						return false;
+					else
+					{
+						CountPlayable++;
+					}
 				}
+			}
+			
+			int sum = 0;
+			foreach(Card c in board.MinionFriend)
+			{
+				sum += c.CurrentAtk;
+			}
+				
+		
+			if(sum + 4 >= board.HeroEnemy.CurrentHealth + board.HeroEnemy.CurrentArmor && CountPlayable < 3)
+				return true;
+				
+				
+			if(CountPlayable > 3)
+			{
+				return false;
 			}
 			
             return true;
@@ -56,9 +74,11 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {			
+			if(target.CurrentHealth < 3 && target.CurrentAtk < 3 && target.Type == Card.CType.MINION )
+				return false;
 			
             if (target.CurrentHealth > 4)
-                    return false;
+                return false;
 
             return true;
         }
