@@ -9,7 +9,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 namespace HREngine.Bots
 {
-   public class Debugger
+    public class Debugger
     {
         public static byte[] Serialize(Object o)
         {
@@ -49,9 +49,9 @@ namespace HREngine.Bots
                     Assemblies.Add(Assembly.LoadFile(CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Profile.dll"));
                     foreach (Assembly ass in Assemblies)
                     {
-                        foreach(Type t in ass.GetTypes())
+                        foreach (Type t in ass.GetTypes())
                         {
-                            if(t.FullName.Contains(typeName))
+                            if (t.FullName.Contains(typeName))
                             {
                                 typeToDeserialize = ass.GetType(typeName);
                                 break;
@@ -66,6 +66,5 @@ namespace HREngine.Bots
                 return typeToDeserialize;
             }
         }
-
     }
 }

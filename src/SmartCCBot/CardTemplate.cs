@@ -10,23 +10,15 @@ namespace HREngine.Bots
     public class CardTemplate
     {
         public static string DatabasePath { get; set; }
-
         public string Id { get; set; }
-
         public int Cost { get; set; }
-
         public string Name { get; set; }
-
         public Card.CType Type { get; set; }
-
         public Card.CRace Race { get; set; }
-
         public int Atk { get; set; }
-
         public int Health { get; set; }
-
         public int Durability { get; set; }
-        public bool  HasDeathrattle { get; set; }
+        public bool HasDeathrattle { get; set; }
         public bool IsBuffer { get; set; }
         public bool IsSecret { get; set; }
 
@@ -48,7 +40,6 @@ namespace HREngine.Bots
 
         public static CardTemplate LoadFromId(string id)
         {
-
             foreach (CardTemplate ct in templateList)
             {
                 if (ct.Id == id)
@@ -60,7 +51,6 @@ namespace HREngine.Bots
 
         public static void LoadAll()
         {
-
             if (DatabasePath == null)
                 return;
 
@@ -190,9 +180,7 @@ namespace HREngine.Bots
                 ret += "[" + Durability.ToString() + "]";
             }
 
-
             ret += "}";
-
 
             return ret;
         }

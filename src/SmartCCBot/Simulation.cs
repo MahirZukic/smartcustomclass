@@ -13,7 +13,7 @@ namespace HREngine.Bots
 {
     public class Simulation
     {
-        public int VERSION = 241;
+        public int VERSION = 242;
         public bool NeedCalculation { get; set; }
 
         public List<Action> ActionStack { get; set; }
@@ -225,8 +225,8 @@ namespace HREngine.Bots
                                     //foreach (Board lol in childs.ToArray())
                                     for (int y = 0; y < childs.Count; y++)
                                     {
-                                        Board lol = childs[y];
-                                        if (bb.Equals(lol))
+                                        Board tmp = childs[y];
+                                        if (bb.Equals(tmp))
                                         {
                                             found = true;
                                             break;
@@ -277,16 +277,13 @@ namespace HREngine.Bots
                 int limit = maxBoards;
                 if (childs.Count < maxBoards)
                     limit = childs.Count;
-                
+
                 childs.Sort((x, y) => y.GetValue().CompareTo(x.GetValue()));
                 childs = new List<Board>(childs.GetRange(0, limit));
 
                 boards = childs;
                 depth++;
             }
-
-
-
 
             if (!foundearly)
             {
@@ -393,7 +390,6 @@ namespace HREngine.Bots
                 }
             }
 
-
             List<Action> finalStack = new List<Action>();
             if (actionPrior != null && !root.SecretEnemy)
             {
@@ -427,9 +423,6 @@ namespace HREngine.Bots
                 finalStack = bestBoard.ActionsStack;
             }
 
-
-
-
             ActionStack = finalStack;
             Log("");
             Log("");
@@ -448,10 +441,12 @@ namespace HREngine.Bots
 
                 Console.WriteLine(a.ToString());
             }
+
             stopWatch.Stop();
 
             Log("Simulation stopped after :" + (stopWatch.ElapsedMilliseconds / 1000.0f).ToString());
             BestBoardFinal = bestBoard;
+
             if (bestBoard.GetValue() > 9000)
                 WriteWinFile();
         }

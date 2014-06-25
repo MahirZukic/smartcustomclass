@@ -31,7 +31,7 @@ namespace HREngine.Bots
         {
 
         }
-        public Action(ActionType actionType, Card actor, Card target = null, int index = 0,int choice = 0)
+        public Action(ActionType actionType, Card actor, Card target = null, int index = 0, int choice = 0)
         {
             Target = target;
             Actor = actor;
@@ -88,9 +88,9 @@ namespace HREngine.Bots
                 tmp += "INDEX : " + Index.ToString();
             }
 
-            if(Actor != null)
+            if (Actor != null)
             {
-                if(Actor.HasChoices)
+                if (Actor.HasChoices)
                 {
                     tmp += " | CHOICE : " + Choice.ToString();
                 }
@@ -108,18 +108,18 @@ namespace HREngine.Bots
                 return false;
 
 
-            if(Actor != null)
+            if (Actor != null)
             {
                 if (!Actor.Equals(c.Actor))
                     return false;
             }
 
-            if(Target != null)
+            if (Target != null)
             {
                 if (!Target.Equals(c.Target))
                     return false;
             }
-            
+
 
             return true;
         }

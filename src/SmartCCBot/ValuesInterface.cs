@@ -42,7 +42,7 @@ namespace HREngine.Bots
             HREngine.API.Utilities.HRLog.Write("Loaded Profile :" + profileName);
             reader = new StreamReader(CardTemplate.DatabasePath + "" + Path.DirectorySeparatorChar + "Bots" + Path.DirectorySeparatorChar + "SmartCC" + Path.DirectorySeparatorChar + "Profiles" + Path.DirectorySeparatorChar + "" + profileName + "" + Path.DirectorySeparatorChar + "aValues");
 
-            while(!reader.EndOfStream)
+            while (!reader.EndOfStream)
             {
                 string line = reader.ReadLine();
                 if (line.Contains("ValueHealthEnemy"))

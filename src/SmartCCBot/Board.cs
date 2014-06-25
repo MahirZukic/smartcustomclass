@@ -17,14 +17,10 @@ namespace HREngine.Bots
         public Card HeroFriend { get; set; }
         public List<Card> Secret { get; set; }
         public bool SecretEnemy { get; set; }
-
         public bool ShoudTryToAttack { get; set; }
-
         public bool ShouldTryToCastMinion { get; set; }
-
         public int ManaAvailable { get; set; }
         public int MaxMana { get; set; }
-
         public Card Ability { get; set; }
         public Card EnemyAbility { get; set; }
         public int EnemyCardCount { get; set; }
@@ -47,13 +43,12 @@ namespace HREngine.Bots
         public int WastedATK { get; set; }
         public int TurnCount { get; set; }
         public int SpellCastCost { get; set; }
-
+        public bool IsCombo { get; set; }
 
         public Board EnemyTurnWorseBoard { get; set; }
         public bool EnemyTurnCalculated = false;
 
         static int lastIdGen = 10000;
-
 
         private float Value = -1;
         private bool calculated = false;
@@ -139,12 +134,6 @@ namespace HREngine.Bots
 
             value += MaxMana * ValuesInterface.ValueMana;
 
-            int playableCardthisTurn = 0;
-            int playableCardNextTurn = 0;
-            foreach (Card c in Hand)
-            {
-
-            }
             value -= GetOverload() * ValuesInterface.ValueOverload;
 
             Value = value;
@@ -167,15 +156,15 @@ namespace HREngine.Bots
         {
             List<Action> enemyActions = CalculateEnemyAvailableActions();
 
-            List<Board> childss = new List<Board>();
-            childss.Add(this);
+            List<Board> Roots = new List<Board>();
+            Roots.Add(this);
             Board worseBoard = null;
 
             int maxWide = 100;
             int maxDepth = 15;
             int wide = 0;
             int depth = 0;
-            while (childss.Count != 0)
+            while (Roots.Count != 0)
             {
                 if (depth > maxDepth)
                     break;
@@ -184,9 +173,9 @@ namespace HREngine.Bots
                 List<Board> childs = new List<Board>();
 
                 //foreach (Board b in childss)
-                for (int i = 0; i < childss.Count; i++)
+                for (int i = 0; i < Roots.Count; i++)
                 {
-                    Board b = childss[i];
+                    Board b = Roots[i];
                     List<Action> actions = b.CalculateEnemyAvailableActions();
 
                     //foreach (Action a in actions)
@@ -218,13 +207,11 @@ namespace HREngine.Bots
                         worseBoard = endBoard;
                     }
                 }
-                childss = childs;
+                Roots = childs;
             }
-
 
             return worseBoard;
         }
-
 
         public List<Action> CalculateEnemyAvailableActions()
         {
@@ -351,7 +338,6 @@ namespace HREngine.Bots
                         enemyActions.Add(a);
                     }
                 }
-
             }
 
             if (WeaponEnemy != null)
@@ -382,7 +368,6 @@ namespace HREngine.Bots
             }
             else if (HeroEnemy.CurrentAtk > 0 && HeroEnemy.CanAttack && WeaponEnemy == null)
             {
-
                 if (taunts.Count == 0)
                 {
                     foreach (Card Friend in MinionFriend)
@@ -402,13 +387,9 @@ namespace HREngine.Bots
                         Action a = new Action(Action.ActionType.HERO_ATTACK, HeroEnemy, taunt);
                         enemyActions.Add(a);
                     }
-
                 }
-
             }
-
             return enemyActions;
-
         }
 
         public Card GetBestMinion()
@@ -442,6 +423,7 @@ namespace HREngine.Bots
             }
             return ret;
         }
+
         public Card GetWorstMinionCanAttack()
         {
             Card ret = null;
@@ -574,7 +556,6 @@ namespace HREngine.Bots
 
         public bool RemoveCardFromHand(int id)
         {
-
             List<Card> tmp = new List<Card>();
             foreach (Card c in Hand)
             {
@@ -585,7 +566,6 @@ namespace HREngine.Bots
                 if (tmp[i].Id == id)
                 {
                     Hand.RemoveAt(i);
-
 
                     if (tmp[i].Behavior.GetHandValue(this) > 0)
                     {
@@ -598,7 +578,6 @@ namespace HREngine.Bots
 
                     return true;
                 }
-
             }
 
             return false;
@@ -639,7 +618,6 @@ namespace HREngine.Bots
                         }
 
                         MinionFriend.Add(tmp[i]);
-
                     }
 
                     return true;
@@ -659,6 +637,7 @@ namespace HREngine.Bots
                 if (ca.Index >= idx)
                     ca.Index++;
             }
+
             c.IsTired = true;
             MinionFriend.Add(c);
             Resimulate();
@@ -798,11 +777,6 @@ namespace HREngine.Bots
                 if (ActionsStack[ActionsStack.Count - 1].Type != Action.ActionType.RESIMULATE)
                     ActionsStack.Add(new Action(Action.ActionType.RESIMULATE, null));
             }
-            else
-            {
-
-            }
-
         }
 
         public static int GenId()
@@ -812,7 +786,6 @@ namespace HREngine.Bots
 
         public void AddCardToBoard(string id, bool friend, int index = -1, bool triggerOnPlayOtherMinion = true)
         {
-
             if (!friend)
             {
                 Card c = Card.Create(id, false, GenId());
@@ -947,8 +920,6 @@ namespace HREngine.Bots
                 }
             }
 
-
-
             return false;
         }
 
@@ -960,13 +931,10 @@ namespace HREngine.Bots
                 HeroFriend.currentAtk = 0;
                 HeroFriend.TempAtk = 0;
             }
-
         }
+
         public void ReplaceWeapon(string id)
         {
-            Random random = new Random();
-            int randomNumber = random.Next(88888, 99999);
-
             int oldCountAttack = 0;
 
             if (WeaponFriend != null)
@@ -974,7 +942,7 @@ namespace HREngine.Bots
                 oldCountAttack = WeaponFriend.CountAttack;
             }
 
-            WeaponFriend = Card.Create(id, true, randomNumber);
+            WeaponFriend = Card.Create(id, true, GenId());
             WeaponFriend.CountAttack = oldCountAttack;
 
             Resimulate();
@@ -982,10 +950,7 @@ namespace HREngine.Bots
 
         public void ReplaceEnemyWeapon(string id)
         {
-            Random random = new Random();
-            int randomNumber = random.Next(88888, 99999);
-
-            WeaponEnemy = Card.Create(id, false, randomNumber);
+            WeaponEnemy = Card.Create(id, false, GenId());
         }
 
         public Card GetMinionByIndex(int idx, bool friend)
@@ -1093,8 +1058,6 @@ namespace HREngine.Bots
             }
             return false;
         }
-        public bool IsCombo { get; set; }
-
 
         public Board ExecuteAction(Action a)
         {
@@ -1151,7 +1114,6 @@ namespace HREngine.Bots
                             c.OnPlaySecret(ref child, a.Actor);
                         }
                     }
-
 
                     child.Update();
 
@@ -1370,7 +1332,6 @@ namespace HREngine.Bots
                         availableActions.Add(a);
                     }
                 }
-
             }
 
             if (WeaponFriend != null)
@@ -1458,12 +1419,6 @@ namespace HREngine.Bots
 
             }
 
-            /* if (HasLethal())
-                 return availableActions;
-             */
-
-
-            //Console.WriteLine("");
             if (!Ability.IsUsed && CastableCards == Hand)
             {
 
@@ -1710,7 +1665,6 @@ namespace HREngine.Bots
                                             }
                                         }
                                     }
-
                                 }
                                 else
                                 {
@@ -1773,7 +1727,6 @@ namespace HREngine.Bots
                                 {
                                     availableActions.Add(a);
                                 }
-
                             }
                         }
                     }
@@ -2197,16 +2150,7 @@ namespace HREngine.Bots
                 }
             }
 
-
-            /*foreach (Action aa in availableActions)
-            {
-                if (aa.Type == Action.ActionType.CAST_MINION)
-                   
-
-            }
-            */
-
-            //Console.WriteLine("");
+            Console.WriteLine("");
 
             return availableActions;
         }
@@ -2243,12 +2187,6 @@ namespace HREngine.Bots
 
         public void EndTurn()
         {
-            /*  foreach (Card c in MinionEnemy)
-              {
-                  c.OnEndTurn(this);
-                  c.TempAtk = 0;
-                  c.IsImmune = false;
-              }*/
             foreach (Card c in MinionFriend.ToArray())
             {
                 c.OnEndTurn(this);
@@ -2262,12 +2200,6 @@ namespace HREngine.Bots
             }
             CleanDestroyedEOT(true);
             Update();
-
-            /*  if(ActionsStack.Count == 1)
-              {
-                  if (ActionsStack[0].Type == Action.ActionType.RESIMULATE)
-                      ActionsStack.Clear();
-              }*/
         }
         public void EndEnemyTurn()
         {
@@ -2277,20 +2209,9 @@ namespace HREngine.Bots
                 c.TempAtk = 0;
                 c.IsImmune = false;
             }
-            /* foreach (Card c in MinionFriend)
-             {
-                 c.OnEndTurn(this);
-                 c.TempAtk = 0;
-                 c.IsImmune = false;
-             }*/
+
             CleanDestroyedEOT(false);
             Update();
-
-            /*  if(ActionsStack.Count == 1)
-              {
-                  if (ActionsStack[0].Type == Action.ActionType.RESIMULATE)
-                      ActionsStack.Clear();
-              }*/
         }
         public void CalculateEnemyTurn()
         {
@@ -2303,13 +2224,12 @@ namespace HREngine.Bots
                 EndEnemyTurn();
             }
 
-
             EnemyTurnCalculated = true;
         }
 
         public void Update()
         {
-            Board bbbb = this;
+            Board thisBoard = this;
             foreach (Card c in MinionEnemy.ToArray())
             {
                 c.OnUpdate(this);
@@ -2317,7 +2237,7 @@ namespace HREngine.Bots
                 {
                     RemoveCardFromBoard(c.Id);
                     if (!c.IsSilenced)
-                        c.OnDeath(ref bbbb);
+                        c.OnDeath(ref thisBoard);
                 }
             }
             foreach (Card c in MinionFriend.ToArray())
@@ -2327,7 +2247,7 @@ namespace HREngine.Bots
                 {
                     RemoveCardFromBoard(c.Id);
                     if (!c.IsSilenced)
-                        c.OnDeath(ref bbbb);
+                        c.OnDeath(ref thisBoard);
 
                 }
             }
@@ -2335,8 +2255,6 @@ namespace HREngine.Bots
             {
                 c.OnUpdateHand(this);
             }
-
-
         }
 
         public List<Card> GetAllCards()
@@ -2347,18 +2265,22 @@ namespace HREngine.Bots
             {
                 ret.Add(c);
             }
+
             foreach (Card c in MinionEnemy)
             {
                 ret.Add(c);
             }
+
             foreach (Card c in MinionFriend)
             {
                 ret.Add(c);
             }
+
             foreach (Card c in Secret)
             {
                 ret.Add(c);
             }
+
             ret.Add(WeaponEnemy);
             ret.Add(WeaponFriend);
             ret.Add(HeroEnemy);
@@ -2432,7 +2354,6 @@ namespace HREngine.Bots
             return Hand;
         }
 
-
         public Card GetCard(int id)
         {
             foreach (Card c in Hand)
@@ -2499,18 +2420,22 @@ namespace HREngine.Bots
             newBoard.EnemyCardCount = baseInstance.EnemyCardCount;
             newBoard.ShoudTryToAttack = baseInstance.ShoudTryToAttack;
             newBoard.ShouldTryToCastMinion = baseInstance.ShouldTryToCastMinion;
+
             foreach (Card c in baseInstance.Hand)
             {
                 newBoard.Hand.Add(Card.Clone(c));
             }
+
             foreach (Card c in baseInstance.MinionFriend)
             {
                 newBoard.MinionFriend.Add(Card.Clone(c));
             }
+
             foreach (Card c in baseInstance.MinionEnemy)
             {
                 newBoard.MinionEnemy.Add(Card.Clone(c));
             }
+
             if (baseInstance.WeaponEnemy != null)
             {
                 newBoard.WeaponEnemy = Card.Clone(baseInstance.WeaponEnemy);
@@ -2519,28 +2444,28 @@ namespace HREngine.Bots
             {
                 newBoard.WeaponEnemy = null;
             }
+
             if (baseInstance.WeaponFriend != null)
             {
                 newBoard.WeaponFriend = Card.Clone(baseInstance.WeaponFriend);
-
             }
             else
             {
                 newBoard.DeleteWeapon();
             }
+
             if (baseInstance.Ability != null)
             {
                 newBoard.Ability = Card.Clone(baseInstance.Ability);
-
             }
             else
             {
                 newBoard.Ability = null;
             }
+
             if (baseInstance.EnemyAbility != null)
             {
                 newBoard.EnemyAbility = Card.Clone(baseInstance.EnemyAbility);
-
             }
             else
             {
@@ -2550,12 +2475,10 @@ namespace HREngine.Bots
             newBoard.HeroEnemy = Card.Clone(baseInstance.HeroEnemy);
             newBoard.HeroFriend = Card.Clone(baseInstance.HeroFriend);
 
-
             foreach (Card c in baseInstance.Secret)
             {
                 newBoard.Secret.Add(Card.Clone(c));
             }
-
 
             newBoard.SecretEnemy = baseInstance.SecretEnemy;
             newBoard.ManaAvailable = baseInstance.ManaAvailable;
@@ -2564,6 +2487,7 @@ namespace HREngine.Bots
             {
                 newBoard.ActionsStack.Add(a);
             }
+
             newBoard.HealFactor = baseInstance.HealFactor;
             newBoard.EnemyHealFactor = baseInstance.EnemyHealFactor;
 
@@ -2634,52 +2558,6 @@ namespace HREngine.Bots
             if (list1.Count != list2.Count)
                 return false;
 
-            int dam1 = 0;
-            int hp1 = 0;
-            int potDam1 = 0;
-            bool haveBuffer1 = false;
-            for (int i = 0; i < list1.Count; i++)
-            {
-                Card c = list1[i];
-                dam1 += c.CurrentAtk;
-                hp1 += c.CurrentHealth;
-                if (c.CanAttack)
-                    potDam1 += c.CurrentAtk;
-                if (!haveBuffer1 && c.IsBuffer)
-                    haveBuffer1 = true;
-            }
-            /*
-            foreach (Card c1 in list1)
-            {
-                dam1 += c1.CurrentAtk;
-                hp1 += c1.CurrentHealth;
-            }
-            */
-
-            int dam2 = 0;
-            int hp2 = 0;
-            int potDam2 = 0;
-            bool haveBuffer2 = false;
-
-            /*foreach (Card c2 in list2)
-            {
-                dam2 += c2.CurrentAtk;
-                hp2 += c2.CurrentHealth;
-            }*/
-
-            for (int i = 0; i < list2.Count; i++)
-            {
-                Card c = list2[i];
-                dam2 += c.CurrentAtk;
-                hp2 += c.CurrentHealth;
-                if (c.CanAttack)
-                    potDam2 += c.CurrentAtk;
-                if (!haveBuffer2 && c.IsBuffer)
-                    haveBuffer2 = true;
-            }
-
-
-
             for (int i = 0; i < list1.Count; i++)
             {
                 Card c1 = list1[i];
@@ -2694,47 +2572,24 @@ namespace HREngine.Bots
                     }
                 }
             }
-            /*
-            foreach (Card c1 in list1)
-            {
-                foreach (Card c2 in list2)
-                {
-                    if (c1.Id == c2.Id)
-                    {
-                        if (!c1.IsSimilar(c2))
-                            return false;
-
-                    }
-                }
-            }
-            */
-
-            if (dam1 != dam2)
-                return false;
-            if (hp1 != hp2)
-                return false;
-            if (potDam1 != potDam2)
-                return false;
-            if (haveBuffer1 != haveBuffer2)
-                return false;
 
             return true;
         }
 
         public bool Equals(Board b)
         {
-            /* if (Ability.template.Id != b.Ability.template.Id)
-                 return false;*/
-
             if (ManaAvailable != b.ManaAvailable)
                 return false;
+
             if (FriendCardDraw != b.FriendCardDraw)
                 return false;
+
             if (MinionFriend.Count != b.MinionFriend.Count)
                 return false;
 
             if (HeroEnemy.CurrentHealth + HeroEnemy.CurrentArmor != b.HeroEnemy.CurrentArmor + b.HeroEnemy.CurrentHealth)
                 return false;
+
             if (MinionEnemy.Count != b.MinionEnemy.Count)
                 return false;
 
@@ -2746,7 +2601,6 @@ namespace HREngine.Bots
 
             if (Hand.Count != b.Hand.Count)
                 return false;
-
 
             if (HeroFriend.CurrentHealth + HeroFriend.CurrentArmor != b.HeroFriend.CurrentArmor + b.HeroFriend.CurrentHealth)
                 return false;

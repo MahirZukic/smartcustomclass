@@ -299,7 +299,6 @@ namespace HREngine.Bots
 
                 me.OnHit(ref board, tar);
                 tar.OnHit(ref board, me);
-
             }
         }
 
@@ -329,8 +328,6 @@ namespace HREngine.Bots
                 }
             }
 
-
-
             OnDamage(ref board);
 
             if (actor.HasFreeze)
@@ -344,9 +341,7 @@ namespace HREngine.Bots
             {
                 if (CurrentArmor <= 0)
                 {
-
                     CurrentHealth -= actor.CurrentAtk;
-
                 }
                 else
                 {
@@ -432,7 +427,6 @@ namespace HREngine.Bots
                     CurrentHealth += amount;
                 }
             }
-
         }
 
         public void Damage(int amount, ref Board board)
@@ -450,7 +444,6 @@ namespace HREngine.Bots
                 }
             }
 
-
             OnDamage(ref board);
             if (IsDivineShield && amount > 0)
             {
@@ -461,7 +454,6 @@ namespace HREngine.Bots
                 if (CurrentArmor <= 0)
                 {
                     CurrentHealth -= amount;
-
                 }
                 else
                 {
@@ -484,7 +476,6 @@ namespace HREngine.Bots
                     }
                 }
 
-
                 if (CurrentHealth <= 0)
                 {
                     IsDestroyed = true;
@@ -500,6 +491,7 @@ namespace HREngine.Bots
             WEAPON = 3,
             HERO_POWER = 4
         }
+
         public enum CRace
         {
             MURLOC = 0,
@@ -510,6 +502,7 @@ namespace HREngine.Bots
             DRAGON = 5,
             NONE = 6
         }
+
         public enum TargetType
         {
             NONE = 0,
@@ -523,7 +516,6 @@ namespace HREngine.Bots
             BOTH_ENEMY = 8,
             ALL = 9
         }
-
         public string GetTargetTypeStr()
         {
             switch (TargetTypeOnPlay)
@@ -553,15 +545,11 @@ namespace HREngine.Bots
         }
 
         public CardTemplate template { get; set; }
-
         public int CurrentCost { get; set; }
-
         public CType Type { get; set; }
-
         public CRace Race { get; set; }
 
         public int currentAtk = 0;
-
         public int CurrentAtk
         {
             get
@@ -575,7 +563,6 @@ namespace HREngine.Bots
         }
 
         public int maxHealth = 0;
-
         public int MaxHealth
         {
             get
@@ -598,15 +585,12 @@ namespace HREngine.Bots
         }
 
         public int CurrentHealth { get; set; }
-
-
         public int TempAtk { get; set; }
 
         public List<Buff> buffs { get; set; }
         public List<string> enchantements { get; set; }
 
         public int CurrentArmor { get; set; }
-
         public int CurrentDurability { get; set; }
 
         public bool IsFriend { get; set; }
@@ -614,7 +598,6 @@ namespace HREngine.Bots
         public int Overload { get; set; }
 
         public int Id { get; set; }
-
         public int Index { get; set; }
 
         public bool TestAllIndexOnPlay { get; set; }
@@ -660,7 +643,6 @@ namespace HREngine.Bots
 
         public int SpellPower { get; set; }
 
-
         public int CountAttack { get; set; }
         public bool CanAttack
         {
@@ -702,7 +684,6 @@ namespace HREngine.Bots
 
         public Card()
         {
-            //IsBuffer = Buff.GetBuffById(template.Id) != null;
         }
 
         public void AddBuff(Buff b)
@@ -711,14 +692,12 @@ namespace HREngine.Bots
 
             currentAtk += b.Atk;
             CurrentHealth += b.Hp;
-
         }
 
         public void RemoveBuffById(int id)
         {
-            
             //foreach (Buff b in buffs.ToArray())
-            for (int i = 0; i < buffs.Count; i++ )
+            for (int i = 0; i < buffs.Count; i++)
             {
                 Buff b = buffs[i];
                 if (b.OwnerId == id)
@@ -809,7 +788,6 @@ namespace HREngine.Bots
             IsBuffer = template.IsBuffer;
             Overload = 0;
             Init();
-
         }
         public Card(CardTemplate newTemplate, bool isFriend, int id)
         {
@@ -824,7 +802,6 @@ namespace HREngine.Bots
             TestAllIndexOnPlay = false;
             Type = newTemplate.Type;
             Race = newTemplate.Race;
-
             CurrentAtk = template.Atk;
             CurrentHealth = template.Health;
             MaxHealth = template.Health;
@@ -863,8 +840,6 @@ namespace HREngine.Bots
             IsCharge = false;
             IsSilenced = true;
 
-
-
             if (maxHealth > template.Health)
             {
                 maxHealth = template.Health;
@@ -877,7 +852,6 @@ namespace HREngine.Bots
                 maxHealth = template.Health;
                 CurrentHealth = maxHealth - dam;
             }
-
 
             CurrentAtk = template.Atk;
             TempAtk = 0;
@@ -2470,18 +2444,17 @@ namespace HREngine.Bots
                     break;
             }
 
-
             if (c == null)
             {
                 HREngine.API.Utilities.HRLog.Write("CARD null");
             }
+
             c.InitInstance(template, isFriend, id);
             c.Index = index;
 
             Type type = assembly.GetType("HREngine.Bots.b" + cardId);
 
             c.Behavior = (Behavior)Activator.CreateInstance(type);
-
 
             return c;
         }
@@ -2494,9 +2467,8 @@ namespace HREngine.Bots
             }
             Card clone = baseInstance.Create();
 
-
             //clone = (Card)Activator.CreateInstance(baseInstance.GetType());
-            // clone = (Card)baseInstance.GetType().CreateInstance();
+            //clone = (Card)baseInstance.GetType().CreateInstance();
             clone.InitInstance(baseInstance.template, baseInstance.IsFriend, baseInstance.Id);
             clone.IsUsed = baseInstance.IsUsed;
             clone.IsBuffer = baseInstance.IsBuffer;
@@ -2535,6 +2507,7 @@ namespace HREngine.Bots
             clone.HasDeathRattle = baseInstance.HasDeathRattle;
             clone.IsDrawAttack = baseInstance.IsDrawAttack;
             clone.Overload = baseInstance.Overload;
+
             //foreach (Buff b in baseInstance.buffs)
             for (int i = 0; i < baseInstance.buffs.Count; i++)
             {
@@ -2545,6 +2518,7 @@ namespace HREngine.Bots
                 ba.OwnerId = b.OwnerId;
                 clone.buffs.Add(ba);
             }
+
             if (baseInstance.enchantements != null)
             {
                 for (int i = 0; i < baseInstance.enchantements.Count; i++)
@@ -2623,7 +2597,6 @@ namespace HREngine.Bots
         }
         public bool Equals(Card c)
         {
-
             if (c == null)
                 return false;
 
@@ -2666,7 +2639,6 @@ namespace HREngine.Bots
 
         public bool IsSimilar(Card c)
         {
-
             if (c == null)
                 return false;
 
@@ -2687,10 +2659,7 @@ namespace HREngine.Bots
 
             if (HasDeathRattle != c.HasDeathRattle)
                 return false;
-            /*
-                        if (IsBuffer || c.IsBuffer)
-                            return false;
-                        */
+
             return true;
         }
     }

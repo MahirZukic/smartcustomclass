@@ -19,7 +19,7 @@ namespace HREngine.Bots
             OwnerId = 0;
         }
 
-        public Buff(int atk,int h, int id)
+        public Buff(int atk, int h, int id)
         {
             Atk = atk;
             Hp = h;
@@ -30,7 +30,7 @@ namespace HREngine.Bots
         {
             Buff b = null;
 
-            if(id.Contains("EX1_508"))
+            if (id.Contains("EX1_508"))
             {
                 b = new Buff();
                 b.Atk = 1;
@@ -78,10 +78,8 @@ namespace HREngine.Bots
                 b = new Buff();
                 b.Atk = 1;
             }
-            
+
             return b;
         }
-
-
     }
 }
