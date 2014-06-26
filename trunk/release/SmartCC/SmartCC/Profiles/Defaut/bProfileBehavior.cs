@@ -13,8 +13,23 @@ namespace HREngine.Bots
             
         }
 		
-		public override List<Card> HandleMulligan(List<Card> Choices)
+		public override List<Card> HandleMulligan(List<Card> Choices, Card.CClass opponentClass)
         {
+			/*
+			public enum Card.CClass
+			{
+            SHAMAN = 0,
+            PRIEST = 1,
+            MAGE = 2,
+            PALADIN = 3,
+            WARRIOR = 4,
+            WARLOCK = 5,
+            HUNTER = 6,
+            ROGUE = 7,
+            DRUID = 8
+			}
+			*/
+		
 			List<Card> CardsToKeep = new List<Card>();
 			List<string> WhiteList = new List<string>();
 			List<string> BlackList = new List<string>();
