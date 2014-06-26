@@ -35,11 +35,13 @@ namespace HREngine.Bots
 			BlackList.Add("DS1_233");//Mind Blast
 
 			/* -----PRIEST----- */
-			WhiteList.Add("CS2_181");
+			WhiteList.Add("CS2_181");//Injured Blademaster
 			foreach(Card c in Choices)
 			{
 				if(c.template.Id == "CS2_181")
-					WhiteList.Add("EX1_621");
+					WhiteList.Add("EX1_621"); // Circle of Healing
+				else
+					BlackList.Add("EX1_621");	
 			}
 			
 			
