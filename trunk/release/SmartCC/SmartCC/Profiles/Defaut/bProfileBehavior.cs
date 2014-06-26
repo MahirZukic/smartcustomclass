@@ -153,8 +153,11 @@ namespace HREngine.Bots
             return true;
         }
 
-        public override bool ShouldAttackTargetWithWeapon(Card weapon,Card target)
+        public override bool ShouldAttackTargetWithWeapon(Board board,Card weapon,Card target)
         {
+			   if(target.Type == Card.CType.HERO && !board.HasWeaponInHand() && target.CurrentHealth + target.CurrentArmor > 15)
+				return false;
+		
             return true;
         }
 		
