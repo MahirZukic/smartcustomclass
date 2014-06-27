@@ -38,7 +38,8 @@ namespace HREngine.Bots
 			
 			
 			/* Setup WhiteList */ 
-			
+			WhiteList.Add("GAME_005");//Coin
+
 			/* Setup BlackList */
 			
 			BlackList.Add("EX1_007");//Acolyte of Pain
@@ -166,6 +167,11 @@ namespace HREngine.Bots
 			if(board.WeaponFriend != null)
 				if(board.WeaponFriend.template.Id == "EX1_366")
 					return false;
+					
+					
+			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && board.HasCardInHand("CS2_074"))
+				return false;
+			
             return true;
         }
 

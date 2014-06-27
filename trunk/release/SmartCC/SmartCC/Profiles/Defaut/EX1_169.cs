@@ -18,8 +18,15 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-			if(board.TurnCount < 2)
-				return false;
+
+			foreach(Card c in board.Hand)
+			{
+				if(c.CurrentCost == 4 && c.Type == Card.CType.MINION)
+					if(board.TurnCount < 2)
+						return false;
+			}
+			
+			
             return true;
         }
 
