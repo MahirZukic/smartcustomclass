@@ -162,9 +162,12 @@ namespace HREngine.Bots
 
         public override bool ShouldAttackTargetWithWeapon(Board board,Card weapon,Card target)
         {
-			   if(target.Type == Card.CType.HERO && !board.HasWeaponInHand() && target.CurrentHealth + target.CurrentArmor > 15)
-				return false;
-		
+				if(target.Type == Card.CType.HERO && !board.HasWeaponInHand() && target.CurrentHealth + target.CurrentArmor > 15)
+					return false;
+				
+				if(target.Type == Card.CType.HERO && (board.WeaponFriend.template.Id == "EX1_411") && target.CurrentHealth + target.CurrentArmor > board.WeaponFriend.CurrentAtk)
+					return false;
+				
             return true;
         }
 		
