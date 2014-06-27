@@ -41,5 +41,10 @@ namespace HREngine.Bots
             return 1;
         }
 		
+		public override int GetPriorityAttack(Board board)
+        {
+            return 2;
+        }
+		
     }
 }

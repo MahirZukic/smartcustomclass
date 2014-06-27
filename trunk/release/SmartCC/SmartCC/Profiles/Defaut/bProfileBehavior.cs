@@ -49,6 +49,17 @@ namespace HREngine.Bots
 			BlackList.Add("EX1_625");//Shadow Form
 			BlackList.Add("DS1_233");//Mind Blast
 
+			/* -----DRUID----- */
+			WhiteList.Add("EX1_169");//Innervate
+			foreach(Card c in Choices)
+			{
+				if(c.template.Id == "EX1_169")
+				{
+					WhiteList.Add("CS2_182"); // Chillwind Yeti
+					WhiteList.Add("NEW1_026"); // NEW1_026
+				}
+			}
+			
 			/* -----PRIEST----- */
 			WhiteList.Add("CS2_181");//Injured Blademaster
 			foreach(Card c in Choices)
@@ -58,8 +69,6 @@ namespace HREngine.Bots
 				else
 					BlackList.Add("EX1_621");	
 			}
-			
-			
 
 			
 			foreach(Card c in Choices)
