@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<HREngineRules card="NEW1_036e">
+    <PlayRule condition="0">
+        <Rule entity="3" method="0" operator="0" paramValue="1" paramString=""/>
+    </PlayRule>
+</HREngineRules>
