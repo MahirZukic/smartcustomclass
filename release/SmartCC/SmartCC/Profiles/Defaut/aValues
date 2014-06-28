@@ -18,3 +18,7 @@ ValueAttackWeapon=0
 ValueFrozen=3
 ValueMana=15
 ValueOverload=0
+UseCriticHealthZone=true
+CriticHealthZoneThreshold=12
+UseAggroZone=false
+AggroZoneThreshold=10
