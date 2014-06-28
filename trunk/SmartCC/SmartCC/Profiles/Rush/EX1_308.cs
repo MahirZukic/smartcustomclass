@@ -50,11 +50,11 @@ namespace HREngine.Bots
 			}
 				
 		
-			if(sum + 4 >= board.HeroEnemy.CurrentHealth + board.HeroEnemy.CurrentArmor && CountPlayable < 3)
+			if(sum + 4 >= board.HeroEnemy.CurrentHealth + board.HeroEnemy.CurrentArmor)
 				return true;
 				
 				
-			if(CountPlayable > 3)
+			if(CountPlayable >= (int)(board.Hand.Count / 2))
 			{
 				return false;
 			}
@@ -85,7 +85,7 @@ namespace HREngine.Bots
 
         public override int GetPriorityPlay(Board board)
         {
-            return 1;
+            return -2;
         }
 		
     }

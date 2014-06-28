@@ -29,7 +29,7 @@ namespace HREngine.Bots
 					hasDoomguard = true;
 			}
 			
-			if(hasDoomguard && board.Hand.Count <= 3)
+			if(hasDoomguard && board.Hand.Count <= 3 && board.TurnCount > 5)
 				return false;
 				
 			if(hasSoulfire && board.Hand.Count <= 2)
