@@ -1,4 +1,4 @@
-ValueHealthEnemy=1
+ValueHealthEnemy=2
 ValueHealthFriend=1
 ValueArmorEnemy=2
 ValueArmorFriend=2
@@ -19,6 +19,6 @@ ValueFrozen=3
 ValueMana=15
 ValueOverload=0
 UseCriticHealthZone=true
-CriticHealthZoneThreshold=12
+CriticHealthZoneThreshold=15
 UseAggroZone=false
-AggroZoneThreshold=10
+AggroZoneThreshold=15
