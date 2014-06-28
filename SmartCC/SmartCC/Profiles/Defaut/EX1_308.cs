@@ -54,7 +54,7 @@ namespace HREngine.Bots
 				return true;
 				
 				
-			if(CountPlayable >= (int)(board.Hand.Count / 2))
+			if(CountPlayable >= (int)(board.Hand.Count / 2) && board.Hand.Count > 2)
 			{
 				return false;
 			}
