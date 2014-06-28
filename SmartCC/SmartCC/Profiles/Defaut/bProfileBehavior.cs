@@ -169,7 +169,7 @@ namespace HREngine.Bots
 					return false;
 					
 					
-			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && board.HasCardInHand("CS2_074"))
+			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && board.HasCardInHand("CS2_074") && board.HasCardInHand("CS2_074") && board.ManaAvailable < 2)
 				return false;
 			
             return true;
