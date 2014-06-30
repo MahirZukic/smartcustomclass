@@ -40,6 +40,11 @@ namespace HREngine.Bots
 			/* Setup WhiteList */ 
 			WhiteList.Add("GAME_005");//Coin
 
+			if(Choices.Count > 3)
+			{
+				WhiteList.Add("EX1_014");//Mukla
+			}
+
 			/* Setup BlackList */
 			
 			BlackList.Add("EX1_007");//Acolyte of Pain
