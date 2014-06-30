@@ -168,8 +168,17 @@ namespace HREngine.Bots
 				if(board.WeaponFriend.template.Id == "EX1_366")
 					return false;
 					
+			bool hasOtherPlayableCard = false;
+			
+			foreach(Card c in board.Hand)
+			{
+				if(c.CurrentCost <= board.ManaAvailable && c.ShouldBePlayed(board) && c.Type == Card.CType.MINION)
+				{
+					hasOtherPlayableCard = true;
+				}
+			}
 					
-			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && board.HasCardInHand("CS2_074") && board.ManaAvailable < 2)
+			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && ((board.HasCardInHand("CS2_074") || hasOtherPlayableCard || board.ManaAvailable < 2)))
 				return false;
 			
             return true;
