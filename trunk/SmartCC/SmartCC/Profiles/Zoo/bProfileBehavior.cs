@@ -34,42 +34,25 @@ namespace HREngine.Bots
 			List<string> WhiteList = new List<string>();
 			List<string> BlackList = new List<string>();
 			int MaxManaCost = 3;
+			bool AllowDoublon = false;
 			
 			
+            if (opponentClass == Card.CClass.DRUID || opponentClass == Card.CClass.ROGUE)
+            {
+				if(Choices.Count == 3)
+					BlackList.Add("EX1_004"); //young priest
+                BlackList.Add("CS2_188"); //abusive sergeant
+            }
+
 			
 			/* Setup WhiteList */ 
 			WhiteList.Add("GAME_005");//Coin
 
 			/* Setup BlackList */
 			
-			BlackList.Add("EX1_007");//Acolyte of Pain
-			BlackList.Add("EX1_349");//Divine Favor
-			BlackList.Add("CS2_023");//Arcane Intellect
-			BlackList.Add("CS2_011");//Savage roar
-			BlackList.Add("EX1_622");//Shadow Word Death
-			BlackList.Add("EX1_625");//Shadow Form
-			BlackList.Add("DS1_233");//Mind Blast
-
-			/* -----DRUID----- */
-			WhiteList.Add("EX1_169");//Innervate
-			foreach(Card c in Choices)
-			{
-				if(c.template.Id == "EX1_169")
-				{
-					WhiteList.Add("CS2_182"); // Chillwind Yeti
-					WhiteList.Add("NEW1_026"); // NEW1_026
-				}
-			}
-			
-			/* -----PRIEST----- */
-			WhiteList.Add("CS2_181");//Injured Blademaster
-			foreach(Card c in Choices)
-			{
-				if(c.template.Id == "CS2_181")
-					WhiteList.Add("EX1_621"); // Circle of Healing
-				else
-					BlackList.Add("EX1_621");	
-			}
+			     /* Setup BlackList */
+            BlackList.Add("EX1_308"); //SF
+            BlackList.Add("EX1_316"); //PO
 
 			
 			foreach(Card c in Choices)
@@ -83,7 +66,7 @@ namespace HREngine.Bots
 							alreadyHasOne = true;
 					}
 				
-					if(c.template.Id == s && !alreadyHasOne)
+					if(c.template.Id == s && (!alreadyHasOne || AllowDoublon))
 						CardsToKeep.Add(c);
 				}
 				bool isBlackListed = false;
