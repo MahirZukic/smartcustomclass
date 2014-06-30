@@ -34,7 +34,8 @@ namespace HREngine.Bots
 			List<string> WhiteList = new List<string>();
 			List<string> BlackList = new List<string>();
 			int MaxManaCost = 4;
-			
+			bool AllowDoublon = false;
+
 			
 			
 			/* Setup WhiteList */ 
@@ -83,7 +84,7 @@ namespace HREngine.Bots
 							alreadyHasOne = true;
 					}
 				
-					if(c.template.Id == s && !alreadyHasOne)
+					if(c.template.Id == s && (!alreadyHasOne || AllowDoublon))
 						CardsToKeep.Add(c);
 				}
 				bool isBlackListed = false;
