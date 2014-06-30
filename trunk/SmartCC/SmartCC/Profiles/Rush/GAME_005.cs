@@ -18,6 +18,9 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.ManaAvailable != 2 && board.TurnCount < 2 && board.HasCardInHand("EX1_014"))
+				return false;
+				
 			if(board.TurnCount > 3)
 				return true;
             foreach(Card c in board.Hand)

@@ -33,6 +33,7 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
+
             return true;
         }
 
@@ -41,5 +42,9 @@ namespace HREngine.Bots
             return 1;
         }
 		
+		public override int GetHandValue(Board board)
+		{
+			return 7;
+		}
     }
 }
