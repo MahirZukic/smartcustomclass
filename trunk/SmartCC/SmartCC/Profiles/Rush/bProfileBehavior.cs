@@ -55,6 +55,7 @@ namespace HREngine.Bots
 			BlackList.Add("EX1_622");//Shadow Word Death
 			BlackList.Add("EX1_625");//Shadow Form
 			BlackList.Add("DS1_233");//Mind Blast
+			BlackList.Add("CS2_108");//Execute
 
 			/* -----DRUID----- */
 			WhiteList.Add("EX1_169");//Innervate
