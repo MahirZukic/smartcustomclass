@@ -43,14 +43,44 @@ namespace HREngine.Bots
 
 			/* Setup BlackList */
 			
-			BlackList.Add("EX1_007");//Acolyte of Pain
+			if(opponentClass != Card.CClass.PALADIN && opponentClass != Card.CClass.HUNTER)
+				BlackList.Add("EX1_007");//Acolyte of Pain
 			BlackList.Add("EX1_349");//Divine Favor
 			BlackList.Add("CS2_023");//Arcane Intellect
 			BlackList.Add("CS2_011");//Savage roar
 			BlackList.Add("EX1_622");//Shadow Word Death
 			BlackList.Add("EX1_625");//Shadow Form
 			BlackList.Add("DS1_233");//Mind Blast
+			BlackList.Add("CS2_108");//Execute
+			BlackList.Add("EX1_391");//Slam
 
+
+			/* -----WARRIOR----*/
+			
+			
+			foreach(Card c in Choices)
+			{
+				if(c.template.Id == "EX1_007" || c.template.Id == "EX1_393" )
+				{
+					WhiteList.Add("EX1_607"); //Inner Rage
+				}
+				else
+					BlackList.Add("EX1_607");	
+			}
+			
+			foreach(Card c in Choices)
+			{
+				if(c.template.Id == "EX1_607")
+				{
+					WhiteList.Add("EX1_007"); //Acolyte
+				}
+			}
+			
+			BlackList.Add("CS2_114");//Cleave
+			BlackList.Add("EX1_012");//BloodMage
+			
+			
+			
 			/* -----DRUID----- */
 			WhiteList.Add("EX1_169");//Innervate
 			foreach(Card c in Choices)

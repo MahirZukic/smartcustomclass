@@ -33,6 +33,12 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
+			if(target.IsFriend)
+			{
+				if(!target.HasBadBuffs())
+					return false;
+			}
+			
             return true;
         }
 
