@@ -41,5 +41,11 @@ namespace HREngine.Bots
             return 11;
         }
 		
+		public override int GetHandValue(Board board)
+		{
+			if(board.HeroFriend.CurrentHealth <= 10)
+				return 1;
+			return 5;
+		}
     }
 }
