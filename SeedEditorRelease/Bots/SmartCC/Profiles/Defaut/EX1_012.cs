@@ -18,6 +18,23 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+		    bool enemyHas2Hp = false;
+			
+			foreach(Card c in board.MinionEnemy)
+			{
+				if(c.CurrentHealth == 2)
+				{
+					enemyHas2Hp = true;
+					break;
+				}
+			}
+			
+			bool hasInnerRage = board.HasCardInHand("EX1_607");
+			
+			
+			
+			if(board.TurnCount < 3 && !(enemyHas2Hp && hasInnerRage))
+				return false;
             return true;
         }
 
@@ -39,6 +56,11 @@ namespace HREngine.Bots
         public override int GetPriorityPlay(Board board)
         {
             return 1;
+        }
+		
+		public override int GetPriorityAttack(Board board)
+        {
+            return 2;
         }
 		
     }

@@ -18,7 +18,16 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-            return true;
+			foreach(Card c in board.MinionFriend)
+			{
+				if(c.CanAttack)
+					return true;
+			}
+			
+			if(board.TurnCount > 1 && board.MinionFriend.Count == 0)
+				return true;
+			
+            return false;
         }
 
         public override bool ShouldAttack(Board board)
@@ -33,9 +42,7 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
-            if (target.IsFriend && target.CanAttack)
-                return true;
-            return false;
+            return true;
         }
 
         public override int GetPriorityPlay(Board board)

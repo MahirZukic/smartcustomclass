@@ -18,6 +18,20 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			bool hasSoulfire = false;
+			bool hasDoomguard = false;
+			
+			foreach(Card c in board.Hand)
+			{
+				if(c.template.Id == "EX1_308")
+					hasSoulfire = true;
+				if(c.template.Id == "EX1_310")
+					hasDoomguard = true;
+			}
+			
+			if(hasDoomguard && board.Hand.Count <= 3 && board.TurnCount > 5)
+				return false;
+			
              if (board.HeroFriend.CurrentHealth < 5 || board.Hand.Count > 5)
                 return false;
             return true;

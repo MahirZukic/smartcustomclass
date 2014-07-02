@@ -18,6 +18,8 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.WeaponFriend == null && board.HasWeaponInHand() && board.TurnCount < 2)
+				return false;
             return true;
         }
 
