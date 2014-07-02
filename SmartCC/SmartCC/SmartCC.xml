@@ -1,0 +1,8 @@
+<Settings>
+   <Sections>
+      <Section id="basic" title="General">
+         <Description>General SmartCC settings</Description>
+         <Setting name="smartcc.AutoConcede" type="boolean" description="AutoConcede - Will concede games to stay at rank 20" />
+      </Section>      
+   </Sections>
+</Settings>
