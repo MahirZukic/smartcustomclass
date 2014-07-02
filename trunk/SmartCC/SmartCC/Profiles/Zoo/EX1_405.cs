@@ -18,6 +18,14 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.TurnCount == 1)
+			{
+				foreach(Card c in board.Hand)
+				{
+					if(c.CurrentCost == 1 && c.template.Id != "EX1_405")
+						return false;
+				}
+			}
             return true;
         }
 
