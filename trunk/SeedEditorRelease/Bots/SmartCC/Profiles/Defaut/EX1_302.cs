@@ -33,15 +33,13 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
-            if (target.CurrentHealth == 1 || target.IsDivineShield )
-                return true;
-            return false;
+            return true;
         }
 
         public override int GetPriorityPlay(Board board)
         {
-            return 1;
+            return 2;
         }
-		
+
     }
 }

@@ -18,6 +18,9 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.MinionFriend.Count == 0 && board.MinionEnemy.Count == 0)
+				return false;
+				
             return true;
         }
 
@@ -36,7 +39,9 @@ namespace HREngine.Bots
 			if(!target.IsFriend && target.CurrentHealth > 1)
 				return false;
 			
-		
+			if(!target.CanAttack && target.IsFriend)
+				return false;
+			
             return true;
         }
 
