@@ -18,7 +18,7 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-			if(board.TurnCount == 1)
+			if(board.TurnCount == 1 && board.MinionEnemy.Count == 0)
 			{
 				foreach(Card c in board.Hand)
 				{
