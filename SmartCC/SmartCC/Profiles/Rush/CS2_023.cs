@@ -41,5 +41,10 @@ namespace HREngine.Bots
             return 10;
         }
 		
+		public override int GetHandValue(Board board)
+		{
+			return 1;
+		}
+		
     }
 }
