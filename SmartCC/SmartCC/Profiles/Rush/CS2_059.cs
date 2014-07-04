@@ -23,11 +23,24 @@ namespace HREngine.Bots
 
         public override bool ShouldAttack(Board board)
         {
+			Card me = null;
+			
+			foreach(Card c in board.MinionFriend)
+			{
+				if(c.Behavior == this)
+					me = c;
+			}
+			
+			if(me != null)
+				if(board.GetHeroEnemyHpAndArmor() > me.CurrentAtk)
+					return false;
+					
             return true;
         }
 
         public override bool ShouldAttackTarget(Card target)
         {
+			
             return true;
         }
 		

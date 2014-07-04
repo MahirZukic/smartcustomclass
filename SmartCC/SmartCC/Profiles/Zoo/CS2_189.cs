@@ -33,6 +33,14 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
+			if(target.IsFriend && !target.HasEnrage)
+				return false;
+			
+			if(!target.IsFriend && target.IsDivineShield)
+				return true;
+			
+			if(!target.IsFriend && target.CurrentHealth > 1)
+				return false;
             return true;
         }
 
