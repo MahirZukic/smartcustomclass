@@ -174,23 +174,7 @@ namespace HREngine.Bots
 
         public override bool ShouldPlayMoreMinions(Board board)
         {
-			int worthyMinion = 0;
-		
-			foreach(Card c in board.MinionFriend)
-			{
-				if(c.GetValue(board) > 10)
-					worthyMinion++;
-			}
-		
-            string enemy = EnemyClass(board.HeroEnemy.template.Id);
-
-            if (enemy == "mage" || enemy == "shaman")
-            {
-                if (worthyMinion >= 3 && board.Hand.Count < 4 && board.MinionEnemy.Count < worthyMinion)
-                    return false;
-            }
-            
-            return true;
+			return true;
         }
 		
 		public override bool ShouldAttackWithWeapon(Board board)

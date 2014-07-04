@@ -34,26 +34,42 @@ namespace HREngine.Bots
 			List<string> WhiteList = new List<string>();
 			List<string> BlackList = new List<string>();
 			int MaxManaCost = 3;
-			bool AllowDoublon = false;
+			bool AllowDoublon = true;
 			
-			
-            if (opponentClass == Card.CClass.DRUID || opponentClass == Card.CClass.ROGUE)
-            {
-				if(Choices.Count == 3)
-					BlackList.Add("EX1_004"); //young priest
+			if( opponentClass == Card.CClass.MAGE)
+			{
+				BlackList.Add("EX1_004"); //young priest					
                 BlackList.Add("CS2_188"); //abusive sergeant
+			}
+			
+            if (opponentClass == Card.CClass.DRUID || opponentClass == Card.CClass.ROGUE )
+            {
+				bool hasTaunt = false;
+				foreach(Card c in Choices)
+				{
+					if(c.IsTaunt)
+						hasTaunt = true;
+				}
+				if(!hasTaunt)
+					BlackList.Add("EX1_004"); //young priest					
+					BlackList.Add("CS2_188"); //abusive sergeant
             }
-
+			
+			if(Choices.Count > 3)
+			{
+				WhiteList.Add("EX1_014");//Mukla
+			}
+			
+			WhiteList.Add("EX1_319");//FlameImp
+			
 			
 			/* Setup WhiteList */ 
 			WhiteList.Add("GAME_005");//Coin
 
 			/* Setup BlackList */
 			
-			     /* Setup BlackList */
             BlackList.Add("EX1_308"); //SF
             BlackList.Add("EX1_316"); //PO
-
 			
 			foreach(Card c in Choices)
 			{
@@ -125,23 +141,7 @@ namespace HREngine.Bots
         }
 
         public override bool ShouldPlayMoreMinions(Board board)
-        {
-			int worthyMinion = 0;
-		
-			foreach(Card c in board.MinionFriend)
-			{
-				if(c.GetValue(board) > 10)
-					worthyMinion++;
-			}
-		
-            string enemy = EnemyClass(board.HeroEnemy.template.Id);
-
-            if (enemy == "mage" || enemy == "shaman")
-            {
-                if (worthyMinion >= 3 && board.Hand.Count < 4 && board.MinionEnemy.Count < worthyMinion)
-                    return false;
-            }
-            
+        {            
             return true;
         }
 		

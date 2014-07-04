@@ -80,6 +80,9 @@ namespace HREngine.Bots
             if (target.CurrentHealth > 4)
                 return false;
 
+			if(target.IsDivineShield)
+				return false;
+				
             return true;
         }
 

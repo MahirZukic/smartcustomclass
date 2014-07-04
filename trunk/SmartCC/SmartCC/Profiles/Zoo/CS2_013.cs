@@ -18,6 +18,8 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.TurnCount > 7 && board.TurnCount < 10)
+				return false;
             return true;
         }
 
@@ -40,6 +42,11 @@ namespace HREngine.Bots
         {
             return 1;
         }
+		
+		public override int GetHandValue(Board board)
+		{
+			return 0;
+		}
 		
     }
 }
