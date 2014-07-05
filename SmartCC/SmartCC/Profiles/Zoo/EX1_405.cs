@@ -22,7 +22,7 @@ namespace HREngine.Bots
 			{
 				foreach(Card c in board.Hand)
 				{
-					if(c.CurrentCost == 1 && c.template.Id != "EX1_405")
+					if(c.CurrentCost == 1 && c.template.Id != "EX1_405" && c.template.Id != "CS2_188")
 						return false;
 				}
 			}

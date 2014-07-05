@@ -19,6 +19,6 @@ ValueFrozen=3
 ValueMana=15
 ValueOverload=0
 UseCriticHealthZone=true
-CriticHealthZoneThreshold=15
+CriticHealthZoneThreshold=20
 UseAggroZone=false
 AggroZoneThreshold=15
