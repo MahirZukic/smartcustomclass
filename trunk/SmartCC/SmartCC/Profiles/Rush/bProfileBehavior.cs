@@ -33,7 +33,7 @@ namespace HREngine.Bots
 			List<Card> CardsToKeep = new List<Card>();
 			List<string> WhiteList = new List<string>();
 			List<string> BlackList = new List<string>();
-			int MaxManaCost = 3;
+			int MaxManaCost = 4;
 			bool AllowDoublon = false;
 
 			
@@ -41,14 +41,10 @@ namespace HREngine.Bots
 			/* Setup WhiteList */ 
 			WhiteList.Add("GAME_005");//Coin
 
-			if(Choices.Count > 3)
-			{
-				WhiteList.Add("EX1_014");//Mukla
-			}
-
 			/* Setup BlackList */
 			
-			BlackList.Add("EX1_007");//Acolyte of Pain
+			if(opponentClass != Card.CClass.PALADIN && opponentClass != Card.CClass.HUNTER)
+				BlackList.Add("EX1_007");//Acolyte of Pain
 			BlackList.Add("EX1_349");//Divine Favor
 			BlackList.Add("CS2_023");//Arcane Intellect
 			BlackList.Add("CS2_011");//Savage roar
@@ -56,7 +52,35 @@ namespace HREngine.Bots
 			BlackList.Add("EX1_625");//Shadow Form
 			BlackList.Add("DS1_233");//Mind Blast
 			BlackList.Add("CS2_108");//Execute
+			BlackList.Add("EX1_391");//Slam
 
+
+			/* -----WARRIOR----*/
+			
+			
+			foreach(Card c in Choices)
+			{
+				if(c.template.Id == "EX1_007" || c.template.Id == "EX1_393" )
+				{
+					WhiteList.Add("EX1_607"); //Inner Rage
+				}
+				else
+					BlackList.Add("EX1_607");	
+			}
+			
+			foreach(Card c in Choices)
+			{
+				if(c.template.Id == "EX1_607")
+				{
+					WhiteList.Add("EX1_007"); //Acolyte
+				}
+			}
+			
+			BlackList.Add("CS2_114");//Cleave
+			BlackList.Add("EX1_012");//BloodMage
+			
+			
+			
 			/* -----DRUID----- */
 			WhiteList.Add("EX1_169");//Innervate
 			foreach(Card c in Choices)
@@ -150,7 +174,7 @@ namespace HREngine.Bots
 
         public override bool ShouldPlayMoreMinions(Board board)
         {
-            return true;
+			return true;
         }
 		
 		public override bool ShouldAttackWithWeapon(Board board)
@@ -159,17 +183,7 @@ namespace HREngine.Bots
 				if(board.WeaponFriend.template.Id == "EX1_366")
 					return false;
 					
-			bool hasOtherPlayableCard = false;
-			
-			foreach(Card c in board.Hand)
-			{
-				if(c.CurrentCost <= board.ManaAvailable && c.ShouldBePlayed(board) && c.Type == Card.CType.MINION)
-				{
-					hasOtherPlayableCard = true;
-				}
-			}
-					
-			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && ((board.HasCardInHand("CS2_074") || hasOtherPlayableCard || board.ManaAvailable < 2)))
+			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && board.HasCardInHand("CS2_074"))
 				return false;
 			
             return true;
@@ -177,7 +191,7 @@ namespace HREngine.Bots
 
         public override bool ShouldAttackTargetWithWeapon(Board board,Card weapon,Card target)
         {
-				if(target.Type == Card.CType.HERO && !board.HasWeaponInHand() && target.CurrentHealth + target.CurrentArmor > 15)
+				if(target.Type == Card.CType.HERO && !board.HasWeaponInHand() && target.CurrentHealth + target.CurrentArmor > 15 && weapon.CurrentDurability < 2)
 					return false;
 				
 				if(target.Type == Card.CType.HERO && (board.WeaponFriend.template.Id == "EX1_411") && target.CurrentHealth + target.CurrentArmor > board.WeaponFriend.CurrentAtk)
