@@ -18,11 +18,27 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			int PlayableMinion = 0;
+			
+			foreach(Card cc in board.Hand)
+			{
+				if(cc.template.Id == "EX1_002")
+					continue;
+					
+				if(cc.Type == Card.CType.MINION)
+					if(cc.CurrentCost <= board.ManaAvailable)
+						PlayableMinion ++;
+			}
+			
+			if(PlayableMinion ==0)
+				return true;
+			
 			foreach(Card c in board.MinionEnemy)
 			{
 				if(c.IsTaunt)
 					return true;
 			}
+			
             return false;
         }
 

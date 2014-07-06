@@ -53,6 +53,8 @@ namespace HREngine.Bots
 			BlackList.Add("DS1_233");//Mind Blast
 			BlackList.Add("CS2_108");//Execute
 			BlackList.Add("EX1_391");//Slam
+			BlackList.Add("EX1_005");//BGH
+			BlackList.Add("CS2_007");//Healing Touch
 
 
 			/* -----WARRIOR----*/
@@ -183,6 +185,17 @@ namespace HREngine.Bots
 				if(board.WeaponFriend.template.Id == "EX1_366")
 					return false;
 					
+			bool has1HpMinion = false;
+			
+			foreach(Card c in board.MinionEnemy)
+			{
+				if(c.CurrentHealth == 1 || c.IsDivineShield)
+					has1HpMinion = true;
+			}
+			
+			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && has1HpMinion)
+				return true;
+				
 			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && board.HasCardInHand("CS2_074"))
 				return false;
 			
