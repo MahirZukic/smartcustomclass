@@ -46,9 +46,9 @@ namespace HREngine.Bots
 		public override int GetHandValue(Board board)
 		{
 			if(board.WeaponFriend != null)
-				if(board.WeaponFriend.CurrentDurability >= 2)
+				if(board.WeaponFriend.CurrentDurability > 2)
 					return 2;
-			return 0;
+			return 3;
 		}
 		
     }

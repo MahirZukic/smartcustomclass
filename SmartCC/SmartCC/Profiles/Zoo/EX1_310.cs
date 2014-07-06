@@ -61,7 +61,7 @@ namespace HREngine.Bots
 			if(sum + 10 >= board.HeroEnemy.CurrentHealth + board.HeroEnemy.CurrentArmor)
 				return true;
 				
-			if(CountPlayable < 3 && MyValue > ValuePlayable)
+			if(CountPlayable < 2 && MyValue > ValuePlayable)
 				return true;
 				
 			if(CountPlayable > 2)

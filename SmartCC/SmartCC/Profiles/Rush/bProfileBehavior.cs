@@ -183,6 +183,17 @@ namespace HREngine.Bots
 				if(board.WeaponFriend.template.Id == "EX1_366")
 					return false;
 					
+			bool has1HpMinion = false;
+			
+			foreach(Card c in board.MinionEnemy)
+			{
+				if(c.CurrentHealth == 1 || c.IsDivineShield)
+					has1HpMinion = true;
+			}
+			
+			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && has1HpMinion)
+				return true;		
+				
 			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && board.HasCardInHand("CS2_074"))
 				return false;
 			
