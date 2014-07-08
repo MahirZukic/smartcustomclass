@@ -52,7 +52,9 @@ namespace HREngine.Bots
 		
 		public override int GetHandValue(Board board)
 		{
-			return 5;
+		    if(board.TurnCount > 3)
+				return 3;
+			return 6;
 		}
     }
 }

@@ -18,7 +18,7 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-			if(board.TurnCount > 7 && board.TurnCount < 10)
+			if(board.MaxMana > 7 && board.MaxMana < 10)
 				return false;
             return true;
         }

@@ -33,6 +33,12 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
+			if(target.IsFriend)
+			{
+				if(!target.HasBadBuffs())
+					return false;
+			}
+			
             return true;
         }
 
@@ -40,6 +46,11 @@ namespace HREngine.Bots
         {
             return 1;
         }
+		
+		public override int GetMinionValue(Board board)
+		{
+			return 10;
+		}
 		
     }
 }
