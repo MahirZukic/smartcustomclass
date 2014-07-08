@@ -20,7 +20,7 @@ namespace HREngine.Bots
         {
 			foreach(Card c in board.MinionEnemy)
 			{
-				if(c.HasGoodBuffs())
+				if(c.HasGoodBuffs() || c.IsBuffer)
 					return true;
 			}
             foreach(Card c in board.MinionFriend)
@@ -49,10 +49,12 @@ namespace HREngine.Bots
 				if(!target.HasBadBuffs())
 					return false;
 			}
-			if(!target.IsFriend && !target.HasGoodBuffs())
+			if(!target.IsFriend && !target.HasGoodBuffs() && !target.IsBuffer)
 				return false;
 			if(!target.IsFriend && target.HasBadBuffs())
 				return false;
+			
+				
             return true;
 		}
 

@@ -55,8 +55,8 @@ namespace HREngine.Bots
 			BlackList.Add("EX1_391");//Slam
 			BlackList.Add("EX1_005");//BGH
 			BlackList.Add("CS2_007");//Healing Touch
-
-
+			BlackList.Add("EX1_246");//Hex 
+			BlackList.Add("EX1_575");//Mana Tide Totem
 			/* -----WARRIOR----*/
 			
 			

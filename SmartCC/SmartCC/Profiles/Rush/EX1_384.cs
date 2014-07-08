@@ -18,8 +18,6 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-            if (board.MinionEnemy.Count == 0 && board.HeroEnemy.CurrentHealth > 15)
-                return false;
             return true;
         }
 

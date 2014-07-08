@@ -33,7 +33,7 @@ namespace HREngine.Bots
 			List<Card> CardsToKeep = new List<Card>();
 			List<string> WhiteList = new List<string>();
 			List<string> BlackList = new List<string>();
-			int MaxManaCost = 4;
+			int MaxManaCost = 3;
 			bool AllowDoublon = false;
 
 			
@@ -55,6 +55,16 @@ namespace HREngine.Bots
 			BlackList.Add("EX1_391");//Slam
 
 
+			/* -----PALADIN----*/
+
+			BlackList.Add("CS2_188");//Abusive Sergeant
+			BlackList.Add("EX1_619");//Equality
+			WhiteList.Add("EX1_008");//Argent Squire
+			WhiteList.Add("EX1_029");//Leper Gnome
+			WhiteList.Add("CS2_173");//Bluegill Warrior
+
+
+			
 			/* -----WARRIOR----*/
 			
 			
