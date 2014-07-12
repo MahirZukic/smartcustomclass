@@ -37,7 +37,11 @@ namespace HREngine.Bots
 			{
 				if(!target.HasBadBuffs())
 					return false;
+			
+				if(target.HasGoodBuffs())
+					return false;
 			}
+
             return true;
         }
 

@@ -112,6 +112,9 @@ namespace HREngine.Bots
 					BlackList.Add("EX1_621");	
 			}
 
+			/* -----MAGE----- */
+
+			BlackList.Add("CS2_031");//Ice Lance
 			
 			foreach(Card c in Choices)
 			{
