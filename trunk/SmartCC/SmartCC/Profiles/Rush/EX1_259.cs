@@ -38,12 +38,12 @@ namespace HREngine.Bots
 
         public override int GetPriorityPlay(Board board)
         {
-            return 1;
+            return 2;
         }
 		
 		public override int GetHandValue(Board board)
 		{
-			return 9;
+			return 10;
 		}
     }
 }
