@@ -9,13 +9,14 @@
       </Section>      
 	  <Section id="exp" title="Experimental">
          <Description>Experimental SmartCC settings</Description>
+		 <Setting name="smartcc.ConcedeOnLethal" type="boolean" description="[EXPERIMENTAL] Concede when enemy has lethal" />
 		 <Setting name="smartcc.useEnemyBehavior" type="boolean" description="[EXPERIMENTAL] Make better trades to avoid AOE " />
 		 <Setting name="smartcc.HandValueSimu" type="boolean" description="[EXPERIMENTAL] Try to not waste minions in hand - Not recommended" />
 		 <Setting name="smartcc.NextTurnSimu" type="boolean" description="[EXPERIMENTAL] Simulate next turn - Not recommended" />
       </Section>  
 	  <Section id="search" title="Search settings">
          <Description>Search SmartCC settings</Description>
-		 <Setting name="smartcc.maxWide" type="text" default="7000" description="Boards calculated each depth level " />
+		 <Setting name="smartcc.maxWide" type="text" default="5000" description="Boards calculated each depth level " />
 		 <Setting name="smartcc.maxBoards" type="text" default="2000" description="Childs board kept for next depth level search" />
 		 <Setting name="smartcc.maxEnemySimu" type="text" default="500" description="Boards kept for enemy turn simulation " />
       </Section>  	  

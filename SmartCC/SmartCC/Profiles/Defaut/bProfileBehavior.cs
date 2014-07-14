@@ -57,7 +57,10 @@ namespace HREngine.Bots
 			BlackList.Add("CS2_007");//Healing Touch
 			BlackList.Add("EX1_246");//Hex 
 			BlackList.Add("EX1_575");//Mana Tide Totem
+			BlackList.Add("EX1_238");//Lightning Bolt
 
+			
+			
 			/* -----PALADIN----*/
 
 			BlackList.Add("CS2_188");//Abusive Sergeant
@@ -105,6 +108,8 @@ namespace HREngine.Bots
 			
 			
 			/* -----DRUID----- */
+			
+			BlackList.Add("CS2_009");//Mark of the wild
 			WhiteList.Add("EX1_169");//Innervate
 			foreach(Card c in Choices)
 			{
