@@ -18,6 +18,24 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			int CountPlayable = 0;
+			
+			foreach(Card c in board.Hand)
+			{
+				if(c.template.Id == "EX1_298")
+				{
+					continue;
+				}
+					
+				if(c.CurrentCost >= 4 && c.Type == Card.CType.MINION)
+				{
+					CountPlayable++;
+				}
+			}
+			
+			if(CountPlayable > 2 && board.MinionEnemy.Count > 3)
+				return false;
+			
             return true;
         }
 

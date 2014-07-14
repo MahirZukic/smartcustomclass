@@ -44,7 +44,10 @@ namespace HREngine.Bots
 			/* Setup BlackList */
 			
 			if(opponentClass != Card.CClass.PALADIN && opponentClass != Card.CClass.HUNTER)
-			BlackList.Add("EX1_007");//Acolyte of Pain
+			{
+				BlackList.Add("EX1_007");//Acolyte of Pain
+			}
+				
 			BlackList.Add("EX1_349");//Divine Favor
 			BlackList.Add("CS2_023");//Arcane Intellect
 			BlackList.Add("CS2_011");//Savage roar
@@ -233,6 +236,14 @@ namespace HREngine.Bots
 
         public override bool ShouldAttackTargetWithWeapon(Board board,Card weapon,Card target)
         {
+				//DoomHammer
+				if(board.WeaponFriend.template.Id == "EX1_567")
+				{
+					if(target.Type == Card.CType.MINION && board.HeroFriend.CurrentAtk < target.CurrentHealth && target.CurrentAtk >= 3)
+						return false;
+				}
+				
+					
 				if(target.Type == Card.CType.HERO && !board.HasWeaponInHand() && target.CurrentHealth + target.CurrentArmor > 15 && weapon.CurrentDurability < 2)
 					return false;
 				
