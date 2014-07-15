@@ -61,6 +61,7 @@ namespace HREngine.Bots
 			BlackList.Add("EX1_246");//Hex 
 			BlackList.Add("EX1_575");//Mana Tide Totem
 			BlackList.Add("EX1_238");//Lightning Bolt
+			BlackList.Add("EX1_565");//Flametongue Totem
 
 			
 			
@@ -122,6 +123,11 @@ namespace HREngine.Bots
 					WhiteList.Add("NEW1_026"); // NEW1_026
 				}
 			}
+			
+			if(opponentClass == Card.CClass.WARLOCK)
+				WhiteList.Add("EX1_166");//Keeper of the grove
+
+			
 			
 			/* -----PRIEST----- */
 			WhiteList.Add("CS2_181");//Injured Blademaster
@@ -240,6 +246,13 @@ namespace HREngine.Bots
 				if(board.WeaponFriend.template.Id == "EX1_567")
 				{
 					if(target.Type == Card.CType.MINION && board.HeroFriend.CurrentAtk < target.CurrentHealth && target.CurrentAtk >= 3)
+						return false;
+				}
+				
+				//Eaglehorn Bow
+				if(board.WeaponFriend.template.Id == "EX1_536")
+				{
+					if(board.Secret.Count > 0 && board.WeaponFriend.CurrentDurability == 1)
 						return false;
 				}
 				

@@ -24,6 +24,9 @@ namespace HREngine.Bots
 			if(board.TurnCount < 3)
 				return false;
 				
+			if(board.TurnCount <= 4 && board.HasCardInHand("EX1_258"))
+				return false;
+				
             return true;
         }
 

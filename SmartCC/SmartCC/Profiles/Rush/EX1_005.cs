@@ -24,8 +24,20 @@ namespace HREngine.Bots
                     return true;
             }
 
-            if (board.Hand.Count > 1)
-                return false;
+            int PlayableMinion = 0;
+			
+			foreach(Card cc in board.Hand)
+			{
+				if(cc.template.Id == "EX1_005")
+					continue;
+					
+				if(cc.Type == Card.CType.MINION)
+					if(cc.CurrentCost <= board.ManaAvailable)
+						PlayableMinion ++;
+			}
+			
+			if(PlayableMinion == 0 && board.EnemyCardCount < 3)
+				return true;
 
             return true;
         }

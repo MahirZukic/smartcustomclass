@@ -30,7 +30,7 @@ namespace HREngine.Bots
 						PlayableMinion ++;
 			}
 			
-			if(PlayableMinion ==0)
+			if(PlayableMinion == 0 )
 				return true;
 			
 			foreach(Card c in board.MinionEnemy)
