@@ -31,7 +31,7 @@ namespace HREngine.Bots
 						has2Hp = true;
 				}
 				
-				if(!has2Hp && drop1Playable < 2)
+				if(!has2Hp && drop1Playable < 2 && board.ManaAvailable == 1)
 					return false;
 			}
 			
