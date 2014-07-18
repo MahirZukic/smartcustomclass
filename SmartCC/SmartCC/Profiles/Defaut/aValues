@@ -21,4 +21,4 @@ ValueOverload=0
 UseCriticHealthZone=true
 CriticHealthZoneThreshold=20
 UseAggroZone=false
-AggroZoneThreshold=15
+AggroZoneThreshold=10

@@ -18,22 +18,6 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-			int nbCards = 0;
-			
-			foreach(Card c in board.Hand)
-			{
-				if(c.template.Id == "CS2_093")
-				{
-					nbCards++;
-				}
-			}
-			
-			if(board.HeroEnemy.CurrentHealth + board.HeroEnemy.CurrentArmor <= nbCards *(2+board.GetSpellPower()))
-				return true;
-			
-			
-			if(board.MinionEnemy.Count < 2)
-				return false;
             return true;
         }
 
@@ -57,5 +41,9 @@ namespace HREngine.Bots
             return 1;
         }
 		
+		public override int GetHandValue(Board board)
+		{
+			return 7;
+		}
     }
 }
