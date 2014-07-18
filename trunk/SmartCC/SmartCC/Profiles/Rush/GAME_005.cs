@@ -18,6 +18,24 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+
+			if(board.EnemyClass() == "rogue" || board.EnemyClass() == "mage" || board.EnemyClass() == "druid")
+			{
+				List<Card> playable = board.GetPlayables(Card.CType.MINION, 2,2);
+				int drop1Playable = board.GetPlayables(Card.CType.MINION, 1,1).Count;
+				bool has2Hp = false;
+				
+				foreach(Card c in playable)
+				{
+					if(c.CurrentHealth >= 2)
+						has2Hp = true;
+				}
+				
+				if(!has2Hp && drop1Playable < 2)
+					return false;
+			}
+			
+
 			if(board.TurnCount > 3)
 				return true;
             foreach(Card c in board.Hand)
@@ -25,6 +43,7 @@ namespace HREngine.Bots
                 if (c.CurrentCost == board.ManaAvailable + 1)
                     return true;
             }
+			
 
             return false;
         }
@@ -51,7 +70,7 @@ namespace HREngine.Bots
 
         public override int GetHandValue(Board board)
 		{
-			return 2;
+			return 3;
 		}
 		
     }
