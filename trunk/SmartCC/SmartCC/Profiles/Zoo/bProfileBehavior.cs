@@ -33,7 +33,7 @@ namespace HREngine.Bots
 			List<Card> CardsToKeep = new List<Card>();
 			List<string> WhiteList = new List<string>();
 			List<string> BlackList = new List<string>();
-			int MaxManaCost = 3;
+			int MaxManaCost = 2;
 			bool AllowDoublon = true;
 			
 			if( opponentClass == Card.CClass.MAGE)

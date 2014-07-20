@@ -20,6 +20,7 @@ namespace HREngine.Bots
         {
 			int CountPlayable = 0;
 			int ValuePlayable = 0;
+			int CostPlayable = 0;
 			int MyValue = 0;
 
 			foreach(Card c in board.Hand)
@@ -38,6 +39,7 @@ namespace HREngine.Bots
 						{
 							if(c.Behavior.ShouldBePlayedOnTarget(cc))
 							{
+								CostPlayable += c.CurrentCost;
 								CountPlayable++;
 								ValuePlayable += (int)c.GetValue(board);
 							}
@@ -45,6 +47,7 @@ namespace HREngine.Bots
 					}
 					else
 					{
+						CostPlayable += c.CurrentCost;
 						CountPlayable++;
 						ValuePlayable += (int)c.GetValue(board);
 					}
@@ -63,6 +66,9 @@ namespace HREngine.Bots
 				
 			if(CountPlayable < 2 && MyValue > ValuePlayable)
 				return true;
+				
+			if(CountPlayable == 2 && CostPlayable >= 3)
+				return false;
 				
 			if(CountPlayable > 2)
 			{
@@ -94,7 +100,13 @@ namespace HREngine.Bots
 		
 		public override int GetHandValue(Board board)
 		{
-			return 30;
+			if(board.Hand.Count == 1)
+				return 0;
+			
+			if(board.Hand.Count == 2)
+				return 45;
+			
+			return 60;
 		}
 		
     }

@@ -32,8 +32,9 @@ namespace HREngine.Bots
 			if(hasDoomguard && board.Hand.Count <= 3 && board.TurnCount > 5)
 				return false;
 			
-             if (board.HeroFriend.CurrentHealth < 5 || board.Hand.Count > 5)
+             if (board.HeroFriend.CurrentHealth < 5)
                 return false;
+				
             return true;
         }
 
@@ -54,7 +55,7 @@ namespace HREngine.Bots
 
         public override int GetPriorityPlay(Board board)
         {
-            return 15;
+            return 5;
         }
 		
     }

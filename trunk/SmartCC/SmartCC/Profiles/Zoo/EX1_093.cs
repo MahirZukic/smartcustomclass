@@ -46,5 +46,12 @@ namespace HREngine.Bots
             return 1;
         }
 		
+		public override int GetMinionValue(Board board)
+		{
+			if(board.MinionFriend.Count < 2)
+				return 8;
+			
+			return 0;
+		}
     }
 }
