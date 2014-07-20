@@ -34,12 +34,9 @@ namespace HREngine.Bots
 				
 			foreach(Card c in board.Hand)
 			{
-				if(c.IsDivineShield)
+				if(c.IsDivineShield && nbShieldsOnBoard == 0)
 				{
-					if(c.CurrentCost + 3 <= board.ManaAvailable)
-					{
-						return false;
-					}
+					return false;
 				}
 			}		
 				

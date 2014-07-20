@@ -53,6 +53,8 @@ namespace HREngine.Bots
 			if(sum + 4 >= board.HeroEnemy.CurrentHealth + board.HeroEnemy.CurrentArmor)
 				return true;
 				
+			if(board.HasCardInHand("EX1_310") && board.Hand.Count < 4)
+				return false;
 				
 			if(CountPlayable >= (int)(board.Hand.Count / 2) && board.Hand.Count > 2)
 			{

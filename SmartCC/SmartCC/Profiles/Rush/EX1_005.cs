@@ -36,7 +36,7 @@ namespace HREngine.Bots
 						PlayableMinion ++;
 			}
 			
-			if(PlayableMinion == 0 && board.EnemyCardCount < 3)
+			if(PlayableMinion == 0 && board.EnemyCardCount < 3 && board.TurnCount > 6)
 				return true;
 
             return true;

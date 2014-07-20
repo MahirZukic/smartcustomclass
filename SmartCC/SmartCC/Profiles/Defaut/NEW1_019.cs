@@ -38,7 +38,7 @@ namespace HREngine.Bots
 
         public override int GetPriorityPlay(Board board)
         {
-            return 10;
+            return 3;
         }
 		
     }

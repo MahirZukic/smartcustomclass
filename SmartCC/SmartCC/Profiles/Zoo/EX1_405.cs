@@ -18,14 +18,6 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-			if(board.TurnCount == 1 && board.MinionEnemy.Count == 0)
-			{
-				foreach(Card c in board.Hand)
-				{
-					if(c.CurrentCost == 1 && c.template.Id != "EX1_405" && c.template.Id != "CS2_188")
-						return false;
-				}
-			}
             return true;
         }
 

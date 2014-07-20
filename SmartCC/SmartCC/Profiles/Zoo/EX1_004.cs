@@ -18,6 +18,8 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.TurnCount == 1 && !board.HasCardInHand("GAME_005") && board.MinionFriend.Count == 0 && (board.EnemyClass() == "druid" || board.EnemyClass() == "rogue" || board.EnemyClass() == "mage"))
+				return false;
             return true;
         }
 
