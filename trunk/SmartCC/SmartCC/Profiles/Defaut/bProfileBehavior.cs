@@ -60,7 +60,10 @@ namespace HREngine.Bots
 			BlackList.Add("CS2_007");//Healing Touch
 			BlackList.Add("EX1_246");//Hex 
 			BlackList.Add("EX1_575");//Mana Tide Totem
-			BlackList.Add("EX1_238");//Lightning Bolt
+			
+			if(opponentClass != Card.CClass.WARLOCK)
+				BlackList.Add("EX1_238");//Lightning Bolt
+				
 			BlackList.Add("EX1_565");//Flametongue Totem
 
 			
@@ -256,9 +259,7 @@ namespace HREngine.Bots
 						return false;
 				}
 				
-				if(target.Type == Card.CType.HERO && !board.HasWeaponInHand() && target.CurrentHealth + target.CurrentArmor > board.HeroFriend.CurrentAtk + 5) 
-					return false;
-					
+
 				if(target.Type == Card.CType.HERO && !board.HasWeaponInHand() && target.CurrentHealth + target.CurrentArmor > 15 && weapon.CurrentDurability == weapon.template.Durability && board.WeaponFriend.template.Id != "EX1_567")
 					return false;
 				

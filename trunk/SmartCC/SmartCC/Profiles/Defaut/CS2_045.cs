@@ -33,7 +33,7 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Card target)
         {
-			if(!target.CanAttack && target.Type != Card.CType.HERO)
+			if(!target.CanAttack && target.Type != Card.CType.HERO && target.CurrentAtk != 0)
 				return false;
             return true;
         }
