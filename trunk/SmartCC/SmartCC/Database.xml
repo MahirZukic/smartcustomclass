@@ -11,6 +11,9 @@
     <Name>Mind Control</Name>
     <Cost>10</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Take Control</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_350</Id>
@@ -27,6 +30,9 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4c_003</Id>
@@ -35,18 +41,29 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_607</Id>
     <Name>Inner Rage</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_320</Id>
     <Name>Bane of Doom</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_011</Id>
@@ -55,12 +72,18 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_339</Id>
     <Name>Thoughtsteal</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Copy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>HERO_05</Id>
@@ -75,6 +98,12 @@
     <Type>Elite Minion</Type>
     <Atk>3</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Divine Shield</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Windfury</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_023</Id>
@@ -83,6 +112,9 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Divine Shield</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_573</Id>
@@ -91,6 +123,12 @@
     <Type>Elite Minion</Type>
     <Atk>5</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Choose One</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_076</Id>
@@ -99,6 +137,9 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_121</Id>
@@ -107,6 +148,9 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_390</Id>
@@ -115,6 +159,11 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Enrage</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_065</Id>
@@ -124,12 +173,18 @@
     <MinionType>Demon</MinionType>
     <Atk>1</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_039</Id>
     <Name>Windfury</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Windfury</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>Mekka3</Id>
@@ -138,6 +193,9 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>ds1_whelptoken</Id>
@@ -161,6 +219,9 @@
     <Name>Summon a Panther</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_221</Id>
@@ -169,6 +230,10 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Enrage</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_165a</Id>
@@ -181,6 +246,10 @@
     <Name>Swipe</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_127</Id>
@@ -190,6 +259,9 @@
     <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_028</Id>
@@ -199,6 +271,9 @@
     <MinionType>Beast</MinionType>
     <Atk>5</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Stealth</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_151</Id>
@@ -207,18 +282,28 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_087</Id>
     <Name>Blessing of Might</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_407</Id>
     <Name>Brawl</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_598</Id>
@@ -234,12 +319,19 @@
     <Name>Polymorph</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Transform</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_007</Id>
     <Name>Starfall</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Choose One</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_182</Id>
@@ -254,12 +346,20 @@
     <Name>Nourish</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Choose One</Mechanic>
+      <Mechanic>Mana Crystals</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_165b</Id>
     <Name>Bear Form</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_034</Id>
@@ -269,6 +369,9 @@
     <MinionType>Beast</MinionType>
     <Atk>4</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_130a</Id>
@@ -283,6 +386,10 @@
     <Name>Counterspell</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Counter</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_011</Id>
@@ -291,6 +398,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_161</Id>
@@ -299,12 +410,19 @@
     <Type>Minion</Type>
     <Atk>7</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Stealth</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_154b</Id>
     <Name>Wrath</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_021</Id>
@@ -313,24 +431,36 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_136</Id>
     <Name>Redemption</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_084</Id>
     <Name>Hunter\'s Mark</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Change Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_345</Id>
     <Name>Mindgames</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Copy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>Mekka4</Id>
@@ -339,24 +469,42 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Transform</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_303</Id>
     <Name>Shadowflame</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+      <Mechanic>Affected By Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_041</Id>
     <Name>Ancestral Healing</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_155</Id>
     <Name>Mark of Nature</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Choose One</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_162</Id>
@@ -365,6 +513,9 @@
     <Type>Minion</Type>
     <Atk>6</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_080</Id>
@@ -373,18 +524,30 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_003</Id>
     <Name>Sacrificial Pact</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_031</Id>
     <Name>Ice Lance</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Freeze</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_582</Id>
@@ -393,6 +556,9 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_587</Id>
@@ -401,6 +567,10 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Windfury</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_231</Id>
@@ -415,12 +585,18 @@
     <Name>Backstab</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_178b</Id>
     <Name>Uproot</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_057</Id>
@@ -429,6 +605,10 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Return to Hand</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_042</Id>
@@ -437,6 +617,10 @@
     <Type>Minion</Type>
     <Atk>6</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_168</Id>
@@ -452,18 +636,30 @@
     <Name>Ice Block</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Immune</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_294</Id>
     <Name>Mirror Entity</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Summon</Mechanic>
+      <Mechanic>Copy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_004</Id>
     <Name>Vanish</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Return to Hand</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_131</Id>
@@ -472,6 +668,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Combo</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_554t</Id>
@@ -489,12 +689,18 @@
     <Type>Minion</Type>
     <Atk>8</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_008b</Id>
     <Name>Ancient Secrets</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_586</Id>
@@ -503,12 +709,19 @@
     <Type>Minion</Type>
     <Atk>8</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_009</Id>
     <Name>Mark of the Wild</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_172</Id>
@@ -524,12 +737,19 @@
     <Name>Nightmare</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_334</Id>
     <Name>Shadow Madness</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Take Control</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_033</Id>
@@ -539,6 +759,9 @@
     <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>Mekka1</Id>
@@ -547,24 +770,38 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DS1h_292</Id>
     <Name>Steady Shot</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_379</Id>
     <Name>Repentance</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_161</Id>
     <Name>Naturalize</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_591</Id>
@@ -573,18 +810,29 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_248</Id>
     <Name>Feral Spirit</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Overload: X</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_045</Id>
     <Name>Rockbiter Weapon</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_188</Id>
@@ -593,12 +841,20 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_094</Id>
     <Name>Hammer of Wrath</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_096</Id>
@@ -607,18 +863,28 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_154a</Id>
     <Name>Wrath</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_169</Id>
     <Name>Innervate</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Mana Crystals</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_196</Id>
@@ -627,6 +893,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>Mekka4t</Id>
@@ -642,6 +912,10 @@
     <Name>Cold Blood</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Combo</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_091</Id>
@@ -650,6 +924,10 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Take Control</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>HERO_06</Id>
@@ -662,6 +940,9 @@
     <Name>Holy Smite</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_067</Id>
@@ -670,12 +951,19 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Divine Shield</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_126</Id>
     <Name>Betrayal</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_015</Id>
@@ -684,6 +972,10 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_603</Id>
@@ -692,12 +984,21 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_594</Id>
     <Name>Vaporize</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_005</Id>
@@ -706,6 +1007,10 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Combo</Mechanic>
+      <Mechanic>Return to Hand</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_124</Id>
@@ -714,6 +1019,9 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_203</Id>
@@ -723,24 +1031,37 @@
     <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Silence</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_089</Id>
     <Name>Holy Light</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DS1_183</Id>
     <Name>Multi-Shot</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_539</Id>
     <Name>Kill Command</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_boar</Id>
@@ -756,18 +1077,29 @@
     <Name>Forked Lightning</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Overload: X</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_056</Id>
     <Name>Life Tap</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DREAM_02</Id>
     <Name>Ysera Awakens</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage All</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_112</Id>
@@ -784,6 +1116,10 @@
     <Type>Elite Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Combo</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_147</Id>
@@ -792,6 +1128,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DS1_188</Id>
@@ -800,24 +1140,36 @@
     <Type>Weapon</Type>
     <Atk>5</Atk>
     <Durability>2</Durability>
+    <Mechanics>
+      <Mechanic>Immune</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_008a</Id>
     <Name>Ancient Teachings</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_029</Id>
     <Name>Fireball</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4c_006</Id>
     <Name>Bananas</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_110t</Id>
@@ -832,12 +1184,18 @@
     <Name>Dispel</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Silence</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_164b</Id>
     <Name>Nourish</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>Mekka2</Id>
@@ -846,6 +1204,9 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_tk29</Id>
@@ -863,6 +1224,10 @@
     <Type>Elite Minion</Type>
     <Atk>7</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage All</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_414</Id>
@@ -871,6 +1236,11 @@
     <Type>Elite Minion</Type>
     <Atk>4</Atk>
     <Health>9</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Enrage</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_141</Id>
@@ -879,6 +1249,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DREAM_01</Id>
@@ -893,12 +1267,20 @@
     <Name>Charge</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Grant Charge</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_076</Id>
     <Name>Assassinate</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_046</Id>
@@ -907,6 +1289,10 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_037</Id>
@@ -915,6 +1301,9 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_567</Id>
@@ -923,6 +1312,10 @@
     <Type>Weapon</Type>
     <Atk>2</Atk>
     <Durability>8</Durability>
+    <Mechanics>
+      <Mechanic>Overload: X</Mechanic>
+      <Mechanic>Windfury</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_tk9</Id>
@@ -931,6 +1324,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_562</Id>
@@ -940,24 +1337,39 @@
     <MinionType>Dragon</MinionType>
     <Atk>8</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_573b</Id>
     <Name>Shan\'do\'s Lesson</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_144</Id>
     <Name>Shadowstep</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Change Cost</Mechanic>
+      <Mechanic>Return to Hand</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>tt_010</Id>
     <Name>Spellbender</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_298</Id>
@@ -966,12 +1378,19 @@
     <Type>Elite Minion</Type>
     <Atk>8</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Can't Attack</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS1_129</Id>
     <Name>Inner Fire</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Change Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_026t</Id>
@@ -986,6 +1405,10 @@
     <Name>Soul of the Forest</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_091</Id>
@@ -1002,6 +1425,10 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_133</Id>
@@ -1010,12 +1437,20 @@
     <Type>Weapon</Type>
     <Atk>2</Atk>
     <Durability>2</Durability>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Combo</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_537</Id>
     <Name>Explosive Shot</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_033</Id>
@@ -1024,6 +1459,9 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Freeze</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>tt_004</Id>
@@ -1032,12 +1470,18 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_392</Id>
     <Name>Battle Rage</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_106</Id>
@@ -1052,6 +1496,9 @@
     <Name>Ancestral Spirit</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_012</Id>
@@ -1060,6 +1507,9 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_560</Id>
@@ -1077,6 +1527,10 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_049</Id>
@@ -1085,6 +1539,10 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Return to Hand</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_110</Id>
@@ -1093,6 +1551,10 @@
     <Type>Elite Minion</Type>
     <Atk>4</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_080</Id>
@@ -1109,18 +1571,30 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_275</Id>
     <Name>Cone of Cold</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Freeze</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_365</Id>
     <Name>Holy Wrath</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_563</Id>
@@ -1130,12 +1604,18 @@
     <MinionType>Dragon</MinionType>
     <Atk>4</Atk>
     <Health>12</Health>
+    <Mechanics>
+      <Mechanic>Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_031</Id>
     <Name>Animal Companion</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_097</Id>
@@ -1144,6 +1624,12 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage All</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_017</Id>
@@ -1153,6 +1639,11 @@
     <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_213</Id>
@@ -1161,18 +1652,28 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_025</Id>
     <Name>Arcane Explosion</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_164a</Id>
     <Name>Nourish</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Mana Crystals</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_103</Id>
@@ -1182,12 +1683,20 @@
     <MinionType>Murloc</MinionType>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_554</Id>
     <Name>Snake Trap</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_024</Id>
@@ -1197,12 +1706,21 @@
     <MinionType>Pirate</MinionType>
     <Atk>5</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_028</Id>
     <Name>Blizzard</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Freeze</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_052</Id>
@@ -1212,12 +1730,18 @@
     <MinionType>Totem</MinionType>
     <Atk>0</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_074</Id>
     <Name>Deadly Poison</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_040t</Id>
@@ -1226,18 +1750,28 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_581</Id>
     <Name>Sap</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Return to Hand</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_132</Id>
     <Name>Eye for an Eye</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_089</Id>
@@ -1246,18 +1780,29 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Mana Crystals</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_008</Id>
     <Name>Moonfire</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_155a</Id>
     <Name>Mark of Nature</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_059</Id>
@@ -1267,6 +1812,10 @@
     <MinionType>Demon</MinionType>
     <Atk>0</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Stealth</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>skele21</Id>
@@ -1281,6 +1830,9 @@
     <Name>Reinforce</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_509</Id>
@@ -1290,24 +1842,38 @@
     <MinionType>Murloc</MinionType>
     <Atk>1</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_093</Id>
     <Name>Consecration</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS1h_001</Id>
     <Name>Lesser Heal</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_578</Id>
     <Name>Savagery</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Affected By Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_152</Id>
@@ -1361,6 +1927,10 @@
     <Name>Force of Nature</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_226</Id>
@@ -1369,18 +1939,31 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_160</Id>
     <Name>Power of the Wild</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Choose One</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_238</Id>
     <Name>Lightning Bolt</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Overload: X</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_508</Id>
@@ -1390,12 +1973,18 @@
     <MinionType>Murloc</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_409</Id>
     <Name>Upgrade!</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_283</Id>
@@ -1404,6 +1993,10 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Freeze</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_575</Id>
@@ -1413,6 +2006,9 @@
     <MinionType>Totem</MinionType>
     <Atk>0</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_301</Id>
@@ -1422,12 +2018,23 @@
     <MinionType>Demon</MinionType>
     <Atk>3</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+      <Mechanic>Mana Crystals</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_611</Id>
     <Name>Freezing Trap</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Change Cost</Mechanic>
+      <Mechanic>Return to Hand</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_025</Id>
@@ -1436,6 +2043,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_155</Id>
@@ -1444,6 +2055,9 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_038</Id>
@@ -1452,6 +2066,9 @@
     <Type>Elite Minion</Type>
     <Atk>7</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_016</Id>
@@ -1461,6 +2078,9 @@
     <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_564</Id>
@@ -1469,6 +2089,10 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Copy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_tk11</Id>
@@ -1477,6 +2101,9 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_050</Id>
@@ -1494,18 +2121,28 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DS1_233</Id>
     <Name>Mind Blast</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_410</Id>
     <Name>Shield Slam</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Affected By Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>hexfrog</Id>
@@ -1515,12 +2152,18 @@
     <MinionType>Beast</MinionType>
     <Atk>0</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_023</Id>
     <Name>Arcane Intellect</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_614</Id>
@@ -1530,6 +2173,9 @@
     <MinionType>Demon</MinionType>
     <Atk>7</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_116</Id>
@@ -1538,12 +2184,21 @@
     <Type>Elite Minion</Type>
     <Atk>6</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_277</Id>
     <Name>Arcane Missiles</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Immune To Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_033</Id>
@@ -1552,6 +2207,9 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Windfury</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_083</Id>
@@ -1560,24 +2218,39 @@
     <Type>Elite Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Transform</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_278</Id>
     <Name>Shiv</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_570</Id>
     <Name>Bite</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Gain Armor</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_178a</Id>
     <Name>Rooted</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_561</Id>
@@ -1587,6 +2260,9 @@
     <MinionType>Dragon</MinionType>
     <Atk>8</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DS1_055</Id>
@@ -1595,24 +2271,40 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_130</Id>
     <Name>Noble Sacrifice</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_610</Id>
     <Name>Explosive Trap</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_026</Id>
     <Name>Frost Nova</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Freeze</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_306</Id>
@@ -1622,12 +2314,20 @@
     <MinionType>Demon</MinionType>
     <Atk>4</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Discard</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_354</Id>
     <Name>Lay on Hands</Name>
     <Cost>8</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_402</Id>
@@ -1636,6 +2336,9 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Gain Armor</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_158t</Id>
@@ -1652,6 +2355,11 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Silence</Mechanic>
+      <Mechanic>Choose One</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS1_069</Id>
@@ -1660,6 +2368,9 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_045</Id>
@@ -1668,6 +2379,9 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Can't Attack</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DS1_175</Id>
@@ -1677,6 +2391,9 @@
     <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_019</Id>
@@ -1685,6 +2402,10 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_023</Id>
@@ -1700,6 +2421,10 @@
     <Name>Power Word: Shield</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_608</Id>
@@ -1708,6 +2433,9 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_243</Id>
@@ -1716,12 +2444,20 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Overload: X</Mechanic>
+      <Mechanic>Windfury</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_289</Id>
     <Name>Ice Barrier</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Gain Armor</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_131</Id>
@@ -1730,18 +2466,29 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_259</Id>
     <Name>Lightning Storm</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Overload: X</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_077</Id>
     <Name>Sprint</Name>
     <Cost>7</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_310</Id>
@@ -1751,6 +2498,11 @@
     <MinionType>Demon</MinionType>
     <Atk>5</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Discard</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_179</Id>
@@ -1759,12 +2511,19 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_400</Id>
     <Name>Whirlwind</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage All</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>HERO_08</Id>
@@ -1779,6 +2538,10 @@
     <Type>Elite Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_169</Id>
@@ -1788,6 +2551,9 @@
     <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Windfury</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_020</Id>
@@ -1796,6 +2562,9 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Divine Shield</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_366</Id>
@@ -1804,6 +2573,10 @@
     <Type>Weapon</Type>
     <Atk>1</Atk>
     <Durability>5</Durability>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_171</Id>
@@ -1813,6 +2586,9 @@
     <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_604</Id>
@@ -1821,6 +2597,9 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_029</Id>
@@ -1829,18 +2608,31 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_024</Id>
     <Name>Frostbolt</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Freeze</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_129</Id>
     <Name>Fan of Knives</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_593</Id>
@@ -1849,6 +2641,10 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>HERO_04</Id>
@@ -1863,6 +2659,9 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_573t</Id>
@@ -1871,12 +2670,18 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_349</Id>
     <Name>Divine Favor</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_027</Id>
@@ -1886,18 +2691,27 @@
     <MinionType>Pirate</MinionType>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_049</Id>
     <Name>Totemic Call</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_155b</Id>
     <Name>Mark of Nature</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_165</Id>
@@ -1906,6 +2720,12 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Choose One</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DS1_178</Id>
@@ -1915,6 +2735,10 @@
     <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Grant Charge</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_396</Id>
@@ -1923,18 +2747,29 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_137</Id>
     <Name>Headcrack</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Combo</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Return to Hand</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_075</Id>
     <Name>Sinister Strike</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_186</Id>
@@ -1951,6 +2786,9 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_146</Id>
@@ -1960,18 +2798,27 @@
     <MinionType>Pirate</MinionType>
     <Atk>2</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_102</Id>
     <Name>Armor Up!</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Gain Armor</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_371</Id>
     <Name>Hand of Protection</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Divine Shield</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_083b</Id>
@@ -1986,6 +2833,10 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Take Control</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_062</Id>
@@ -1995,6 +2846,10 @@
     <MinionType>Murloc</MinionType>
     <Atk>2</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_173</Id>
@@ -2004,12 +2859,18 @@
     <MinionType>Murloc</MinionType>
     <Atk>2</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_011</Id>
     <Name>Savage Roar</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_612</Id>
@@ -2018,6 +2879,11 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_012</Id>
@@ -2026,6 +2892,11 @@
     <Type>Elite Minion</Type>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Spell Damage</Mechanic>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_222</Id>
@@ -2034,6 +2905,9 @@
     <Type>Minion</Type>
     <Atk>6</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_048</Id>
@@ -2042,6 +2916,10 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Silence</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_590</Id>
@@ -2050,12 +2928,20 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Divine Shield</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_619</Id>
     <Name>Equality</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Change Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_008</Id>
@@ -2064,6 +2950,9 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Divine Shield</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_032</Id>
@@ -2072,6 +2961,10 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Divine Shield</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_082</Id>
@@ -2080,6 +2973,11 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage All</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_093</Id>
@@ -2088,6 +2986,11 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_009</Id>
@@ -2097,6 +3000,9 @@
     <MinionType>Totem</MinionType>
     <Atk>0</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_021</Id>
@@ -2105,18 +3011,29 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Windfury</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_246</Id>
     <Name>Hex</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Transform</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_245</Id>
     <Name>Earth Shock</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Silence</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_399</Id>
@@ -2125,12 +3042,18 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_007</Id>
     <Name>Healing Touch</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_258</Id>
@@ -2139,6 +3062,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Overload: X</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_323</Id>
@@ -2148,6 +3075,10 @@
     <MinionType>Demon</MinionType>
     <Atk>3</Atk>
     <Health>15</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_556</Id>
@@ -2156,6 +3087,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_313</Id>
@@ -2165,18 +3100,28 @@
     <MinionType>Demon</MinionType>
     <Atk>5</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4c_002</Id>
     <Name>Barrel Toss</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_108</Id>
     <Name>Execute</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_393</Id>
@@ -2185,6 +3130,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Enrage</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_044</Id>
@@ -2193,6 +3142,9 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_tk1</Id>
@@ -2210,6 +3162,9 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_059</Id>
@@ -2218,24 +3173,36 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_408</Id>
     <Name>Mortal Strike</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_034</Id>
     <Name>Fireblast</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DREAM_04</Id>
     <Name>Dream</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Return to Hand</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_411</Id>
@@ -2252,6 +3219,9 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_160t</Id>
@@ -2273,18 +3243,30 @@
     <Name>Snipe</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_053</Id>
     <Name>Far Sight</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_173</Id>
     <Name>Starfire</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_284</Id>
@@ -2294,12 +3276,20 @@
     <MinionType>Dragon</MinionType>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Spell Damage</Mechanic>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_244</Id>
     <Name>Totemic Might</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_030</Id>
@@ -2309,30 +3299,51 @@
     <MinionType>Dragon</MinionType>
     <Atk>12</Atk>
     <Health>12</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Discard</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_160b</Id>
     <Name>Leader of the Pack</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_154</Id>
     <Name>Wrath</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Choose One</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS1_112</Id>
     <Name>Holy Nova</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_316</Id>
     <Name>Power Overwhelming</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_097</Id>
@@ -2341,6 +3352,9 @@
     <Type>Weapon</Type>
     <Atk>4</Atk>
     <Durability>2</Durability>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_051</Id>
@@ -2350,12 +3364,18 @@
     <MinionType>Totem</MinionType>
     <Atk>0</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_360</Id>
     <Name>Humility</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Change Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_029</Id>
@@ -2364,6 +3384,10 @@
     <Type>Elite Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_112</Id>
@@ -2372,12 +3396,19 @@
     <Type>Elite Minion</Type>
     <Atk>6</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_312</Id>
     <Name>Twisting Nether</Name>
     <Cost>8</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_317</Id>
@@ -2390,6 +3421,10 @@
     <Name>Lava Burst</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Overload: X</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_405</Id>
@@ -2398,12 +3433,18 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DS1_185</Id>
     <Name>Arcane Shot</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_022</Id>
@@ -2413,6 +3454,10 @@
     <MinionType>Pirate</MinionType>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_335</Id>
@@ -2429,6 +3474,10 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Stealth</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_383</Id>
@@ -2437,6 +3486,11 @@
     <Type>Elite Minion</Type>
     <Atk>6</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Divine Shield</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_058</Id>
@@ -2445,6 +3499,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>HERO_07</Id>
@@ -2457,18 +3515,32 @@
     <Name>Flare</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Stealth</Mechanic>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_549</Id>
     <Name>Bestial Wrath</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Immune</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_124</Id>
     <Name>Eviscerate</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Combo</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_066</Id>
@@ -2477,6 +3549,10 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_558</Id>
@@ -2485,12 +3561,20 @@
     <Type>Elite Minion</Type>
     <Atk>5</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_057</Id>
     <Name>Shadow Bolt</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_584</Id>
@@ -2499,12 +3583,20 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_061</Id>
     <Name>Drain Life</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_008</Id>
@@ -2513,6 +3605,11 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Choose One</Mechanic>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_017</Id>
@@ -2522,6 +3619,9 @@
     <MinionType>Beast</MinionType>
     <Atk>4</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Stealth</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS1_042</Id>
@@ -2530,6 +3630,9 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_597</Id>
@@ -2538,12 +3641,19 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_007b</Id>
     <Name>Starfall</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>HERO_03</Id>
@@ -2558,24 +3668,37 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_114</Id>
     <Name>Cleave</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_092</Id>
     <Name>Blessing of Kings</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_062</Id>
     <Name>Hellfire</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage All</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_032</Id>
@@ -2585,6 +3708,9 @@
     <MinionType>Beast</MinionType>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_247</Id>
@@ -2593,6 +3719,9 @@
     <Type>Weapon</Type>
     <Atk>2</Atk>
     <Durability>3</Durability>
+    <Mechanics>
+      <Mechanic>Overload: X</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_577</Id>
@@ -2602,6 +3731,10 @@
     <MinionType>Beast</MinionType>
     <Atk>9</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_mirror</Id>
@@ -2610,6 +3743,9 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_315</Id>
@@ -2618,18 +3754,29 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_037</Id>
     <Name>Frost Shock</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Freeze</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_308</Id>
     <Name>Soulfire</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Discard</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_506</Id>
@@ -2639,6 +3786,10 @@
     <MinionType>Murloc</MinionType>
     <Atk>2</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_102</Id>
@@ -2647,12 +3798,18 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_063</Id>
     <Name>Corruption</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_162</Id>
@@ -2662,24 +3819,37 @@
     <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_166a</Id>
     <Name>Moonfire</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4c_004</Id>
     <Name>Stomp</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_128</Id>
     <Name>Conceal</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Stealth</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_105</Id>
@@ -2688,6 +3858,9 @@
     <Type>Minion</Type>
     <Atk>8</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_010</Id>
@@ -2696,6 +3869,9 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Stealth</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_197</Id>
@@ -2704,6 +3880,9 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_025</Id>
@@ -2713,6 +3892,9 @@
     <MinionType>Pirate</MinionType>
     <Atk>1</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_018</Id>
@@ -2722,6 +3904,9 @@
     <MinionType>Pirate</MinionType>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DS1_070</Id>
@@ -2730,12 +3915,21 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_032</Id>
     <Name>Flamestrike</Name>
     <Cost>7</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_finkle</Id>
@@ -2750,6 +3944,9 @@
     <Name>Heroic Strike</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_565</Id>
@@ -2759,6 +3956,9 @@
     <MinionType>Totem</MinionType>
     <Atk>0</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_084</Id>
@@ -2767,6 +3967,11 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Grant Charge</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_020</Id>
@@ -2775,6 +3980,10 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage All</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_050</Id>
@@ -2784,6 +3993,10 @@
     <MinionType>Murloc</MinionType>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_064</Id>
@@ -2793,6 +4006,11 @@
     <MinionType>Demon</MinionType>
     <Atk>6</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage All</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_362</Id>
@@ -2801,18 +4019,29 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Divine Shield</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_606</Id>
     <Name>Shield Block</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Gain Armor</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_036</Id>
     <Name>Commanding Shout</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_026</Id>
@@ -2821,6 +4050,9 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_178</Id>
@@ -2829,6 +4061,11 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Choose One</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_043</Id>
@@ -2838,18 +4075,30 @@
     <MinionType>Dragon</MinionType>
     <Atk>4</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>DS1_184</Id>
     <Name>Tracking</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Discard</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_005</Id>
     <Name>Claw</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Gain Armor</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_507</Id>
@@ -2859,12 +4108,21 @@
     <MinionType>Murloc</MinionType>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_233</Id>
     <Name>Blade Flurry</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+      <Mechanic>Affected By Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>HERO_02</Id>
@@ -2879,6 +4137,10 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_019</Id>
@@ -2887,12 +4149,20 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_391</Id>
     <Name>Slam</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>skele11</Id>
@@ -2924,6 +4194,10 @@
     <Name>Mirror Image</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>tt_010a</Id>
@@ -2938,6 +4212,9 @@
     <Name>Pyroblast</Name>
     <Cost>10</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_319</Id>
@@ -2947,24 +4224,38 @@
     <MinionType>Demon</MinionType>
     <Atk>3</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_533</Id>
     <Name>Misdirection</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_302</Id>
     <Name>Mortal Coil</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_617</Id>
     <Name>Deadly Shot</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_170</Id>
@@ -2974,24 +4265,38 @@
     <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+      <Mechanic>Poisonous</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_003</Id>
     <Name>Mind Vision</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Copy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_309</Id>
     <Name>Siphon Soul</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_104</Id>
     <Name>Rampage</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_181</Id>
@@ -3000,6 +4305,10 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_134</Id>
@@ -3008,6 +4317,10 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Combo</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_227</Id>
@@ -3016,18 +4329,27 @@
     <Type>Minion</Type>
     <Atk>7</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_017</Id>
     <Name>Shapeshift</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_013</Id>
     <Name>Wild Growth</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Mana Crystals</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_522</Id>
@@ -3036,6 +4358,11 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Stealth</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+      <Mechanic>Poisonous</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_100</Id>
@@ -3044,6 +4371,9 @@
     <Type>Elite Minion</Type>
     <Atk>0</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Copy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_187</Id>
@@ -3052,6 +4382,9 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_250</Id>
@@ -3060,12 +4393,20 @@
     <Type>Minion</Type>
     <Atk>7</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Overload: X</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_596</Id>
     <Name>Demonfire</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_tk34</Id>
@@ -3084,12 +4425,18 @@
     <MinionType>Beast</MinionType>
     <Atk>8</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_573a</Id>
     <Name>Demigod\'s Favor</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_557</Id>
@@ -3098,6 +4445,9 @@
     <Type>Elite Minion</Type>
     <Atk>0</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_412</Id>
@@ -3106,18 +4456,30 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Enrage</Mechanic>
+      <Mechanic>Windfury</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_145</Id>
     <Name>Preparation</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NEW1_007a</Id>
     <Name>Starfall</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_382</Id>
@@ -3126,24 +4488,38 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Change Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_046</Id>
     <Name>Bloodlust</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_384</Id>
     <Name>Avenging Wrath</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Immune To Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_tk33</Id>
     <Name>INFERNO!</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_125</Id>
@@ -3153,6 +4529,9 @@
     <MinionType>Beast</MinionType>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_572</Id>
@@ -3162,12 +4541,18 @@
     <MinionType>Dragon</MinionType>
     <Atk>4</Atk>
     <Health>12</Health>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_332</Id>
     <Name>Silence</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Silence</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_tk28</Id>
@@ -3186,6 +4571,10 @@
     <MinionType>Demon</MinionType>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_237</Id>
@@ -3195,12 +4584,20 @@
     <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_538</Id>
     <Name>Unleash the Hounds</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_534</Id>
@@ -3210,6 +4607,10 @@
     <MinionType>Beast</MinionType>
     <Atk>6</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_531</Id>
@@ -3219,6 +4620,9 @@
     <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4a_001</Id>
@@ -3247,6 +4651,9 @@
     <Name>Hogger SMASH!</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4a_005</Id>
@@ -3273,12 +4680,18 @@
     <Name>Circle of Healing</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_622</Id>
     <Name>Shadow Word: Death</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_623</Id>
@@ -3287,30 +4700,48 @@
     <Type>Minion</Type>
     <Atk>6</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_624</Id>
     <Name>Holy Fire</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_626</Id>
     <Name>Mass Dispel</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Silence</Mechanic>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_234</Id>
     <Name>Shadow Word: Pain</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_625</Id>
     <Name>Shadowform</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_120</Id>
@@ -3338,6 +4769,10 @@
     <MinionType>Beast</MinionType>
     <Atk>3</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_620</Id>
@@ -3346,12 +4781,18 @@
     <Type>Minion</Type>
     <Atk>8</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_363</Id>
     <Name>Blessing of Wisdom</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4b_001</Id>
@@ -3366,6 +4807,9 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4c_001</Id>
@@ -3392,6 +4836,9 @@
     <Name>Will of Mukla</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4d_001</Id>
@@ -3412,12 +4859,18 @@
     <Name>Mind Spike</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_625t2</Id>
     <Name>Mind Shatter</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_534t</Id>
@@ -3435,6 +4888,9 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4e_001</Id>
@@ -3447,6 +4903,9 @@
     <Name>Flames of Azzinoth</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4e_003</Id>
@@ -3493,6 +4952,9 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_117</Id>
@@ -3501,6 +4963,10 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_101t</Id>
@@ -3525,6 +4991,9 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_002</Id>
@@ -3533,6 +5002,11 @@
     <Type>Elite Minion</Type>
     <Atk>4</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_005</Id>
@@ -3541,6 +5015,10 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_006</Id>
@@ -3557,6 +5035,9 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_323w</Id>
@@ -3581,6 +5062,10 @@
     <Type>Weapon</Type>
     <Atk>3</Atk>
     <Durability>2</Durability>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4f_001</Id>
@@ -3609,6 +5094,9 @@
     <Name>Legacy of the Emperor</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4f_005</Id>
@@ -3631,6 +5119,9 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_165t1</Id>
@@ -3639,6 +5130,9 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_165t2</Id>
@@ -3647,12 +5141,18 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>TU4d_003</Id>
     <Name>Shotgun Blast</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CS2_200</Id>
@@ -3679,6 +5179,10 @@
     <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Enrage</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_014</Id>
@@ -3688,12 +5192,18 @@
     <MinionType>Beast</MinionType>
     <Atk>5</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_014t</Id>
     <Name>Bananas</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_398t</Id>
@@ -3711,6 +5221,9 @@
     <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_345t</Id>
@@ -3727,6 +5240,10 @@
     <Type>Elite Minion</Type>
     <Atk>5</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Take Control</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_317t</Id>
@@ -3742,6 +5259,9 @@
     <Name>Excess Mana</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_383t</Id>
@@ -3766,12 +5286,19 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>GAME_005</Id>
     <Name>The Coin</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Mana Crystals</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>GAME_006</Id>
@@ -3794,6 +5321,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>PRO_001</Id>
@@ -3802,6 +5333,9 @@
     <Type>Elite Minion</Type>
     <Atk>5</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>CRED_02</Id>
@@ -3947,6 +5481,10 @@
     <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_002t</Id>
@@ -3963,6 +5501,9 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_005</Id>
@@ -3971,6 +5512,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Stealth</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_006</Id>
@@ -3979,6 +5524,11 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Charge</Mechanic>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_007</Id>
@@ -3987,6 +5537,10 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_007t</Id>
@@ -4003,6 +5557,10 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_008</Id>
@@ -4019,6 +5577,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_010</Id>
@@ -4028,6 +5590,10 @@
     <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+      <Mechanic>Poisonous</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAXM_002</Id>
@@ -4036,6 +5602,10 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_012</Id>
@@ -4044,6 +5614,11 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_013</Id>
@@ -4052,6 +5627,9 @@
     <Type>Elite Minion</Type>
     <Atk>6</Atk>
     <Health>8</Health>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_012t</Id>
@@ -4060,6 +5638,9 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_014</Id>
@@ -4068,6 +5649,10 @@
     <Type>Elite Minion</Type>
     <Atk>7</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_015</Id>
@@ -4076,6 +5661,10 @@
     <Type>Elite Minion</Type>
     <Atk>4</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_014t</Id>
@@ -4092,6 +5681,10 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Silence</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_017</Id>
@@ -4100,18 +5693,28 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_018</Id>
     <Name>Duplicate</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_019</Id>
     <Name>Poison Seeds</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_019t</Id>
@@ -4126,6 +5729,10 @@
     <Name>Avenge</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Secret</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_021</Id>
@@ -4134,6 +5741,11 @@
     <Type>Weapon</Type>
     <Atk>4</Atk>
     <Durability>2</Durability>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage All</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_022</Id>
@@ -4143,6 +5755,9 @@
     <MinionType>Demon</MinionType>
     <Atk>3</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_023</Id>
@@ -4151,6 +5766,10 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_024</Id>
@@ -4159,12 +5778,21 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Taunt</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage All</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_025</Id>
     <Name>Reincarnate</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_026</Id>
@@ -4173,6 +5801,10 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Return to Hand</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX2_01</Id>
@@ -4259,12 +5891,20 @@
     <Name>Skitter</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX1_05</Id>
     <Name>Locust Swarm</Name>
     <Cost>7</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX1_01</Id>
@@ -4277,6 +5917,9 @@
     <Name>Rain of Fire</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Immune To Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX2_05</Id>
@@ -4285,12 +5928,18 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>PRO_001a</Id>
     <Name>I Am Murloc</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>PRO_001at</Id>
@@ -4306,12 +5955,19 @@
     <Name>Rogues Do It...</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>PRO_001c</Id>
     <Name>Power of the Horde</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX4_03</Id>
@@ -4332,18 +5988,28 @@
     <Name>Plague</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX5_02</Id>
     <Name>Eruption</Name>
     <Cost>1</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX5_03</Id>
     <Name>Mindpocalypse</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Mana Crystals</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_003</Id>
@@ -4352,6 +6018,11 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Summon</Mechanic>
+      <Mechanic>Copy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_011</Id>
@@ -4361,6 +6032,9 @@
     <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_027</Id>
@@ -4369,18 +6043,28 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Restore Health</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX6_02</Id>
     <Name>Necrotic Aura</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX6_03</Id>
     <Name>Deathbloom</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX6_03t</Id>
@@ -4389,18 +6073,28 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>1</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX3_02</Id>
     <Name>Web Wrap</Name>
     <Cost>3</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Return to Hand</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX3_03</Id>
     <Name>Necrotic Poison</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX7_02</Id>
@@ -4409,12 +6103,18 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX7_03</Id>
     <Name>Unbalancing Strike</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX7_04</Id>
@@ -4429,6 +6129,9 @@
     <Name>Harvest</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX8_03</Id>
@@ -4437,6 +6140,10 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX8_03t</Id>
@@ -4445,6 +6152,9 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX8_04</Id>
@@ -4453,6 +6163,10 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX8_04t</Id>
@@ -4461,6 +6175,9 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX8_05</Id>
@@ -4469,6 +6186,10 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX8_05t</Id>
@@ -4477,6 +6198,9 @@
     <Type>Minion</Type>
     <Atk>0</Atk>
     <Health>6</Health>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX9_02</Id>
@@ -4485,6 +6209,9 @@
     <Type>Elite Minion</Type>
     <Atk>1</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Immune</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX9_03</Id>
@@ -4493,6 +6220,9 @@
     <Type>Elite Minion</Type>
     <Atk>1</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Immune</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX9_04</Id>
@@ -4501,6 +6231,9 @@
     <Type>Elite Minion</Type>
     <Atk>1</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Immune</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX9_05</Id>
@@ -4509,18 +6242,27 @@
     <Type>Weapon</Type>
     <Atk>1</Atk>
     <Durability>3</Durability>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX9_06</Id>
     <Name>Unholy Shadow</Name>
     <Cost>5</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX9_07</Id>
     <Name>Mark of the Horsemen</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX10_02</Id>
@@ -4529,18 +6271,29 @@
     <Type>Weapon</Type>
     <Atk>5</Atk>
     <Durability>8</Durability>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX10_03</Id>
     <Name>Hateful Strike</Name>
     <Cost>4</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX11_02</Id>
     <Name>Poison Cloud</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage All</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX11_03</Id>
@@ -4555,6 +6308,9 @@
     <Name>Decimate</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Change Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX12_03</Id>
@@ -4563,12 +6319,18 @@
     <Type>Weapon</Type>
     <Atk>1</Atk>
     <Durability>5</Durability>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX12_04</Id>
     <Name>Enrage</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX13_02</Id>
@@ -4593,6 +6355,10 @@
     <Name>Frost Blast</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Freeze</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX15_03t</Id>
@@ -4601,18 +6367,27 @@
     <Type>Minion</Type>
     <Atk>5</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX15_04</Id>
     <Name>Chains</Name>
     <Cost>8</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Take Control</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX14_02</Id>
     <Name>Frost Breath</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX14_03</Id>
@@ -4627,6 +6402,10 @@
     <Name>Pure Cold</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Freeze</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_028</Id>
@@ -4635,6 +6414,11 @@
     <Type>Minion</Type>
     <Atk>1</Atk>
     <Health>2</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Buff Stats</Mechanic>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>EX1_116t</Id>
@@ -4652,6 +6436,10 @@
     <Type>Minion</Type>
     <Atk>4</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Draw Cards</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_030</Id>
@@ -4660,6 +6448,10 @@
     <Type>Elite Minion</Type>
     <Atk>5</Atk>
     <Health>5</Health>
+    <Mechanics>
+      <Mechanic>Battlecry</Mechanic>
+      <Mechanic>Change Cost</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>FP1_031</Id>
@@ -4674,6 +6466,9 @@
     <Name>Mutating Injection</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX7_05</Id>
@@ -4686,12 +6481,20 @@
     <Name>Supercharge</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX6_04</Id>
     <Name>Sporeburst</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX1h_03</Id>
@@ -4712,6 +6515,9 @@
     <Name>Skitter</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX2_01H</Id>
@@ -4724,6 +6530,9 @@
     <Name>Rain of Fire</Name>
     <Cost>1</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Immune To Spell Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX3_01H</Id>
@@ -4736,6 +6545,9 @@
     <Name>Web Wrap</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Return to Hand</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX4_01H</Id>
@@ -4768,6 +6580,9 @@
     <Name>Eruption</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX6_01H</Id>
@@ -4780,6 +6595,9 @@
     <Name>Necrotic Aura</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX8_01H</Id>
@@ -4792,6 +6610,10 @@
     <Name>Harvest</Name>
     <Cost>1</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Draw Cards</Mechanic>
+      <Mechanic>Mana Crystals</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX9_01H</Id>
@@ -4806,6 +6628,9 @@
     <Type>Elite Minion</Type>
     <Atk>2</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Immune</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX9_03H</Id>
@@ -4814,6 +6639,9 @@
     <Type>Elite Minion</Type>
     <Atk>2</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Immune</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX9_04H</Id>
@@ -4822,6 +6650,9 @@
     <Type>Elite Minion</Type>
     <Atk>2</Atk>
     <Health>7</Health>
+    <Mechanics>
+      <Mechanic>Immune</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX9_05H</Id>
@@ -4830,6 +6661,9 @@
     <Type>Weapon</Type>
     <Atk>2</Atk>
     <Durability>3</Durability>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX7_01H</Id>
@@ -4842,6 +6676,9 @@
     <Name>Unbalancing Strike</Name>
     <Cost>1</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX7_04H</Id>
@@ -4864,12 +6701,19 @@
     <Type>Weapon</Type>
     <Atk>4</Atk>
     <Durability>8</Durability>
+    <Mechanics>
+      <Mechanic>Deathrattle</Mechanic>
+      <Mechanic>Windfury</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX10_03H</Id>
     <Name>Hateful Strike</Name>
     <Cost>4</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Destroy</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX11_01H</Id>
@@ -4882,6 +6726,11 @@
     <Name>Poison Cloud</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Summon</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+      <Mechanic>Damage Enemies</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX12_01H</Id>
@@ -4894,6 +6743,9 @@
     <Name>Decimate</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Change Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX12_03H</Id>
@@ -4902,6 +6754,9 @@
     <Type>Weapon</Type>
     <Atk>3</Atk>
     <Durability>5</Durability>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX13_01H</Id>
@@ -4942,12 +6797,19 @@
     <Name>Frost Blast</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Freeze</Mechanic>
+      <Mechanic>Deal Damage</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX15_04H</Id>
     <Name>Chains</Name>
     <Cost>8</Cost>
     <Type>Hero Power</Type>
+    <Mechanics>
+      <Mechanic>Take Control</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX15_05</Id>
@@ -4965,6 +6827,9 @@
     <Type>Minion</Type>
     <Atk>2</Atk>
     <Health>4</Health>
+    <Mechanics>
+      <Mechanic>Buff Stats</Mechanic>
+    </Mechanics>
   </Card>
   <Card>
     <Id>NAX15_03n</Id>
@@ -4973,5 +6838,8 @@
     <Type>Minion</Type>
     <Atk>3</Atk>
     <Health>3</Health>
+    <Mechanics>
+      <Mechanic>Taunt</Mechanic>
+    </Mechanics>
   </Card>
 </Cards>

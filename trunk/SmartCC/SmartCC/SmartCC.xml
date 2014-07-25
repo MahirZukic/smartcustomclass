@@ -14,6 +14,7 @@
 		 <Setting name="smartcc.useEnemyBehavior" type="boolean" description="[EXPERIMENTAL] Make better trades to avoid AOE " />
 		 <Setting name="smartcc.HandValueSimu" type="boolean" description="[EXPERIMENTAL] Try to not waste minions in hand - Not recommended" />
 		 <Setting name="smartcc.NextTurnSimu" type="boolean" description="[EXPERIMENTAL] Simulate next turn - Not recommended" />
+		 <Setting name="smartcc.EnemyBehavior" type="boolean" description="[EXPERIMENTAL] Detect enemy behavior (aggro / control) to manage heatlh better" />
       </Section>  
 	  <Section id="search" title="Search settings">
          <Description>Search SmartCC settings</Description>
