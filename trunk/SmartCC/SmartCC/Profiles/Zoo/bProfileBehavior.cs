@@ -65,6 +65,8 @@ namespace HREngine.Bots
 			
 			/* Setup WhiteList */ 
 			WhiteList.Add("GAME_005");//Coin
+			WhiteList.Add("FP1_007");//Nerubian
+
 
 			/* Setup BlackList */
 			
