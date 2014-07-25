@@ -263,7 +263,7 @@ namespace HREngine.Bots
 				if(target.Type == Card.CType.HERO && !board.HasWeaponInHand() && target.CurrentHealth + target.CurrentArmor > 15 && weapon.CurrentDurability == weapon.template.Durability && board.WeaponFriend.template.Id != "EX1_567")
 					return false;
 				
-				if(target.Type == Card.CType.HERO && (board.WeaponFriend.template.Id == "EX1_411") && target.CurrentHealth + target.CurrentArmor > board.WeaponFriend.CurrentAtk)
+				if(target.Type == Card.CType.HERO && (board.WeaponFriend.template.Id == "EX1_411") && target.CurrentHealth + target.CurrentArmor > board.HeroFriend.CurrentAtk)
 					return false;
 				
             return true;

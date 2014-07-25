@@ -1,24 +1,22 @@
-﻿<Cards>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Cards>
   <Card>
     <Id>HERO_01</Id>
     <Name>Garrosh Hellscream</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS1_113</Id>
     <Name>Mind Control</Name>
     <Cost>10</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_350</Id>
     <Name>Prophet Velen</Name>
     <Cost>7</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>7</Atk>
     <Health>7</Health>
   </Card>
@@ -27,7 +25,6 @@
     <Name>Mana Addict</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>3</Health>
   </Card>
@@ -36,7 +33,6 @@
     <Name>Barrel</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>2</Health>
   </Card>
@@ -45,21 +41,18 @@
     <Name>Inner Rage</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_320</Id>
     <Name>Bane of Doom</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_011</Id>
     <Name>Kor\'kron Elite</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>3</Health>
   </Card>
@@ -68,21 +61,18 @@
     <Name>Thoughtsteal</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>HERO_05</Id>
     <Name>Rexxar</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_010</Id>
     <Name>Al\'Akir the Windlord</Name>
     <Cost>8</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>5</Health>
   </Card>
@@ -91,7 +81,6 @@
     <Name>Silvermoon Guardian</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -100,7 +89,6 @@
     <Name>Cenarius</Name>
     <Cost>9</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>8</Health>
   </Card>
@@ -109,7 +97,6 @@
     <Name>Pint-Sized Summoner</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -118,7 +105,6 @@
     <Name>Frostwolf Grunt</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -127,7 +113,6 @@
     <Name>Tauren Warrior</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -136,7 +121,7 @@
     <Name>Voidwalker</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>1</Atk>
     <Health>3</Health>
   </Card>
@@ -145,14 +130,12 @@
     <Name>Windfury</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>Mekka3</Id>
     <Name>Emboldener 3000</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>4</Health>
   </Card>
@@ -161,7 +144,7 @@
     <Name>Whelp</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Dragon</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -170,7 +153,6 @@
     <Name>Mechanical Dragonling</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -179,14 +161,12 @@
     <Name>Summon a Panther</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_221</Id>
     <Name>Spiteful Smith</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>6</Health>
   </Card>
@@ -195,21 +175,19 @@
     <Name>Cat Form</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_012</Id>
     <Name>Swipe</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_127</Id>
     <Name>Silverback Patriarch</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>4</Health>
   </Card>
@@ -218,7 +196,7 @@
     <Name>Stranglethorn Tiger</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -227,7 +205,6 @@
     <Name>Silver Hand Knight</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -236,21 +213,19 @@
     <Name>Blessing of Might</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_407</Id>
     <Name>Brawl</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_598</Id>
     <Name>Imp</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -259,21 +234,18 @@
     <Name>Polymorph</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_007</Id>
     <Name>Starfall</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_182</Id>
     <Name>Chillwind Yeti</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>5</Health>
   </Card>
@@ -282,21 +254,19 @@
     <Name>Nourish</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_165b</Id>
     <Name>Bear Form</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_034</Id>
     <Name>Huffer</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>4</Atk>
     <Health>2</Health>
   </Card>
@@ -305,7 +275,6 @@
     <Name>Defender</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -314,14 +283,12 @@
     <Name>Counterspell</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_011</Id>
     <Name>Voodoo Doctor</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -330,7 +297,6 @@
     <Name>Ravenholdt Assassin</Name>
     <Cost>7</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>7</Atk>
     <Health>5</Health>
   </Card>
@@ -339,14 +305,12 @@
     <Name>Wrath</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_021</Id>
     <Name>Doomsayer</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>7</Health>
   </Card>
@@ -355,28 +319,24 @@
     <Name>Redemption</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_084</Id>
     <Name>Hunter\'s Mark</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_345</Id>
     <Name>Mindgames</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>Mekka4</Id>
     <Name>Poultryizer</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>3</Health>
   </Card>
@@ -385,28 +345,24 @@
     <Name>Shadowflame</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_041</Id>
     <Name>Ancestral Healing</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_155</Id>
     <Name>Mark of Nature</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_162</Id>
     <Name>Lord of the Arena</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>6</Atk>
     <Health>5</Health>
   </Card>
@@ -415,7 +371,6 @@
     <Name>Secretkeeper</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>2</Health>
   </Card>
@@ -424,21 +379,18 @@
     <Name>Sacrificial Pact</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_031</Id>
     <Name>Ice Lance</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_582</Id>
     <Name>Dalaran Mage</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>4</Health>
   </Card>
@@ -447,7 +399,6 @@
     <Name>Windspeaker</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -456,7 +407,6 @@
     <Name>Wisp</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -465,21 +415,18 @@
     <Name>Backstab</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_178b</Id>
     <Name>Uproot</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_057</Id>
     <Name>Ancient Brewmaster</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>4</Health>
   </Card>
@@ -488,7 +435,6 @@
     <Name>Fire Elemental</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>6</Atk>
     <Health>5</Health>
   </Card>
@@ -497,7 +443,7 @@
     <Name>Murloc Raider</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Murloc</MinionType>
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -506,28 +452,24 @@
     <Name>Ice Block</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_294</Id>
     <Name>Mirror Entity</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_004</Id>
     <Name>Vanish</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_131</Id>
     <Name>Defias Ringleader</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -536,7 +478,7 @@
     <Name>Snake</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -545,7 +487,6 @@
     <Name>Ironbark Protector</Name>
     <Cost>8</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>8</Atk>
     <Health>8</Health>
   </Card>
@@ -554,14 +495,12 @@
     <Name>Ancient Secrets</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_586</Id>
     <Name>Sea Giant</Name>
     <Cost>10</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>8</Atk>
     <Health>8</Health>
   </Card>
@@ -570,14 +509,13 @@
     <Name>Mark of the Wild</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_172</Id>
     <Name>Bloodfen Raptor</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>3</Atk>
     <Health>2</Health>
   </Card>
@@ -586,21 +524,19 @@
     <Name>Nightmare</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_334</Id>
     <Name>Shadow Madness</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_033</Id>
     <Name>Leokk</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>4</Health>
   </Card>
@@ -609,7 +545,6 @@
     <Name>Homing Chicken</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>1</Health>
   </Card>
@@ -618,28 +553,24 @@
     <Name>Steady Shot</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_379</Id>
     <Name>Repentance</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_161</Id>
     <Name>Naturalize</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_591</Id>
     <Name>Auchenai Soulpriest</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>5</Health>
   </Card>
@@ -648,21 +579,18 @@
     <Name>Feral Spirit</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_045</Id>
     <Name>Rockbiter Weapon</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_188</Id>
     <Name>Abusive Sergeant</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -671,14 +599,12 @@
     <Name>Hammer of Wrath</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_096</Id>
     <Name>Loot Hoarder</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -687,21 +613,18 @@
     <Name>Wrath</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_169</Id>
     <Name>Innervate</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_196</Id>
     <Name>Razorfen Hunter</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -710,7 +633,7 @@
     <Name>Chicken</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -719,14 +642,12 @@
     <Name>Cold Blood</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_091</Id>
     <Name>Cabal Shadow Priest</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>5</Health>
   </Card>
@@ -735,21 +656,18 @@
     <Name>Malfurion Stormrage</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS1_130</Id>
     <Name>Holy Smite</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_067</Id>
     <Name>Argent Commander</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>2</Health>
   </Card>
@@ -758,14 +676,12 @@
     <Name>Betrayal</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_015</Id>
     <Name>Novice Engineer</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -774,7 +690,6 @@
     <Name>Cruel Taskmaster</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -783,14 +698,12 @@
     <Name>Vaporize</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_005</Id>
     <Name>Kidnapper</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>3</Health>
   </Card>
@@ -799,7 +712,6 @@
     <Name>Wolfrider</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>1</Health>
   </Card>
@@ -808,7 +720,7 @@
     <Name>Ironbeak Owl</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -817,28 +729,25 @@
     <Name>Holy Light</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>DS1_183</Id>
     <Name>Multi-Shot</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_539</Id>
     <Name>Kill Command</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_boar</Id>
     <Name>Boar</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -847,28 +756,24 @@
     <Name>Forked Lightning</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_056</Id>
     <Name>Life Tap</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>DREAM_02</Id>
     <Name>Ysera Awakens</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_112</Id>
     <Name>Arcanite Reaper</Name>
     <Cost>5</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Durability>2</Durability>
   </Card>
@@ -877,7 +782,6 @@
     <Name>Edwin VanCleef</Name>
     <Cost>3</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -886,7 +790,6 @@
     <Name>Gnomish Inventor</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>4</Health>
   </Card>
@@ -895,7 +798,6 @@
     <Name>Gladiator\'s Longbow</Name>
     <Cost>7</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Durability>2</Durability>
   </Card>
@@ -904,28 +806,24 @@
     <Name>Ancient Teachings</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_029</Id>
     <Name>Fireball</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4c_006</Id>
     <Name>Bananas</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_110t</Id>
     <Name>Baine Bloodhoof</Name>
     <Cost>4</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>5</Health>
   </Card>
@@ -934,21 +832,18 @@
     <Name>Dispel</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_164b</Id>
     <Name>Nourish</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>Mekka2</Id>
     <Name>Repair Bot</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>3</Health>
   </Card>
@@ -957,7 +852,7 @@
     <Name>Devilsaur</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -966,7 +861,6 @@
     <Name>Baron Geddon</Name>
     <Cost>7</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>7</Atk>
     <Health>5</Health>
   </Card>
@@ -975,7 +869,6 @@
     <Name>Grommash Hellscream</Name>
     <Cost>8</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>9</Health>
   </Card>
@@ -984,7 +877,6 @@
     <Name>Ironforge Rifleman</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -993,7 +885,6 @@
     <Name>Laughing Sister</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>5</Health>
   </Card>
@@ -1002,21 +893,18 @@
     <Name>Charge</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_076</Id>
     <Name>Assassinate</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_046</Id>
     <Name>Dark Iron Dwarf</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -1025,7 +913,6 @@
     <Name>Master Swordsmith</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>3</Health>
   </Card>
@@ -1034,7 +921,6 @@
     <Name>Doomhammer</Name>
     <Cost>5</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Durability>8</Durability>
   </Card>
@@ -1043,7 +929,6 @@
     <Name>Treant</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -1052,7 +937,7 @@
     <Name>Onyxia</Name>
     <Cost>9</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Dragon</MinionType>
     <Atk>8</Atk>
     <Health>8</Health>
   </Card>
@@ -1061,28 +946,24 @@
     <Name>Shan\'do\'s Lesson</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_144</Id>
     <Name>Shadowstep</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>tt_010</Id>
     <Name>Spellbender</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_298</Id>
     <Name>Ragnaros the Firelord</Name>
     <Cost>8</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>8</Atk>
     <Health>8</Health>
   </Card>
@@ -1091,14 +972,12 @@
     <Name>Inner Fire</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_026t</Id>
     <Name>Violet Apprentice</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -1107,14 +986,12 @@
     <Name>Soul of the Forest</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_091</Id>
     <Name>Light\'s Justice</Name>
     <Cost>1</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Durability>4</Durability>
   </Card>
@@ -1123,7 +1000,6 @@
     <Name>Elven Archer</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -1132,7 +1008,6 @@
     <Name>Perdition\'s Blade</Name>
     <Cost>3</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Durability>2</Durability>
   </Card>
@@ -1141,14 +1016,12 @@
     <Name>Explosive Shot</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_033</Id>
     <Name>Water Elemental</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>6</Health>
   </Card>
@@ -1157,7 +1030,6 @@
     <Name>Flesheating Ghoul</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -1166,14 +1038,12 @@
     <Name>Battle Rage</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_106</Id>
     <Name>Fiery War Axe</Name>
     <Cost>2</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Durability>2</Durability>
   </Card>
@@ -1182,14 +1052,12 @@
     <Name>Ancestral Spirit</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_012</Id>
     <Name>Mana Wyrm</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>3</Health>
   </Card>
@@ -1198,7 +1066,7 @@
     <Name>Nozdormu</Name>
     <Cost>9</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Dragon</MinionType>
     <Atk>8</Atk>
     <Health>8</Health>
   </Card>
@@ -1207,7 +1075,6 @@
     <Name>Stormpike Commando</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>2</Health>
   </Card>
@@ -1216,7 +1083,6 @@
     <Name>Youthful Brewmaster</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>2</Health>
   </Card>
@@ -1225,7 +1091,6 @@
     <Name>Cairne Bloodhoof</Name>
     <Cost>6</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>5</Health>
   </Card>
@@ -1234,7 +1099,6 @@
     <Name>Assassin\'s Blade</Name>
     <Cost>5</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Durability>4</Durability>
   </Card>
@@ -1243,7 +1107,6 @@
     <Name>Priestess of Elune</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>4</Health>
   </Card>
@@ -1252,21 +1115,19 @@
     <Name>Cone of Cold</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_365</Id>
     <Name>Holy Wrath</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_563</Id>
     <Name>Malygos</Name>
     <Cost>9</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Dragon</MinionType>
     <Atk>4</Atk>
     <Health>12</Health>
   </Card>
@@ -1275,14 +1136,12 @@
     <Name>Animal Companion</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_097</Id>
     <Name>Abomination</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -1291,7 +1150,7 @@
     <Name>Hungry Crab</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>2</Health>
   </Card>
@@ -1300,7 +1159,6 @@
     <Name>Reckless Rocketeer</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>2</Health>
   </Card>
@@ -1309,21 +1167,19 @@
     <Name>Arcane Explosion</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_164a</Id>
     <Name>Nourish</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_103</Id>
     <Name>Coldlight Seer</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Murloc</MinionType>
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -1332,14 +1188,13 @@
     <Name>Snake Trap</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_024</Id>
     <Name>Captain Greenskin</Name>
     <Cost>5</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Pirate</MinionType>
     <Atk>5</Atk>
     <Health>4</Health>
   </Card>
@@ -1348,14 +1203,13 @@
     <Name>Blizzard</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_052</Id>
     <Name>Wrath of Air Totem</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Totem</MinionType>
     <Atk>0</Atk>
     <Health>2</Health>
   </Card>
@@ -1364,14 +1218,12 @@
     <Name>Deadly Poison</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_040t</Id>
     <Name>Gnoll</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -1380,21 +1232,18 @@
     <Name>Sap</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_132</Id>
     <Name>Eye for an Eye</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_089</Id>
     <Name>Arcane Golem</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>2</Health>
   </Card>
@@ -1403,21 +1252,19 @@
     <Name>Moonfire</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_155a</Id>
     <Name>Mark of Nature</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_059</Id>
     <Name>Blood Imp</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>0</Atk>
     <Health>1</Health>
   </Card>
@@ -1426,7 +1273,6 @@
     <Name>Damaged Golem</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -1435,14 +1281,13 @@
     <Name>Reinforce</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_509</Id>
     <Name>Murloc Tidecaller</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Murloc</MinionType>
     <Atk>1</Atk>
     <Health>2</Health>
   </Card>
@@ -1451,28 +1296,24 @@
     <Name>Consecration</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS1h_001</Id>
     <Name>Lesser Heal</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_578</Id>
     <Name>Savagery</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_152</Id>
     <Name>Squire</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -1481,7 +1322,6 @@
     <Name>Wicked Knife</Name>
     <Cost>1</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Durability>2</Durability>
   </Card>
@@ -1490,7 +1330,6 @@
     <Name>Defias Bandit</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -1499,7 +1338,7 @@
     <Name>Emerald Drake</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Dragon</MinionType>
     <Atk>7</Atk>
     <Health>6</Health>
   </Card>
@@ -1508,7 +1347,6 @@
     <Name>Hidden Gnome</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>3</Health>
   </Card>
@@ -1517,21 +1355,18 @@
     <Name>Lord Jaraxxus</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_571</Id>
     <Name>Force of Nature</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_226</Id>
     <Name>Frostwolf Warlord</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -1540,21 +1375,19 @@
     <Name>Power of the Wild</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_238</Id>
     <Name>Lightning Bolt</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_508</Id>
     <Name>Grimscale Oracle</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Murloc</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -1563,14 +1396,12 @@
     <Name>Upgrade!</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_283</Id>
     <Name>Frost Elemental</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -1579,7 +1410,7 @@
     <Name>Mana Tide Totem</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Totem</MinionType>
     <Atk>0</Atk>
     <Health>3</Health>
   </Card>
@@ -1588,7 +1419,7 @@
     <Name>Felguard</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>3</Atk>
     <Health>5</Health>
   </Card>
@@ -1597,14 +1428,12 @@
     <Name>Freezing Trap</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_025</Id>
     <Name>Dragonling Mechanic</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>4</Health>
   </Card>
@@ -1613,7 +1442,6 @@
     <Name>Archmage</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>7</Health>
   </Card>
@@ -1622,7 +1450,6 @@
     <Name>Gruul</Name>
     <Cost>8</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>7</Atk>
     <Health>7</Health>
   </Card>
@@ -1631,7 +1458,7 @@
     <Name>Captain\'s Parrot</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -1640,7 +1467,6 @@
     <Name>Faceless Manipulator</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -1649,7 +1475,6 @@
     <Name>Spirit Wolf</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -1658,7 +1483,7 @@
     <Name>Searing Totem</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Totem</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -1667,7 +1492,6 @@
     <Name>Arathi Weaponsmith</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -1676,21 +1500,19 @@
     <Name>Mind Blast</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_410</Id>
     <Name>Shield Slam</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>hexfrog</Id>
     <Name>Frog</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>0</Atk>
     <Health>1</Health>
   </Card>
@@ -1699,14 +1521,13 @@
     <Name>Arcane Intellect</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_614</Id>
     <Name>Illidan Stormrage</Name>
     <Cost>6</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>7</Atk>
     <Health>5</Health>
   </Card>
@@ -1715,7 +1536,6 @@
     <Name>Leeroy Jenkins</Name>
     <Cost>4</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>6</Atk>
     <Health>2</Health>
   </Card>
@@ -1724,14 +1544,12 @@
     <Name>Arcane Missiles</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_033</Id>
     <Name>Windfury Harpy</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>5</Health>
   </Card>
@@ -1740,7 +1558,6 @@
     <Name>Tinkmaster Overspark</Name>
     <Cost>3</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -1749,28 +1566,25 @@
     <Name>Shiv</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_570</Id>
     <Name>Bite</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_178a</Id>
     <Name>Rooted</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_561</Id>
     <Name>Alexstrasza</Name>
     <Cost>9</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Dragon</MinionType>
     <Atk>8</Atk>
     <Health>8</Health>
   </Card>
@@ -1779,7 +1593,6 @@
     <Name>Darkscale Healer</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>5</Health>
   </Card>
@@ -1788,28 +1601,25 @@
     <Name>Noble Sacrifice</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_610</Id>
     <Name>Explosive Trap</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_026</Id>
     <Name>Frost Nova</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_306</Id>
     <Name>Succubus</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>4</Atk>
     <Health>3</Health>
   </Card>
@@ -1818,14 +1628,12 @@
     <Name>Lay on Hands</Name>
     <Cost>8</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_402</Id>
     <Name>Armorsmith</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>4</Health>
   </Card>
@@ -1834,7 +1642,6 @@
     <Name>Treant</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -1843,7 +1650,6 @@
     <Name>Keeper of the Grove</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>4</Health>
   </Card>
@@ -1852,7 +1658,6 @@
     <Name>Fen Creeper</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>6</Health>
   </Card>
@@ -1861,7 +1666,6 @@
     <Name>Ancient Watcher</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>5</Health>
   </Card>
@@ -1870,7 +1674,7 @@
     <Name>Timber Wolf</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -1879,7 +1683,6 @@
     <Name>Shattered Sun Cleric</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>2</Health>
   </Card>
@@ -1888,7 +1691,7 @@
     <Name>Faerie Dragon</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Dragon</MinionType>
     <Atk>3</Atk>
     <Health>2</Health>
   </Card>
@@ -1897,14 +1700,12 @@
     <Name>Power Word: Shield</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_608</Id>
     <Name>Sorcerer\'s Apprentice</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>2</Health>
   </Card>
@@ -1913,7 +1714,6 @@
     <Name>Dust Devil</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>1</Health>
   </Card>
@@ -1922,14 +1722,12 @@
     <Name>Ice Barrier</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_131</Id>
     <Name>Stormwind Knight</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>5</Health>
   </Card>
@@ -1938,21 +1736,19 @@
     <Name>Lightning Storm</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_077</Id>
     <Name>Sprint</Name>
     <Cost>7</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_310</Id>
     <Name>Doomguard</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>5</Atk>
     <Health>7</Health>
   </Card>
@@ -1961,7 +1757,6 @@
     <Name>Sen\'jin Shieldmasta</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>5</Health>
   </Card>
@@ -1970,21 +1765,18 @@
     <Name>Whirlwind</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>HERO_08</Id>
     <Name>Jaina Proudmoore</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_040</Id>
     <Name>Hogger</Name>
     <Cost>6</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -1993,7 +1785,7 @@
     <Name>Young Dragonhawk</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -2002,7 +1794,6 @@
     <Name>Scarlet Crusader</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>1</Health>
   </Card>
@@ -2011,7 +1802,6 @@
     <Name>Sword of Justice</Name>
     <Cost>3</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Durability>5</Durability>
   </Card>
@@ -2020,7 +1810,7 @@
     <Name>Stonetusk Boar</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -2029,7 +1819,6 @@
     <Name>Frothing Berserker</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>4</Health>
   </Card>
@@ -2038,7 +1827,6 @@
     <Name>Leper Gnome</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -2047,21 +1835,18 @@
     <Name>Frostbolt</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_129</Id>
     <Name>Fan of Knives</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_593</Id>
     <Name>Nightblade</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -2070,14 +1855,12 @@
     <Name>Uther Lightbringer</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_142</Id>
     <Name>Kobold Geomancer</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -2086,7 +1869,6 @@
     <Name>Treant</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -2095,14 +1877,13 @@
     <Name>Divine Favor</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_027</Id>
     <Name>Southsea Captain</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Pirate</MinionType>
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -2111,21 +1892,18 @@
     <Name>Totemic Call</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_155b</Id>
     <Name>Mark of Nature</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_165</Id>
     <Name>Druid of the Claw</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -2134,7 +1912,7 @@
     <Name>Tundra Rhino</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>5</Health>
   </Card>
@@ -2143,7 +1921,6 @@
     <Name>Mogu\'shan Warden</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>7</Health>
   </Card>
@@ -2152,21 +1929,18 @@
     <Name>Headcrack</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_075</Id>
     <Name>Sinister Strike</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_186</Id>
     <Name>War Golem</Name>
     <Cost>7</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>7</Atk>
     <Health>7</Health>
   </Card>
@@ -2175,7 +1949,6 @@
     <Name>Mana Wraith</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -2184,7 +1957,7 @@
     <Name>Southsea Deckhand</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Pirate</MinionType>
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -2193,28 +1966,24 @@
     <Name>Armor Up!</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_371</Id>
     <Name>Hand of Protection</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_083b</Id>
     <Name>Dagger Mastery</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_085</Id>
     <Name>Mind Control Tech</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -2223,7 +1992,7 @@
     <Name>Old Murk-Eye</Name>
     <Cost>4</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Murloc</MinionType>
     <Atk>2</Atk>
     <Health>4</Health>
   </Card>
@@ -2232,7 +2001,7 @@
     <Name>Bluegill Warrior</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Murloc</MinionType>
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -2241,14 +2010,12 @@
     <Name>Savage Roar</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_612</Id>
     <Name>Kirin Tor Mage</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>3</Health>
   </Card>
@@ -2257,7 +2024,6 @@
     <Name>Bloodmage Thalnos</Name>
     <Cost>2</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -2266,7 +2032,6 @@
     <Name>Stormwind Champion</Name>
     <Cost>7</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>6</Atk>
     <Health>6</Health>
   </Card>
@@ -2275,7 +2040,6 @@
     <Name>Spellbreaker</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>3</Health>
   </Card>
@@ -2284,7 +2048,6 @@
     <Name>Blood Knight</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -2293,14 +2056,12 @@
     <Name>Equality</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_008</Id>
     <Name>Argent Squire</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -2309,7 +2070,6 @@
     <Name>Sunwalker</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>5</Health>
   </Card>
@@ -2318,7 +2078,6 @@
     <Name>Mad Bomber</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>2</Health>
   </Card>
@@ -2327,7 +2086,6 @@
     <Name>Defender of Argus</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -2336,7 +2094,7 @@
     <Name>Healing Totem</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Totem</MinionType>
     <Atk>0</Atk>
     <Health>2</Health>
   </Card>
@@ -2345,7 +2103,6 @@
     <Name>Thrallmar Farseer</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -2354,21 +2111,18 @@
     <Name>Hex</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_245</Id>
     <Name>Earth Shock</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_399</Id>
     <Name>Gurubashi Berserker</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>7</Health>
   </Card>
@@ -2377,14 +2131,12 @@
     <Name>Healing Touch</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_258</Id>
     <Name>Unbound Elemental</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>4</Health>
   </Card>
@@ -2393,7 +2145,7 @@
     <Name>Lord Jaraxxus</Name>
     <Cost>9</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>3</Atk>
     <Health>15</Health>
   </Card>
@@ -2402,7 +2154,6 @@
     <Name>Harvest Golem</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -2411,7 +2162,7 @@
     <Name>Pit Lord</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>5</Atk>
     <Health>6</Health>
   </Card>
@@ -2420,21 +2171,18 @@
     <Name>Barrel Toss</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_108</Id>
     <Name>Execute</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_393</Id>
     <Name>Amani Berserker</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -2443,7 +2191,6 @@
     <Name>Questing Adventurer</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -2452,7 +2199,7 @@
     <Name>Sheep</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -2461,7 +2208,6 @@
     <Name>Lightwell</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>5</Health>
   </Card>
@@ -2470,7 +2216,6 @@
     <Name>Crazed Alchemist</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -2479,28 +2224,24 @@
     <Name>Mortal Strike</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_034</Id>
     <Name>Fireblast</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>DREAM_04</Id>
     <Name>Dream</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_411</Id>
     <Name>Gorehowl</Name>
     <Cost>7</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>7</Atk>
     <Durability>1</Durability>
   </Card>
@@ -2509,7 +2250,6 @@
     <Name>Cult Master</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>2</Health>
   </Card>
@@ -2518,7 +2258,7 @@
     <Name>Panther</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>3</Atk>
     <Health>2</Health>
   </Card>
@@ -2527,35 +2267,31 @@
     <Name>Anduin Wrynn</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_609</Id>
     <Name>Snipe</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_053</Id>
     <Name>Far Sight</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_173</Id>
     <Name>Starfire</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_284</Id>
     <Name>Azure Drake</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Dragon</MinionType>
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -2564,14 +2300,13 @@
     <Name>Totemic Might</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_030</Id>
     <Name>Deathwing</Name>
     <Cost>10</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Dragon</MinionType>
     <Atk>12</Atk>
     <Health>12</Health>
   </Card>
@@ -2580,35 +2315,30 @@
     <Name>Leader of the Pack</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_154</Id>
     <Name>Wrath</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS1_112</Id>
     <Name>Holy Nova</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_316</Id>
     <Name>Power Overwhelming</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_097</Id>
     <Name>Truesilver Champion</Name>
     <Cost>4</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Durability>2</Durability>
   </Card>
@@ -2617,7 +2347,7 @@
     <Name>Stoneclaw Totem</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Totem</MinionType>
     <Atk>0</Atk>
     <Health>2</Health>
   </Card>
@@ -2626,14 +2356,12 @@
     <Name>Humility</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_029</Id>
     <Name>Millhouse Manastorm</Name>
     <Cost>2</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -2642,7 +2370,6 @@
     <Name>Gelbin Mekkatorque</Name>
     <Cost>6</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>6</Atk>
     <Health>6</Health>
   </Card>
@@ -2651,28 +2378,24 @@
     <Name>Twisting Nether</Name>
     <Cost>8</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_317</Id>
     <Name>Sense Demons</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_241</Id>
     <Name>Lava Burst</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_405</Id>
     <Name>Shieldbearer</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>4</Health>
   </Card>
@@ -2681,14 +2404,13 @@
     <Name>Arcane Shot</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_022</Id>
     <Name>Dread Corsair</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Pirate</MinionType>
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -2697,7 +2419,6 @@
     <Name>Lightspawn</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>5</Health>
   </Card>
@@ -2706,7 +2427,6 @@
     <Name>Master of Disguise</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -2715,7 +2435,6 @@
     <Name>Tirion Fordring</Name>
     <Cost>8</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>6</Atk>
     <Health>6</Health>
   </Card>
@@ -2724,7 +2443,6 @@
     <Name>Sunfury Protector</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -2733,35 +2451,30 @@
     <Name>Gul\'dan</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_544</Id>
     <Name>Flare</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_549</Id>
     <Name>Bestial Wrath</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_124</Id>
     <Name>Eviscerate</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_066</Id>
     <Name>Acidic Swamp Ooze</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>2</Health>
   </Card>
@@ -2770,7 +2483,6 @@
     <Name>Harrison Jones</Name>
     <Cost>5</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>4</Health>
   </Card>
@@ -2779,14 +2491,12 @@
     <Name>Shadow Bolt</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_584</Id>
     <Name>Ancient Mage</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>5</Health>
   </Card>
@@ -2795,14 +2505,12 @@
     <Name>Drain Life</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_008</Id>
     <Name>Ancient of Lore</Name>
     <Cost>7</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -2811,7 +2519,7 @@
     <Name>Jungle Panther</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>4</Atk>
     <Health>2</Health>
   </Card>
@@ -2820,7 +2528,6 @@
     <Name>Goldshire Footman</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>2</Health>
   </Card>
@@ -2829,7 +2536,6 @@
     <Name>Imp Master</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>5</Health>
   </Card>
@@ -2838,21 +2544,18 @@
     <Name>Starfall</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>HERO_03</Id>
     <Name>Valeera Sanguinar</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_095</Id>
     <Name>Gadgetzan Auctioneer</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -2861,28 +2564,25 @@
     <Name>Cleave</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_092</Id>
     <Name>Blessing of Kings</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_062</Id>
     <Name>Hellfire</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_032</Id>
     <Name>Misha</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -2891,7 +2591,6 @@
     <Name>Stormforged Axe</Name>
     <Cost>2</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Durability>3</Durability>
   </Card>
@@ -2900,7 +2599,7 @@
     <Name>The Beast</Name>
     <Cost>6</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>9</Atk>
     <Health>7</Health>
   </Card>
@@ -2909,7 +2608,6 @@
     <Name>Mirror Image</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>2</Health>
   </Card>
@@ -2918,7 +2616,6 @@
     <Name>Summoning Portal</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>4</Health>
   </Card>
@@ -2927,21 +2624,19 @@
     <Name>Frost Shock</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_308</Id>
     <Name>Soulfire</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_506</Id>
     <Name>Murloc Tidehunter</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Murloc</MinionType>
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -2950,7 +2645,6 @@
     <Name>Demolisher</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>4</Health>
   </Card>
@@ -2959,14 +2653,13 @@
     <Name>Corruption</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_162</Id>
     <Name>Dire Wolf Alpha</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -2975,28 +2668,24 @@
     <Name>Moonfire</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4c_004</Id>
     <Name>Stomp</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_128</Id>
     <Name>Conceal</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_105</Id>
     <Name>Mountain Giant</Name>
     <Cost>12</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>8</Atk>
     <Health>8</Health>
   </Card>
@@ -3005,7 +2694,6 @@
     <Name>Worgen Infiltrator</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -3014,7 +2702,6 @@
     <Name>Ogre Magi</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -3023,7 +2710,7 @@
     <Name>Bloodsail Corsair</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Pirate</MinionType>
     <Atk>1</Atk>
     <Health>2</Health>
   </Card>
@@ -3032,7 +2719,7 @@
     <Name>Bloodsail Raider</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Pirate</MinionType>
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -3041,7 +2728,6 @@
     <Name>Houndmaster</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>3</Health>
   </Card>
@@ -3050,14 +2736,12 @@
     <Name>Flamestrike</Name>
     <Cost>7</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_finkle</Id>
     <Name>Finkle Einhorn</Name>
     <Cost>2</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -3066,14 +2750,13 @@
     <Name>Heroic Strike</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_565</Id>
     <Name>Flametongue Totem</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Totem</MinionType>
     <Atk>0</Atk>
     <Health>3</Health>
   </Card>
@@ -3082,7 +2765,6 @@
     <Name>Warsong Commander</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -3091,7 +2773,6 @@
     <Name>Wild Pyromancer</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>2</Health>
   </Card>
@@ -3100,7 +2781,7 @@
     <Name>Coldlight Oracle</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Murloc</MinionType>
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -3109,7 +2790,7 @@
     <Name>Dread Infernal</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>6</Atk>
     <Health>6</Health>
   </Card>
@@ -3118,7 +2799,6 @@
     <Name>Argent Protector</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -3127,21 +2807,18 @@
     <Name>Shield Block</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_036</Id>
     <Name>Commanding Shout</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_026</Id>
     <Name>Violet Teacher</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>5</Health>
   </Card>
@@ -3150,7 +2827,6 @@
     <Name>Ancient of War</Name>
     <Cost>7</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -3159,7 +2835,7 @@
     <Name>Twilight Drake</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Dragon</MinionType>
     <Atk>4</Atk>
     <Health>1</Health>
   </Card>
@@ -3168,21 +2844,19 @@
     <Name>Tracking</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_005</Id>
     <Name>Claw</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_507</Id>
     <Name>Murloc Warleader</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Murloc</MinionType>
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -3191,21 +2865,18 @@
     <Name>Blade Flurry</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>HERO_02</Id>
     <Name>Thrall</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_088</Id>
     <Name>Guardian of Kings</Name>
     <Cost>7</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>6</Health>
   </Card>
@@ -3214,7 +2885,6 @@
     <Name>Knife Juggler</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>2</Health>
   </Card>
@@ -3223,14 +2893,12 @@
     <Name>Slam</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>skele11</Id>
     <Name>Skeleton</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -3239,7 +2907,7 @@
     <Name>Murloc Scout</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Murloc</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -3248,7 +2916,6 @@
     <Name>Archmage Antonidas</Name>
     <Cost>7</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>7</Health>
   </Card>
@@ -3257,14 +2924,12 @@
     <Name>Mirror Image</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>tt_010a</Id>
     <Name>Spellbender</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>3</Health>
   </Card>
@@ -3273,14 +2938,13 @@
     <Name>Pyroblast</Name>
     <Cost>10</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_319</Id>
     <Name>Flame Imp</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>3</Atk>
     <Health>2</Health>
   </Card>
@@ -3289,28 +2953,25 @@
     <Name>Misdirection</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_302</Id>
     <Name>Mortal Coil</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_617</Id>
     <Name>Deadly Shot</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_170</Id>
     <Name>Emperor Cobra</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -3319,28 +2980,24 @@
     <Name>Mind Vision</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_309</Id>
     <Name>Siphon Soul</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_104</Id>
     <Name>Rampage</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_181</Id>
     <Name>Injured Blademaster</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>7</Health>
   </Card>
@@ -3349,7 +3006,6 @@
     <Name>SI:7 Agent</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -3358,7 +3014,6 @@
     <Name>Venture Co. Mercenary</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>7</Atk>
     <Health>6</Health>
   </Card>
@@ -3367,21 +3022,18 @@
     <Name>Shapeshift</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_013</Id>
     <Name>Wild Growth</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_522</Id>
     <Name>Patient Assassin</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -3390,7 +3042,6 @@
     <Name>Lorewalker Cho</Name>
     <Cost>2</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>4</Health>
   </Card>
@@ -3399,7 +3050,6 @@
     <Name>Booty Bay Bodyguard</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>4</Health>
   </Card>
@@ -3408,7 +3058,6 @@
     <Name>Earth Elemental</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>7</Atk>
     <Health>8</Health>
   </Card>
@@ -3417,14 +3066,13 @@
     <Name>Demonfire</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_tk34</Id>
     <Name>Infernal</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>6</Atk>
     <Health>6</Health>
   </Card>
@@ -3433,7 +3081,7 @@
     <Name>King Krush</Name>
     <Cost>9</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>8</Atk>
     <Health>8</Health>
   </Card>
@@ -3442,14 +3090,12 @@
     <Name>Demigod\'s Favor</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_557</Id>
     <Name>Nat Pagle</Name>
     <Cost>2</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>4</Health>
   </Card>
@@ -3458,7 +3104,6 @@
     <Name>Raging Worgen</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -3467,21 +3112,18 @@
     <Name>Preparation</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NEW1_007a</Id>
     <Name>Starfall</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_382</Id>
     <Name>Aldor Peacekeeper</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -3490,28 +3132,25 @@
     <Name>Bloodlust</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_384</Id>
     <Name>Avenging Wrath</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_tk33</Id>
     <Name>INFERNO!</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_125</Id>
     <Name>Ironfur Grizzly</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -3520,7 +3159,7 @@
     <Name>Ysera</Name>
     <Cost>9</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Dragon</MinionType>
     <Atk>4</Atk>
     <Health>12</Health>
   </Card>
@@ -3529,14 +3168,13 @@
     <Name>Silence</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_tk28</Id>
     <Name>Squirrel</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -3545,7 +3183,7 @@
     <Name>Void Terror</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -3554,7 +3192,7 @@
     <Name>Starving Buzzard</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -3563,14 +3201,13 @@
     <Name>Unleash the Hounds</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_534</Id>
     <Name>Savannah Highmane</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>6</Atk>
     <Health>5</Health>
   </Card>
@@ -3579,7 +3216,7 @@
     <Name>Scavenging Hyena</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -3588,14 +3225,12 @@
     <Name>Hogger</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4a_002</Id>
     <Name>Riverpaw Gnoll</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -3604,7 +3239,6 @@
     <Name>Gnoll</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -3613,14 +3247,12 @@
     <Name>Hogger SMASH!</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4a_005</Id>
     <Name>Massive Gnoll</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>2</Health>
   </Card>
@@ -3629,35 +3261,30 @@
     <Name>Jaina Proudmoore</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_236</Id>
     <Name>Divine Spirit</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_621</Id>
     <Name>Circle of Healing</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_622</Id>
     <Name>Shadow Word: Death</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_623</Id>
     <Name>Temple Enforcer</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>6</Atk>
     <Health>6</Health>
   </Card>
@@ -3666,35 +3293,31 @@
     <Name>Holy Fire</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_626</Id>
     <Name>Mass Dispel</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_234</Id>
     <Name>Shadow Word: Pain</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_625</Id>
     <Name>Shadowform</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_120</Id>
     <Name>River Crocolisk</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -3703,7 +3326,7 @@
     <Name>Oasis Snapjaw</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>7</Health>
   </Card>
@@ -3712,7 +3335,7 @@
     <Name>Stampeding Kodo</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>3</Atk>
     <Health>5</Health>
   </Card>
@@ -3721,7 +3344,6 @@
     <Name>Molten Giant</Name>
     <Cost>20</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>8</Atk>
     <Health>8</Health>
   </Card>
@@ -3730,21 +3352,18 @@
     <Name>Blessing of Wisdom</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4b_001</Id>
     <Name>Millhouse Manastorm</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_122</Id>
     <Name>Raid Leader</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -3753,14 +3372,12 @@
     <Name>King Mukla</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4c_007</Id>
     <Name>Mukla\'s Big Brother</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>10</Atk>
     <Health>10</Health>
   </Card>
@@ -3769,28 +3386,24 @@
     <Name>Blessed Champion</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4c_008</Id>
     <Name>Will of Mukla</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4d_001</Id>
     <Name>Hemet Nesingwary</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4d_002</Id>
     <Name>Crazed Hunter</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -3799,21 +3412,19 @@
     <Name>Mind Spike</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_625t2</Id>
     <Name>Mind Shatter</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_534t</Id>
     <Name>Hyena</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -3822,7 +3433,6 @@
     <Name>Young Priestess</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -3831,21 +3441,18 @@
     <Name>Illidan Stormrage</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4e_002</Id>
     <Name>Flames of Azzinoth</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4e_003</Id>
     <Name>Naga Myrmidon</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -3854,7 +3461,6 @@
     <Name>Warglaive of Azzinoth</Name>
     <Cost>2</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Durability>2</Durability>
   </Card>
@@ -3863,14 +3469,12 @@
     <Name>Flame Burst</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4e_007</Id>
     <Name>Dual Warglaives</Name>
     <Cost>6</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Durability>2</Durability>
   </Card>
@@ -3879,7 +3483,6 @@
     <Name>Flame of Azzinoth</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -3888,7 +3491,6 @@
     <Name>Northshire Cleric</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>3</Health>
   </Card>
@@ -3897,7 +3499,6 @@
     <Name>Earthen Ring Farseer</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -3906,7 +3507,6 @@
     <Name>Silver Hand Recruit</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -3915,7 +3515,6 @@
     <Name>Magma Rager</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>1</Health>
   </Card>
@@ -3924,7 +3523,6 @@
     <Name>Lightwarden</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>2</Health>
   </Card>
@@ -3933,7 +3531,6 @@
     <Name>The Black Knight</Name>
     <Cost>6</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>5</Health>
   </Card>
@@ -3942,7 +3539,6 @@
     <Name>Big Game Hunter</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>2</Health>
   </Card>
@@ -3951,7 +3547,6 @@
     <Name>Alarm-o-Bot</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>3</Health>
   </Card>
@@ -3960,7 +3555,6 @@
     <Name>Acolyte of Pain</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>3</Health>
   </Card>
@@ -3969,7 +3563,6 @@
     <Name>Blood Fury</Name>
     <Cost>3</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Durability>8</Durability>
   </Card>
@@ -3978,7 +3571,6 @@
     <Name>Heavy Axe</Name>
     <Cost>1</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Durability>3</Durability>
   </Card>
@@ -3987,7 +3579,6 @@
     <Name>Eaglehorn Bow</Name>
     <Cost>3</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Durability>2</Durability>
   </Card>
@@ -3996,14 +3587,12 @@
     <Name>Lorewalker Cho</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4f_002</Id>
     <Name>Pandaren Scout</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -4012,7 +3601,6 @@
     <Name>Shado-Pan Monk</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -4021,14 +3609,12 @@
     <Name>Legacy of the Emperor</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4f_005</Id>
     <Name>Brewmaster</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -4037,14 +3623,12 @@
     <Name>Transcendence</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>TU4f_007</Id>
     <Name>Crazy Monkey</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>2</Health>
   </Card>
@@ -4053,7 +3637,6 @@
     <Name>Druid of the Claw</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -4062,7 +3645,6 @@
     <Name>Druid of the Claw</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>6</Health>
   </Card>
@@ -4071,14 +3653,12 @@
     <Name>Shotgun Blast</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>CS2_200</Id>
     <Name>Boulderfist Ogre</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>6</Atk>
     <Health>7</Health>
   </Card>
@@ -4087,7 +3667,7 @@
     <Name>Core Hound</Name>
     <Cost>7</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>9</Atk>
     <Health>5</Health>
   </Card>
@@ -4096,7 +3676,7 @@
     <Name>Angry Chicken</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -4105,7 +3685,7 @@
     <Name>King Mukla</Name>
     <Cost>3</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -4114,14 +3694,12 @@
     <Name>Bananas</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_398t</Id>
     <Name>Battle Axe</Name>
     <Cost>1</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Durability>2</Durability>
   </Card>
@@ -4130,7 +3708,7 @@
     <Name>Hound</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -4139,7 +3717,6 @@
     <Name>Shadow of Nothing</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>1</Health>
   </Card>
@@ -4148,7 +3725,6 @@
     <Name>Sylvanas Windrunner</Name>
     <Cost>6</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -4157,7 +3733,7 @@
     <Name>Worthless Imp</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -4166,14 +3742,12 @@
     <Name>Excess Mana</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_383t</Id>
     <Name>Ashbringer</Name>
     <Cost>5</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Durability>3</Durability>
   </Card>
@@ -4182,7 +3756,6 @@
     <Name>Avatar of the Coin</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -4191,7 +3764,6 @@
     <Name>Ethereal Arcanist</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -4200,21 +3772,18 @@
     <Name>The Coin</Name>
     <Cost>0</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>GAME_006</Id>
     <Name>NOOOOOOOOOOOO</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>EX1_614t</Id>
     <Name>Flame of Azzinoth</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>1</Health>
   </Card>
@@ -4223,7 +3792,6 @@
     <Name>Zombie Chow</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -4232,7 +3800,6 @@
     <Name>Elite Tauren Chieftain</Name>
     <Cost>5</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -4241,7 +3808,6 @@
     <Name>Eric Dodds</Name>
     <Cost>6</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -4250,7 +3816,6 @@
     <Name>Jason Chayes</Name>
     <Cost>6</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>7</Atk>
     <Health>6</Health>
   </Card>
@@ -4259,7 +3824,6 @@
     <Name>Bob Fitch</Name>
     <Cost>3</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>4</Health>
   </Card>
@@ -4268,7 +3832,6 @@
     <Name>Steven Gabriel</Name>
     <Cost>1</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
@@ -4277,7 +3840,6 @@
     <Name>Kyle Harrison</Name>
     <Cost>3</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>4</Health>
   </Card>
@@ -4286,7 +3848,6 @@
     <Name>Derek Sakamoto</Name>
     <Cost>1</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>1</Health>
   </Card>
@@ -4295,7 +3856,6 @@
     <Name>Zwick</Name>
     <Cost>2</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -4304,7 +3864,6 @@
     <Name>Ben Brode</Name>
     <Cost>3</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>1</Health>
   </Card>
@@ -4313,7 +3872,6 @@
     <Name>Ben Thompson</Name>
     <Cost>6</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>7</Health>
   </Card>
@@ -4322,7 +3880,6 @@
     <Name>Michael Schweitzer</Name>
     <Cost>2</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -4331,7 +3888,6 @@
     <Name>Jay Baxter</Name>
     <Cost>4</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>4</Health>
   </Card>
@@ -4340,7 +3896,6 @@
     <Name>Rachelle Davis</Name>
     <Cost>2</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>2</Health>
   </Card>
@@ -4349,7 +3904,6 @@
     <Name>Brian Schwab</Name>
     <Cost>10</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>10</Atk>
     <Health>10</Health>
   </Card>
@@ -4358,7 +3912,6 @@
     <Name>Yong Woo</Name>
     <Cost>5</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>2</Health>
   </Card>
@@ -4367,7 +3920,6 @@
     <Name>Andy Brock</Name>
     <Cost>1</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>3</Health>
   </Card>
@@ -4376,7 +3928,6 @@
     <Name>Hamilton Chu</Name>
     <Cost>7</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>9</Atk>
     <Health>5</Health>
   </Card>
@@ -4385,7 +3936,6 @@
     <Name>Rob Pardo</Name>
     <Cost>9</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>9</Atk>
     <Health>9</Health>
   </Card>
@@ -4394,7 +3944,7 @@
     <Name>Haunted Creeper</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>2</Health>
   </Card>
@@ -4403,7 +3953,6 @@
     <Name>Spectral Spider</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -4412,7 +3961,6 @@
     <Name>Mad Scientist</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -4421,7 +3969,6 @@
     <Name>Shade of Naxxramas</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -4430,7 +3977,6 @@
     <Name>Deathcharger</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>3</Health>
   </Card>
@@ -4439,7 +3985,6 @@
     <Name>Nerubian Egg</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>2</Health>
   </Card>
@@ -4448,7 +3993,6 @@
     <Name>Nerubian</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -4457,7 +4001,6 @@
     <Name>Necroknight</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>6</Health>
   </Card>
@@ -4466,7 +4009,6 @@
     <Name>Spectral Knight</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>6</Health>
   </Card>
@@ -4475,7 +4017,6 @@
     <Name>Deathlord</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>8</Health>
   </Card>
@@ -4484,7 +4025,7 @@
     <Name>Maexxna</Name>
     <Cost>6</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>2</Atk>
     <Health>8</Health>
   </Card>
@@ -4493,7 +4034,6 @@
     <Name>Skeletal Smith</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>3</Health>
   </Card>
@@ -4502,7 +4042,6 @@
     <Name>Sludge Belcher</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>5</Health>
   </Card>
@@ -4511,7 +4050,6 @@
     <Name>Kel\'Thuzad</Name>
     <Cost>8</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>6</Atk>
     <Health>8</Health>
   </Card>
@@ -4520,7 +4058,6 @@
     <Name>Slime</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>2</Health>
   </Card>
@@ -4529,7 +4066,6 @@
     <Name>Stalagg</Name>
     <Cost>5</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>7</Atk>
     <Health>4</Health>
   </Card>
@@ -4538,7 +4074,6 @@
     <Name>Feugen</Name>
     <Cost>5</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>7</Health>
   </Card>
@@ -4547,7 +4082,6 @@
     <Name>Thaddius</Name>
     <Cost>10</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>11</Atk>
     <Health>11</Health>
   </Card>
@@ -4556,7 +4090,6 @@
     <Name>Wailing Soul</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>5</Health>
   </Card>
@@ -4565,7 +4098,6 @@
     <Name>Nerub\'ar Weblord</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>4</Health>
   </Card>
@@ -4574,21 +4106,18 @@
     <Name>Duplicate</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>FP1_019</Id>
     <Name>Poison Seeds</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>FP1_019t</Id>
     <Name>Treant</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -4597,14 +4126,12 @@
     <Name>Avenge</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>FP1_021</Id>
     <Name>Death\'s Bite</Name>
     <Cost>4</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Durability>2</Durability>
   </Card>
@@ -4613,7 +4140,7 @@
     <Name>Voidcaller</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Demon</MinionType>
     <Atk>3</Atk>
     <Health>4</Health>
   </Card>
@@ -4622,7 +4149,6 @@
     <Name>Dark Cultist</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>4</Health>
   </Card>
@@ -4631,7 +4157,6 @@
     <Name>Unstable Ghoul</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>3</Health>
   </Card>
@@ -4640,14 +4165,12 @@
     <Name>Reincarnate</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>FP1_026</Id>
     <Name>Anub\'ar Ambusher</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -4656,91 +4179,78 @@
     <Name>Grand Widow Faerlina</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX3_01</Id>
     <Name>Maexxna</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX4_01</Id>
     <Name>Noth the Plaguebringer</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX5_01</Id>
     <Name>Heigan the Unclean</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX6_01</Id>
     <Name>Loatheb</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX7_01</Id>
     <Name>Instructor Razuvious</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX8_01</Id>
     <Name>Gothik the Harvester</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX9_01</Id>
     <Name>Baron Rivendare</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX10_01</Id>
     <Name>Patchwerk</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX11_01</Id>
     <Name>Grobbulus</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX12_01</Id>
     <Name>Gluth</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX13_01</Id>
     <Name>Thaddius</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX1_03</Id>
     <Name>Nerubian</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>1</Health>
   </Card>
@@ -4749,35 +4259,30 @@
     <Name>Skitter</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX1_05</Id>
     <Name>Locust Swarm</Name>
     <Cost>7</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX1_01</Id>
     <Name>Anub\'Rekhan</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX2_03</Id>
     <Name>Rain of Fire</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX2_05</Id>
     <Name>Worshipper</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>4</Health>
   </Card>
@@ -4786,14 +4291,13 @@
     <Name>I Am Murloc</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>PRO_001at</Id>
     <Name>Murloc</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Murloc</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -4802,21 +4306,18 @@
     <Name>Rogues Do It...</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>PRO_001c</Id>
     <Name>Power of the Horde</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX4_03</Id>
     <Name>Skeleton</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -4825,35 +4326,30 @@
     <Name>Raise Dead</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX4_05</Id>
     <Name>Plague</Name>
     <Cost>6</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX5_02</Id>
     <Name>Eruption</Name>
     <Cost>1</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX5_03</Id>
     <Name>Mindpocalypse</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>FP1_003</Id>
     <Name>Echoing Ooze</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>2</Health>
   </Card>
@@ -4862,7 +4358,7 @@
     <Name>Webspinner</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -4871,7 +4367,6 @@
     <Name>Stoneskin Gargoyle</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>4</Health>
   </Card>
@@ -4880,21 +4375,18 @@
     <Name>Necrotic Aura</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX6_03</Id>
     <Name>Deathbloom</Name>
     <Cost>4</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX6_03t</Id>
     <Name>Spore</Name>
     <Cost>0</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>1</Health>
   </Card>
@@ -4903,21 +4395,18 @@
     <Name>Web Wrap</Name>
     <Cost>3</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX3_03</Id>
     <Name>Necrotic Poison</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX7_02</Id>
     <Name>Understudy</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>7</Health>
   </Card>
@@ -4926,14 +4415,12 @@
     <Name>Unbalancing Strike</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX7_04</Id>
     <Name>Massive Runeblade</Name>
     <Cost>3</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Durability>2</Durability>
   </Card>
@@ -4942,14 +4429,12 @@
     <Name>Harvest</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX8_03</Id>
     <Name>Unrelenting Trainee</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -4958,7 +4443,6 @@
     <Name>Spectral Trainee</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>2</Health>
   </Card>
@@ -4967,7 +4451,6 @@
     <Name>Unrelenting Warrior</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>4</Health>
   </Card>
@@ -4976,7 +4459,6 @@
     <Name>Spectral Warrior</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>4</Health>
   </Card>
@@ -4985,7 +4467,6 @@
     <Name>Unrelenting Rider</Name>
     <Cost>6</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>6</Health>
   </Card>
@@ -4994,7 +4475,6 @@
     <Name>Spectral Rider</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>0</Atk>
     <Health>6</Health>
   </Card>
@@ -5003,7 +4483,6 @@
     <Name>Lady Blaumeux</Name>
     <Cost>3</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>7</Health>
   </Card>
@@ -5012,7 +4491,6 @@
     <Name>Thane Korth\'azz</Name>
     <Cost>3</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>7</Health>
   </Card>
@@ -5021,7 +4499,6 @@
     <Name>Sir Zeliek</Name>
     <Cost>3</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>7</Health>
   </Card>
@@ -5030,7 +4507,6 @@
     <Name>Runeblade</Name>
     <Cost>3</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Durability>3</Durability>
   </Card>
@@ -5039,21 +4515,18 @@
     <Name>Unholy Shadow</Name>
     <Cost>5</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX9_07</Id>
     <Name>Mark of the Horsemen</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX10_02</Id>
     <Name>Hook</Name>
     <Cost>3</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Durability>8</Durability>
   </Card>
@@ -5062,21 +4535,18 @@
     <Name>Hateful Strike</Name>
     <Cost>4</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX11_02</Id>
     <Name>Poison Cloud</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX11_03</Id>
     <Name>Fallout Slime</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>2</Health>
   </Card>
@@ -5085,14 +4555,12 @@
     <Name>Decimate</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX12_03</Id>
     <Name>Jaws</Name>
     <Cost>1</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Durability>5</Durability>
   </Card>
@@ -5101,42 +4569,36 @@
     <Name>Enrage</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX13_02</Id>
     <Name>Polarity Shift</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX14_01</Id>
     <Name>Sapphiron</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX15_01</Id>
     <Name>Kel\'Thuzad</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX15_02</Id>
     <Name>Frost Blast</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX15_03t</Id>
     <Name>Guardian of Icecrown</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -5145,21 +4607,18 @@
     <Name>Chains</Name>
     <Cost>8</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX14_02</Id>
     <Name>Frost Breath</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX14_03</Id>
     <Name>Frozen Champion</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>10</Health>
   </Card>
@@ -5168,14 +4627,12 @@
     <Name>Pure Cold</Name>
     <Cost>5</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>FP1_028</Id>
     <Name>Undertaker</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>2</Health>
   </Card>
@@ -5184,7 +4641,7 @@
     <Name>Whelp</Name>
     <Cost>1</Cost>
     <Type>Minion</Type>
-    <MinionType />
+    <MinionType>Dragon</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -5193,7 +4650,6 @@
     <Name>Dancing Swords</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -5202,7 +4658,6 @@
     <Name>Loatheb</Name>
     <Cost>5</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -5211,7 +4666,6 @@
     <Name>Baron Rivendare</Name>
     <Cost>4</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>1</Atk>
     <Health>7</Health>
   </Card>
@@ -5220,35 +4674,30 @@
     <Name>Mutating Injection</Name>
     <Cost>3</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX7_05</Id>
     <Name>Mind Control Crystal</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX13_03</Id>
     <Name>Supercharge</Name>
     <Cost>2</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX6_04</Id>
     <Name>Sporeburst</Name>
     <Cost>1</Cost>
     <Type>Spell</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX1h_03</Id>
     <Name>Nerubian</Name>
     <Cost>2</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>4</Health>
   </Card>
@@ -5257,56 +4706,48 @@
     <Name>Anub\'Rekhan</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX1h_04</Id>
     <Name>Skitter</Name>
     <Cost>2</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX2_01H</Id>
     <Name>Grand Widow Faerlina</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX2_03H</Id>
     <Name>Rain of Fire</Name>
     <Cost>1</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX3_01H</Id>
     <Name>Maexxna</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX3_02H</Id>
     <Name>Web Wrap</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX4_01H</Id>
     <Name>Noth the Plaguebringer</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX4_03H</Id>
     <Name>Skeleton</Name>
     <Cost>5</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>5</Atk>
     <Health>5</Health>
   </Card>
@@ -5315,63 +4756,54 @@
     <Name>Raise Dead</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX5_01H</Id>
     <Name>Heigan the Unclean</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX5_02H</Id>
     <Name>Eruption</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX6_01H</Id>
     <Name>Loatheb</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX6_02H</Id>
     <Name>Necrotic Aura</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX8_01H</Id>
     <Name>Gothik the Harvester</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX8_02H</Id>
     <Name>Harvest</Name>
     <Cost>1</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX9_01H</Id>
     <Name>Baron Rivendare</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX9_02H</Id>
     <Name>Lady Blaumeux</Name>
     <Cost>3</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>7</Health>
   </Card>
@@ -5380,7 +4812,6 @@
     <Name>Thane Korth\'azz</Name>
     <Cost>3</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>7</Health>
   </Card>
@@ -5389,7 +4820,6 @@
     <Name>Sir Zeliek</Name>
     <Cost>3</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>7</Health>
   </Card>
@@ -5398,7 +4828,6 @@
     <Name>Runeblade</Name>
     <Cost>3</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Durability>3</Durability>
   </Card>
@@ -5407,21 +4836,18 @@
     <Name>Instructor Razuvious</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX7_03H</Id>
     <Name>Unbalancing Strike</Name>
     <Cost>1</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX7_04H</Id>
     <Name>Massive Runeblade</Name>
     <Cost>3</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>10</Atk>
     <Durability>2</Durability>
   </Card>
@@ -5430,14 +4856,12 @@
     <Name>Patchwerk</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX10_02H</Id>
     <Name>Hook</Name>
     <Cost>3</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Durability>8</Durability>
   </Card>
@@ -5446,42 +4870,36 @@
     <Name>Hateful Strike</Name>
     <Cost>4</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX11_01H</Id>
     <Name>Grobbulus</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX11_02H</Id>
     <Name>Poison Cloud</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX12_01H</Id>
     <Name>Gluth</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX12_02H</Id>
     <Name>Decimate</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX12_03H</Id>
     <Name>Jaws</Name>
     <Cost>1</Cost>
     <Type>Weapon</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Durability>5</Durability>
   </Card>
@@ -5490,14 +4908,12 @@
     <Name>Thaddius</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX13_04H</Id>
     <Name>Feugen</Name>
     <Cost>5</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>4</Atk>
     <Health>7</Health>
   </Card>
@@ -5506,7 +4922,6 @@
     <Name>Stalagg</Name>
     <Cost>5</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
     <Atk>7</Atk>
     <Health>4</Health>
   </Card>
@@ -5515,35 +4930,31 @@
     <Name>Sapphiron</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX15_01H</Id>
     <Name>Kel\'Thuzad</Name>
     <Cost>0</Cost>
     <Type>Hero</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX15_02H</Id>
     <Name>Frost Blast</Name>
     <Cost>0</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX15_04H</Id>
     <Name>Chains</Name>
     <Cost>8</Cost>
     <Type>Hero Power</Type>
-    <MinionType />
   </Card>
   <Card>
     <Id>NAX15_05</Id>
     <Name>Mr. Bigglesworth</Name>
     <Cost>0</Cost>
     <Type>Elite Minion</Type>
-    <MinionType />
+    <MinionType>Beast</MinionType>
     <Atk>1</Atk>
     <Health>1</Health>
   </Card>
@@ -5552,7 +4963,6 @@
     <Name>Worshipper</Name>
     <Cost>3</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>2</Atk>
     <Health>4</Health>
   </Card>
@@ -5561,7 +4971,6 @@
     <Name>Guardian of Icecrown</Name>
     <Cost>4</Cost>
     <Type>Minion</Type>
-    <MinionType />
     <Atk>3</Atk>
     <Health>3</Health>
   </Card>
