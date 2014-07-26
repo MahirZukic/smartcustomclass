@@ -38,6 +38,10 @@ namespace HREngine.Bots
 
 			if(board.TurnCount > 3)
 				return true;
+				
+			if(board.GetPlayables(Card.CType.MINION, 2,2).Count < 2 && board.TurnCount == 1 && board.GetPlayables(Card.CType.MINION, 1,1).Count == 0)
+				return false;
+				
             foreach(Card c in board.Hand)
             {
                 if (c.CurrentCost == board.ManaAvailable + 1)
