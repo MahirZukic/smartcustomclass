@@ -1,15 +1,16 @@
 <Settings>
    <Sections>
       <Section id="basic" title="General">
-         <Description>General SmartCC settings</Description>
+         <Description>-----General SmartCC settings-----</Description>
          <Setting name="smartcc.AutoConcede" type="boolean" description="AutoConcede - Will concede games to stay at low rank" />
 		 <Setting name="smartcc.MaxRank" type="text" default="20" description="AutoConcede rank -> the bot will stay at this rank" />
 		 <Setting name="smartcc.Delay" type="text" default="0" description="Delay (sec) before conceding" />
 		 <Setting name="smartcc.OldAutoConcede" type="boolean" description="Check this if you want to use old AutoConcede mode (you have to check other box too)" />
+		 <Setting name="smartcc.MaxLogs" type="text" default="100" description="Max number of logs kept in the folder" />
 		 <Setting name="smartcc.Version" type="text" default="0" description="Current version" />
       </Section>      
 	  <Section id="exp" title="Experimental">
-         <Description>Experimental SmartCC settings</Description>
+         <Description>-----Experimental SmartCC settings-----</Description>
 		 <Setting name="smartcc.ConcedeOnLethal" type="boolean" description="[EXPERIMENTAL] Concede when enemy has lethal" />
 		 <Setting name="smartcc.useEnemyBehavior" type="boolean" description="[EXPERIMENTAL] Make better trades to avoid AOE " />
 		 <Setting name="smartcc.HandValueSimu" type="boolean" description="[EXPERIMENTAL] Try to not waste minions in hand - Not recommended" />
@@ -17,13 +18,13 @@
 		 <Setting name="smartcc.EnemyBehavior" type="boolean" description="[EXPERIMENTAL] Detect enemy behavior (aggro / control) to manage heatlh better" />
       </Section>  
 	  <Section id="search" title="Search settings">
-         <Description>Search SmartCC settings</Description>
+         <Description>-----Search SmartCC settings-----</Description>
 		 <Setting name="smartcc.maxWide" type="text" default="5000" description="Boards calculated each depth level " />
 		 <Setting name="smartcc.maxBoards" type="text" default="2000" description="Childs board kept for next depth level search" />
 		 <Setting name="smartcc.maxEnemySimu" type="text" default="500" description="Boards kept for enemy turn simulation " />
       </Section>  	  
 	  <Section id="statistics" title="Statistics">
-         <Description>SmartCC Stats</Description>
+         <Description>-----SmartCC Stats-----</Description>
 		 <Setting name="smartcc.Wins" type="text" default="0" description="Win" />
 		 <Setting name="smartcc.Lost" type="text" default="0" description="Lost" />
 		 <Setting name="smartcc.Conceded" type="text" default="0" description="Conceded" />
