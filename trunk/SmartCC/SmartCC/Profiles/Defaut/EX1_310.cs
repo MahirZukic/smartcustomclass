@@ -37,7 +37,7 @@ namespace HREngine.Bots
 					{
 						foreach(Card cc in board.MinionEnemy)
 						{
-							if(c.Behavior.ShouldBePlayedOnTarget(cc))
+							if(c.Behavior.ShouldBePlayedOnTarget(board,cc))
 							{
 								CostPlayable += c.CurrentCost;
 								CountPlayable++;
@@ -67,13 +67,9 @@ namespace HREngine.Bots
 			if(CountPlayable < 2 && MyValue > ValuePlayable)
 				return true;
 				
-			if(CountPlayable == 2 && CostPlayable >= 3)
+			if(CountPlayable == 2 && CostPlayable >= 4)
 				return false;
-				
-			if(CountPlayable > 2)
-			{
-				return false;
-			}
+	
 			
             return true;
         }
@@ -83,12 +79,12 @@ namespace HREngine.Bots
             return true;
         }
 
-        public override bool ShouldAttackTarget(Card target)
+        public override bool ShouldAttackTarget(Board board,Card target)
         {
             return true;
         }
 		
-		public override bool ShouldBePlayedOnTarget(Card target)
+		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
             return true;
         }
@@ -104,9 +100,9 @@ namespace HREngine.Bots
 				return 0;
 			
 			if(board.Hand.Count == 2)
-				return 45;
+				return 50;
 			
-			return 60;
+			return 75;
 		}
 		
     }

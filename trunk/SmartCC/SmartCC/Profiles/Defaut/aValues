@@ -20,5 +20,5 @@ ValueMana=15
 ValueOverload=0
 UseCriticHealthZone=true
 CriticHealthZoneThreshold=20
-UseAggroZone=false
-AggroZoneThreshold=10
+UseAggroZone=true
+AggroZoneThreshold=4

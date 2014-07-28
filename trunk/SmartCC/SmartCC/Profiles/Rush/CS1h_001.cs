@@ -26,13 +26,15 @@ namespace HREngine.Bots
             return true;
         }
 
-        public override bool ShouldAttackTarget(Card target)
+        public override bool ShouldAttackTarget(Board board,Card target)
         {
             return true;
         }
 		
-		public override bool ShouldBePlayedOnTarget(Card target)
+		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
+			if(board.HealFactor > 0 && target.Type == Card.CType.HERO && !target.IsFriend)
+				return false;
             return true;
         }
 
