@@ -18,6 +18,20 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			bool potentialEnemyTarget = false;
+			foreach(Card c in board.MinionEnemy)
+			{
+				if(ShouldBePlayedOnTarget(board,c))
+					potentialEnemyTarget = true;
+			}
+			
+			foreach(Card c in board.MinionFriend)
+			{
+				if(c.CurrentAtk >= 7 && !potentialEnemyTarget)
+					return false;
+			}
+			
+		
             foreach(Card c in board.MinionEnemy)
             {
                 if (c.CurrentAtk >= 7)
@@ -36,7 +50,7 @@ namespace HREngine.Bots
 						PlayableMinion ++;
 			}
 			
-			if(PlayableMinion == 0 && board.EnemyCardCount < 3 && board.TurnCount > 6)
+			if(PlayableMinion == 0 && board.EnemyCardCount < 3 && board.TurnCount > 10)
 				return true;
 
             return true;
@@ -47,12 +61,12 @@ namespace HREngine.Bots
             return true;
         }
 
-        public override bool ShouldAttackTarget(Card target)
+        public override bool ShouldAttackTarget(Board board,Card target)
         {
             return true;
         }
 		
-		public override bool ShouldBePlayedOnTarget(Card target)
+		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
 			if(target.CurrentAtk < 7)
 				return false;

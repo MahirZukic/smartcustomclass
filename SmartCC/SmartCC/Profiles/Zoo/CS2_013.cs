@@ -18,8 +18,12 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-			if(board.TurnCount > 7 && board.TurnCount < 10)
+			if(board.MaxMana > 7 && board.MaxMana < 10)
 				return false;
+				
+			if(board.TurnCount == 1 && !board.HasCardInHand("GAME_005"))
+				return false;
+				
             return true;
         }
 
@@ -28,12 +32,12 @@ namespace HREngine.Bots
             return true;
         }
 
-        public override bool ShouldAttackTarget(Card target)
+        public override bool ShouldAttackTarget(Board board,Card target)
         {
             return true;
         }
 		
-		public override bool ShouldBePlayedOnTarget(Card target)
+		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
             return true;
         }

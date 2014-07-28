@@ -30,7 +30,7 @@ namespace HREngine.Bots
 						PlayableMinion ++;
 			}
 			
-			if(PlayableMinion == 0 )
+			if(PlayableMinion == 0 && board.EnemyCardCount < 3 && board.TurnCount > 10)
 				return true;
 			
 			foreach(Card c in board.MinionEnemy)
@@ -47,12 +47,12 @@ namespace HREngine.Bots
             return true;
         }
 
-        public override bool ShouldAttackTarget(Card target)
+        public override bool ShouldAttackTarget(Board board,Card target)
         {
             return true;
         }
 		
-		public override bool ShouldBePlayedOnTarget(Card target)
+		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
             if (target.IsTaunt)
                 return true;

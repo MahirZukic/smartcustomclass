@@ -18,11 +18,27 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			int PlayableMinion = 0;
+			
+			foreach(Card cc in board.Hand)
+			{
+				if(cc.template.Id == "EX1_002")
+					continue;
+					
+				if(cc.Type == Card.CType.MINION)
+					if(cc.CurrentCost <= board.ManaAvailable)
+						PlayableMinion ++;
+			}
+			
+			if(PlayableMinion == 0 && board.EnemyCardCount < 3 && board.TurnCount > 10)
+				return true;
+			
 			foreach(Card c in board.MinionEnemy)
 			{
 				if(c.IsTaunt)
 					return true;
 			}
+			
             return false;
         }
 
@@ -31,12 +47,12 @@ namespace HREngine.Bots
             return true;
         }
 
-        public override bool ShouldAttackTarget(Card target)
+        public override bool ShouldAttackTarget(Board board,Card target)
         {
             return true;
         }
 		
-		public override bool ShouldBePlayedOnTarget(Card target)
+		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
             if (target.IsTaunt)
                 return true;
