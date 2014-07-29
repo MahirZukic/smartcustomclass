@@ -4,6 +4,7 @@
          <Description>-----General SmartCC settings-----</Description>
          <Setting name="smartcc.AutoConcede" type="boolean" description="AutoConcede - Will concede games to stay at low rank" />
 		 <Setting name="smartcc.MaxRank" type="text" default="20" description="AutoConcede rank -> the bot will stay at this rank" />
+		 <Setting name="smartcc.OldAutoConcede" type="boolean" description="AutoConcede - 1Play/1Concede" />
 		 <Setting name="smartcc.Delay" type="text" default="0" description="Delay (sec) before conceding" />
 		 <Setting name="smartcc.MaxLogs" type="text" default="100" description="Max number of logs kept in the folder" />
 		 <Setting name="smartcc.Version" type="text" default="0" description="Current version" />

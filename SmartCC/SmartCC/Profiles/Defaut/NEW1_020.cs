@@ -43,9 +43,9 @@ namespace HREngine.Bots
 		
 		public override int GetMinionValue(Board board)
         {
-			if(board.MinionEnemy.Count > 2 || board.HeroFriend.CurrentHealth < 20)
+			if(board.MinionEnemy.Count > 2 || board.HeroFriend.CurrentHealth < 10)
 				return 0;
-            return 8;
+            return 14;
         }
     }
 }
