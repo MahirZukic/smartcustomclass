@@ -21,7 +21,7 @@ namespace HREngine.Bots
 			if(board.MaxMana > 7 && board.MaxMana < 10)
 				return false;
 				
-			if(board.TurnCount == 1 && !board.HasCardInHand("GAME_005"))
+			if(board.TurnCount == 1)
 				return false;
 				
             return true;

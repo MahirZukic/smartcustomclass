@@ -49,7 +49,7 @@ namespace HREngine.Bots
 		public override int GetMinionValue(Board board)
 		{
 			if(board.MinionFriend.Count < 2)
-				return 8;
+				return 15;
 			
 			return 0;
 		}
