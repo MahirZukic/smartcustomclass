@@ -19,7 +19,7 @@ namespace HREngine.Bots
 		public override bool ShouldBePlayed(Board board)
         {
 
-			if(board.EnemyClass() == "rogue" || board.EnemyClass() == "mage" || board.EnemyClass() == "druid")
+			if(board.EnemyClass == Board.Class.ROGUE || board.EnemyClass == Board.Class.MAGE || board.EnemyClass == Board.Class.DRUID)
 			{
 				List<Card> playable = board.GetPlayables(Card.CType.MINION, 2,2);
 				int drop1Playable = board.GetPlayables(Card.CType.MINION, 1,1).Count;

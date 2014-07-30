@@ -50,6 +50,9 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
+			if(target.IsFriend && !target.HasBadBuffs())
+				return false;
+				
             return true;
         }
 
@@ -58,5 +61,9 @@ namespace HREngine.Bots
             return 1;
         }
 		
+		public override int GetHandValue(Board board)
+		{
+			return 6;
+		}
     }
 }
