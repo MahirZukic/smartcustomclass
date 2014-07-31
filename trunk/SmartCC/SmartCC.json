@@ -2,6 +2,7 @@
    "dll": "SmartCC.dll",
    "settings": "SmartCC/SmartCC.xml",
    "classes": [
-      { "class": "SmartCC" }
+      { "class": "SmartCC" },
+	  { "class": "SmartCCCoach" }
    ]
 }
