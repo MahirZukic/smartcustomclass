@@ -33,6 +33,9 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
+			if(target.IsStuck && !target.IsSilenced)
+				return false;
+				
             return true;
         }
 
