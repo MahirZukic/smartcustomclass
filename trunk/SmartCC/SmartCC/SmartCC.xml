@@ -2,6 +2,7 @@
    <Sections>
       <Section id="basic" title="General">
          <Description>-----General SmartCC settings-----</Description>
+		 <Setting name="smartcc.UseProfiles" default="true" type="boolean" description="Use profile selector (default profile loaded if unchecked)" />
          <Setting name="smartcc.AutoConcede" type="boolean" description="AutoConcede - Will concede games to stay at low rank" />
 		 <Setting name="smartcc.MaxRank" type="text" default="20" description="AutoConcede rank -> the bot will stay at this rank" />
 		 <Setting name="smartcc.OldAutoConcede" type="boolean" description="AutoConcede - 1Play/1Concede" />

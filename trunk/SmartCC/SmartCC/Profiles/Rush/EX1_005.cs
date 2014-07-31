@@ -53,7 +53,9 @@ namespace HREngine.Bots
 			if(PlayableMinion == 0 && board.EnemyCardCount < 3 && board.TurnCount > 10)
 				return true;
 
-            return true;
+				
+				
+            return false;
         }
 
         public override bool ShouldAttack(Board board)
