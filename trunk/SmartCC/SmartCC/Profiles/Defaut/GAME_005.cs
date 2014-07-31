@@ -31,7 +31,7 @@ namespace HREngine.Bots
 						has2Hp = true;
 				}
 				
-				if(!has2Hp && drop1Playable < 2 && board.ManaAvailable == 1)
+				if(!has2Hp && drop1Playable < 2 && board.ManaAvailable == 1 && !board.HasCardInHand("EX1_169"))
 					return false;
 			}
 			
@@ -45,7 +45,7 @@ namespace HREngine.Bots
 			if(board.MinionEnemy.Count > 0 && board.GetPlayables(Card.CType.MINION, 2,2).Count > 0 && board.TurnCount == 1)
 				return true;
 			
-			if(board.GetPlayables(Card.CType.MINION, 2,2).Count < 2 && board.TurnCount == 1 && board.GetPlayables(Card.CType.MINION, 1,1).Count == 0)
+			if(board.GetPlayables(Card.CType.MINION, 2,2).Count < 2 && board.TurnCount == 1 && board.GetPlayables(Card.CType.MINION, 1,1).Count == 0 && !board.HasCardInHand("EX1_169"))
 				return false;
 				
             foreach(Card c in board.Hand)
@@ -55,7 +55,7 @@ namespace HREngine.Bots
             }
 			
 
-            return false;
+            return true;
         }
 
         public override bool ShouldAttack(Board board)
