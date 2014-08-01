@@ -102,6 +102,16 @@ namespace HREngine.Bots
 				}
 			}
 			
+			/* -----HUNTER----*/
+
+			BlackList.Add("CS2_084");//Hunter\'s Mark
+			BlackList.Add("EX1_610");//Explosive Trap
+			BlackList.Add("EX1_611");//Freezing Trap
+			BlackList.Add("DS1_185");//Arcane Shot
+			BlackList.Add("EX1_617");//Deadly Shot
+			WhiteList.Add("NEW1_031");//Animal Companion
+			BlackList.Add("DS1_175");
+			
 			/* -----PRIEST----- */
 			WhiteList.Add("CS2_181");//Injured Blademaster
 			foreach(Card c in Choices)

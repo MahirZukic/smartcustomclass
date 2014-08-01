@@ -251,8 +251,6 @@ namespace HREngine.Bots
 					if(target.Type == Card.CType.MINION && board.HeroFriend.CurrentAtk < target.CurrentHealth && target.CurrentAtk >= 3)
 						return false;
 						
-					if(target.Type == Card.CType.HERO && board.HeroFriend.CurrentAtk <= 2 && board.WeaponFriend.CurrentDurability <= 2 && board.GetHeroEnemyHpAndArmor() > 4)
-						return false;
 				}
 				
 				//Eaglehorn Bow

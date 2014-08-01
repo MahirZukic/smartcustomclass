@@ -18,6 +18,17 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			foreach(Card c in board.MinionEnemy)
+			{
+				if(c.HasGoodBuffs() || c.IsBuffer)
+					return true;
+			}
+            foreach(Card c in board.MinionFriend)
+			{
+				if(c.HasBadBuffs())
+					return true;
+			}
+			
             return true;
         }
 
@@ -33,6 +44,19 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
+			if(target.IsFriend)
+			{
+				if(!target.HasBadBuffs())
+					return false;
+					
+				if(target.HasGoodBuffs())
+					return false;
+			}
+			if(!target.IsFriend && !target.HasGoodBuffs() && !target.IsBuffer)
+				return false;
+			if(!target.IsFriend && target.HasBadBuffs())
+				return false;
+				
             return true;
         }
 
@@ -40,6 +64,10 @@ namespace HREngine.Bots
         {
             return 1;
         }
-		
+	
+		public override int GetHandValue(Board board)
+		{
+			return 7;
+		}
     }
 }

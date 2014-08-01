@@ -39,7 +39,7 @@ namespace HREngine.Bots
 			if(target.IsFriend && target.CurrentHealth == 1 && !target.IsDivineShield)
 				return false;
 			
-			if(!target.CanAttack && target.IsFriend)
+			if(!target.CanAttack && target.IsFriend && target.CurrentAtk != 0)
 				return false;
 			
             return true;

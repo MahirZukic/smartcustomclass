@@ -26,6 +26,11 @@ namespace HREngine.Bots
 						return false;
 			}
 			
+			int dropThreePlayale = board.GetPlayables(Card.CType.MINION, 3,3).Count;
+
+			if(!board.HasCardInHand("GAME_005") && dropThreePlayale < 1 && board.TurnCount < 2)
+				return false;
+
 			
             return true;
         }
@@ -52,8 +57,9 @@ namespace HREngine.Bots
 		
 		public override int GetHandValue(Board board)
 		{
-		    if(board.TurnCount > 3)
-				return 3;
+		    if(board.TurnCount > 2)
+				return 4;
+			
 			return 6;
 		}
     }
