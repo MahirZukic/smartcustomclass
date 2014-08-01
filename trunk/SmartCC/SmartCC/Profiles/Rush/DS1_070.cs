@@ -43,5 +43,16 @@ namespace HREngine.Bots
             return 1;
         }
 		
+		public override int GetMinionValue(Board board)
+		{
+			foreach(Card c in board.MinionFriend)
+			{
+				if(c.Race == Card.CRace.BEAST)
+					return 0;
+			}
+			
+			return 15;
+		}
+		
     }
 }

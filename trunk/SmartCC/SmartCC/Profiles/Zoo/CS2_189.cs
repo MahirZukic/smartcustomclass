@@ -33,6 +33,15 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
+			int mortalCount = 0;
+	        foreach(Card c in board.Hand)
+            {
+                if (c.template.Id == "EX1_302") 
+		            mortalCount++;
+            }
+			if (mortalCount > 1) 
+		        return true;
+
 			if(target.Type == Card.CType.HERO && target.CurrentHealth <= 10 && !target.IsFriend)
 				return true;
 				

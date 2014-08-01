@@ -45,7 +45,7 @@ namespace HREngine.Bots
 			if(board.MinionEnemy.Count > 0 && board.GetPlayables(Card.CType.MINION, 2,2).Count > 0 && board.TurnCount == 1)
 				return true;
 			
-			if(board.GetPlayables(Card.CType.MINION, 2,2).Count < 2 && board.TurnCount == 1 && board.GetPlayables(Card.CType.MINION, 1,1).Count == 0 && !board.HasCardInHand("EX1_169"))
+			if(board.GetPlayables(Card.CType.MINION, 2,2).Count < 2 && board.TurnCount == 1 && board.GetPlayables(Card.CType.MINION, 1,1).Count == 0 && !(board.HasCardInHand("EX1_169") && board.GetPlayables(Card.CType.MINION, 2,2).Count > 0))
 				return false;
 				
             foreach(Card c in board.Hand)

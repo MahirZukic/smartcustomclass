@@ -36,10 +36,10 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
-			if(!target.IsFriend && target.CurrentHealth > 1)
+			if(target.IsFriend && target.CurrentHealth == 1 && !target.IsDivineShield)
 				return false;
 			
-			if(!target.CanAttack)
+			if(!target.CanAttack && target.IsFriend && target.CurrentAtk != 0)
 				return false;
 			
             return true;

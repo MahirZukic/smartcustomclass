@@ -20,7 +20,7 @@ namespace HREngine.Bots
         {
 			foreach(Card c in board.MinionFriend)
 			{
-				if(c.CanAttack)
+				if(c.CanAttack || c.CurrentAtk == 0)
 					return true;
 			}
 			

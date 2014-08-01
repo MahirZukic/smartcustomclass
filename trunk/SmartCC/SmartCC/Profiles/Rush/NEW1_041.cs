@@ -41,5 +41,18 @@ namespace HREngine.Bots
             return 1;
         }
 		
+		public override int GetMinionValue(Board board)
+		{
+			foreach(Card c in board.MinionEnemy)
+			{
+				if(c.CurrentAtk <= 2)
+					return 0;
+			}
+			
+			if(board.TurnCount > 8)
+				return 0;
+				
+			return 15;
+		}
     }
 }
