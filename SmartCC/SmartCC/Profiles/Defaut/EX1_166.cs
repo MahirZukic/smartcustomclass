@@ -52,6 +52,12 @@ namespace HREngine.Bots
 		
 		public override int GetMinionValue(Board board)
 		{
+			foreach(Card c in board.MinionEnemy)
+			{
+				if(c.template.Id == "FP1_007" && !c.IsSilenced)
+					return 0;
+			}
+			
 			return 10;
 		}
 		
