@@ -88,6 +88,11 @@ namespace HREngine.Bots
 				WhiteList.Add("EX1_014");//Mukla
 			}
 			
+			
+			/* -----ROGUE----*/
+
+			BlackList.Add("EX1_124");//Eviscerate
+			
 			/* -----WARRIOR----*/
 			
 			
