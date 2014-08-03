@@ -41,9 +41,9 @@ namespace HREngine.Bots
             return 1;
         }
 		
-		public override int GetHandValue(Board board)
+		public override int GetMinionValue(Board board)
 		{
-			return 40;
+			return 30;
 		}
     }
 }

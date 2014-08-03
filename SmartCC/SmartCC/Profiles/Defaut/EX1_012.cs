@@ -30,10 +30,10 @@ namespace HREngine.Bots
 			}
 			
 			bool hasInnerRage = board.HasCardInHand("EX1_607");
-			
-			
-			
 			if(board.TurnCount < 3 && !(enemyHas2Hp && hasInnerRage))
+				return false;
+				
+			if(board.TurnCount <= 2)
 				return false;
             return true;
         }
