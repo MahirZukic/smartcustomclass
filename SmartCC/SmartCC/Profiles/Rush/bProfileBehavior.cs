@@ -54,6 +54,9 @@ namespace HREngine.Bots
 			BlackList.Add("CS2_108");//Execute
 			BlackList.Add("EX1_391");//Slam
 
+			/* -----ROGUE----*/
+
+			BlackList.Add("EX1_124");//Eviscerate
 
 			/* -----PALADIN----*/
 
