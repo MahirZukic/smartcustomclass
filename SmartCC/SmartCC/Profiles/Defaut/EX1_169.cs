@@ -22,13 +22,13 @@ namespace HREngine.Bots
 			foreach(Card c in board.Hand)
 			{
 				if(c.CurrentCost == 4 && c.Type == Card.CType.MINION)
-					if(board.TurnCount < 2 && !board.HasCardInHand("GAME_005"))
+					if(board.TurnCount < 2 && !board.HasCardInHand("GAME_005") && board.ManaAvailable == 1)
 						return false;
 			}
 			
 			int dropThreePlayale = board.GetPlayables(Card.CType.MINION, 3,3).Count;
 
-			if(!board.HasCardInHand("GAME_005") && dropThreePlayale < 1 && board.TurnCount < 2)
+			if(!board.HasCardInHand("GAME_005") && dropThreePlayale < 1 && board.TurnCount < 2 && board.ManaAvailable == 1)
 				return false;
 
 			

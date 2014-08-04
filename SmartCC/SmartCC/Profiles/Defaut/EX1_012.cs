@@ -65,7 +65,7 @@ namespace HREngine.Bots
 		
 		public override int GetMinionValue(Board board)
 		{
-			return 20;
+			return 7;
 		}
 		
     }

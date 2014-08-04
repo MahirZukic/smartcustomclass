@@ -11,6 +11,10 @@ namespace HREngine.Bots
 	[Serializable]
     public class bEX1_382 : Behavior
     {
+		private int boardEnemyCard = 0;
+		private int OwnCards = 0;
+		private int EnemyMinion = 0;
+		
 		public bEX1_382() : base()
         {
             
@@ -18,6 +22,12 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			boardEnemyCard = board.EnemyCardCount;
+			OwnCards = board.Hand.Count;
+			EnemyMinion = board.MinionEnemy.Count;
+		
+			if(board.EnemyCardCount < 4)
+				return true;
 			if(board.MinionEnemy.Count < 1)
 				return false;
             return true;
@@ -37,6 +47,7 @@ namespace HREngine.Bots
         {
 			if(target.CurrentAtk < 3)
 				return false;
+				
             return true;
         }
 
@@ -44,6 +55,11 @@ namespace HREngine.Bots
         {
             return 1;
         }
+		
+		public override int GetMinionValue(Board board)
+		{
+			return 10;
+		}
 		
     }
 }
