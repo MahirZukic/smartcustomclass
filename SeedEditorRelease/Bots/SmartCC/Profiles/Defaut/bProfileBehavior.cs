@@ -44,7 +44,10 @@ namespace HREngine.Bots
 			/* Setup BlackList */
 			
 			if(opponentClass != Card.CClass.PALADIN && opponentClass != Card.CClass.HUNTER)
+			{
 				BlackList.Add("EX1_007");//Acolyte of Pain
+			}
+				
 			BlackList.Add("EX1_349");//Divine Favor
 			BlackList.Add("CS2_023");//Arcane Intellect
 			BlackList.Add("CS2_011");//Savage roar
@@ -53,8 +56,43 @@ namespace HREngine.Bots
 			BlackList.Add("DS1_233");//Mind Blast
 			BlackList.Add("CS2_108");//Execute
 			BlackList.Add("EX1_391");//Slam
+			BlackList.Add("EX1_005");//BGH
+			BlackList.Add("CS2_007");//Healing Touch
+			BlackList.Add("EX1_246");//Hex 
+			BlackList.Add("EX1_575");//Mana Tide Totem
+			
+			if(opponentClass != Card.CClass.WARLOCK)
+				BlackList.Add("EX1_238");//Lightning Bolt
+				
+			BlackList.Add("EX1_565");//Flametongue Totem
 
+			
+			
+			/* -----PALADIN----*/
 
+			BlackList.Add("CS2_188");//Abusive Sergeant
+			BlackList.Add("EX1_619");//Equality
+			BlackList.Add("CS2_089");//Holy Light
+
+			/* -----HUNTER----*/
+
+			BlackList.Add("CS2_084");//Hunter\'s Mark
+			BlackList.Add("EX1_610");//Explosive Trap
+			BlackList.Add("EX1_611");//Freezing Trap
+			BlackList.Add("DS1_185");//Arcane Shot
+			BlackList.Add("EX1_617");//Deadly Shot
+			WhiteList.Add("NEW1_031");//Animal Companion
+			
+			if(Choices.Count > 3)
+			{
+				WhiteList.Add("EX1_014");//Mukla
+			}
+			
+			
+			/* -----ROGUE----*/
+
+			BlackList.Add("EX1_124");//Eviscerate
+			
 			/* -----WARRIOR----*/
 			
 			
@@ -82,6 +120,8 @@ namespace HREngine.Bots
 			
 			
 			/* -----DRUID----- */
+			
+			BlackList.Add("CS2_009");//Mark of the wild
 			WhiteList.Add("EX1_169");//Innervate
 			foreach(Card c in Choices)
 			{
@@ -91,6 +131,11 @@ namespace HREngine.Bots
 					WhiteList.Add("NEW1_026"); // NEW1_026
 				}
 			}
+			
+			if(opponentClass == Card.CClass.WARLOCK)
+				WhiteList.Add("EX1_166");//Keeper of the grove
+
+			
 			
 			/* -----PRIEST----- */
 			WhiteList.Add("CS2_181");//Injured Blademaster
@@ -102,6 +147,9 @@ namespace HREngine.Bots
 					BlackList.Add("EX1_621");	
 			}
 
+			/* -----MAGE----- */
+
+			BlackList.Add("CS2_031");//Ice Lance
 			
 			foreach(Card c in Choices)
 			{
@@ -174,23 +222,7 @@ namespace HREngine.Bots
 
         public override bool ShouldPlayMoreMinions(Board board)
         {
-			int worthyMinion = 0;
-		
-			foreach(Card c in board.MinionFriend)
-			{
-				if(c.GetValue(board) > 10)
-					worthyMinion++;
-			}
-		
-            string enemy = EnemyClass(board.HeroEnemy.template.Id);
-
-            if (enemy == "mage" || enemy == "shaman")
-            {
-                if (worthyMinion >= 3 && board.Hand.Count < 4 && board.MinionEnemy.Count < worthyMinion)
-                    return false;
-            }
-            
-            return true;
+			return true;
         }
 		
 		public override bool ShouldAttackWithWeapon(Board board)
@@ -199,17 +231,18 @@ namespace HREngine.Bots
 				if(board.WeaponFriend.template.Id == "EX1_366")
 					return false;
 					
-			bool hasOtherPlayableCard = false;
+			bool has1HpMinion = false;
 			
-			foreach(Card c in board.Hand)
+			foreach(Card c in board.MinionEnemy)
 			{
-				if(c.CurrentCost <= board.ManaAvailable && c.ShouldBePlayed(board) && c.Type == Card.CType.MINION)
-				{
-					hasOtherPlayableCard = true;
-				}
+				if(c.CurrentHealth == 1 || c.IsDivineShield)
+					has1HpMinion = true;
 			}
-					
-			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && ((board.HasCardInHand("CS2_074") || hasOtherPlayableCard || board.ManaAvailable < 2)))
+			
+			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && has1HpMinion)
+				return true;
+				
+			if(board.WeaponFriend.CurrentAtk == 1 &&  board.WeaponFriend.CurrentDurability == 2 && board.HasCardInHand("CS2_074"))
 				return false;
 			
             return true;
@@ -217,10 +250,26 @@ namespace HREngine.Bots
 
         public override bool ShouldAttackTargetWithWeapon(Board board,Card weapon,Card target)
         {
-				if(target.Type == Card.CType.HERO && !board.HasWeaponInHand() && target.CurrentHealth + target.CurrentArmor > 15 && weapon.CurrentDurability < 2)
+				//DoomHammer
+				if(board.WeaponFriend.template.Id == "EX1_567")
+				{
+					if(target.Type == Card.CType.MINION && board.HeroFriend.CurrentAtk < target.CurrentHealth && target.CurrentAtk >= 3)
+						return false;
+						
+				}
+				
+				//Eaglehorn Bow
+				if(board.WeaponFriend.template.Id == "EX1_536")
+				{
+					if(board.Secret.Count > 0 && board.WeaponFriend.CurrentDurability == 1)
+						return false;
+				}
+				
+
+				if(target.Type == Card.CType.HERO && !board.HasWeaponInHand() && target.CurrentHealth + target.CurrentArmor > 15 && weapon.CurrentDurability ==  1 && board.WeaponFriend.template.Id != "EX1_567" && weapon.CurrentAtk > 2)
 					return false;
 				
-				if(target.Type == Card.CType.HERO && (board.WeaponFriend.template.Id == "EX1_411") && target.CurrentHealth + target.CurrentArmor > board.WeaponFriend.CurrentAtk)
+				if(target.Type == Card.CType.HERO && (board.WeaponFriend.template.Id == "EX1_411") && target.CurrentHealth + target.CurrentArmor > board.HeroFriend.CurrentAtk)
 					return false;
 				
             return true;

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<HREngineRules card="CS2_094">
-    <PlayRule condition="0">
-        <Rule entity="0" method="0" operator="2" paramValue="3" paramString=""/>
-        <Rule entity="1" method="0" operator="2" paramValue="3" paramString=""/>
-    </PlayRule>
-</HREngineRules>
