@@ -18,8 +18,6 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
-            if (board.MinionEnemy.Count < 2)
-                return false;
             return true;
         }
 
@@ -28,20 +26,24 @@ namespace HREngine.Bots
             return true;
         }
 
-        public override bool ShouldAttackTarget(Card target)
+        public override bool ShouldAttackTarget(Board board,Card target)
         {
             return true;
         }
 		
-		public override bool ShouldBePlayedOnTarget(Card target)
+		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
             return true;
         }
 
         public override int GetPriorityPlay(Board board)
         {
-            return 1;
+            return 2;
         }
 		
+		public override int GetHandValue(Board board)
+		{
+			return 10;
+		}
     }
 }

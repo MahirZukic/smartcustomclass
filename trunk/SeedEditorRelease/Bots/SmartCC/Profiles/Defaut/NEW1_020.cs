@@ -26,12 +26,12 @@ namespace HREngine.Bots
             return true;
         }
 
-        public override bool ShouldAttackTarget(Card target)
+        public override bool ShouldAttackTarget(Board board,Card target)
         {
             return true;
         }
 		
-		public override bool ShouldBePlayedOnTarget(Card target)
+		public override bool ShouldBePlayedOnTarget(Board board,Card target)
         {
             return true;
         }
@@ -41,5 +41,11 @@ namespace HREngine.Bots
             return 1;
         }
 		
+		public override int GetMinionValue(Board board)
+        {
+			if(board.MinionEnemy.Count > 2 || board.HeroFriend.CurrentHealth < 10)
+				return 0;
+            return 14;
+        }
     }
 }

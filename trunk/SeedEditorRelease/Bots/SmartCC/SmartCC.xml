@@ -1,0 +1,46 @@
+<Settings>
+   <Sections>
+      <Section id="basic" title="General">
+         <Description>-----General SmartCC settings-----</Description>
+		 <Setting name="smartcc.UseProfiles" default="true" type="boolean" description="Use profile selector (default profile loaded if unchecked)" />
+         <Setting name="smartcc.AutoConcede" type="boolean" description="AutoConcede - Will concede games to stay at low rank" />
+		 <Setting name="smartcc.MaxRank" type="text" default="20" description="AutoConcede rank -> the bot will stay at this rank" />
+		 <Setting name="smartcc.OldAutoConcede" type="boolean" description="AutoConcede - 1Play/1Concede" />
+		 <Setting name="smartcc.Delay" type="text" default="0" description="Delay (sec) before conceding" />
+		 <Setting name="smartcc.MaxLogs" type="text" default="100" description="Max number of logs kept in the folder" />
+		 <Setting name="smartcc.Version" type="text" default="0" description="Current version" />
+      </Section>      
+	  <Section id="exp" title="Experimental">
+         <Description>-----Experimental SmartCC settings-----</Description>
+		 <Setting name="smartcc.ConcedeOnLethal" type="boolean" description="[EXPERIMENTAL] Concede when enemy has lethal" />
+		 <Setting name="smartcc.useEnemyBehavior" type="boolean" description="[EXPERIMENTAL] Make better trades to avoid AOE " />
+		 <Setting name="smartcc.HandValueSimu" type="boolean" description="[EXPERIMENTAL] Try to not waste minions in hand - Not recommended" />
+		 <Setting name="smartcc.NextTurnSimu" type="boolean" description="[EXPERIMENTAL] Simulate next turn - Not recommended" />
+		 <Setting name="smartcc.EnemyBehavior" type="boolean" description="[EXPERIMENTAL] Detect enemy behavior (aggro / control) to manage heatlh better" />
+      </Section>  
+	  <Section id="search" title="Search settings">
+         <Description>-----Search SmartCC settings-----</Description>
+		 <Setting name="smartcc.maxWide" type="text" default="5000" description="Boards calculated each depth level " />
+		 <Setting name="smartcc.maxBoards" type="text" default="2000" description="Childs board kept for next depth level search" />
+		 <Setting name="smartcc.maxEnemySimu" type="text" default="500" description="Boards kept for enemy turn simulation " />
+		 <Label>Very low : 3500 / 1000 / 250</Label>
+		 <Label>Low : 5000 / 1000 / 350</Label>
+		 <Label>Medium : 5000 / 2000 / 500</Label>
+		 <Label>High : 7000 / 3000 / 500</Label>
+		 <Setting name="smartcc.useExternalEngine" default="false" type="boolean" description="[EXPERIMENTAL] Use external process to perform calculation" />
+		 <Label>Using external engine you can expect calculation time / 2 on big boards, the cost of this is just a base delay every turn just a micro freeze of few ms</Label>
+      </Section>  	  
+	  <Section id="statistics" title="Statistics">
+         <Description>-----SmartCC Stats-----</Description>
+		 <Setting name="smartcc.Wins" type="text" default="0" description="Win" />
+		 <Setting name="smartcc.Lost" type="text" default="0" description="Lost" />
+		 <Setting name="smartcc.Conceded" type="text" default="0" description="Conceded" />
+		 <Setting name="smartcc.Ratio" type="text" default="0" description="Ratio" />
+		 <Setting name="smartcc.TrueRatio" type="text" default="0" description="TrueRatio" />
+		 <Setting name="smartcc.Winrate" type="text" default="0" description="Winrate" />
+		 <Setting name="smartcc.TrueWinrate" type="text" default="0" description="True Winrate" />
+		 <Setting name="smartcc.Start" type="text" default="0" description="Hours elapsed" />
+		 <Setting name="smartcc.WinPerHour" type="text" default="0" description="Win/h" />
+      </Section>  	
+   </Sections>
+</Settings>
