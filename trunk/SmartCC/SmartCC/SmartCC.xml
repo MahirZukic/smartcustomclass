@@ -8,9 +8,14 @@
 		 <Setting name="smartcc.OldAutoConcede" type="boolean" description="AutoConcede - 1Play/1Concede" />
 		 <Setting name="smartcc.Delay" type="text" default="0" description="Delay (sec) before conceding" />
 		 <Setting name="smartcc.MaxLogs" type="text" default="100" description="Max number of logs kept in the folder" />
-		 <Setting name="smartcc.FastModeDelay" type="text" default="300" description="Delay (ms) before performing actions on the board when fastmode is enabled " />		 
 		 <Setting name="smartcc.Version" type="text" default="0" description="Current version" />
       </Section>      
+	  <Section id="timers" title="Timers">
+         <Description>-----Timers settings-----</Description>
+		 <Setting name="smartcc.FastModeDelay" type="text" default="300" description="Delay (ms) before performing actions on the board when fastmode is ENABLED " />	
+		 <Setting name="smartcc.RandomTimerMin" type="text" default="0" description="Min Delay (ms) before performing actions on the board when fastmode is DISABLED " />		 
+		 <Setting name="smartcc.RandomTimerMax" type="text" default="0" description="Max Delay (ms) before performing actions on the board when fastmode is DISABLED " />		 		 
+      </Section>   
 	  <Section id="exp" title="Experimental">
          <Description>-----Experimental SmartCC settings-----</Description>
 		 <Setting name="smartcc.ConcedeOnLethal" type="boolean" description="[EXPERIMENTAL] Concede when enemy has lethal" />

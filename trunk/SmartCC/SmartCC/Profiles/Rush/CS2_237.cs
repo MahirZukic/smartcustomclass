@@ -43,6 +43,8 @@ namespace HREngine.Bots
 		
 		public override int GetMinionValue(Board board)
 		{
+			if(board.GetCountInHand("EX1_538") > 0 && board.ManaAvailable >= 5)
+				return 5;
 			if(board.GetCountInHand("CS2_237") > 1)
 				return 15;
 			return 30;

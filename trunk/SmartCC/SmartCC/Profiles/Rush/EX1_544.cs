@@ -41,5 +41,17 @@ namespace HREngine.Bots
             return 1;
         }
 		
+		public override int GetHandValue(Board board)
+		{
+			if((board.EnemyClass == Board.Class.MAGE || board.EnemyClass == Board.Class.HUNTER))
+			{
+				if(!board.SecretEnemy && board.EnemyCardCount >= 3)
+					return 5;
+				else
+					return 0;
+			}
+			return 0;
+		}
+		
     }
 }

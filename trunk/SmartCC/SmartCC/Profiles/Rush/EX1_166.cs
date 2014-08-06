@@ -58,7 +58,7 @@ namespace HREngine.Bots
 					return 0;
 			}
 			
-			return 10;
+			return 20;
 		}
 		
     }
