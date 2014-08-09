@@ -8,6 +8,7 @@
 		 <Setting name="smartcc.OldAutoConcede" type="boolean" description="AutoConcede - 1Play/1Concede" />
 		 <Setting name="smartcc.Delay" type="text" default="0" description="Delay (sec) before conceding" />
 		 <Setting name="smartcc.MaxLogs" type="text" default="100" description="Max number of logs kept in the folder" />
+		 <Setting name="smartcc.MaxWins" type="text" default="0" description="Stop after X wins (0 to disable)" />
 		 <Setting name="smartcc.Version" type="text" default="0" description="Current version" />
       </Section>      
 	  <Section id="timers" title="Timers">
