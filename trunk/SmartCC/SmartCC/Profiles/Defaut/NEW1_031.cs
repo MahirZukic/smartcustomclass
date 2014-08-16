@@ -18,6 +18,8 @@ namespace HREngine.Bots
 		
 		public override bool ShouldBePlayed(Board board)
         {
+			if(board.MinionFriend.Count == 7)
+				return false;
             return true;
         }
 
