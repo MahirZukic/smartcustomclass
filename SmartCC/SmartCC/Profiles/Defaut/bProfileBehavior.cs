@@ -258,13 +258,7 @@ namespace HREngine.Bots
 						
 				}
 				
-				//Eaglehorn Bow
-				if(board.WeaponFriend.template.Id == "EX1_536")
-				{
-					if(board.Secret.Count > 0 && board.WeaponFriend.CurrentDurability == 1)
-						return false;
-				}
-				
+
 
 				if(target.Type == Card.CType.HERO && !board.HasWeaponInHand() && target.CurrentHealth + target.CurrentArmor > 15 && weapon.CurrentDurability ==  1 && board.WeaponFriend.template.Id != "EX1_567" && weapon.CurrentAtk > 2)
 					return false;
